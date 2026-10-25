@@ -1,0 +1,27 @@
+{
+  "script": "latin",
+  "ordinary_score": 0.95,
+  "negative_samples": 20,
+  "weak_samples": 10,
+  "ordinary_samples": 10,
+  "qwen_batch": 100,
+  "seed": 42,
+  "calibration": {
+    "date": "2026-10-26",
+    "reviewer": "conversation_agent",
+    "sample_count": 40,
+    "evidence": "Viewed ImageText/calibration.png: G129 contains small statistics labels; G153/G165 title art; G158 menu art; G159 inventory label; G169 attack tutorial art; G142/G143 medals contain digits and tiny decorative writing. No ordinary font family validated from thumbnails. Remaining resources stay unknown.",
+    "limitations": "Contact sheet establishes presence/risk only; exact text must be reviewed on full-size images. No claim of complete image coverage."
+  },
+  "families": {},
+  "images": {
+    "Avadon Files/Graphics Core/G129.jpg": {"known_text": true, "risks": ["small_ui_labels"]},
+    "Avadon Files/Graphics Core/G142.jpg": {"known_text": true, "risks": ["tiny_decorative_text", "digits"]},
+    "Avadon Files/Graphics Core/G143.jpg": {"known_text": true, "risks": ["tiny_decorative_text", "digits"]},
+    "Avadon Files/Graphics Core/G153.png": {"known_text": true, "risks": ["art"]},
+    "Avadon Files/Graphics Core/G158.png": {"known_text": true, "risks": ["art"]},
+    "Avadon Files/Graphics Core/G159.png": {"known_text": true, "risks": ["small_ui_labels"]},
+    "Avadon Files/Graphics Core/G165.png": {"known_text": true, "risks": ["art"]},
+    "Avadon Files/Graphics Core/G169.bmp": {"known_text": true, "risks": ["art"]}
+  }
+}

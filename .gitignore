@@ -8,6 +8,10 @@
 /ImageText/work/images/
 /ImageText/work/cache/
 /ImageText/work/tiered/qwen/
+/ImageText/exported/
+/ImageText/calibration.png
+/ImageText/work/
+/Analysis/*.snapshot.json
 
 # Python
 __pycache__/

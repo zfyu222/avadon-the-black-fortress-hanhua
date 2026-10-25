@@ -1,0 +1,20 @@
+{
+  "unique_texts": 15928,
+  "source_occurrences": 18379,
+  "by_kind": {
+    "script": 17350,
+    "dat": 192,
+    "native": 837
+  },
+  "script_files": 279,
+  "zone_count": 24,
+  "imagebase": "0x400000",
+  "csv_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+  "validation": "all mapped source spans match original bytes; single-column CSV round-trip passed",
+  "limitations": [
+    "Static reviewed corpus, not proof of complete runtime coverage.",
+    "Native diagnostics, third-party library strings, format-only strings and internal keys excluded.",
+    "Native literals not all individually traced; repacking must verify call site and capacity.",
+    "Chinese encoding/font support and runtime rendering unverified."
+  ]
+}

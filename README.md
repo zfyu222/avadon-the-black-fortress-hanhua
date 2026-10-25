@@ -8,7 +8,7 @@
 - Steam 发售日期：2011-08-17（其他平台首发日期不据此推定）。
 - 原语言 / 商店支持语言：英语；Steam 语言表仅列英语界面。
 - 本地版本标识：Steam Build ID `4252712`，Depot `112101`，Manifest `6035336520543477858`；来自本机 `appmanifest_112100.acf`，不等同于程序版本号。
-- 引擎：具体名称及版本尚未确认。目录包含 `Avadon.exe`、`steam_api.dll` 和 `Avadon Files/`，未见 Unity / RPG Maker 的常见目录标志。
+- 引擎：32 位 x86 原生程序，采用自定义脚本与二进制场景结构；EXE 中有 PTK Game Library / OpenGL 线索，具体引擎名称及版本未确认。程序内版本字符串为 `v1.0s2, Copyright 2011-2, Spiderweb Software, All Rights Reserved`。
 - 本地游戏目录：`D:\Program Files (x86)\Steam\steamapps\common\Avadon The Black Fortress`
 - 资料来源：[Steam 商店](https://store.steampowered.com/app/112100/)、[开发商官网](https://www.spiderwebsoftware.com/avadon/)。
 
@@ -31,7 +31,7 @@
 | 环节 | 工具 | 版本 / 状态 |
 |------|------|------|
 | 初始化 | start-translate / Python / Git | 2026-10-26 / 3.12.10 / 2.55.0.windows.5 |
-| 常规提取 | game-unpack | 待执行 |
+| 常规提取 | game-unpack / Python / REA + Ghidra | 3.12.10 / 6.4.0 + 12.1.4；已导出 15,928 条 |
 | 图片提取 | game-image-extract | 已启用，待执行 |
 | 翻译 | game-translate | SubAgent / API 路线尚未选择 |
 | 图片合入 | game-image-repack | 待正式图片译文完成 |
@@ -39,12 +39,20 @@
 | 发布 | game-release-patch | 待回填验证通过 |
 
 ## 文本提取
-- 初始化目录检查：`Avadon Files/Scripts/` 存在文本脚本；`codex.txt` 中可见 `beginobjectscript`、`beginstate` 等语法，不能把全部字符串或全部行直接当作待译内容。
-- 资源线索：`Avadon Files/AvScenData.dat`（6,026,632 字节）及 `Graphics A/`、`Graphics B/`、`Graphics Core/`。
-- `Avadon Files/` 文件扩展名统计：279 个 TXT、633 个 PNG、46 个 BMP、42 个 JPG、195 个 OGG、1 个 DAT。图片数量不代表含字图片数量。
-- 需要区分脚本中的显示文本、标识符、注释及控制语法，并检查场景数据与程序内的遗漏文本。
-- 正式输出：项目根目录 `avadon-the-black-fortress_text.csv`，单列逐条文本；当前尚未提取。
-- 需分析原生程序或字体/编码函数时，先阅读 `.agents/skills/game-unpack/references/rea_ghidra.md`，使用 REA + Ghidra，证据放项目 `Analysis/`。
+- 状态：2026-10-26 完成首版静态提取，共 **15,928 条去重原文 / 18,379 个来源位置**。脚本 17,350 处、DAT 192 处、EXE 837 处；同文精确去重，全部来源保留。
+- 正式原文：`avadon-the-black-fortress_text.csv`，UTF-8 BOM、无表头、单列标准 CSV；逗号、引号、换行按 CSV 规则处理，读取时使用 CSV 解析器。
+- 来源映射：`avadon-the-black-fortress_text.mapping.json`；记录 CSV 行号、文件、字节偏移、编码、脚本上下文；原生文本另记 VA / RVA、容量和证据 ID。
+- 可复现命令：工作区根目录执行 `python Projects/avadon-the-black-fortress/Extraction/extract_text.py`。脚本仅只读访问游戏；已有不同源文时拒绝覆盖。
+- 脚本：遍历 279 个 TXT，按字符串 / 注释词法解析；提取对话、选项、文本库、技能 / 物品 / 地形名称及显示函数参数，排除注释、空槽和资源脚本名；保留源空格、转义、下划线与 `$` 等格式标记。
+- 特殊项：`z12beastwddlg.txt` 的 `set_coloradj(132,"Ice Imp")` 是数值参数中的异常字符串，记入排除报告，不当作该调用的显示文本。
+- DAT：REA + Ghidra 确认头部 `0x1168`、每区 `0x3d42c`、共 24 区；地图名在头部 `4 + zone*44`，容量 32 字节。每区两层、层跨度 `0x161f8`；每层 `0x16054` 起有 10 个 40 字节地图标注槽，`0x15604` 起有 10 个 256 字节消息槽（本版均为空）。严格按槽起点读取到首个 NUL，避免把残留旧字节误当文本。
+- EXE：REA Ghidra 已定义字符串清单与已检查 UI 表字节联合提取；覆盖战斗提示、技能说明、库存 / 商店 / 训练 / 设置、键位标签、读写档错误等，排除调试输出、引擎诊断、文件路径、作弊指令键及第三方库字符串。补充了清单遗漏的 `Hard`、`On`、`Off`、`Fire` 等短标签。
+- 工具：REA 6.4.0，Ghidra 12.1.4，固定 `ghidra` 后端；doctor 定向检查 healthy=true。直接分析安装目录真实路径，未向 REA 传入 junction 路径，未修改原始程序。
+- 分析输入：`Avadon.exe` SHA-256 `d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e`，PE image base `0x400000`。
+- 分析证据：`Analysis/ghidra-functions.json`、`Analysis/ghidra-strings.json`、`Analysis/*_table.json` 等；完整会话快照为忽略文件。DAT 加载函数 `0x4283f0 / 0x4284a0`，初始化函数 `0x4518f0 / 0x451d00 / 0x451f90`。
+- 校验：全部映射源字节与原文件一致，CSV 单列往返校验通过。源文件大小和 SHA-256 存在 `Extraction/source_manifest.json`，排除项存在 `Extraction/excluded_strings.json`，统计与边界存在 `Extraction/report.json`。
+- 图片交接：已复制导出 721 个原始图片文件，像素去重后 717 张；`ImageText/provenance.json` 记录游戏根目录相对路径和哈希，快照位于忽略的 `ImageText/exported/`、`ImageText/work/`。
+- 覆盖边界：这是静态提取首版，不代表实机全覆盖。EXE 字符串未逐条追踪调用，回填须复核调用点、用途与容量；未定义 / 动态生成文本仍需后续实机覆盖检查。
 
 ## 翻译
 - 执行路线：尚未选择，首次进入翻译阶段时确认 SubAgent 或 API。
@@ -59,7 +67,7 @@
 
 ## 已知问题
 - 尚未确认中文编码、字体覆盖与排版限制。
-- 尚未确认脚本、DAT 与 EXE 各自包含的可见文本范围。
+- 已建立脚本、DAT 与 EXE 的首版静态语料；尚未完成实机覆盖核对。原生片段依赖拼接和空白，不能逐词随意替换；中文超出原槽容量时须重定位或显示层适配。
 - 项目 `Game/` 为安装目录的 junction；后续对其写入将影响实际游戏，回填前须备份。
 
 ## 对外发布
@@ -68,3 +76,4 @@
 
 ## 版本记录
 - 2026-10-26：初始化独立汉化仓库及 Game 目录联接；启用图片文字汉化；补充官方资料、本地资源线索和 Steam 构建标识。
+- 2026-10-26：完成常规文本静态提取首版（15,928 条）；保存来源映射、校验报告和 REA Ghidra 证据，导出图片快照并启动本地图片文字流程。

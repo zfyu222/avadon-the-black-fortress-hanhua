@@ -1,0 +1,852 @@
+[
+  {
+    "evidence_id": "ev_c6d2db13ef03dfc4e30f8c884b49a51226e5e5259f8ed5fb9cb6b23e06c8f00f",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4022a0"
+    },
+    "raw_result": {
+      "value": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined4 FUN_004022a0(short param_1)\r\n\r\n{\r\n  short sVar1;\r\n  short sVar2;\r\n  undefined4 uVar3;\r\n  char cVar4;\r\n  int iVar5;\r\n  undefined4 *puVar6;\r\n  undefined4 *puVar7;\r\n  undefined4 local_188 [6];\r\n  short local_170;\r\n  \r\n  uVar3 = _DAT_006043e0;\r\n  sVar2 = DAT_006043d8;\r\n  if ((DAT_006043d8 < 0) || (cVar4 = FUN_0044e890(), cVar4 == '\\0')) {\r\n    FUN_0046da70(1);\r\n    return 0;\r\n  }\r\n  sVar1 = (&DAT_00742368)[(short)uVar3 * 0xcd6];\r\n  puVar6 = (undefined4 *)((int)&DAT_0071b078 + sVar2 * 0x17a);\r\n  puVar7 = local_188;\r\n  for (iVar5 = 0x5e; iVar5 != 0; iVar5 = iVar5 + -1) {\r\n    *puVar7 = *puVar6;\r\n    puVar6 = puVar6 + 1;\r\n    puVar7 = puVar7 + 1;\r\n  }\r\n  *(undefined2 *)puVar7 = *(undefined2 *)puVar6;\r\n  if (((7 < sVar1) || (7 < (short)(&DAT_00742368)[param_1 * 0xcd6])) ||\r\n     ((local_170 != 10 && (local_170 != 0x16)))) {\r\n    cVar4 = FUN_004460f0(&DAT_00742368 + (short)uVar3 * 0xcd6);\r\n    if (cVar4 != '\\0') {\r\n      if ((9 < local_170) && (local_170 != 0x17)) {\r\n        FUN_0046da70(1);\r\n        return 0;\r\n      }\r\n      if (cVar4 != '\\0') {\r\n        return 1;\r\n      }\r\n    }\r\n    if (((local_170 < 10) || (local_170 == 0x17)) && (local_170 != 4)) {\r\n      FUN_0046da70(1);\r\n      return 0;\r\n    }\r\n  }\r\n  return 1;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined4 FUN_004022a0(short param_1)\r\n\r\n{\r\n  short sVar1;\r\n  short sVar2;\r\n  undefined4 uVar3;\r\n  char cVar4;\r\n  int iVar5;\r\n  undefined4 *puVar6;\r\n  undefined4 *puVar7;\r\n  undefined4 local_188 [6];\r\n  short local_170;\r\n  \r\n  uVar3 = _DAT_006043e0;\r\n  sVar2 = DAT_006043d8;\r\n  if ((DAT_006043d8 < 0) || (cVar4 = FUN_0044e890(), cVar4 == '\\0')) {\r\n    FUN_0046da70(1);\r\n    return 0;\r\n  }\r\n  sVar1 = (&DAT_00742368)[(short)uVar3 * 0xcd6];\r\n  puVar6 = (undefined4 *)((int)&DAT_0071b078 + sVar2 * 0x17a);\r\n  puVar7 = local_188;\r\n  for (iVar5 = 0x5e; iVar5 != 0; iVar5 = iVar5 + -1) {\r\n    *puVar7 = *puVar6;\r\n    puVar6 = puVar6 + 1;\r\n    puVar7 = puVar7 + 1;\r\n  }\r\n  *(undefined2 *)puVar7 = *(undefined2 *)puVar6;\r\n  if (((7 < sVar1) || (7 < (short)(&DAT_00742368)[param_1 * 0xcd6])) ||\r\n     ((local_170 != 10 && (local_170 != 0x16)))) {\r\n    cVar4 = FUN_004460f0(&DAT_00742368 + (short)uVar3 * 0xcd6);\r\n    if (cVar4 != '\\0') {\r\n      if ((9 < local_170) && (local_170 != 0x17)) {\r\n        FUN_0046da70(1);\r\n        return 0;\r\n      }\r\n      if (cVar4 != '\\0') {\r\n        return 1;\r\n      }\r\n    }\r\n    if (((local_170 < 10) || (local_170 == 0x17)) && (local_170 != 4)) {\r\n      FUN_0046da70(1);\r\n      return 0;\r\n    }\r\n  }\r\n  return 1;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_1ec735a3b7796b8214b245a31f3320efaa59bc3d9701425709015506ac6e3e13",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4284a0"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_004284a0(short param_1)\r\n\r\n{\r\n  FILE *_File;\r\n  size_t sVar1;\r\n  char local_10c [260];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  _sprintf(local_10c,\"%s%s\",&DAT_0060e540,\"AvScenData.dat\");\r\n  _File = _fopen(local_10c,\"rb\");\r\n  if (_File == (FILE *)0x0) {\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  _fseek(_File,param_1 * 0x3d42c + 0x1168,0);\r\n  sVar1 = _fread(&DAT_0097f8b0,0x3d42c,1,_File);\r\n  if (sVar1 == 0) {\r\n    _fclose(_File);\r\n    DAT_00604024._2_1_ = 1;\r\n  }\r\n  _fclose(_File);\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_004284a0(short param_1)\r\n\r\n{\r\n  FILE *_File;\r\n  size_t sVar1;\r\n  char local_10c [260];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  _sprintf(local_10c,\"%s%s\",&DAT_0060e540,\"AvScenData.dat\");\r\n  _File = _fopen(local_10c,\"rb\");\r\n  if (_File == (FILE *)0x0) {\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  _fseek(_File,param_1 * 0x3d42c + 0x1168,0);\r\n  sVar1 = _fread(&DAT_0097f8b0,0x3d42c,1,_File);\r\n  if (sVar1 == 0) {\r\n    _fclose(_File);\r\n    DAT_00604024._2_1_ = 1;\r\n  }\r\n  _fclose(_File);\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_a835ddac788431f4f7eaf629db88d5703e731417e63a6a703e57d0e013fc688b",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4283f0"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_004283f0(void)\r\n\r\n{\r\n  FILE *_File;\r\n  size_t sVar1;\r\n  char local_10c [260];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  _sprintf(local_10c,\"%s%s\",&DAT_0060e540,\"AvScenData.dat\");\r\n  _File = _fopen(local_10c,\"rb\");\r\n  if (_File == (FILE *)0x0) {\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  sVar1 = _fread(&DAT_00738478,0x1168,1,_File);\r\n  if (sVar1 == 0) {\r\n    _fclose(_File);\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  _fclose(_File);\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_004283f0(void)\r\n\r\n{\r\n  FILE *_File;\r\n  size_t sVar1;\r\n  char local_10c [260];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  _sprintf(local_10c,\"%s%s\",&DAT_0060e540,\"AvScenData.dat\");\r\n  _File = _fopen(local_10c,\"rb\");\r\n  if (_File == (FILE *)0x0) {\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  sVar1 = _fread(&DAT_00738478,0x1168,1,_File);\r\n  if (sVar1 == 0) {\r\n    _fclose(_File);\r\n    DAT_00604024._2_1_ = 1;\r\n    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n    return;\r\n  }\r\n  _fclose(_File);\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_845edb142de0ac51d6bf10c700b8b27b0f9049fe8df4d1f34a7de1c7cc7de30e",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x423f80"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_00423f80(int *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  short sVar2;\r\n  \r\n  sVar2 = 0;\r\n  if (DAT_00738478 < 1) {\r\n    return;\r\n  }\r\n  do {\r\n    iVar1 = (int)sVar2;\r\n    if (((((0 < (short)(&DAT_007395e0)[iVar1]) && ((short)(&DAT_007395e0)[iVar1] < 4)) ||\r\n         (DAT_006bed67 != '\\0')) &&\r\n        (('\\0' < (char)(&DAT_005cf330)[iVar1] || (DAT_006bed46 != '\\0')))) &&\r\n       (DAT_0074233c == (&DAT_005cf268)[iVar1])) {\r\n      if ((((int)(short)(&DAT_005cf1f0)[iVar1 * 2] <= *param_1) &&\r\n          (*param_1 < (int)(short)((&DAT_005cf1f0)[iVar1 * 2] + 0x48))) &&\r\n         (((int)(short)(&DAT_005cf1f2)[iVar1 * 2] <= param_1[1] &&\r\n          (param_1[1] < (int)(short)((&DAT_005cf1f2)[iVar1 * 2] + 0x49))))) {\r\n        FUN_0046b470();\r\n        DAT_006047c4._0_2_ = sVar2;\r\n        FUN_00423f00();\r\n        return;\r\n      }\r\n    }\r\n    sVar2 = sVar2 + 1;\r\n    if (DAT_00738478 <= sVar2) {\r\n      return;\r\n    }\r\n  } while( true );\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_00423f80(int *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  short sVar2;\r\n  \r\n  sVar2 = 0;\r\n  if (DAT_00738478 < 1) {\r\n    return;\r\n  }\r\n  do {\r\n    iVar1 = (int)sVar2;\r\n    if (((((0 < (short)(&DAT_007395e0)[iVar1]) && ((short)(&DAT_007395e0)[iVar1] < 4)) ||\r\n         (DAT_006bed67 != '\\0')) &&\r\n        (('\\0' < (char)(&DAT_005cf330)[iVar1] || (DAT_006bed46 != '\\0')))) &&\r\n       (DAT_0074233c == (&DAT_005cf268)[iVar1])) {\r\n      if ((((int)(short)(&DAT_005cf1f0)[iVar1 * 2] <= *param_1) &&\r\n          (*param_1 < (int)(short)((&DAT_005cf1f0)[iVar1 * 2] + 0x48))) &&\r\n         (((int)(short)(&DAT_005cf1f2)[iVar1 * 2] <= param_1[1] &&\r\n          (param_1[1] < (int)(short)((&DAT_005cf1f2)[iVar1 * 2] + 0x49))))) {\r\n        FUN_0046b470();\r\n        DAT_006047c4._0_2_ = sVar2;\r\n        FUN_00423f00();\r\n        return;\r\n      }\r\n    }\r\n    sVar2 = sVar2 + 1;\r\n    if (DAT_00738478 <= sVar2) {\r\n      return;\r\n    }\r\n  } while( true );\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_d14fa1249346c9382d6ff460fc7a7306118c528d8d9a9bcea9688f9e0aa86e36",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4518f0"
+    },
+    "raw_result": {
+      "value": "\r\nundefined2 * FUN_004518f0(void)\r\n\r\n{\r\n  undefined4 *puVar1;\r\n  int iVar2;\r\n  \r\n  iVar2 = 99;\r\n  puVar1 = &DAT_0073849c;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    _sprintf((char *)(puVar1 + -8),\"Zone Name\");\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    puVar1[2] = 0;\r\n    puVar1 = puVar1 + 0xb;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  FUN_00451940();\r\n  return &DAT_00738478;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nundefined2 * FUN_004518f0(void)\r\n\r\n{\r\n  undefined4 *puVar1;\r\n  int iVar2;\r\n  \r\n  iVar2 = 99;\r\n  puVar1 = &DAT_0073849c;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    _sprintf((char *)(puVar1 + -8),\"Zone Name\");\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    puVar1[2] = 0;\r\n    puVar1 = puVar1 + 0xb;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  FUN_00451940();\r\n  return &DAT_00738478;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_5ac1e111f660b8b99f3c6c1c59603c533d596db3ec2465b49445abfe53317059",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4521f0"
+    },
+    "raw_result": {
+      "value": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined * FUN_004521f0(void)\r\n\r\n{\r\n  undefined4 *puVar1;\r\n  int iVar2;\r\n  int local_8;\r\n  \r\n  iVar2 = 1;\r\n  do {\r\n    FUN_00451d00();\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  puVar1 = &DAT_009abcb8;\r\n  iVar2 = 599;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    *(undefined2 *)(puVar1 + -2) = 0xffff;\r\n    puVar1[2] = 0;\r\n    puVar1 = puVar1 + 5;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  iVar2 = 599;\r\n  puVar1 = &DAT_009aeb98;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    *(undefined2 *)(puVar1 + -2) = 0xffff;\r\n    _sprintf((char *)(puVar1 + 2),\"\");\r\n    *(undefined2 *)(puVar1 + 0xb) = 0;\r\n    *(undefined4 *)((int)puVar1 + 0x2e) = 0;\r\n    *(undefined4 *)((int)puVar1 + 0x32) = 0;\r\n    *(undefined2 *)((int)puVar1 + 0x36) = 0;\r\n    puVar1 = puVar1 + 0x10;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  local_8 = 199;\r\n  puVar1 = &DAT_009b8198;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    FUN_00451c70();\r\n    puVar1 = puVar1 + 0x18;\r\n    local_8 = local_8 + -1;\r\n  } while (-1 < local_8);\r\n  DAT_009bcc90 = 0;\r\n  DAT_009bcc94 = 0;\r\n  DAT_009bcc98 = 0;\r\n  DAT_009bcc9c = 0;\r\n  _DAT_009bcca0 = 0;\r\n  _DAT_009bcca4 = 0;\r\n  _DAT_009bcca8 = 0;\r\n  _DAT_009bccac = 0;\r\n  FUN_00452300();\r\n  return &DAT_0097f8b0;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined * FUN_004521f0(void)\r\n\r\n{\r\n  undefined4 *puVar1;\r\n  int iVar2;\r\n  int local_8;\r\n  \r\n  iVar2 = 1;\r\n  do {\r\n    FUN_00451d00();\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  puVar1 = &DAT_009abcb8;\r\n  iVar2 = 599;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    *(undefined2 *)(puVar1 + -2) = 0xffff;\r\n    puVar1[2] = 0;\r\n    puVar1 = puVar1 + 5;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  iVar2 = 599;\r\n  puVar1 = &DAT_009aeb98;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    *(undefined2 *)(puVar1 + -2) = 0xffff;\r\n    _sprintf((char *)(puVar1 + 2),\"\");\r\n    *(undefined2 *)(puVar1 + 0xb) = 0;\r\n    *(undefined4 *)((int)puVar1 + 0x2e) = 0;\r\n    *(undefined4 *)((int)puVar1 + 0x32) = 0;\r\n    *(undefined2 *)((int)puVar1 + 0x36) = 0;\r\n    puVar1 = puVar1 + 0x10;\r\n    iVar2 = iVar2 + -1;\r\n  } while (-1 < iVar2);\r\n  local_8 = 199;\r\n  puVar1 = &DAT_009b8198;\r\n  do {\r\n    *puVar1 = 0;\r\n    puVar1[1] = 0;\r\n    *(undefined2 *)(puVar1 + -1) = 0;\r\n    FUN_00451c70();\r\n    puVar1 = puVar1 + 0x18;\r\n    local_8 = local_8 + -1;\r\n  } while (-1 < local_8);\r\n  DAT_009bcc90 = 0;\r\n  DAT_009bcc94 = 0;\r\n  DAT_009bcc98 = 0;\r\n  DAT_009bcc9c = 0;\r\n  _DAT_009bcca0 = 0;\r\n  _DAT_009bcca4 = 0;\r\n  _DAT_009bcca8 = 0;\r\n  _DAT_009bccac = 0;\r\n  FUN_00452300();\r\n  return &DAT_0097f8b0;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_95a7ab36916b539fa49dc80d55373ca3d3f19f9ea72e56b4985455618e28d1b9",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x451d00"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_00451d00(void)\r\n\r\n{\r\n  undefined2 *puVar1;\r\n  undefined4 *puVar2;\r\n  int in_ECX;\r\n  int iVar3;\r\n  int local_8;\r\n  \r\n  puVar2 = (undefined4 *)(in_ECX + 0x10000);\r\n  iVar3 = 0x77;\r\n  do {\r\n    puVar2[3] = 0;\r\n    puVar2[2] = 0;\r\n    puVar2[1] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 4;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x1087c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10878) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10874) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10870) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1088c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10888) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10884) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10880) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1089c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10898) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10894) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10890) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108ac) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a0) = 0;\r\n  puVar1 = (undefined2 *)(in_ECX + 0x108b0);\r\n  iVar3 = 599;\r\n  do {\r\n    *(undefined4 *)(puVar1 + 2) = 0;\r\n    *(undefined4 *)(puVar1 + 4) = 0;\r\n    *puVar1 = 0;\r\n    *(undefined4 *)(puVar1 + 6) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 8) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 10) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 0xc) = 0xffffffff;\r\n    puVar1 = puVar1 + 0xe;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x14a50) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a54) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a58) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a5c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a60) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a64) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a68) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a6c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a70) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a74) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a78) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a7c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a80) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a84) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a88) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a8c) = 0;\r\n  puVar1 = (undefined2 *)(in_ECX + 0x14a90);\r\n  local_8 = 0xb;\r\n  do {\r\n    FUN_00401000(puVar1 + 2,8,0x18,&LAB_004511b0);\r\n    *puVar1 = 0;\r\n    puVar1 = puVar1 + 0x62;\r\n    local_8 = local_8 + -1;\r\n  } while (-1 < local_8);\r\n  puVar2 = (undefined4 *)(in_ECX + 0x153c0);\r\n  iVar3 = 0x17;\r\n  do {\r\n    puVar2[3] = 0;\r\n    puVar2[2] = 0;\r\n    puVar2[1] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 4;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x1557c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15578) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15574) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15570) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155b4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155b8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155bc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155cc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155dc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155ec) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155fc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15600) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16004) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16008) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1600c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16010) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16014) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16018) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1601c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16020) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16024) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16028) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1602c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16030) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16034) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16038) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1603c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16040) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16044) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16048) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1604c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16050) = 0;\r\n  FUN_00451f90();\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_00451d00(void)\r\n\r\n{\r\n  undefined2 *puVar1;\r\n  undefined4 *puVar2;\r\n  int in_ECX;\r\n  int iVar3;\r\n  int local_8;\r\n  \r\n  puVar2 = (undefined4 *)(in_ECX + 0x10000);\r\n  iVar3 = 0x77;\r\n  do {\r\n    puVar2[3] = 0;\r\n    puVar2[2] = 0;\r\n    puVar2[1] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 4;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x1087c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10878) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10874) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10870) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1088c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10888) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10884) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10880) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1089c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10898) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10894) = 0;\r\n  *(undefined4 *)(in_ECX + 0x10890) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108ac) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x108a0) = 0;\r\n  puVar1 = (undefined2 *)(in_ECX + 0x108b0);\r\n  iVar3 = 599;\r\n  do {\r\n    *(undefined4 *)(puVar1 + 2) = 0;\r\n    *(undefined4 *)(puVar1 + 4) = 0;\r\n    *puVar1 = 0;\r\n    *(undefined4 *)(puVar1 + 6) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 8) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 10) = 0xffffffff;\r\n    *(undefined4 *)(puVar1 + 0xc) = 0xffffffff;\r\n    puVar1 = puVar1 + 0xe;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x14a50) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a54) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a58) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a5c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a60) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a64) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a68) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a6c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a70) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a74) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a78) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a7c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a80) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a84) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a88) = 0;\r\n  *(undefined4 *)(in_ECX + 0x14a8c) = 0;\r\n  puVar1 = (undefined2 *)(in_ECX + 0x14a90);\r\n  local_8 = 0xb;\r\n  do {\r\n    FUN_00401000(puVar1 + 2,8,0x18,&LAB_004511b0);\r\n    *puVar1 = 0;\r\n    puVar1 = puVar1 + 0x62;\r\n    local_8 = local_8 + -1;\r\n  } while (-1 < local_8);\r\n  puVar2 = (undefined4 *)(in_ECX + 0x153c0);\r\n  iVar3 = 0x17;\r\n  do {\r\n    puVar2[3] = 0;\r\n    puVar2[2] = 0;\r\n    puVar2[1] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 4;\r\n    iVar3 = iVar3 + -1;\r\n  } while (-1 < iVar3);\r\n  *(undefined4 *)(in_ECX + 0x1557c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15578) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15574) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15570) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155b4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155b8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155bc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155c8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155cc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155d8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155dc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155e8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155ec) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f0) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f4) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155f8) = 0;\r\n  *(undefined4 *)(in_ECX + 0x155fc) = 0;\r\n  *(undefined4 *)(in_ECX + 0x15600) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16004) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16008) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1600c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16010) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16014) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16018) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1601c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16020) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16024) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16028) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1602c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16030) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16034) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16038) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1603c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16040) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16044) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16048) = 0;\r\n  *(undefined4 *)(in_ECX + 0x1604c) = 0;\r\n  *(undefined4 *)(in_ECX + 0x16050) = 0;\r\n  FUN_00451f90();\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_2b327e3e7a6cd6fecadd01de29c02d5950d6ec7fc259a648ff302bfe2ced329c",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x452300"
+    },
+    "raw_result": {
+      "value": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_00452300(void)\r\n\r\n{\r\n  uint uVar1;\r\n  short *psVar2;\r\n  undefined2 *puVar3;\r\n  int *piVar4;\r\n  int iVar5;\r\n  \r\n  uVar1 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  FUN_00451f90(0x80040);\r\n  FUN_00451f90();\r\n  _sprintf(&DAT_009abca0,\"NullZoneSc\");\r\n  psVar2 = (short *)&stack0xffffffea;\r\n  piVar4 = &DAT_009bcc94;\r\n  iVar5 = 4;\r\n  do {\r\n    piVar4[-1] = (int)psVar2[-1];\r\n    *piVar4 = (int)*psVar2;\r\n    psVar2 = psVar2 + 2;\r\n    piVar4 = piVar4 + 2;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009abcb0;\r\n  iVar5 = 600;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 10;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009aeb90;\r\n  iVar5 = 600;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 0x20;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009b8190;\r\n  iVar5 = 200;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 0x30;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  _DAT_009bccb0 = 0;\r\n  _DAT_009bccb4 = 0;\r\n  _DAT_009bccb8 = 0;\r\n  _DAT_009bccbc = 0;\r\n  _DAT_009bccc0 = 0;\r\n  _DAT_009bccc4 = 0;\r\n  _DAT_009bccc8 = 0;\r\n  _DAT_009bcccc = 0;\r\n  _DAT_009bccd0 = 0;\r\n  _DAT_009bccd4 = 0;\r\n  _DAT_009bccd8 = 0;\r\n  __security_check_cookie(uVar1 ^ (uint)&stack0xfffffffc,0);\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_00452300(void)\r\n\r\n{\r\n  uint uVar1;\r\n  short *psVar2;\r\n  undefined2 *puVar3;\r\n  int *piVar4;\r\n  int iVar5;\r\n  \r\n  uVar1 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  FUN_00451f90(0x80040);\r\n  FUN_00451f90();\r\n  _sprintf(&DAT_009abca0,\"NullZoneSc\");\r\n  psVar2 = (short *)&stack0xffffffea;\r\n  piVar4 = &DAT_009bcc94;\r\n  iVar5 = 4;\r\n  do {\r\n    piVar4[-1] = (int)psVar2[-1];\r\n    *piVar4 = (int)*psVar2;\r\n    psVar2 = psVar2 + 2;\r\n    piVar4 = piVar4 + 2;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009abcb0;\r\n  iVar5 = 600;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 10;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009aeb90;\r\n  iVar5 = 600;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 0x20;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = &DAT_009b8190;\r\n  iVar5 = 200;\r\n  do {\r\n    *puVar3 = 0xffff;\r\n    puVar3 = puVar3 + 0x30;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  _DAT_009bccb0 = 0;\r\n  _DAT_009bccb4 = 0;\r\n  _DAT_009bccb8 = 0;\r\n  _DAT_009bccbc = 0;\r\n  _DAT_009bccc0 = 0;\r\n  _DAT_009bccc4 = 0;\r\n  _DAT_009bccc8 = 0;\r\n  _DAT_009bcccc = 0;\r\n  _DAT_009bccd0 = 0;\r\n  _DAT_009bccd4 = 0;\r\n  _DAT_009bccd8 = 0;\r\n  __security_check_cookie(uVar1 ^ (uint)&stack0xfffffffc,0);\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_058d857858dd23b4a46b1744228ca518b1d135c49f00db1a2f08d64abae2ff71",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x451f90"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_00451f90(void)\r\n\r\n{\r\n  undefined1 *puVar1;\r\n  undefined2 *puVar2;\r\n  undefined4 *puVar3;\r\n  int iVar4;\r\n  int iVar5;\r\n  int in_EDX;\r\n  \r\n  puVar1 = (undefined1 *)(in_EDX + 0x8000);\r\n  iVar4 = 0x80;\r\n  do {\r\n    iVar5 = iVar4;\r\n    iVar4 = 0x80;\r\n    do {\r\n      puVar1[0x4000] = 0;\r\n      *puVar1 = 0;\r\n      puVar1[-0x4000] = 0;\r\n      puVar1[-0x8000] = 0;\r\n      puVar1 = puVar1 + 1;\r\n      iVar4 = iVar4 + -1;\r\n    } while (iVar4 != 0);\r\n    iVar4 = iVar5 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10008);\r\n  iVar5 = iVar5 + 0x77;\r\n  do {\r\n    puVar3[-2] = 0;\r\n    puVar3[-1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3[1] = 0;\r\n    puVar3 = puVar3 + 4;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10780);\r\n  for (iVar4 = 0x3c; iVar4 != 0; iVar4 = iVar4 + -1) {\r\n    *puVar3 = 0xffffffff;\r\n    puVar3 = puVar3 + 1;\r\n  }\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10878);\r\n  iVar4 = 4;\r\n  do {\r\n    puVar3[-2] = 0xffffffff;\r\n    puVar3[-1] = 0xffffffff;\r\n    *puVar3 = 0xffffffff;\r\n    puVar3[1] = 0xffffffff;\r\n    puVar3 = puVar3 + 4;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar2 = (undefined2 *)(in_EDX + 0x108b0);\r\n  iVar4 = 600;\r\n  do {\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 0xe;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x14a50);\r\n  iVar4 = 8;\r\n  do {\r\n    puVar3[1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar2 = (undefined2 *)(in_EDX + 0x14a90);\r\n  iVar4 = 0xc;\r\n  do {\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 0x62;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x153c8);\r\n  iVar4 = 0x18;\r\n  do {\r\n    puVar3[-2] = 0;\r\n    puVar3[-1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3[1] = 0;\r\n    puVar3 = puVar3 + 4;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined4 *)(in_EDX + 0x15540) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15544) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15548) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1554c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15550) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15554) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15558) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1555c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15560) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15564) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15568) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1556c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15578) = 0x7f;\r\n  *(undefined4 *)(in_EDX + 0x1557c) = 0x7f;\r\n  *(undefined4 *)(in_EDX + 0x15570) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15574) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15580) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15584) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15588) = 0;\r\n  puVar2 = (undefined2 *)(in_EDX + 0x1558c);\r\n  iVar4 = 8;\r\n  do {\r\n    puVar2[8] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 1;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined2 *)(in_EDX + 0x15598) = 0xc;\r\n  *(undefined4 *)(in_EDX + 0x155ac) = 0;\r\n  *(undefined4 *)(in_EDX + 0x155b0) = 0;\r\n  iVar4 = 10;\r\n  *(undefined4 *)(in_EDX + 0x1558c) = 0x10002;\r\n  *(undefined4 *)(in_EDX + 0x15590) = 0x8000a;\r\n  *(undefined4 *)(in_EDX + 0x15594) = 0x120009;\r\n  puVar1 = (undefined1 *)(in_EDX + 0x15604);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x155b4);\r\n  do {\r\n    *puVar3 = 0xffffffff;\r\n    *puVar1 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    puVar1 = puVar1 + 0x100;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar1 = (undefined1 *)(in_EDX + 0x16054);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x16004);\r\n  iVar4 = 10;\r\n  do {\r\n    *puVar3 = 0xffffffff;\r\n    *puVar1 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    puVar1 = puVar1 + 0x28;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined4 *)(in_EDX + 0x161e4) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161e8) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161ec) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161f0) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161f4) = 0;\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_00451f90(void)\r\n\r\n{\r\n  undefined1 *puVar1;\r\n  undefined2 *puVar2;\r\n  undefined4 *puVar3;\r\n  int iVar4;\r\n  int iVar5;\r\n  int in_EDX;\r\n  \r\n  puVar1 = (undefined1 *)(in_EDX + 0x8000);\r\n  iVar4 = 0x80;\r\n  do {\r\n    iVar5 = iVar4;\r\n    iVar4 = 0x80;\r\n    do {\r\n      puVar1[0x4000] = 0;\r\n      *puVar1 = 0;\r\n      puVar1[-0x4000] = 0;\r\n      puVar1[-0x8000] = 0;\r\n      puVar1 = puVar1 + 1;\r\n      iVar4 = iVar4 + -1;\r\n    } while (iVar4 != 0);\r\n    iVar4 = iVar5 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10008);\r\n  iVar5 = iVar5 + 0x77;\r\n  do {\r\n    puVar3[-2] = 0;\r\n    puVar3[-1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3[1] = 0;\r\n    puVar3 = puVar3 + 4;\r\n    iVar5 = iVar5 + -1;\r\n  } while (iVar5 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10780);\r\n  for (iVar4 = 0x3c; iVar4 != 0; iVar4 = iVar4 + -1) {\r\n    *puVar3 = 0xffffffff;\r\n    puVar3 = puVar3 + 1;\r\n  }\r\n  puVar3 = (undefined4 *)(in_EDX + 0x10878);\r\n  iVar4 = 4;\r\n  do {\r\n    puVar3[-2] = 0xffffffff;\r\n    puVar3[-1] = 0xffffffff;\r\n    *puVar3 = 0xffffffff;\r\n    puVar3[1] = 0xffffffff;\r\n    puVar3 = puVar3 + 4;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar2 = (undefined2 *)(in_EDX + 0x108b0);\r\n  iVar4 = 600;\r\n  do {\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 0xe;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x14a50);\r\n  iVar4 = 8;\r\n  do {\r\n    puVar3[1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar2 = (undefined2 *)(in_EDX + 0x14a90);\r\n  iVar4 = 0xc;\r\n  do {\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 0x62;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x153c8);\r\n  iVar4 = 0x18;\r\n  do {\r\n    puVar3[-2] = 0;\r\n    puVar3[-1] = 0;\r\n    *puVar3 = 0;\r\n    puVar3[1] = 0;\r\n    puVar3 = puVar3 + 4;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined4 *)(in_EDX + 0x15540) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15544) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15548) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1554c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15550) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15554) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15558) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1555c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15560) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15564) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15568) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x1556c) = 0xffffffff;\r\n  *(undefined4 *)(in_EDX + 0x15578) = 0x7f;\r\n  *(undefined4 *)(in_EDX + 0x1557c) = 0x7f;\r\n  *(undefined4 *)(in_EDX + 0x15570) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15574) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15580) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15584) = 0;\r\n  *(undefined4 *)(in_EDX + 0x15588) = 0;\r\n  puVar2 = (undefined2 *)(in_EDX + 0x1558c);\r\n  iVar4 = 8;\r\n  do {\r\n    puVar2[8] = 0;\r\n    *puVar2 = 0;\r\n    puVar2 = puVar2 + 1;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined2 *)(in_EDX + 0x15598) = 0xc;\r\n  *(undefined4 *)(in_EDX + 0x155ac) = 0;\r\n  *(undefined4 *)(in_EDX + 0x155b0) = 0;\r\n  iVar4 = 10;\r\n  *(undefined4 *)(in_EDX + 0x1558c) = 0x10002;\r\n  *(undefined4 *)(in_EDX + 0x15590) = 0x8000a;\r\n  *(undefined4 *)(in_EDX + 0x15594) = 0x120009;\r\n  puVar1 = (undefined1 *)(in_EDX + 0x15604);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x155b4);\r\n  do {\r\n    *puVar3 = 0xffffffff;\r\n    *puVar1 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    puVar1 = puVar1 + 0x100;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  puVar1 = (undefined1 *)(in_EDX + 0x16054);\r\n  puVar3 = (undefined4 *)(in_EDX + 0x16004);\r\n  iVar4 = 10;\r\n  do {\r\n    *puVar3 = 0xffffffff;\r\n    *puVar1 = 0;\r\n    puVar3 = puVar3 + 2;\r\n    puVar1 = puVar1 + 0x28;\r\n    iVar4 = iVar4 + -1;\r\n  } while (iVar4 != 0);\r\n  *(undefined4 *)(in_EDX + 0x161e4) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161e8) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161ec) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161f0) = 0;\r\n  *(undefined4 *)(in_EDX + 0x161f4) = 0;\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_7898ed8b272d59b6236a67b60919c93f9405507f0298c4d0812289bbefa46b51",
+    "subject": {
+      "name": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe",
+      "digest": {
+        "sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"
+      },
+      "format": "pe",
+      "architecture": "x86",
+      "local_path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\Avadon.exe"
+    },
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "parameters": {
+        "target_kind": "executable",
+        "target_format": "pe",
+        "executable_role": "application",
+        "managed": false,
+        "native_aot_metadata": {
+          "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+          "source_bytes": 134217728,
+          "work_units": 67108864,
+          "working_memory_bytes": 67108864,
+          "report_bytes": 4194304
+        },
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "import_mode": "ephemeral-source-immutable",
+        "annotation_policy": "atomic-function-entry-metadata-v1",
+        "load_image_observations": "source-mappings-entry-context-v2",
+        "function_body_evidence": "complete-inclusive-ranges-v1",
+        "function_references": "complete-body-and-entry-reference-manager-v2",
+        "string_inventory_evidence": "defined-data-coverage-v1",
+        "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+        "instruction_flow_evidence": "decoded-return-pcode-v1",
+        "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+        "no_return_repair": "disabled-windows-p0",
+        "process_launch": "official-headless-script-v1",
+        "jump_table_evidence": "typed-case-default-blocks-v1",
+        "decompiler_jump_loads": true,
+        "loader": "auto-from-header",
+        "language_id": "auto-from-header",
+        "compiler_spec_id": "auto-default",
+        "analyzer_preset": "ghidra-default"
+      },
+      "digest": "b9d116ea480a02cc8773b19372074a3caf77785cbc080b1ac7133b5110e40b17"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x456c10"
+    },
+    "raw_result": {
+      "value": "\r\nvoid FUN_00456c10(undefined *param_1,undefined4 param_2)\r\n\r\n{\r\n  int iVar1;\r\n  byte bVar2;\r\n  short sVar3;\r\n  short sVar4;\r\n  undefined *puVar5;\r\n  undefined4 uVar6;\r\n  char cVar7;\r\n  short sVar8;\r\n  short sVar9;\r\n  short sVar10;\r\n  uint uVar11;\r\n  short sVar12;\r\n  int iVar13;\r\n  int *piVar14;\r\n  float10 extraout_ST0;\r\n  float10 fVar15;\r\n  float10 fVar16;\r\n  float10 extraout_ST1;\r\n  float10 fVar17;\r\n  float10 fVar18;\r\n  float10 fVar19;\r\n  undefined8 uVar20;\r\n  tagPOINT local_26c;\r\n  tagPOINT local_264;\r\n  undefined4 local_25c;\r\n  undefined *local_258;\r\n  undefined4 local_254;\r\n  undefined4 local_250;\r\n  short local_248;\r\n  short sStack_246;\r\n  short local_244;\r\n  short sStack_242;\r\n  undefined4 local_240;\r\n  undefined4 local_23c;\r\n  undefined4 local_238;\r\n  undefined4 local_234;\r\n  undefined4 local_230;\r\n  undefined4 local_22c;\r\n  uint local_228;\r\n  undefined4 local_224;\r\n  undefined4 local_220;\r\n  short local_21c;\r\n  ushort uStack_21a;\r\n  short local_218;\r\n  short sStack_216;\r\n  undefined4 local_214;\r\n  undefined4 local_210;\r\n  undefined1 local_20c [516];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  local_264.y = (LONG)&DAT_009500e3;\r\n  local_264.x = (LONG)&DAT_008900d7;\r\n  local_26c.y = (LONG)&DAT_00590081;\r\n  local_26c.x = 0x34006d;\r\n  cVar7 = FUN_0040a370();\r\n  if (cVar7 == '\\0') {\r\n    if (DAT_006bee3a == '\\0') {\r\n      local_22c = 0x1110107;\r\n      local_230 = (undefined *)0x80000;\r\n      FUN_00408730(0x3f800000,param_1,param_2,0x80000,0x1110107);\r\n    }\r\n    else {\r\n      local_210 = param_2;\r\n      local_214 = param_1;\r\n      FUN_004077b0(0x41e00000,0x41e00000,0x41e00000,0x3f800000,param_1,param_2);\r\n      FUN_00407510(0,0,0,0x3f19999a,param_1,param_2);\r\n    }\r\n    uStack_21a = (short)DAT_00eb84c8 + -0x20;\r\n    sStack_216 = (short)DAT_00eb84c8 + 0x20;\r\n    local_218 = (short)DAT_00eb84cc + 0x20;\r\n    local_21c = (short)DAT_00eb84cc + -0x1f;\r\n    local_25c = 0;\r\n    local_258 = &DAT_00800080;\r\n    if (DAT_006bee3a != '\\0') {\r\n      local_21c = 0;\r\n      uStack_21a = 0;\r\n      local_218 = 0x80;\r\n      sStack_216 = 0x80;\r\n    }\r\n    _local_248 = CONCAT22(uStack_21a + 1,local_21c + 1);\r\n    _local_244 = CONCAT22(sStack_216 + -1,local_218 + -1);\r\n    uVar20 = FUN_00472680();\r\n    local_21c = (short)uVar20;\r\n    uStack_21a = (ushort)((ulonglong)uVar20 >> 0x10);\r\n    local_218 = (short)((ulonglong)uVar20 >> 0x20);\r\n    sStack_216 = (short)((ulonglong)uVar20 >> 0x30);\r\n    uVar11 = FUN_0042ea50();\r\n    local_258 = (undefined *)(uVar11 & 0xffff);\r\n    local_23c = (uint)uStack_21a;\r\n    if ((short)uStack_21a < sStack_216) {\r\n      local_234 = CONCAT22(local_218,uStack_21a) * 4 & 0xffff;\r\n      local_220 = (short *)((int)(short)uStack_21a << 7);\r\n      do {\r\n        if (local_21c < local_218) {\r\n          iVar13 = (int)local_21c;\r\n          uVar11 = (uint)(ushort)(local_21c * 4);\r\n          sVar10 = local_21c;\r\n          do {\r\n            fVar16 = (float10)25.0;\r\n            fVar19 = (float10)8.0;\r\n            fVar18 = (float10)6.0;\r\n            fVar17 = (float10)0.75;\r\n            fVar15 = (float10)31.0;\r\n            if (((((-1 < (short)local_23c) && (-1 < sVar10)) && ((short)local_234 < 0x200)) &&\r\n                (sVar10 < 0x80)) &&\r\n               (((local_250 = iVar13, local_228 = uVar11, DAT_0073b90c == 0 ||\r\n                 (sVar8 = FUN_0042ea50(), fVar15 = extraout_ST0, fVar17 = extraout_ST1,\r\n                 sVar8 == *(char *)((int)local_220 + (int)(&DAT_00651cc8 + iVar13)))) &&\r\n                (*(char *)((int)local_220 + (int)(&DAT_00659cc8 + iVar13)) != '\\0')))) {\r\n              if (DAT_006bee3a == '\\0') {\r\n                sVar8 = (short)local_23c - (short)DAT_00eb84c8;\r\n                sVar9 = sVar10 - (short)DAT_00eb84cc;\r\n                local_210 = CONCAT22(sVar8 * 4 + 0x84 + param_1._2_2_ + 0xb,\r\n                                     sVar9 * 4 + 0x84 + (short)param_1);\r\n                local_214 = (undefined *)\r\n                            CONCAT22(sVar8 * 4 + 0x80 + param_1._2_2_ + 0xb,\r\n                                     sVar9 * 4 + 0x80 + (short)param_1);\r\n                uVar11 = local_228;\r\n              }\r\n              else {\r\n                local_210 = CONCAT22((short)local_234 + 4 + param_1._2_2_,\r\n                                     (short)uVar11 + 4 + (short)param_1);\r\n                local_214 = (undefined *)\r\n                            CONCAT22((short)local_234 + param_1._2_2_,(short)uVar11 + (short)param_1\r\n                                    );\r\n              }\r\n              iVar1 = (int)local_220 + local_250 + DAT_0073b90c * 0x161f8;\r\n              bVar2 = (&DAT_009878b0)[iVar1];\r\n              iVar13 = local_250;\r\n              if ((((bVar2 == 0) || (0xb < bVar2)) && ((bVar2 < 0x10 || (0x2e < bVar2)))) &&\r\n                 ((bVar2 < 0x33 || (0x46 < bVar2)))) {\r\n                if (((bVar2 < 0x47) || (0x52 < bVar2)) && ((bVar2 < 0xc6 || (0xcd < bVar2)))) {\r\n                  if ((bVar2 == 0xe6) || (0xeb < bVar2)) {\r\n                    FUN_00407510(0x41400000,0x41300000,0x40a00000,0x3f800000,local_214,local_210);\r\n                  }\r\n                  else if ((DAT_005cdc03 & (&DAT_0097f8b0)[iVar1]) == 0) {\r\n                    if ((DAT_005cdc04 & (&DAT_0097f8b0)[iVar1]) == 0) {\r\n                      fVar16 = fVar18;\r\n                      if (DAT_006bee3a != '\\0') goto LAB_00457115;\r\n                    }\r\n                    else {\r\n                      FUN_00407510((float)fVar15,0,0,(float)fVar17,local_214,local_210);\r\n                    }\r\n                  }\r\n                  else {\r\n                    FUN_00407510(0,0,(float)fVar15,(float)fVar17,local_214,local_210);\r\n                  }\r\n                }\r\n                else {\r\n                  fVar16 = fVar19;\r\n                  if ((&DAT_00994e38)[DAT_0073b90c * 0xb0fc] == 1) goto LAB_00457115;\r\n                  FUN_00407510((float)fVar18,0x41200000,0x40000000,0x3f800000,local_214,local_210);\r\n                }\r\n              }\r\n              else {\r\nLAB_00457115:\r\n                FUN_00407510((float)fVar16,(float)fVar16,(float)fVar16,0x3f800000,local_214,\r\n                             local_210);\r\n              }\r\n            }\r\n            sVar10 = sVar10 + 1;\r\n            uVar11 = uVar11 + 4;\r\n            iVar13 = iVar13 + 1;\r\n            local_250 = iVar13;\r\n          } while (sVar10 < local_218);\r\n        }\r\n        local_234 = local_234 + 4;\r\n        local_220 = local_220 + 0x40;\r\n        local_23c = local_23c + 1;\r\n      } while ((short)local_23c < sStack_216);\r\n    }\r\n    local_228 = 0;\r\n    local_234 = 0;\r\n    local_23c = 10;\r\n    do {\r\n      iVar13 = (DAT_0073b90c * 0x2c3f + local_228) * 8;\r\n      if (-1 < *(int *)(&DAT_009958b4 + iVar13)) {\r\n        iVar1 = *(int *)(&DAT_009958b8 + iVar13);\r\n        if (((((int)sStack_246 <= *(int *)(&DAT_009958b4 + iVar13)) &&\r\n             (*(int *)(&DAT_009958b4 + iVar13) < (int)sStack_242)) && (local_248 <= iVar1)) &&\r\n           ((iVar1 < local_244 &&\r\n            ((DAT_0073b90c == 0 ||\r\n             ((short)local_258 ==\r\n              (char)(&DAT_00651cc8)[iVar1 + *(int *)(&DAT_009958b4 + iVar13) * 0x80])))))) {\r\n          sVar10 = *(short *)(&DAT_009958b4 + iVar13);\r\n          sVar8 = *(short *)(&DAT_009958b8 + iVar13);\r\n          if ((-1 < sVar10) &&\r\n             (((-1 < sVar8 && (sVar10 < 0x80)) &&\r\n              ((sVar8 < 0x80 &&\r\n               (((DAT_0073b90c == 0 ||\r\n                 (sVar9 = FUN_0042ea50(), sVar9 == (char)(&DAT_00651cc8)[(int)sVar8 + sVar10 * 0x80]\r\n                 )) && ('\\0' < (char)(&DAT_00659cc8)[(int)sVar8 + sVar10 * 0x80])))))))) {\r\n            sVar9 = sVar10 * 4 + -4;\r\n            sVar10 = sVar10 * 4 + 8;\r\n            sVar12 = sVar8 * 4 + 8;\r\n            sVar8 = sVar8 * 4 + -4;\r\n            local_210 = CONCAT22(sVar10,sVar12);\r\n            local_214 = (undefined *)CONCAT22(sVar9,sVar8);\r\n            if (DAT_006bee3a == '\\0') {\r\n              sVar3 = (0x20 - (short)DAT_00eb84cc) * 4;\r\n              sVar4 = (short)DAT_00eb84c8 * -4 + 0x8b;\r\n              local_210 = CONCAT22(sVar10 + sVar4,sVar12 + sVar3);\r\n              local_214 = (undefined *)CONCAT22(sVar9 + sVar4,sVar8 + sVar3);\r\n            }\r\n            uVar6 = local_210;\r\n            puVar5 = local_214;\r\n            sVar10 = (short)((uint)local_210 >> 0x10);\r\n            local_250._0_2_ = (short)local_210;\r\n            sVar12 = (short)local_250;\r\n            local_250 = CONCAT22(sVar10 + param_1._2_2_,(short)local_250 + (short)param_1);\r\n            sVar8 = (short)((uint)local_214 >> 0x10);\r\n            local_254._0_2_ = (short)local_214;\r\n            sVar9 = (short)local_254;\r\n            local_254 = CONCAT22(sVar8 + param_1._2_2_,(short)local_254 + (short)param_1);\r\n            FUN_004079d0(DAT_006bee7c,1,0,0,&DAT_007c00d7,&DAT_008800e3,local_254,local_250);\r\n            cVar7 = FUN_004724a0();\r\n            if ((cVar7 == '\\0') &&\r\n               ((cVar7 = FUN_00458330(param_1,param_2,puVar5,uVar6), cVar7 != '\\0' ||\r\n                (DAT_006bee3a != '\\0')))) {\r\n              local_230 = (undefined *)CONCAT22(sVar8,sVar9 + 0xe);\r\n              local_22c = CONCAT22(sVar10,sVar12 + 0xe);\r\n              local_224 = CONCAT22(sVar8 + param_1._2_2_,sVar9 + 0xe + (short)param_1);\r\n              local_220 = (short *)CONCAT22(sVar10 + param_1._2_2_,sVar12 + 0xe + (short)param_1);\r\n              FUN_0046e060(0,local_224,local_220);\r\n              FUN_0046e560(&DAT_00995904 + local_234 + DAT_0073b90c * 0x161f8);\r\n            }\r\n          }\r\n        }\r\n      }\r\n      local_234 = local_234 + 0x28;\r\n      local_228 = local_228 + 1;\r\n      local_23c = local_23c + -1;\r\n    } while (local_23c != 0);\r\n    piVar14 = &DAT_00742254;\r\n    local_220 = &DAT_007422d4;\r\n    local_228 = 0x10;\r\n    local_23c = 0;\r\n    do {\r\n      if (0 < *piVar14) {\r\n        if ((((int)sStack_246 <= *piVar14) && (*piVar14 < (int)sStack_242)) &&\r\n           (((int)local_248 <= piVar14[1] &&\r\n            ((((piVar14[1] < (int)local_244 && (DAT_0073b90c == local_220[0x10])) &&\r\n              (DAT_0073b910 == *local_220)) &&\r\n             ((DAT_0073b90c == 0 ||\r\n              ((short)local_258 == (char)(&DAT_00651cc8)[piVar14[1] + *piVar14 * 0x80])))))))) {\r\n          sVar9 = (short)*piVar14 * 4 + -4;\r\n          sVar10 = (short)*piVar14 * 4 + 8;\r\n          sVar12 = (short)piVar14[1] * 4 + 8;\r\n          sVar8 = (short)piVar14[1] * 4 + -4;\r\n          local_210 = CONCAT22(sVar10,sVar12);\r\n          local_214 = (undefined *)CONCAT22(sVar9,sVar8);\r\n          if (DAT_006bee3a == '\\0') {\r\n            sVar3 = (0x20 - (short)DAT_00eb84cc) * 4;\r\n            sVar4 = (short)DAT_00eb84c8 * -4 + 0x8b;\r\n            local_210 = CONCAT22(sVar10 + sVar4,sVar12 + sVar3);\r\n            local_214 = (undefined *)CONCAT22(sVar9 + sVar4,sVar8 + sVar3);\r\n          }\r\n          uVar6 = local_210;\r\n          puVar5 = local_214;\r\n          local_234._0_2_ = (short)local_210;\r\n          sVar10 = (short)local_234;\r\n          local_234 = CONCAT22((short)((uint)local_210 >> 0x10) + param_1._2_2_,\r\n                               (short)local_234 + (short)param_1);\r\n          local_238._0_2_ = (short)local_214;\r\n          local_238 = CONCAT22((short)((uint)local_214 >> 0x10) + param_1._2_2_,\r\n                               (short)local_238 + (short)param_1);\r\n          FUN_004079d0(DAT_006bee7c,1,0,0,local_264.x,local_264.y,local_238,local_234);\r\n          cVar7 = FUN_004724a0();\r\n          if ((cVar7 == '\\0') &&\r\n             ((cVar7 = FUN_00458330(param_1,param_2,puVar5,uVar6), cVar7 != '\\0' ||\r\n              (DAT_006bee3a != '\\0')))) {\r\n            local_230 = puVar5;\r\n            local_22c = uVar6;\r\n            FUN_004711b0();\r\n            sVar8 = (short)local_230 + 0xe;\r\n            local_230 = (undefined *)CONCAT22(local_230._2_2_,sVar8);\r\n            local_22c = CONCAT22(local_22c._2_2_,sVar10 + 0xe);\r\n            local_240 = CONCAT22(local_230._2_2_ + param_1._2_2_,sVar8 + (short)param_1);\r\n            local_23c = CONCAT22(local_22c._2_2_ + param_1._2_2_,sVar10 + 0xe + (short)param_1);\r\n            FUN_0046e060(0,local_240,local_23c);\r\n            FUN_0046e560(local_20c);\r\n          }\r\n        }\r\n      }\r\n      local_220 = local_220 + 1;\r\n      piVar14 = piVar14 + 2;\r\n      local_228 = local_228 + -1;\r\n    } while (local_228 != 0);\r\n    FUN_00457b50(param_1,param_2,CONCAT22(uStack_21a,local_21c),CONCAT22(sStack_216,local_218));\r\n    if (DAT_006bee3a == '\\0') {\r\n      local_218 = ((short)local_26c.y - (short)local_26c.x) + 4;\r\n      sStack_216 = ((short)((uint)local_26c.y >> 0x10) - (short)((uint)local_26c.x >> 0x10)) + 0x7a;\r\n      local_210 = CONCAT22(sStack_216,local_218);\r\n      local_214 = &DAT_007a0004;\r\n      uStack_21a = param_1._2_2_ + 0x7a;\r\n      local_21c = (short)param_1 + 4;\r\n      local_218 = local_218 + (short)param_1;\r\n      sStack_216 = sStack_216 + param_1._2_2_;\r\n      FUN_004079d0(DAT_006bee7c,1,0,0,local_26c.x,local_26c.y,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n    }\r\n    if (DAT_006bed48 == 0) {\r\n      if (9 < DAT_006bed4c) {\r\n        __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n        return;\r\n      }\r\n    }\r\n    else if (((((DAT_006bed48 == 10) || (DAT_006bed48 == 0xf)) && (9 < DAT_006bed4c)) &&\r\n             ((DAT_006bed4c != 0x1f && (DAT_006bed4c != 0x20)))) || (DAT_006bed48 == 0x14))\r\n    goto LAB_00457b36;\r\n    GetCursorPos(&local_26c);\r\n    ScreenToClient(DAT_006bed20,&local_26c);\r\n    sVar10 = (short)local_26c.x;\r\n    GetCursorPos(&local_264);\r\n    ScreenToClient(DAT_006bed20,&local_264);\r\n    if (((param_1._2_2_ <= sVar10) && (sVar10 < param_2._2_2_)) &&\r\n       (((short)param_1 <= (short)local_264.y &&\r\n        (((short)local_264.y < (short)param_2 && (DAT_006bee3a == '\\0')))))) {\r\n      local_210._0_2_ = (short)DAT_005cda88;\r\n      local_214._0_2_ = (short)DAT_005cda84;\r\n      sVar10 = (short)local_210 - (short)local_214;\r\n      local_210._2_2_ = (short)((uint)DAT_005cda88 >> 0x10) - (short)((uint)DAT_005cda84 >> 0x10);\r\n      local_210._0_2_ = sVar10 + 0x14;\r\n      local_218 = (short)local_210 + (short)param_1;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_214 = (undefined *)(uint)(ushort)(sVar10 + 2U);\r\n      local_21c = sVar10 + 2U + (short)param_1;\r\n      FUN_0046e560(&DAT_0073847c + DAT_0073b910 * 0x2c,0,CONCAT22(param_1._2_2_,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n      local_210._0_2_ = sVar10 + 0x24;\r\n      uStack_21a = local_214._2_2_ + param_1._2_2_;\r\n      local_218 = (short)local_210 + (short)param_1;\r\n      local_21c = (short)local_214 + 0x10 + (short)param_1;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_214._0_2_ = (short)local_214 + 0x10;\r\n      FUN_0046e560(\"Hold Tab key to see entire map.\",0,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n      local_214._0_2_ = (short)local_214 + 0x10;\r\n      local_210 = CONCAT22(local_210._2_2_,sVar10 + 0x34);\r\n      uStack_21a = local_214._2_2_ + param_1._2_2_;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_218 = sVar10 + 0x34 + (short)param_1;\r\n      local_21c = (short)local_214 + (short)param_1;\r\n      FUN_0046e560(\"Hold Shift key to see creature names.\",0,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n    }\r\n  }\r\nLAB_00457b36:\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+      "limitations": []
+    },
+    "normalized_result": "\r\nvoid FUN_00456c10(undefined *param_1,undefined4 param_2)\r\n\r\n{\r\n  int iVar1;\r\n  byte bVar2;\r\n  short sVar3;\r\n  short sVar4;\r\n  undefined *puVar5;\r\n  undefined4 uVar6;\r\n  char cVar7;\r\n  short sVar8;\r\n  short sVar9;\r\n  short sVar10;\r\n  uint uVar11;\r\n  short sVar12;\r\n  int iVar13;\r\n  int *piVar14;\r\n  float10 extraout_ST0;\r\n  float10 fVar15;\r\n  float10 fVar16;\r\n  float10 extraout_ST1;\r\n  float10 fVar17;\r\n  float10 fVar18;\r\n  float10 fVar19;\r\n  undefined8 uVar20;\r\n  tagPOINT local_26c;\r\n  tagPOINT local_264;\r\n  undefined4 local_25c;\r\n  undefined *local_258;\r\n  undefined4 local_254;\r\n  undefined4 local_250;\r\n  short local_248;\r\n  short sStack_246;\r\n  short local_244;\r\n  short sStack_242;\r\n  undefined4 local_240;\r\n  undefined4 local_23c;\r\n  undefined4 local_238;\r\n  undefined4 local_234;\r\n  undefined4 local_230;\r\n  undefined4 local_22c;\r\n  uint local_228;\r\n  undefined4 local_224;\r\n  undefined4 local_220;\r\n  short local_21c;\r\n  ushort uStack_21a;\r\n  short local_218;\r\n  short sStack_216;\r\n  undefined4 local_214;\r\n  undefined4 local_210;\r\n  undefined1 local_20c [516];\r\n  uint local_8;\r\n  \r\n  local_8 = DAT_005bef44 ^ (uint)&stack0xfffffffc;\r\n  local_264.y = (LONG)&DAT_009500e3;\r\n  local_264.x = (LONG)&DAT_008900d7;\r\n  local_26c.y = (LONG)&DAT_00590081;\r\n  local_26c.x = 0x34006d;\r\n  cVar7 = FUN_0040a370();\r\n  if (cVar7 == '\\0') {\r\n    if (DAT_006bee3a == '\\0') {\r\n      local_22c = 0x1110107;\r\n      local_230 = (undefined *)0x80000;\r\n      FUN_00408730(0x3f800000,param_1,param_2,0x80000,0x1110107);\r\n    }\r\n    else {\r\n      local_210 = param_2;\r\n      local_214 = param_1;\r\n      FUN_004077b0(0x41e00000,0x41e00000,0x41e00000,0x3f800000,param_1,param_2);\r\n      FUN_00407510(0,0,0,0x3f19999a,param_1,param_2);\r\n    }\r\n    uStack_21a = (short)DAT_00eb84c8 + -0x20;\r\n    sStack_216 = (short)DAT_00eb84c8 + 0x20;\r\n    local_218 = (short)DAT_00eb84cc + 0x20;\r\n    local_21c = (short)DAT_00eb84cc + -0x1f;\r\n    local_25c = 0;\r\n    local_258 = &DAT_00800080;\r\n    if (DAT_006bee3a != '\\0') {\r\n      local_21c = 0;\r\n      uStack_21a = 0;\r\n      local_218 = 0x80;\r\n      sStack_216 = 0x80;\r\n    }\r\n    _local_248 = CONCAT22(uStack_21a + 1,local_21c + 1);\r\n    _local_244 = CONCAT22(sStack_216 + -1,local_218 + -1);\r\n    uVar20 = FUN_00472680();\r\n    local_21c = (short)uVar20;\r\n    uStack_21a = (ushort)((ulonglong)uVar20 >> 0x10);\r\n    local_218 = (short)((ulonglong)uVar20 >> 0x20);\r\n    sStack_216 = (short)((ulonglong)uVar20 >> 0x30);\r\n    uVar11 = FUN_0042ea50();\r\n    local_258 = (undefined *)(uVar11 & 0xffff);\r\n    local_23c = (uint)uStack_21a;\r\n    if ((short)uStack_21a < sStack_216) {\r\n      local_234 = CONCAT22(local_218,uStack_21a) * 4 & 0xffff;\r\n      local_220 = (short *)((int)(short)uStack_21a << 7);\r\n      do {\r\n        if (local_21c < local_218) {\r\n          iVar13 = (int)local_21c;\r\n          uVar11 = (uint)(ushort)(local_21c * 4);\r\n          sVar10 = local_21c;\r\n          do {\r\n            fVar16 = (float10)25.0;\r\n            fVar19 = (float10)8.0;\r\n            fVar18 = (float10)6.0;\r\n            fVar17 = (float10)0.75;\r\n            fVar15 = (float10)31.0;\r\n            if (((((-1 < (short)local_23c) && (-1 < sVar10)) && ((short)local_234 < 0x200)) &&\r\n                (sVar10 < 0x80)) &&\r\n               (((local_250 = iVar13, local_228 = uVar11, DAT_0073b90c == 0 ||\r\n                 (sVar8 = FUN_0042ea50(), fVar15 = extraout_ST0, fVar17 = extraout_ST1,\r\n                 sVar8 == *(char *)((int)local_220 + (int)(&DAT_00651cc8 + iVar13)))) &&\r\n                (*(char *)((int)local_220 + (int)(&DAT_00659cc8 + iVar13)) != '\\0')))) {\r\n              if (DAT_006bee3a == '\\0') {\r\n                sVar8 = (short)local_23c - (short)DAT_00eb84c8;\r\n                sVar9 = sVar10 - (short)DAT_00eb84cc;\r\n                local_210 = CONCAT22(sVar8 * 4 + 0x84 + param_1._2_2_ + 0xb,\r\n                                     sVar9 * 4 + 0x84 + (short)param_1);\r\n                local_214 = (undefined *)\r\n                            CONCAT22(sVar8 * 4 + 0x80 + param_1._2_2_ + 0xb,\r\n                                     sVar9 * 4 + 0x80 + (short)param_1);\r\n                uVar11 = local_228;\r\n              }\r\n              else {\r\n                local_210 = CONCAT22((short)local_234 + 4 + param_1._2_2_,\r\n                                     (short)uVar11 + 4 + (short)param_1);\r\n                local_214 = (undefined *)\r\n                            CONCAT22((short)local_234 + param_1._2_2_,(short)uVar11 + (short)param_1\r\n                                    );\r\n              }\r\n              iVar1 = (int)local_220 + local_250 + DAT_0073b90c * 0x161f8;\r\n              bVar2 = (&DAT_009878b0)[iVar1];\r\n              iVar13 = local_250;\r\n              if ((((bVar2 == 0) || (0xb < bVar2)) && ((bVar2 < 0x10 || (0x2e < bVar2)))) &&\r\n                 ((bVar2 < 0x33 || (0x46 < bVar2)))) {\r\n                if (((bVar2 < 0x47) || (0x52 < bVar2)) && ((bVar2 < 0xc6 || (0xcd < bVar2)))) {\r\n                  if ((bVar2 == 0xe6) || (0xeb < bVar2)) {\r\n                    FUN_00407510(0x41400000,0x41300000,0x40a00000,0x3f800000,local_214,local_210);\r\n                  }\r\n                  else if ((DAT_005cdc03 & (&DAT_0097f8b0)[iVar1]) == 0) {\r\n                    if ((DAT_005cdc04 & (&DAT_0097f8b0)[iVar1]) == 0) {\r\n                      fVar16 = fVar18;\r\n                      if (DAT_006bee3a != '\\0') goto LAB_00457115;\r\n                    }\r\n                    else {\r\n                      FUN_00407510((float)fVar15,0,0,(float)fVar17,local_214,local_210);\r\n                    }\r\n                  }\r\n                  else {\r\n                    FUN_00407510(0,0,(float)fVar15,(float)fVar17,local_214,local_210);\r\n                  }\r\n                }\r\n                else {\r\n                  fVar16 = fVar19;\r\n                  if ((&DAT_00994e38)[DAT_0073b90c * 0xb0fc] == 1) goto LAB_00457115;\r\n                  FUN_00407510((float)fVar18,0x41200000,0x40000000,0x3f800000,local_214,local_210);\r\n                }\r\n              }\r\n              else {\r\nLAB_00457115:\r\n                FUN_00407510((float)fVar16,(float)fVar16,(float)fVar16,0x3f800000,local_214,\r\n                             local_210);\r\n              }\r\n            }\r\n            sVar10 = sVar10 + 1;\r\n            uVar11 = uVar11 + 4;\r\n            iVar13 = iVar13 + 1;\r\n            local_250 = iVar13;\r\n          } while (sVar10 < local_218);\r\n        }\r\n        local_234 = local_234 + 4;\r\n        local_220 = local_220 + 0x40;\r\n        local_23c = local_23c + 1;\r\n      } while ((short)local_23c < sStack_216);\r\n    }\r\n    local_228 = 0;\r\n    local_234 = 0;\r\n    local_23c = 10;\r\n    do {\r\n      iVar13 = (DAT_0073b90c * 0x2c3f + local_228) * 8;\r\n      if (-1 < *(int *)(&DAT_009958b4 + iVar13)) {\r\n        iVar1 = *(int *)(&DAT_009958b8 + iVar13);\r\n        if (((((int)sStack_246 <= *(int *)(&DAT_009958b4 + iVar13)) &&\r\n             (*(int *)(&DAT_009958b4 + iVar13) < (int)sStack_242)) && (local_248 <= iVar1)) &&\r\n           ((iVar1 < local_244 &&\r\n            ((DAT_0073b90c == 0 ||\r\n             ((short)local_258 ==\r\n              (char)(&DAT_00651cc8)[iVar1 + *(int *)(&DAT_009958b4 + iVar13) * 0x80])))))) {\r\n          sVar10 = *(short *)(&DAT_009958b4 + iVar13);\r\n          sVar8 = *(short *)(&DAT_009958b8 + iVar13);\r\n          if ((-1 < sVar10) &&\r\n             (((-1 < sVar8 && (sVar10 < 0x80)) &&\r\n              ((sVar8 < 0x80 &&\r\n               (((DAT_0073b90c == 0 ||\r\n                 (sVar9 = FUN_0042ea50(), sVar9 == (char)(&DAT_00651cc8)[(int)sVar8 + sVar10 * 0x80]\r\n                 )) && ('\\0' < (char)(&DAT_00659cc8)[(int)sVar8 + sVar10 * 0x80])))))))) {\r\n            sVar9 = sVar10 * 4 + -4;\r\n            sVar10 = sVar10 * 4 + 8;\r\n            sVar12 = sVar8 * 4 + 8;\r\n            sVar8 = sVar8 * 4 + -4;\r\n            local_210 = CONCAT22(sVar10,sVar12);\r\n            local_214 = (undefined *)CONCAT22(sVar9,sVar8);\r\n            if (DAT_006bee3a == '\\0') {\r\n              sVar3 = (0x20 - (short)DAT_00eb84cc) * 4;\r\n              sVar4 = (short)DAT_00eb84c8 * -4 + 0x8b;\r\n              local_210 = CONCAT22(sVar10 + sVar4,sVar12 + sVar3);\r\n              local_214 = (undefined *)CONCAT22(sVar9 + sVar4,sVar8 + sVar3);\r\n            }\r\n            uVar6 = local_210;\r\n            puVar5 = local_214;\r\n            sVar10 = (short)((uint)local_210 >> 0x10);\r\n            local_250._0_2_ = (short)local_210;\r\n            sVar12 = (short)local_250;\r\n            local_250 = CONCAT22(sVar10 + param_1._2_2_,(short)local_250 + (short)param_1);\r\n            sVar8 = (short)((uint)local_214 >> 0x10);\r\n            local_254._0_2_ = (short)local_214;\r\n            sVar9 = (short)local_254;\r\n            local_254 = CONCAT22(sVar8 + param_1._2_2_,(short)local_254 + (short)param_1);\r\n            FUN_004079d0(DAT_006bee7c,1,0,0,&DAT_007c00d7,&DAT_008800e3,local_254,local_250);\r\n            cVar7 = FUN_004724a0();\r\n            if ((cVar7 == '\\0') &&\r\n               ((cVar7 = FUN_00458330(param_1,param_2,puVar5,uVar6), cVar7 != '\\0' ||\r\n                (DAT_006bee3a != '\\0')))) {\r\n              local_230 = (undefined *)CONCAT22(sVar8,sVar9 + 0xe);\r\n              local_22c = CONCAT22(sVar10,sVar12 + 0xe);\r\n              local_224 = CONCAT22(sVar8 + param_1._2_2_,sVar9 + 0xe + (short)param_1);\r\n              local_220 = (short *)CONCAT22(sVar10 + param_1._2_2_,sVar12 + 0xe + (short)param_1);\r\n              FUN_0046e060(0,local_224,local_220);\r\n              FUN_0046e560(&DAT_00995904 + local_234 + DAT_0073b90c * 0x161f8);\r\n            }\r\n          }\r\n        }\r\n      }\r\n      local_234 = local_234 + 0x28;\r\n      local_228 = local_228 + 1;\r\n      local_23c = local_23c + -1;\r\n    } while (local_23c != 0);\r\n    piVar14 = &DAT_00742254;\r\n    local_220 = &DAT_007422d4;\r\n    local_228 = 0x10;\r\n    local_23c = 0;\r\n    do {\r\n      if (0 < *piVar14) {\r\n        if ((((int)sStack_246 <= *piVar14) && (*piVar14 < (int)sStack_242)) &&\r\n           (((int)local_248 <= piVar14[1] &&\r\n            ((((piVar14[1] < (int)local_244 && (DAT_0073b90c == local_220[0x10])) &&\r\n              (DAT_0073b910 == *local_220)) &&\r\n             ((DAT_0073b90c == 0 ||\r\n              ((short)local_258 == (char)(&DAT_00651cc8)[piVar14[1] + *piVar14 * 0x80])))))))) {\r\n          sVar9 = (short)*piVar14 * 4 + -4;\r\n          sVar10 = (short)*piVar14 * 4 + 8;\r\n          sVar12 = (short)piVar14[1] * 4 + 8;\r\n          sVar8 = (short)piVar14[1] * 4 + -4;\r\n          local_210 = CONCAT22(sVar10,sVar12);\r\n          local_214 = (undefined *)CONCAT22(sVar9,sVar8);\r\n          if (DAT_006bee3a == '\\0') {\r\n            sVar3 = (0x20 - (short)DAT_00eb84cc) * 4;\r\n            sVar4 = (short)DAT_00eb84c8 * -4 + 0x8b;\r\n            local_210 = CONCAT22(sVar10 + sVar4,sVar12 + sVar3);\r\n            local_214 = (undefined *)CONCAT22(sVar9 + sVar4,sVar8 + sVar3);\r\n          }\r\n          uVar6 = local_210;\r\n          puVar5 = local_214;\r\n          local_234._0_2_ = (short)local_210;\r\n          sVar10 = (short)local_234;\r\n          local_234 = CONCAT22((short)((uint)local_210 >> 0x10) + param_1._2_2_,\r\n                               (short)local_234 + (short)param_1);\r\n          local_238._0_2_ = (short)local_214;\r\n          local_238 = CONCAT22((short)((uint)local_214 >> 0x10) + param_1._2_2_,\r\n                               (short)local_238 + (short)param_1);\r\n          FUN_004079d0(DAT_006bee7c,1,0,0,local_264.x,local_264.y,local_238,local_234);\r\n          cVar7 = FUN_004724a0();\r\n          if ((cVar7 == '\\0') &&\r\n             ((cVar7 = FUN_00458330(param_1,param_2,puVar5,uVar6), cVar7 != '\\0' ||\r\n              (DAT_006bee3a != '\\0')))) {\r\n            local_230 = puVar5;\r\n            local_22c = uVar6;\r\n            FUN_004711b0();\r\n            sVar8 = (short)local_230 + 0xe;\r\n            local_230 = (undefined *)CONCAT22(local_230._2_2_,sVar8);\r\n            local_22c = CONCAT22(local_22c._2_2_,sVar10 + 0xe);\r\n            local_240 = CONCAT22(local_230._2_2_ + param_1._2_2_,sVar8 + (short)param_1);\r\n            local_23c = CONCAT22(local_22c._2_2_ + param_1._2_2_,sVar10 + 0xe + (short)param_1);\r\n            FUN_0046e060(0,local_240,local_23c);\r\n            FUN_0046e560(local_20c);\r\n          }\r\n        }\r\n      }\r\n      local_220 = local_220 + 1;\r\n      piVar14 = piVar14 + 2;\r\n      local_228 = local_228 + -1;\r\n    } while (local_228 != 0);\r\n    FUN_00457b50(param_1,param_2,CONCAT22(uStack_21a,local_21c),CONCAT22(sStack_216,local_218));\r\n    if (DAT_006bee3a == '\\0') {\r\n      local_218 = ((short)local_26c.y - (short)local_26c.x) + 4;\r\n      sStack_216 = ((short)((uint)local_26c.y >> 0x10) - (short)((uint)local_26c.x >> 0x10)) + 0x7a;\r\n      local_210 = CONCAT22(sStack_216,local_218);\r\n      local_214 = &DAT_007a0004;\r\n      uStack_21a = param_1._2_2_ + 0x7a;\r\n      local_21c = (short)param_1 + 4;\r\n      local_218 = local_218 + (short)param_1;\r\n      sStack_216 = sStack_216 + param_1._2_2_;\r\n      FUN_004079d0(DAT_006bee7c,1,0,0,local_26c.x,local_26c.y,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n    }\r\n    if (DAT_006bed48 == 0) {\r\n      if (9 < DAT_006bed4c) {\r\n        __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n        return;\r\n      }\r\n    }\r\n    else if (((((DAT_006bed48 == 10) || (DAT_006bed48 == 0xf)) && (9 < DAT_006bed4c)) &&\r\n             ((DAT_006bed4c != 0x1f && (DAT_006bed4c != 0x20)))) || (DAT_006bed48 == 0x14))\r\n    goto LAB_00457b36;\r\n    GetCursorPos(&local_26c);\r\n    ScreenToClient(DAT_006bed20,&local_26c);\r\n    sVar10 = (short)local_26c.x;\r\n    GetCursorPos(&local_264);\r\n    ScreenToClient(DAT_006bed20,&local_264);\r\n    if (((param_1._2_2_ <= sVar10) && (sVar10 < param_2._2_2_)) &&\r\n       (((short)param_1 <= (short)local_264.y &&\r\n        (((short)local_264.y < (short)param_2 && (DAT_006bee3a == '\\0')))))) {\r\n      local_210._0_2_ = (short)DAT_005cda88;\r\n      local_214._0_2_ = (short)DAT_005cda84;\r\n      sVar10 = (short)local_210 - (short)local_214;\r\n      local_210._2_2_ = (short)((uint)DAT_005cda88 >> 0x10) - (short)((uint)DAT_005cda84 >> 0x10);\r\n      local_210._0_2_ = sVar10 + 0x14;\r\n      local_218 = (short)local_210 + (short)param_1;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_214 = (undefined *)(uint)(ushort)(sVar10 + 2U);\r\n      local_21c = sVar10 + 2U + (short)param_1;\r\n      FUN_0046e560(&DAT_0073847c + DAT_0073b910 * 0x2c,0,CONCAT22(param_1._2_2_,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n      local_210._0_2_ = sVar10 + 0x24;\r\n      uStack_21a = local_214._2_2_ + param_1._2_2_;\r\n      local_218 = (short)local_210 + (short)param_1;\r\n      local_21c = (short)local_214 + 0x10 + (short)param_1;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_214._0_2_ = (short)local_214 + 0x10;\r\n      FUN_0046e560(\"Hold Tab key to see entire map.\",0,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n      local_214._0_2_ = (short)local_214 + 0x10;\r\n      local_210 = CONCAT22(local_210._2_2_,sVar10 + 0x34);\r\n      uStack_21a = local_214._2_2_ + param_1._2_2_;\r\n      sStack_216 = local_210._2_2_ + param_1._2_2_;\r\n      local_218 = sVar10 + 0x34 + (short)param_1;\r\n      local_21c = (short)local_214 + (short)param_1;\r\n      FUN_0046e560(\"Hold Shift key to see creature names.\",0,CONCAT22(uStack_21a,local_21c),\r\n                   CONCAT22(sStack_216,local_218));\r\n    }\r\n  }\r\nLAB_00457b36:\r\n  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);\r\n  return;\r\n}\r\n\r\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+      "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+      "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically."
+    ],
+    "locations": [],
+    "evidence_links": []
+  }
+]
