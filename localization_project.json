@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "image_translation": {
+    "status": "enabled",
+    "reason": "User choice at initialization"
+  }
+}
