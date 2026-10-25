@@ -1,0 +1,44 @@
+{
+  "engine": {
+    "adapter": 5,
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.31.0",
+    "language": "ch",
+    "numpy": "2.5.4",
+    "pillow": "13.0.0",
+    "opencv": "5.0.0.93",
+    "box_threshold": 0.35,
+    "threads": 4,
+    "models": {
+      "Det": {
+        "file": "PP-OCRv6_det_medium.onnx",
+        "sha256": "92078b7355007ccfffcd4c8cd441a3afd4538904d06881b29a155e1e679907c2",
+        "providers": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      },
+      "Rec": {
+        "file": "PP-OCRv6_rec_medium.onnx",
+        "sha256": "eef444829dbbe18d7fea59a3f6eb75647518d2b3a9568d27c92e42940204894b",
+        "providers": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      }
+    },
+    "model_size": "medium",
+    "device": "cuda"
+  },
+  "kernel_events": {
+    "Det": {
+      "CUDAExecutionProvider": 448
+    },
+    "Rec": {
+      "CUDAExecutionProvider": 382,
+      "CPUExecutionProvider": 4
+    }
+  },
+  "status": "CUDA kernels verified for both detection and recognition",
+  "input": "Avadon Files/Graphics Core/G158.png"
+}

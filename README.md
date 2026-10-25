@@ -25,14 +25,14 @@
 - 选择记录：`localization_project.json`，状态为 `enabled`。
 - 顺序：常规解包 → `game-image-extract` → 正式翻译 → `game-image-repack` → 引擎回填。
 - 常规与图片源文、译文独立保存；图片翻译中间产物放 `TranslateFiles/image-text/`。
-- 图片候选、模型识别结果须经规定的视觉审核后才能作为正式源文；尚未执行图片扫描、OCR 或翻译。
+- 已完成本地 OCR、选择性 Qwen 复核及所需范围的对话 Agent 看图核对；正式导出为已确认子集，仍有 10 张局部未决，尚未翻译。
 
 ## 技术栈
 | 环节 | 工具 | 版本 / 状态 |
 |------|------|------|
 | 初始化 | start-translate / Python / Git | 2026-10-26 / 3.12.10 / 2.55.0.windows.5 |
 | 常规提取 | game-unpack / Python / REA + Ghidra | 3.12.10 / 6.4.0 + 12.1.4；已导出 15,928 条 |
-| 图片提取 | game-image-extract | 已启用，待执行 |
+| 图片提取 | game-image-extract / RapidOCR / ORT GPU / Qwen3-VL | v0.5 / 3.10.0 / 1.31.0 / 8B Instruct Q4_K_M；98 条确认子集 |
 | 翻译 | game-translate | SubAgent / API 路线尚未选择 |
 | 图片合入 | game-image-repack | 待正式图片译文完成 |
 | 回填 | game-repack；需逆向时使用 REA + Ghidra | 待分析 |
@@ -54,6 +54,19 @@
 - 图片交接：已复制导出 721 个原始图片文件，像素去重后 717 张；`ImageText/provenance.json` 记录游戏根目录相对路径和哈希，快照位于忽略的 `ImageText/exported/`、`ImageText/work/`。
 - 覆盖边界：这是静态提取首版，不代表实机全覆盖。EXE 字符串未逐条追踪调用，回填须复核调用点、用途与容量；未定义 / 动态生成文本仍需后续实机覆盖检查。
 
+## 图片文字提取
+- 2026-10-26 导出原始贴图 721 个，像素精确去重后 717 张；来源与哈希见 `ImageText/provenance.json`，原图和工作快照不入库。
+- 校准：实际查看 40 张初始样本、其余 Core 图集联系表及关键全尺寸原图；新字体族仍保持 unknown，未用高分自动放行。策略 / 依据见 `ImageText/policy.json` 和 `ImageText/calibration_notes.json`。
+- L1：全量 717 张 GPU PP-OCRv6 medium，扫描 226.016 秒（含初始化总计 235.912 秒），12,205 个疑似框，错误 0。大量精灵与地形形状误报，框数不是有效文字数。`ImageText/gpu_report.json` 记录真实 CUDA 内核证据；没有静默退回 CPU。
+- L2：分流 305 张，含 20 张未检出 / 10 张低信号抽查；本地 Qwen 真实请求 305 次、推理累计 428.236 秒，22 个 text / 283 个 no_text 建议，付费 API 请求 0。OCR 子进程退出后才加载 Qwen；模型信息、GPU 驻留与报告摘要见 `ImageText/report.json`，原始回复和缓存保留在忽略的 work 目录。
+- L3：当前对话 Agent 实际查看 275 张绑定图像 / 清晰联系表，关键小字另看全图及放大；导入 22 张有字确认、252 张无字确认、1 张未决。已确认有字图中另有 9 张存在局部残字，共 10 张未决。
+- 正式输出：`avadon-the-black-fortress_images_text.csv`，**98 条去重原文 / 133 个位置**；独立坐标与来源为 `avadon-the-black-fortress_images_text.mapping.json`。
+- 导出明确使用 `--allow-partial`：只收已看清的区域，不补写被遮挡或截断的字。当前范围是 confirmed subset，不是全图转写完成。10 张未决来源 / 原因详列 `ImageText/report.json`。
+- 412 张筛选排除及 30 张模型 no_text 抽查未当作 Agent 确认无字；不宣称全游戏无漏字。Core G201 的单字母徽记已在校准记录为保留美术，不默认翻译。
+- `ImageText/visual_decisions.json`、`ImageText/visual_reviews/` 记录实际 Agent 裁决；并非用户人工确认，`human_approval=false`。
+- 翻译交接：`ImageText/translation_notes.md`、`ImageText/preserve_rows.json`；数字、教程字母、字体字形表、资源标记等需正式纳入后续保护规则。图集 G290 是拉丁位图字形资源，中文字体适配须另查渲染逻辑。
+- 独立图片翻译工作区：`TranslateFiles/image-text/`；仅准备源文快照 / 图片上下文，不启动正文翻译。
+
 ## 翻译
 - 执行路线：尚未选择，首次进入翻译阶段时确认 SubAgent 或 API。
 - 正式译文：`avadon-the-black-fortress_text_translated.csv`，与源文逐条对应。
@@ -66,7 +79,8 @@
 - 尚未安装补丁或进行汉化实机验证。
 
 ## 已知问题
-- 尚未确认中文编码、字体覆盖与排版限制。
+- 图片原文为确认子集：10 张局部残字、遮挡、字形或特殊药瓶标签未决；细项与来源见 ImageText/report.json，不能标成全图无漏字。
+- 尚未确认中文编码及排版限制；已发现 G290 拉丁位图字形图集，不能默认替换字体文件即可支持中文。
 - 已建立脚本、DAT 与 EXE 的首版静态语料；尚未完成实机覆盖核对。原生片段依赖拼接和空白，不能逐词随意替换；中文超出原槽容量时须重定位或显示层适配。
 - 项目 `Game/` 为安装目录的 junction；后续对其写入将影响实际游戏，回填前须备份。
 
@@ -77,3 +91,4 @@
 ## 版本记录
 - 2026-10-26：初始化独立汉化仓库及 Game 目录联接；启用图片文字汉化；补充官方资料、本地资源线索和 Steam 构建标识。
 - 2026-10-26：完成常规文本静态提取首版（15,928 条）；保存来源映射、校验报告和 REA Ghidra 证据，导出图片快照并启动本地图片文字流程。
+- 2026-10-26：完成图片全量 GPU OCR、305 张本地 Qwen 复核和 275 张视觉核对；导出 98 条 / 133 处确认子集，记录 10 张未决。

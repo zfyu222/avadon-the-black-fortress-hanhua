@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-26",
+  "files": 721,
+  "unique_images": 717,
+  "scan_images": 717,
+  "scan_errors": 0,
+  "regions": 12205,
+  "routes": {
+    "excluded": 412,
+    "qwen": 305
+  },
+  "route_reasons": {
+    "weak_signal": 406,
+    "unknown_or_unstable_text": 267,
+    "weak_signal_audit": 10,
+    "not_detected_audit": 20,
+    "not_detected": 6,
+    "known_text_or_risky_family": 8
+  },
+  "local_qwen": {
+    "requests": 305,
+    "paid_api_requests": 0,
+    "elapsed_seconds": 428.236,
+    "models": [
+      {
+        "model": "qwen3-vl:8b-instruct-q4_K_M",
+        "digest": "70e58e37beb15464e19aa903dedb2cba828b89c0fb186f75ff2738c7347b96eb",
+        "runtime": "0.40.9"
+      },
+      {
+        "model": "qwen3-vl:8b-instruct-q4_K_M",
+        "digest": "70e58e37beb15464e19aa903dedb2cba828b89c0fb186f75ff2738c7347b96eb",
+        "runtime": "0.40.9"
+      },
+      {
+        "model": "qwen3-vl:8b-instruct-q4_K_M",
+        "digest": "70e58e37beb15464e19aa903dedb2cba828b89c0fb186f75ff2738c7347b96eb",
+        "runtime": "0.40.9"
+      },
+      {
+        "model": "qwen3-vl:8b-instruct-q4_K_M",
+        "digest": "70e58e37beb15464e19aa903dedb2cba828b89c0fb186f75ff2738c7347b96eb",
+        "runtime": "0.40.9"
+      }
+    ],
+    "presence": {
+      "no_text": 283,
+      "text": 22
+    },
+    "gpu_models": [
+      {
+        "name": "qwen3-vl:8b-instruct-q4_K_M",
+        "size": 6588685352,
+        "size_vram": 6588685352
+      },
+      {
+        "name": "qwen3-vl:8b-instruct-q4_K_M",
+        "size": 6588685352,
+        "size_vram": 6588685352
+      },
+      {
+        "name": "qwen3-vl:8b-instruct-q4_K_M",
+        "size": 6588685352,
+        "size_vram": 6588685352
+      },
+      {
+        "name": "qwen3-vl:8b-instruct-q4_K_M",
+        "size": 6588685352,
+        "size_vram": 6588685352
+      }
+    ]
+  },
+  "visual_decisions": {
+    "visual_confirmed_no_text": 252,
+    "agent_visual_confirmed": 22,
+    "unreadable": 1
+  },
+  "visual_reviewed_images": 275,
+  "unresolved_images": [
+    {
+      "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+      "sources": [
+        "Avadon Files/Graphics Core/G231.jpg"
+      ],
+      "reason": "已查看原始地图：两处地名可读；左边界另有被截断的地名片段，不补全。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "sources": [
+        "Avadon Files/Graphics Core/G142.jpg"
+      ],
+      "reason": "原图及最近邻放大核对了数字、地图小字和墓碑；血迹遮挡的地图字不补全，圆章内的星形是徽记。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "sources": [
+        "Avadon Files/Graphics Core/G189.png"
+      ],
+      "reason": "教程五条注释及 A-E 标记可读；嵌入的库存截图还有若干极小字，无法逐字可靠读全。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "sources": [
+        "Avadon Files/Graphics Core/G143.jpg"
+      ],
+      "reason": "核对灰度成就图的数字、问号及可读地图/墓碑字；血迹遮挡和细小残字保持未决。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+      "sources": [
+        "Avadon Files/Graphics Core/G220.png"
+      ],
+      "reason": "宣传拼图标题及地图的一处完整地名可读；截图的极小对话字和被覆盖的地图字不补写。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "sources": [
+        "Avadon Files/Graphics Core/G177.jpg"
+      ],
+      "reason": "核对原始地图地名；左边界另有截断的 Holklanda/Wretch Lands 字形片段，不据其他地图补写。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "b9d3943b7ec96dfb829b545d6b956bc486e17eae5b7e8d26d66a56bc739842a8",
+      "sources": [
+        "Avadon Files/Graphics Core/G290.png"
+      ],
+      "reason": "这是位图字体图集：仅确认顶部完整大写字母序列；其余字形/标点不作为已读语句，字体资源应保留并另行适配中文。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "sources": [
+        "Avadon Files/Graphics Core/G133.png"
+      ],
+      "reason": "UI 图集的 Buy/Combine 和底部资源标记可读；若干极小状态图标数字保留未决。G133 为资源标记，后续应禁翻。",
+      "status": "agent_visual_confirmed"
+    },
+    {
+      "image_id": "cccfb73d74dc2697c9b3869c916f53cf16ff6a9aae6a7f37ccc13ad482bafcaf",
+      "sources": [
+        "Avadon Files/Graphics Core/G173.jpg"
+      ],
+      "reason": "全尺寸场景插画的药瓶标签和桌上地图有字形状标记，无法可靠判定/转写原文；不按 Qwen 的无字建议确认无字。",
+      "status": "unreadable"
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "sources": [
+        "Avadon Files/Graphics Core/G176.jpg"
+      ],
+      "reason": "查看原图并将小地名、日期、争夺地带放大核对；右边界残字及年代前的小符号保留未决，不补全。",
+      "status": "agent_visual_confirmed"
+    }
+  ],
+  "exported_unique_texts": 98,
+  "exported_positions": 133,
+  "source_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "scope": "visually_confirmed_subset",
+  "human_approval": false,
+  "limitations": [
+    "412 predicted exclusions and 30 model no-text audits are not agent-confirmed no-text.",
+    "10 visually inspected images contain unreadable/clipped/technical glyph material; only confirmed regions exported.",
+    "Not a full-game no-missing-text guarantee."
+  ]
+}

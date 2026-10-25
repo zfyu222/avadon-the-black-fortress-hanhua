@@ -16,5 +16,9 @@
     "Native diagnostics, third-party library strings, format-only strings and internal keys excluded.",
     "Native literals not all individually traced; repacking must verify call site and capacity.",
     "Chinese encoding/font support and runtime rendering unverified."
-  ]
+  ],
+  "source_integrity_check": {
+    "files": 281,
+    "changed_files": 0
+  }
 }

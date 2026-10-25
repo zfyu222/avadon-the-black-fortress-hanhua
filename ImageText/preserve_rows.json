@@ -1,0 +1,91 @@
+{
+  "source_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "advisory": true,
+  "rows": [
+    {
+      "row": 4,
+      "text": "?",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 28,
+      "text": "G133",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 29,
+      "text": "10",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 30,
+      "text": "20",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 31,
+      "text": "30",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 34,
+      "text": "50",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 36,
+      "text": "!",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 47,
+      "text": "1",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 52,
+      "text": "A",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 53,
+      "text": "B",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 54,
+      "text": "C",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 55,
+      "text": "D",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 61,
+      "text": "6312",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 70,
+      "text": "N",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 83,
+      "text": "E",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 85,
+      "text": "TM",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    },
+    {
+      "row": 98,
+      "text": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "reason": "glyph/resource marker/annotation letter/number: preserve unless deliberate graphic redesign"
+    }
+  ]
+}

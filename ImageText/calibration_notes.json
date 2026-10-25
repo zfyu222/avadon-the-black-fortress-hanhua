@@ -1,0 +1,22 @@
+{
+  "reviewer": "conversation_agent",
+  "date": "2026-10-26",
+  "viewed": [
+    "calibration.png",
+    "calibration-core-rest.png",
+    "exported/Avadon Files/Graphics Core/G129.jpg",
+    "exported/Avadon Files/Graphics Core/G158.png",
+    "exported/Avadon Files/Graphics Core/G169.bmp",
+    "exported/Avadon Files/Graphics Core/G290.png"
+  ],
+  "findings": [
+    "G129: statistics, resistances and skill UI labels are baked into image.",
+    "G158: main-menu text is baked into image.",
+    "G169: attack tutorial labels are baked into image.",
+    "G176/G177/G231/G232/G233: map artwork has place names; inspect originals before transcribing.",
+    "G203: pause/file menu artwork has visible labels.",
+    "G290: Latin alphabet/punctuation bitmap font atlas; treat as font resource, not prose translation.",
+    "G201: A monogram emblem, retain artwork unless explicitly redesigned."
+  ],
+  "limitations": "Calibration notes are not formal region confirmations and do not replace agent-import decisions."
+}

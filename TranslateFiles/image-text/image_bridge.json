@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "source": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\avadon-the-black-fortress_images_text.csv",
+  "source_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "mapping_sha256": "d86a194a8ce52b5aa75b4d698f50dba108e39752ac2bafddef4948c40864cfc1",
+  "workspace": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text",
+  "translation": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text\\avadon-the-black-fortress_images_text_translated.csv",
+  "validation": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text\\TranslateFiles\\reports\\final_validation.json"
+}

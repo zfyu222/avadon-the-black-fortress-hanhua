@@ -9,9 +9,10 @@
 /ImageText/work/cache/
 /ImageText/work/tiered/qwen/
 /ImageText/exported/
-/ImageText/calibration.png
+/ImageText/calibration*.png
 /ImageText/work/
 /Analysis/*.snapshot.json
+/Analysis/gpu-verification/
 
 # Python
 __pycache__/

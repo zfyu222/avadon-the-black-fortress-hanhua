@@ -1,0 +1,1143 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "2",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "3",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "4",
+      "status": "text",
+      "reason": "已查看原始地图：两处地名可读；左边界另有被截断的地名片段，不补全。",
+      "unreadable": true,
+      "regions": [
+        {
+          "text": "THE KVA",
+          "box": [
+            313.725,
+            63.158,
+            598.039,
+            147.368
+          ]
+        },
+        {
+          "text": "WRETCH LANDS",
+          "box": [
+            282.353,
+            489.474,
+            678.431,
+            744.737
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "6",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "7",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "8",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "9",
+      "status": "text",
+      "reason": "逐字核对教程图的四条说明及截图上的 A/B/C/D 标记。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "A - Terrain Screen",
+          "box": [
+            545.0,
+            180.645,
+            965.0,
+            329.032
+          ]
+        },
+        {
+          "text": "B - Buttons",
+          "box": [
+            545.0,
+            335.484,
+            857.5,
+            470.968
+          ]
+        },
+        {
+          "text": "C - Party Roster",
+          "box": [
+            545.0,
+            483.871,
+            925.0,
+            619.355
+          ]
+        },
+        {
+          "text": "D - Automap",
+          "box": [
+            545.0,
+            625.806,
+            887.5,
+            767.742
+          ]
+        },
+        {
+          "text": "A",
+          "box": [
+            225.0,
+            412.903,
+            267.5,
+            541.935
+          ]
+        },
+        {
+          "text": "B",
+          "box": [
+            205.0,
+            870.968,
+            252.5,
+            987.097
+          ]
+        },
+        {
+          "text": "C",
+          "box": [
+            22.5,
+            129.032,
+            65.0,
+            264.516
+          ]
+        },
+        {
+          "text": "D",
+          "box": [
+            452.5,
+            109.677,
+            502.5,
+            245.161
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "11",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "12",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "13",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "14",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "15",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "16",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "17",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "18",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "19",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "20",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "21",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "22",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "23",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "24",
+      "status": "text",
+      "reason": "原图是 Spiderweb SOFTWARE 标志，右上角还有小型 TM。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "Spiderweb",
+          "box": [
+            0.0,
+            0.0,
+            953.704,
+            834.483
+          ]
+        },
+        {
+          "text": "TM",
+          "box": [
+            948.148,
+            144.828,
+            985.185,
+            268.966
+          ]
+        },
+        {
+          "text": "SOFTWARE",
+          "box": [
+            194.444,
+            751.724,
+            1000.0,
+            1000.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "26",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "27",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "28",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "29",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "30",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "31",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "32",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "33",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "34",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "35",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "36",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "37",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "38",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "39",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "40",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "41",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "42",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "43",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "44",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "45",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "46",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "47",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "48",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "49",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "50",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "51",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "52",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "53",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "54",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "55",
+      "status": "text",
+      "reason": "原图及最近邻放大核对了数字、地图小字和墓碑；血迹遮挡的地图字不补全，圆章内的星形是徽记。",
+      "unreadable": true,
+      "regions": [
+        {
+          "text": "10",
+          "box": [
+            242.331,
+            56.266,
+            349.693,
+            132.992
+          ]
+        },
+        {
+          "text": "20",
+          "box": [
+            435.583,
+            56.266,
+            549.08,
+            132.992
+          ]
+        },
+        {
+          "text": "30",
+          "box": [
+            634.969,
+            56.266,
+            760.736,
+            132.992
+          ]
+        },
+        {
+          "text": "The Beraza\nWoods",
+          "box": [
+            24.54,
+            204.604,
+            193.252,
+            263.427
+          ]
+        },
+        {
+          "text": "R.I.P.",
+          "box": [
+            257.669,
+            708.44,
+            343.558,
+            744.246
+          ]
+        },
+        {
+          "text": "10",
+          "box": [
+            463.19,
+            751.918,
+            588.957,
+            815.857
+          ]
+        },
+        {
+          "text": "50",
+          "box": [
+            239.264,
+            905.371,
+            365.031,
+            979.54
+          ]
+        },
+        {
+          "text": "Castle\nVebeaux",
+          "box": [
+            680.982,
+            887.468,
+            996.933,
+            956.522
+          ]
+        },
+        {
+          "text": "!",
+          "box": [
+            27.607,
+            537.084,
+            67.485,
+            629.156
+          ]
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "57",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "58",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "59",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "60",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "61",
+      "status": "text",
+      "reason": "教程五条注释及 A-E 标记可读；嵌入的库存截图还有若干极小字，无法逐字可靠读全。",
+      "unreadable": true,
+      "regions": [
+        {
+          "text": "A - Items on Ground",
+          "box": [
+            519.355,
+            120.0,
+            1000.0,
+            280.0
+          ]
+        },
+        {
+          "text": "B - Equipped Items",
+          "box": [
+            519.355,
+            280.0,
+            990.323,
+            432.0
+          ]
+        },
+        {
+          "text": "C - Quick Use Items",
+          "box": [
+            519.355,
+            432.0,
+            1000.0,
+            584.0
+          ]
+        },
+        {
+          "text": "D - Your Pack",
+          "box": [
+            519.355,
+            592.0,
+            883.871,
+            736.0
+          ]
+        },
+        {
+          "text": "E - Scarabs",
+          "box": [
+            519.355,
+            744.0,
+            848.387,
+            888.0
+          ]
+        },
+        {
+          "text": "A",
+          "box": [
+            358.065,
+            720.0,
+            403.226,
+            840.0
+          ]
+        },
+        {
+          "text": "B",
+          "box": [
+            125.806,
+            320.0,
+            161.29,
+            432.0
+          ]
+        },
+        {
+          "text": "C",
+          "box": [
+            119.355,
+            784.0,
+            158.065,
+            896.0
+          ]
+        },
+        {
+          "text": "D",
+          "box": [
+            351.613,
+            272.0,
+            393.548,
+            384.0
+          ]
+        },
+        {
+          "text": "E",
+          "box": [
+            70.968,
+            496.0,
+            109.677,
+            616.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "63",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "64",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "65",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "66",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "67",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "68",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "69",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "70",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "71",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "72",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "73",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "74",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "75",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "76",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "77",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "78",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "79",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "80",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "81",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "82",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "83",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "84",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "85",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "86",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "87",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "88",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "89",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "90",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "91",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "92",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "93",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "94",
+      "status": "text",
+      "reason": "已查看标题原图，主标题大写 AVADON，副标题以小写 the 开头。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "AVADON",
+          "box": [
+            0.0,
+            0.0,
+            1000.0,
+            680.412
+          ]
+        },
+        {
+          "text": "the BLACK FORTRESS",
+          "box": [
+            16.502,
+            628.866,
+            980.198,
+            989.691
+          ]
+        }
+      ]
+    },
+    {
+      "id": "95",
+      "status": "text",
+      "reason": "核对灰度成就图的数字、问号及可读地图/墓碑字；血迹遮挡和细小残字保持未决。",
+      "unreadable": true,
+      "regions": [
+        {
+          "text": "10",
+          "box": [
+            242.331,
+            56.266,
+            349.693,
+            132.992
+          ]
+        },
+        {
+          "text": "20",
+          "box": [
+            435.583,
+            56.266,
+            549.08,
+            132.992
+          ]
+        },
+        {
+          "text": "30",
+          "box": [
+            634.969,
+            56.266,
+            760.736,
+            132.992
+          ]
+        },
+        {
+          "text": "The Beraza\nWoods",
+          "box": [
+            24.54,
+            204.604,
+            193.252,
+            263.427
+          ]
+        },
+        {
+          "text": "R.I.P.",
+          "box": [
+            257.669,
+            708.44,
+            343.558,
+            744.246
+          ]
+        },
+        {
+          "text": "10",
+          "box": [
+            463.19,
+            751.918,
+            588.957,
+            815.857
+          ]
+        },
+        {
+          "text": "50",
+          "box": [
+            239.264,
+            905.371,
+            365.031,
+            979.54
+          ]
+        },
+        {
+          "text": "!",
+          "box": [
+            27.607,
+            537.084,
+            67.485,
+            629.156
+          ]
+        },
+        {
+          "text": "Castle\nVebeaux",
+          "box": [
+            680.982,
+            887.468,
+            996.933,
+            956.522
+          ]
+        },
+        {
+          "text": "?",
+          "box": [
+            42.945,
+            368.286,
+            159.509,
+            485.934
+          ]
+        },
+        {
+          "text": "?",
+          "box": [
+            242.331,
+            368.286,
+            358.896,
+            485.934
+          ]
+        },
+        {
+          "text": "?",
+          "box": [
+            441.718,
+            368.286,
+            558.282,
+            485.934
+          ]
+        },
+        {
+          "text": "?",
+          "box": [
+            641.104,
+            368.286,
+            757.669,
+            485.934
+          ]
+        },
+        {
+          "text": "?",
+          "box": [
+            840.491,
+            368.286,
+            957.055,
+            485.934
+          ]
+        }
+      ]
+    },
+    {
+      "id": "96",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "97",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "98",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "99",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "100",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    }
+  ]
+}

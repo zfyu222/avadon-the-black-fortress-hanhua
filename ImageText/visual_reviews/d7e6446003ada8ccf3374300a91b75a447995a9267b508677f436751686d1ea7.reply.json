@@ -1,0 +1,995 @@
+{
+  "records": [
+    {
+      "id": "9",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "10",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "11",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "12",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "13",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "14",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "15",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "16",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "17",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "18",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "19",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "20",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "21",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "22",
+      "status": "uncertain",
+      "reason": "全尺寸场景插画的药瓶标签和桌上地图有字形状标记，无法可靠判定/转写原文；不按 Qwen 的无字建议确认无字。",
+      "unreadable": true,
+      "regions": []
+    },
+    {
+      "id": "23",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "24",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "25",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "26",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "27",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "28",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "29",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "30",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "31",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "32",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "33",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "34",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "35",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "36",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "37",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "38",
+      "status": "text",
+      "reason": "原图及清晰放大图显示教程标题与两个按钮说明。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "Default attack buttons:",
+          "box": [
+            19.108,
+            0.0,
+            974.522,
+            114.504
+          ]
+        },
+        {
+          "text": "Weapon",
+          "box": [
+            152.866,
+            877.863,
+            522.293,
+            1000.0
+          ]
+        },
+        {
+          "text": "Spell",
+          "box": [
+            541.401,
+            877.863,
+            777.07,
+            1000.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "40",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "41",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "42",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "43",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "44",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "45",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "46",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "47",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "48",
+      "status": "text",
+      "reason": "核对大尺寸标题标志，与另一尺寸标志分别保留位置。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "AVADON",
+          "box": [
+            0.0,
+            0.0,
+            1000.0,
+            648.515
+          ]
+        },
+        {
+          "text": "the BLACK FORTRESS",
+          "box": [
+            11.475,
+            638.614,
+            986.885,
+            1000.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "50",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "51",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "52",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "53",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "54",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "55",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "56",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "57",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "58",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "59",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "60",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "61",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "62",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "63",
+      "status": "text",
+      "reason": "查看原图并将小地名、日期、争夺地带放大核对；右边界残字及年代前的小符号保留未决，不补全。",
+      "unreadable": true,
+      "regions": [
+        {
+          "text": "THE FIVE NATIONS OF THE\nMIDLANDS PACT",
+          "box": [
+            97.143,
+            402.0,
+            481.429,
+            465.0
+          ]
+        },
+        {
+          "text": "IN THE LANDS OF LYNAEUS",
+          "box": [
+            114.286,
+            477.0,
+            397.143,
+            498.0
+          ]
+        },
+        {
+          "text": "6312",
+          "box": [
+            415.714,
+            477.0,
+            462.857,
+            498.0
+          ]
+        },
+        {
+          "text": "KHEMERIA",
+          "box": [
+            721.429,
+            126.0,
+            890.0,
+            159.0
+          ]
+        },
+        {
+          "text": "Dhorl\nStead",
+          "box": [
+            664.286,
+            169.0,
+            711.429,
+            193.0
+          ]
+        },
+        {
+          "text": "Ogrhym'Tor",
+          "box": [
+            737.143,
+            171.0,
+            827.143,
+            193.0
+          ]
+        },
+        {
+          "text": "THE WYLDRYLM",
+          "box": [
+            591.429,
+            475.0,
+            854.286,
+            506.0
+          ]
+        },
+        {
+          "text": "Avadon",
+          "box": [
+            892.857,
+            474.0,
+            977.143,
+            497.0
+          ]
+        },
+        {
+          "text": "THE CORRUPTION",
+          "box": [
+            340.0,
+            625.0,
+            604.286,
+            678.0
+          ]
+        },
+        {
+          "text": "Contested\nTerritory",
+          "box": [
+            831.429,
+            611.0,
+            914.286,
+            641.0
+          ]
+        },
+        {
+          "text": "THE TITAN PEAKS",
+          "box": [
+            657.143,
+            744.0,
+            908.571,
+            776.0
+          ]
+        },
+        {
+          "text": "N",
+          "box": [
+            137.143,
+            836.0,
+            175.714,
+            864.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "65",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "66",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "67",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "68",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "69",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "70",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "71",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "72",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "73",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "74",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "75",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "76",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "77",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "78",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "79",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "80",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "81",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "82",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "83",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "84",
+      "status": "no_text",
+      "reason": "已实际查看此编号的绑定联系表：仅见角色/动物动作帧、物体、纹理、光效或插画，没有可辨认的文字。",
+      "unreadable": false,
+      "regions": []
+    },
+    {
+      "id": "85",
+      "status": "text",
+      "reason": "已查看全尺寸属性界面，逐项核对 21 处标签及冒号。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "Level",
+          "box": [
+            38.226,
+            30.593,
+            102.446,
+            63.098
+          ]
+        },
+        {
+          "text": "Experience",
+          "box": [
+            126.911,
+            32.505,
+            258.41,
+            65.01
+          ]
+        },
+        {
+          "text": "Next Level",
+          "box": [
+            287.462,
+            32.505,
+            417.431,
+            65.01
+          ]
+        },
+        {
+          "text": "Skills",
+          "box": [
+            669.725,
+            28.681,
+            752.294,
+            66.922
+          ]
+        },
+        {
+          "text": "Attributes",
+          "box": [
+            71.865,
+            158.7,
+            198.777,
+            195.029
+          ]
+        },
+        {
+          "text": "Health",
+          "box": [
+            305.81,
+            158.7,
+            397.554,
+            196.941
+          ]
+        },
+        {
+          "text": "Strength",
+          "box": [
+            45.872,
+            214.149,
+            148.318,
+            248.566
+          ]
+        },
+        {
+          "text": "Dexterity",
+          "box": [
+            38.226,
+            261.95,
+            152.905,
+            290.631
+          ]
+        },
+        {
+          "text": "Intelligence",
+          "box": [
+            32.11,
+            302.103,
+            165.138,
+            338.432
+          ]
+        },
+        {
+          "text": "Endurance",
+          "box": [
+            35.168,
+            351.816,
+            155.963,
+            386.233
+          ]
+        },
+        {
+          "text": "Vitality",
+          "box": [
+            293.578,
+            298.279,
+            406.728,
+            336.52
+          ]
+        },
+        {
+          "text": "Resistances",
+          "box": [
+            152.905,
+            428.298,
+            314.985,
+            464.627
+          ]
+        },
+        {
+          "text": "Armor:",
+          "box": [
+            45.872,
+            487.572,
+            137.615,
+            521.989
+          ]
+        },
+        {
+          "text": "Poison:",
+          "box": [
+            249.235,
+            485.66,
+            339.45,
+            521.989
+          ]
+        },
+        {
+          "text": "Magic:",
+          "box": [
+            48.93,
+            537.285,
+            139.144,
+            571.702
+          ]
+        },
+        {
+          "text": "Acid:",
+          "box": [
+            270.642,
+            535.373,
+            336.391,
+            571.702
+          ]
+        },
+        {
+          "text": "Fire:",
+          "box": [
+            74.924,
+            583.174,
+            136.086,
+            617.591
+          ]
+        },
+        {
+          "text": "Mental:",
+          "box": [
+            244.648,
+            583.174,
+            339.45,
+            617.591
+          ]
+        },
+        {
+          "text": "Cold:",
+          "box": [
+            71.865,
+            629.063,
+            139.144,
+            667.304
+          ]
+        },
+        {
+          "text": "Curses:",
+          "box": [
+            247.706,
+            630.975,
+            344.037,
+            667.304
+          ]
+        },
+        {
+          "text": "Specializations",
+          "box": [
+            134.557,
+            707.457,
+            374.618,
+            745.698
+          ]
+        }
+      ]
+    },
+    {
+      "id": "86",
+      "status": "text",
+      "reason": "已查看全尺寸主菜单，六项均清楚可读。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "Start New Game",
+          "box": [
+            38.095,
+            38.462,
+            958.73,
+            144.231
+          ]
+        },
+        {
+          "text": "Load Game",
+          "box": [
+            174.603,
+            182.692,
+            819.048,
+            294.872
+          ]
+        },
+        {
+          "text": "Instructions",
+          "box": [
+            142.857,
+            336.538,
+            838.095,
+            448.718
+          ]
+        },
+        {
+          "text": "Settings",
+          "box": [
+            250.794,
+            483.974,
+            755.556,
+            608.974
+          ]
+        },
+        {
+          "text": "Medals",
+          "box": [
+            288.889,
+            637.821,
+            720.635,
+            756.41
+          ]
+        },
+        {
+          "text": "Quit",
+          "box": [
+            355.556,
+            788.462,
+            619.048,
+            907.051
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87",
+      "status": "text",
+      "reason": "教程说明、背包标题和两瓶药水旁的数字 1 清楚可见。",
+      "unreadable": false,
+      "regions": [
+        {
+          "text": "Press these\nbuttons to\nuse items.",
+          "box": [
+            23.333,
+            181.102,
+            480.0,
+            685.039
+          ]
+        },
+        {
+          "text": "Your Pack:",
+          "box": [
+            596.667,
+            31.496,
+            950.0,
+            204.724
+          ]
+        },
+        {
+          "text": "1",
+          "box": [
+            790.0,
+            456.693,
+            826.667,
+            614.173
+          ]
+        },
+        {
+          "text": "1",
+          "box": [
+            790.0,
+            795.276,
+            830.0,
+            944.882
+          ]
+        }
+      ]
+    }
+  ]
+}
