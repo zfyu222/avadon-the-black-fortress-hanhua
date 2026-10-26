@@ -1,0 +1,768 @@
+{
+  "previous_run": "887140b0f02449a99edd20819e573e68",
+  "reason": "Stopped official API extraction exhausted reasoning output on 128-record scopes; retain accepted results and used attempts, reduce remaining scopes to 32 records; allow one additional attempt beyond the existing limit after diagnosing rejected proper-name enforcement.",
+  "configuration": {
+    "revision": 2,
+    "semantic_reset": false,
+    "affected_records": [],
+    "retry_limit_only": true
+  },
+  "splits": [
+    {
+      "status": "split",
+      "task_id": "extract-r2-00040-c24b1354",
+      "children": [
+        "extract-r2-00040-c24b1354-s1d39fe1b",
+        "extract-r2-00040-c24b1354-se8ac168f",
+        "extract-r2-00040-c24b1354-sa8589095",
+        "extract-r2-00040-c24b1354-s295565db"
+      ],
+      "inherited_attempts": 0,
+      "records": 120
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00033-0de9a1bd-se6c05f6e",
+      "children": [
+        "extract-r2-00033-0de9a1bd-se6c05f6e-sf02af2c4",
+        "extract-r2-00033-0de9a1bd-se6c05f6e-s3ee3b39c",
+        "extract-r2-00033-0de9a1bd-se6c05f6e-sbab3e6a2",
+        "extract-r2-00033-0de9a1bd-se6c05f6e-sb09617da"
+      ],
+      "inherited_attempts": 0,
+      "records": 100
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00033-0de9a1bd-saf01392e",
+      "children": [
+        "extract-r2-00033-0de9a1bd-saf01392e-sc8c03250",
+        "extract-r2-00033-0de9a1bd-saf01392e-s14512a7b",
+        "extract-r2-00033-0de9a1bd-saf01392e-s42e02bb6",
+        "extract-r2-00033-0de9a1bd-saf01392e-s0e0f4f1e"
+      ],
+      "inherited_attempts": 0,
+      "records": 100
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00033-0de9a1bd-s3aab3178",
+      "children": [
+        "extract-r2-00033-0de9a1bd-s3aab3178-scfd87ab9",
+        "extract-r2-00033-0de9a1bd-s3aab3178-s247f4b56",
+        "extract-r2-00033-0de9a1bd-s3aab3178-sb41a55df",
+        "extract-r2-00033-0de9a1bd-s3aab3178-s700e824c"
+      ],
+      "inherited_attempts": 0,
+      "records": 100
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00033-0de9a1bd-sa5ff74dd",
+      "children": [
+        "extract-r2-00033-0de9a1bd-sa5ff74dd-s4b0c0dee",
+        "extract-r2-00033-0de9a1bd-sa5ff74dd-sfd086d05",
+        "extract-r2-00033-0de9a1bd-sa5ff74dd-s5f5dad76",
+        "extract-r2-00033-0de9a1bd-sa5ff74dd-safa84470"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00034-2cfc1403-s9268fe6d",
+      "children": [
+        "extract-r2-00034-2cfc1403-s9268fe6d-se72a8eb9",
+        "extract-r2-00034-2cfc1403-s9268fe6d-s2045354f",
+        "extract-r2-00034-2cfc1403-s9268fe6d-s5c6633a4",
+        "extract-r2-00034-2cfc1403-s9268fe6d-s571b08b7"
+      ],
+      "inherited_attempts": 0,
+      "records": 89
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00034-2cfc1403-see2862bc",
+      "children": [
+        "extract-r2-00034-2cfc1403-see2862bc-sb4b0fd2f",
+        "extract-r2-00034-2cfc1403-see2862bc-s1ed340fc",
+        "extract-r2-00034-2cfc1403-see2862bc-scc728347",
+        "extract-r2-00034-2cfc1403-see2862bc-sa9e101e1"
+      ],
+      "inherited_attempts": 0,
+      "records": 90
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00034-2cfc1403-sc2615512",
+      "children": [
+        "extract-r2-00034-2cfc1403-sc2615512-s34ad71e1",
+        "extract-r2-00034-2cfc1403-sc2615512-se51de0a0",
+        "extract-r2-00034-2cfc1403-sc2615512-s579039d6",
+        "extract-r2-00034-2cfc1403-sc2615512-s22fa836b"
+      ],
+      "inherited_attempts": 0,
+      "records": 89
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00034-2cfc1403-sd752c5ae",
+      "children": [
+        "extract-r2-00034-2cfc1403-sd752c5ae-scecb0b3b",
+        "extract-r2-00034-2cfc1403-sd752c5ae-se9f93aa3",
+        "extract-r2-00034-2cfc1403-sd752c5ae-s18ed4f21",
+        "extract-r2-00034-2cfc1403-sd752c5ae-s55c967ac"
+      ],
+      "inherited_attempts": 0,
+      "records": 90
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2-sdfadfe7d",
+      "children": [
+        "extract-r2-00035-5ca217d2-sdfadfe7d-s1b41d3a6",
+        "extract-r2-00035-5ca217d2-sdfadfe7d-s213d506d",
+        "extract-r2-00035-5ca217d2-sdfadfe7d-sfa64f94e",
+        "extract-r2-00035-5ca217d2-sdfadfe7d-se845bac8"
+      ],
+      "inherited_attempts": 0,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2-s34eb257e",
+      "children": [
+        "extract-r2-00035-5ca217d2-s34eb257e-s114e864e",
+        "extract-r2-00035-5ca217d2-s34eb257e-sc7083bdf",
+        "extract-r2-00035-5ca217d2-s34eb257e-sacbe1056",
+        "extract-r2-00035-5ca217d2-s34eb257e-sa2b17ad7"
+      ],
+      "inherited_attempts": 0,
+      "records": 96
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2-s0ebd2b1e",
+      "children": [
+        "extract-r2-00035-5ca217d2-s0ebd2b1e-s5ca90eb3",
+        "extract-r2-00035-5ca217d2-s0ebd2b1e-sc502a724",
+        "extract-r2-00035-5ca217d2-s0ebd2b1e-s9c031731",
+        "extract-r2-00035-5ca217d2-s0ebd2b1e-s714665d9"
+      ],
+      "inherited_attempts": 0,
+      "records": 96
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2-s07854e24",
+      "children": [
+        "extract-r2-00035-5ca217d2-s07854e24-se51f8423",
+        "extract-r2-00035-5ca217d2-s07854e24-sa3d10db7",
+        "extract-r2-00035-5ca217d2-s07854e24-s653d83c3",
+        "extract-r2-00035-5ca217d2-s07854e24-sa5138fb4"
+      ],
+      "inherited_attempts": 0,
+      "records": 96
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00036-6c20c4d8-s7801f6e0",
+      "children": [
+        "extract-r2-00036-6c20c4d8-s7801f6e0-sad334403",
+        "extract-r2-00036-6c20c4d8-s7801f6e0-sda151e7c",
+        "extract-r2-00036-6c20c4d8-s7801f6e0-sbccd4560",
+        "extract-r2-00036-6c20c4d8-s7801f6e0-s6801647a"
+      ],
+      "inherited_attempts": 0,
+      "records": 103
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00036-6c20c4d8-s34c22269",
+      "children": [
+        "extract-r2-00036-6c20c4d8-s34c22269-s937483dd",
+        "extract-r2-00036-6c20c4d8-s34c22269-sb84b7734",
+        "extract-r2-00036-6c20c4d8-s34c22269-s8e80b968",
+        "extract-r2-00036-6c20c4d8-s34c22269-s212dba3e"
+      ],
+      "inherited_attempts": 0,
+      "records": 104
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00036-6c20c4d8-s7b8075df",
+      "children": [
+        "extract-r2-00036-6c20c4d8-s7b8075df-sf1efc643",
+        "extract-r2-00036-6c20c4d8-s7b8075df-sa0c4c9ae",
+        "extract-r2-00036-6c20c4d8-s7b8075df-s702a603a",
+        "extract-r2-00036-6c20c4d8-s7b8075df-s0b95fa43"
+      ],
+      "inherited_attempts": 0,
+      "records": 103
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00036-6c20c4d8-s90030506",
+      "children": [
+        "extract-r2-00036-6c20c4d8-s90030506-sc1fe8b6c",
+        "extract-r2-00036-6c20c4d8-s90030506-s3ec93366",
+        "extract-r2-00036-6c20c4d8-s90030506-s3fc41db7",
+        "extract-r2-00036-6c20c4d8-s90030506-s2af3e335"
+      ],
+      "inherited_attempts": 0,
+      "records": 104
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00037-d1be5acb-s900b04e9",
+      "children": [
+        "extract-r2-00037-d1be5acb-s900b04e9-sb7a74e18",
+        "extract-r2-00037-d1be5acb-s900b04e9-s55eebb43",
+        "extract-r2-00037-d1be5acb-s900b04e9-s3672066a",
+        "extract-r2-00037-d1be5acb-s900b04e9-s1f4fdeb0"
+      ],
+      "inherited_attempts": 0,
+      "records": 89
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00037-d1be5acb-s25b01822",
+      "children": [
+        "extract-r2-00037-d1be5acb-s25b01822-sc4b5e446",
+        "extract-r2-00037-d1be5acb-s25b01822-s5967f758",
+        "extract-r2-00037-d1be5acb-s25b01822-sd85e0227",
+        "extract-r2-00037-d1be5acb-s25b01822-sbb6522a6"
+      ],
+      "inherited_attempts": 0,
+      "records": 90
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00037-d1be5acb-sbeb267e9",
+      "children": [
+        "extract-r2-00037-d1be5acb-sbeb267e9-sbae3cf40",
+        "extract-r2-00037-d1be5acb-sbeb267e9-sace9dd02",
+        "extract-r2-00037-d1be5acb-sbeb267e9-sd5104329",
+        "extract-r2-00037-d1be5acb-sbeb267e9-s48953451"
+      ],
+      "inherited_attempts": 0,
+      "records": 90
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00037-d1be5acb-s6e5749e2",
+      "children": [
+        "extract-r2-00037-d1be5acb-s6e5749e2-se491be19",
+        "extract-r2-00037-d1be5acb-s6e5749e2-sfad40710",
+        "extract-r2-00037-d1be5acb-s6e5749e2-s410d73dc",
+        "extract-r2-00037-d1be5acb-s6e5749e2-sa88030e4"
+      ],
+      "inherited_attempts": 0,
+      "records": 90
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42-s5e59b0a2",
+      "children": [
+        "extract-r2-00038-20b7ee42-s5e59b0a2-s63efe041",
+        "extract-r2-00038-20b7ee42-s5e59b0a2-s877b8e05",
+        "extract-r2-00038-20b7ee42-s5e59b0a2-saaad56bf",
+        "extract-r2-00038-20b7ee42-s5e59b0a2-s64014d7b"
+      ],
+      "inherited_attempts": 0,
+      "records": 91
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42-s6a226a2e",
+      "children": [
+        "extract-r2-00038-20b7ee42-s6a226a2e-s6a505c7b",
+        "extract-r2-00038-20b7ee42-s6a226a2e-s313b50a9",
+        "extract-r2-00038-20b7ee42-s6a226a2e-sf996c2d2",
+        "extract-r2-00038-20b7ee42-s6a226a2e-s83d1310c"
+      ],
+      "inherited_attempts": 0,
+      "records": 92
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42-s4b19c7ca",
+      "children": [
+        "extract-r2-00038-20b7ee42-s4b19c7ca-s87550117",
+        "extract-r2-00038-20b7ee42-s4b19c7ca-scafb8a45",
+        "extract-r2-00038-20b7ee42-s4b19c7ca-s98ab5160",
+        "extract-r2-00038-20b7ee42-s4b19c7ca-s7a60742d"
+      ],
+      "inherited_attempts": 0,
+      "records": 92
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42-s973e2c96",
+      "children": [
+        "extract-r2-00038-20b7ee42-s973e2c96-s1532f898",
+        "extract-r2-00038-20b7ee42-s973e2c96-sff3e411f",
+        "extract-r2-00038-20b7ee42-s973e2c96-sf5667dc7",
+        "extract-r2-00038-20b7ee42-s973e2c96-s9d2f7689"
+      ],
+      "inherited_attempts": 0,
+      "records": 92
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c",
+      "children": [
+        "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c-s9b67dd1e",
+        "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c-s29b09b85",
+        "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c-s86e2f5ba",
+        "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c-s6e7b7814"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883",
+      "children": [
+        "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883-sf25a4e5d",
+        "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883-s83d24377",
+        "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883-s1cce5f2e",
+        "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883-sfc816522"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f",
+      "children": [
+        "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f-sd6f62af9",
+        "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f-s74eaf2a8",
+        "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f-s3fa308af",
+        "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f-sea5747d9"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde",
+      "children": [
+        "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde-s3bcdfd7c",
+        "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde-s5bf6294d",
+        "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde-s52512280",
+        "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde-s159f09cb"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d",
+      "children": [
+        "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d-s9fa266c2",
+        "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d-s6f551a55",
+        "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d-s65268c1f",
+        "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d-s65956a12"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8",
+      "children": [
+        "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8-s2c5ab55e",
+        "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8-s9c14350c",
+        "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8-s778023c6",
+        "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8-s6d490ea1"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-s35d7b055-s75047a77",
+      "children": [
+        "extract-r2-00041-c614c0bd-s35d7b055-s75047a77-se339ae0f",
+        "extract-r2-00041-c614c0bd-s35d7b055-s75047a77-sc5a9be58",
+        "extract-r2-00041-c614c0bd-s35d7b055-s75047a77-sec9f4782",
+        "extract-r2-00041-c614c0bd-s35d7b055-s75047a77-s7a483588"
+      ],
+      "inherited_attempts": 0,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e",
+      "children": [
+        "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e-s99f0cad1",
+        "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e-s3f44e98d",
+        "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e-s00340447",
+        "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e-sb506cca5"
+      ],
+      "inherited_attempts": 0,
+      "records": 102
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00024-a8444021-se2127173",
+      "children": [
+        "extract-r2-00024-a8444021-se2127173-s28ba7192",
+        "extract-r2-00024-a8444021-se2127173-sab15d6d0",
+        "extract-r2-00024-a8444021-se2127173-sf64718b8",
+        "extract-r2-00024-a8444021-se2127173-sd9d3f5d8"
+      ],
+      "inherited_attempts": 2,
+      "records": 98
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00024-a8444021-sc205830c",
+      "children": [
+        "extract-r2-00024-a8444021-sc205830c-s5ae3d93d",
+        "extract-r2-00024-a8444021-sc205830c-sfc6939ef",
+        "extract-r2-00024-a8444021-sc205830c-s1d25526b",
+        "extract-r2-00024-a8444021-sc205830c-s719f988c"
+      ],
+      "inherited_attempts": 2,
+      "records": 98
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00025-0fbdad18-s74d89ba6",
+      "children": [
+        "extract-r2-00025-0fbdad18-s74d89ba6-s695206a8",
+        "extract-r2-00025-0fbdad18-s74d89ba6-s884de7be",
+        "extract-r2-00025-0fbdad18-s74d89ba6-seae53eb0",
+        "extract-r2-00025-0fbdad18-s74d89ba6-s6471111b"
+      ],
+      "inherited_attempts": 1,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00025-0fbdad18-s9c97f23e",
+      "children": [
+        "extract-r2-00025-0fbdad18-s9c97f23e-s13ec4512",
+        "extract-r2-00025-0fbdad18-s9c97f23e-s860120fc",
+        "extract-r2-00025-0fbdad18-s9c97f23e-s2aabecf5",
+        "extract-r2-00025-0fbdad18-s9c97f23e-sb47c8eb7"
+      ],
+      "inherited_attempts": 1,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00025-0fbdad18-sf89579ea",
+      "children": [
+        "extract-r2-00025-0fbdad18-sf89579ea-sf98776a0",
+        "extract-r2-00025-0fbdad18-sf89579ea-sd62333b9",
+        "extract-r2-00025-0fbdad18-sf89579ea-s917eedb5",
+        "extract-r2-00025-0fbdad18-sf89579ea-s84855f4a"
+      ],
+      "inherited_attempts": 1,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00025-0fbdad18-sffb61562",
+      "children": [
+        "extract-r2-00025-0fbdad18-sffb61562-s2d15155f",
+        "extract-r2-00025-0fbdad18-sffb61562-sdc817ccd",
+        "extract-r2-00025-0fbdad18-sffb61562-s6ea3be30",
+        "extract-r2-00025-0fbdad18-sffb61562-s9c833517"
+      ],
+      "inherited_attempts": 1,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00026-00ee51f3-s013cce09",
+      "children": [
+        "extract-r2-00026-00ee51f3-s013cce09-s1aaa79f8",
+        "extract-r2-00026-00ee51f3-s013cce09-s4ccbfc57",
+        "extract-r2-00026-00ee51f3-s013cce09-s88d7498d",
+        "extract-r2-00026-00ee51f3-s013cce09-s93af08de"
+      ],
+      "inherited_attempts": 1,
+      "records": 91
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00026-00ee51f3-sfc1fd7bc",
+      "children": [
+        "extract-r2-00026-00ee51f3-sfc1fd7bc-sb330ffb4",
+        "extract-r2-00026-00ee51f3-sfc1fd7bc-s49a7f19d",
+        "extract-r2-00026-00ee51f3-sfc1fd7bc-safb1e2f1",
+        "extract-r2-00026-00ee51f3-sfc1fd7bc-s9774cd96"
+      ],
+      "inherited_attempts": 1,
+      "records": 92
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00026-00ee51f3-s3d1b5f8b",
+      "children": [
+        "extract-r2-00026-00ee51f3-s3d1b5f8b-se3f4114b",
+        "extract-r2-00026-00ee51f3-s3d1b5f8b-sca1020ea",
+        "extract-r2-00026-00ee51f3-s3d1b5f8b-s158e5ca7",
+        "extract-r2-00026-00ee51f3-s3d1b5f8b-sa0812479"
+      ],
+      "inherited_attempts": 1,
+      "records": 91
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00026-00ee51f3-sa48a336f",
+      "children": [
+        "extract-r2-00026-00ee51f3-sa48a336f-s14f1149e",
+        "extract-r2-00026-00ee51f3-sa48a336f-sb97d9ace",
+        "extract-r2-00026-00ee51f3-sa48a336f-sc50f0db9",
+        "extract-r2-00026-00ee51f3-sa48a336f-sb2e3554c"
+      ],
+      "inherited_attempts": 1,
+      "records": 92
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00027-b433ace5-s9e7a4139",
+      "children": [
+        "extract-r2-00027-b433ace5-s9e7a4139-s39ace2be",
+        "extract-r2-00027-b433ace5-s9e7a4139-se18f6359",
+        "extract-r2-00027-b433ace5-s9e7a4139-s94206746",
+        "extract-r2-00027-b433ace5-s9e7a4139-sebe91cb5"
+      ],
+      "inherited_attempts": 1,
+      "records": 87
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00027-b433ace5-sebac5232",
+      "children": [
+        "extract-r2-00027-b433ace5-sebac5232-s3a556339",
+        "extract-r2-00027-b433ace5-sebac5232-s06dddea0",
+        "extract-r2-00027-b433ace5-sebac5232-sf1836bd3",
+        "extract-r2-00027-b433ace5-sebac5232-se7fb2158"
+      ],
+      "inherited_attempts": 1,
+      "records": 87
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00027-b433ace5-s68d043ab",
+      "children": [
+        "extract-r2-00027-b433ace5-s68d043ab-s310d838c",
+        "extract-r2-00027-b433ace5-s68d043ab-s7c253ca8",
+        "extract-r2-00027-b433ace5-s68d043ab-s6107aa81",
+        "extract-r2-00027-b433ace5-s68d043ab-sc973558b"
+      ],
+      "inherited_attempts": 1,
+      "records": 87
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00027-b433ace5-s759c40f2",
+      "children": [
+        "extract-r2-00027-b433ace5-s759c40f2-s7febce19",
+        "extract-r2-00027-b433ace5-s759c40f2-sd6c7c165",
+        "extract-r2-00027-b433ace5-s759c40f2-s979937c1",
+        "extract-r2-00027-b433ace5-s759c40f2-s632eafcd"
+      ],
+      "inherited_attempts": 1,
+      "records": 87
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00029-a5f8101f-sdc5866ab",
+      "children": [
+        "extract-r2-00029-a5f8101f-sdc5866ab-sdb096e31",
+        "extract-r2-00029-a5f8101f-sdc5866ab-sb3a97ff4",
+        "extract-r2-00029-a5f8101f-sdc5866ab-s123664e0",
+        "extract-r2-00029-a5f8101f-sdc5866ab-s0df426e5"
+      ],
+      "inherited_attempts": 1,
+      "records": 110
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00029-a5f8101f-s30ec1067",
+      "children": [
+        "extract-r2-00029-a5f8101f-s30ec1067-s3eb764b3",
+        "extract-r2-00029-a5f8101f-s30ec1067-sfd62a7bc",
+        "extract-r2-00029-a5f8101f-s30ec1067-s972ecfb4",
+        "extract-r2-00029-a5f8101f-s30ec1067-s9f0c5fd0"
+      ],
+      "inherited_attempts": 1,
+      "records": 110
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00029-a5f8101f-s136e6e4a",
+      "children": [
+        "extract-r2-00029-a5f8101f-s136e6e4a-s43b18d73",
+        "extract-r2-00029-a5f8101f-s136e6e4a-s4ce32c73",
+        "extract-r2-00029-a5f8101f-s136e6e4a-s2f389ee1",
+        "extract-r2-00029-a5f8101f-s136e6e4a-s45e1e491"
+      ],
+      "inherited_attempts": 1,
+      "records": 110
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00029-a5f8101f-sb172d0ce",
+      "children": [
+        "extract-r2-00029-a5f8101f-sb172d0ce-sf94c2815",
+        "extract-r2-00029-a5f8101f-sb172d0ce-s4c7cf49a",
+        "extract-r2-00029-a5f8101f-sb172d0ce-sd288dd99",
+        "extract-r2-00029-a5f8101f-sb172d0ce-sc33f7871"
+      ],
+      "inherited_attempts": 1,
+      "records": 111
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00030-b4f8a470-sdde6d7e9",
+      "children": [
+        "extract-r2-00030-b4f8a470-sdde6d7e9-s0fc5a845",
+        "extract-r2-00030-b4f8a470-sdde6d7e9-sebe37f3c",
+        "extract-r2-00030-b4f8a470-sdde6d7e9-s362dbd99",
+        "extract-r2-00030-b4f8a470-sdde6d7e9-see67ffc9"
+      ],
+      "inherited_attempts": 1,
+      "records": 100
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00030-b4f8a470-s58ec641b",
+      "children": [
+        "extract-r2-00030-b4f8a470-s58ec641b-sc6b55a68",
+        "extract-r2-00030-b4f8a470-s58ec641b-sc6189c33",
+        "extract-r2-00030-b4f8a470-s58ec641b-s9b66cc70",
+        "extract-r2-00030-b4f8a470-s58ec641b-s6b162a22"
+      ],
+      "inherited_attempts": 1,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00030-b4f8a470-sc0de1302",
+      "children": [
+        "extract-r2-00030-b4f8a470-sc0de1302-sfe21910f",
+        "extract-r2-00030-b4f8a470-sc0de1302-s32e79048",
+        "extract-r2-00030-b4f8a470-sc0de1302-s5be8eb1c",
+        "extract-r2-00030-b4f8a470-sc0de1302-s734f78c1"
+      ],
+      "inherited_attempts": 1,
+      "records": 100
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00030-b4f8a470-sedd18275",
+      "children": [
+        "extract-r2-00030-b4f8a470-sedd18275-s0a034ea7",
+        "extract-r2-00030-b4f8a470-sedd18275-s2bf5c256",
+        "extract-r2-00030-b4f8a470-sedd18275-s49f12d23",
+        "extract-r2-00030-b4f8a470-sedd18275-s5f55e04a"
+      ],
+      "inherited_attempts": 1,
+      "records": 101
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00005-92de20a4-s052addf3",
+      "children": [
+        "extract-r2-00005-92de20a4-s052addf3-sa3e7cecf",
+        "extract-r2-00005-92de20a4-s052addf3-s7651209e",
+        "extract-r2-00005-92de20a4-s052addf3-sec53ddcc",
+        "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae"
+      ],
+      "inherited_attempts": 3,
+      "records": 122
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00008-0a6868bf-sbf37904c",
+      "children": [
+        "extract-r2-00008-0a6868bf-sbf37904c-s500cf386",
+        "extract-r2-00008-0a6868bf-sbf37904c-s5eb00081",
+        "extract-r2-00008-0a6868bf-sbf37904c-scccf48b6",
+        "extract-r2-00008-0a6868bf-sbf37904c-s4890977c"
+      ],
+      "inherited_attempts": 2,
+      "records": 98
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00013-94c1bc7e-sc0755e05",
+      "children": [
+        "extract-r2-00013-94c1bc7e-sc0755e05-sa6af8e4d",
+        "extract-r2-00013-94c1bc7e-sc0755e05-sfc9a4780",
+        "extract-r2-00013-94c1bc7e-sc0755e05-sba70b1a7",
+        "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952"
+      ],
+      "inherited_attempts": 3,
+      "records": 104
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00015-2e1a79ac-sae472521",
+      "children": [
+        "extract-r2-00015-2e1a79ac-sae472521-sdc0006dd",
+        "extract-r2-00015-2e1a79ac-sae472521-s7e10f79b",
+        "extract-r2-00015-2e1a79ac-sae472521-s193aa5ca",
+        "extract-r2-00015-2e1a79ac-sae472521-s4358707c"
+      ],
+      "inherited_attempts": 2,
+      "records": 104
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00017-58e71e5f-s7d11a666",
+      "children": [
+        "extract-r2-00017-58e71e5f-s7d11a666-scf0752c7",
+        "extract-r2-00017-58e71e5f-s7d11a666-s154f957f",
+        "extract-r2-00017-58e71e5f-s7d11a666-s16ad2e5e",
+        "extract-r2-00017-58e71e5f-s7d11a666-sef129a90"
+      ],
+      "inherited_attempts": 2,
+      "records": 98
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00018-6169abcd-s841ab7c8",
+      "children": [
+        "extract-r2-00018-6169abcd-s841ab7c8-s7fb009a6",
+        "extract-r2-00018-6169abcd-s841ab7c8-s36caa038",
+        "extract-r2-00018-6169abcd-s841ab7c8-s36f4e270",
+        "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01"
+      ],
+      "inherited_attempts": 2,
+      "records": 104
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00019-5a049036-s0404a93b",
+      "children": [
+        "extract-r2-00019-5a049036-s0404a93b-s76e2e7e6",
+        "extract-r2-00019-5a049036-s0404a93b-s60ee34a3",
+        "extract-r2-00019-5a049036-s0404a93b-sbdaad0be",
+        "extract-r2-00019-5a049036-s0404a93b-s69f8d9d4"
+      ],
+      "inherited_attempts": 2,
+      "records": 95
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00021-22ccbcb7-sc15c1324",
+      "children": [
+        "extract-r2-00021-22ccbcb7-sc15c1324-s0f6e586a",
+        "extract-r2-00021-22ccbcb7-sc15c1324-s4565e507",
+        "extract-r2-00021-22ccbcb7-sc15c1324-s547519f5",
+        "extract-r2-00021-22ccbcb7-sc15c1324-s1a3ef70f"
+      ],
+      "inherited_attempts": 2,
+      "records": 97
+    }
+  ]
+}

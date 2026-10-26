@@ -24,3 +24,14 @@ Desktop.ini
 .DS_Store
 .vscode/
 .idea/
+
+# Translation execution state, requests, caches and backups (all datasets)
+**/TranslateFiles/state/
+**/TranslateFiles/tasks/
+**/TranslateFiles/results/
+**/TranslateFiles/cache/
+**/TranslateFiles/backups/
+**/TranslateFiles/history/
+**/TranslateFiles/logs/
+**/TranslateFiles/reports/api_runs/
+**/TranslateFiles/reports/api_failover/

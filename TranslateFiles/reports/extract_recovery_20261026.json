@@ -1,0 +1,370 @@
+{
+  "reason": "proxy returned analysis as final content, plus timeouts; smaller stopped scopes, inherited attempts; next API explicitly deepseek",
+  "previous_run": "fe8cc031eed44b259992f4940dff3a62",
+  "splits": [
+    {
+      "status": "split",
+      "task_id": "extract-r2-00033-0de9a1bd",
+      "children": [
+        "extract-r2-00033-0de9a1bd-se6c05f6e",
+        "extract-r2-00033-0de9a1bd-saf01392e",
+        "extract-r2-00033-0de9a1bd-s3aab3178",
+        "extract-r2-00033-0de9a1bd-sa5ff74dd"
+      ],
+      "inherited_attempts": 0,
+      "records": 401
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00034-2cfc1403",
+      "children": [
+        "extract-r2-00034-2cfc1403-s9268fe6d",
+        "extract-r2-00034-2cfc1403-see2862bc",
+        "extract-r2-00034-2cfc1403-sc2615512",
+        "extract-r2-00034-2cfc1403-sd752c5ae"
+      ],
+      "inherited_attempts": 0,
+      "records": 358
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2",
+      "children": [
+        "extract-r2-00035-5ca217d2-sdfadfe7d",
+        "extract-r2-00035-5ca217d2-s34eb257e",
+        "extract-r2-00035-5ca217d2-s0ebd2b1e",
+        "extract-r2-00035-5ca217d2-s07854e24"
+      ],
+      "inherited_attempts": 0,
+      "records": 383
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00036-6c20c4d8",
+      "children": [
+        "extract-r2-00036-6c20c4d8-s7801f6e0",
+        "extract-r2-00036-6c20c4d8-s34c22269",
+        "extract-r2-00036-6c20c4d8-s7b8075df",
+        "extract-r2-00036-6c20c4d8-s90030506"
+      ],
+      "inherited_attempts": 0,
+      "records": 414
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00037-d1be5acb",
+      "children": [
+        "extract-r2-00037-d1be5acb-s900b04e9",
+        "extract-r2-00037-d1be5acb-s25b01822",
+        "extract-r2-00037-d1be5acb-sbeb267e9",
+        "extract-r2-00037-d1be5acb-s6e5749e2"
+      ],
+      "inherited_attempts": 0,
+      "records": 359
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42",
+      "children": [
+        "extract-r2-00038-20b7ee42-s5e59b0a2",
+        "extract-r2-00038-20b7ee42-s6a226a2e",
+        "extract-r2-00038-20b7ee42-s4b19c7ca",
+        "extract-r2-00038-20b7ee42-s973e2c96"
+      ],
+      "inherited_attempts": 0,
+      "records": 367
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-sc5290d95",
+      "children": [
+        "extract-r2-00041-c614c0bd-sc5290d95-sa4e2e17c",
+        "extract-r2-00041-c614c0bd-sc5290d95-sf9bd5883",
+        "extract-r2-00041-c614c0bd-sc5290d95-s5eccc06f",
+        "extract-r2-00041-c614c0bd-sc5290d95-s2b713bde"
+      ],
+      "inherited_attempts": 0,
+      "records": 404
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00041-c614c0bd-s35d7b055",
+      "children": [
+        "extract-r2-00041-c614c0bd-s35d7b055-scd37f38d",
+        "extract-r2-00041-c614c0bd-s35d7b055-s5e3fa1d8",
+        "extract-r2-00041-c614c0bd-s35d7b055-s75047a77",
+        "extract-r2-00041-c614c0bd-s35d7b055-s41b9396e"
+      ],
+      "inherited_attempts": 0,
+      "records": 405
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00001-27590d80-s15510166",
+      "children": [
+        "extract-r2-00001-27590d80-s15510166-sf9fea26b",
+        "extract-r2-00001-27590d80-s15510166-s0c126d92",
+        "extract-r2-00001-27590d80-s15510166-s67cc19c1",
+        "extract-r2-00001-27590d80-s15510166-s67b05864",
+        "extract-r2-00001-27590d80-s15510166-s8bc6b424",
+        "extract-r2-00001-27590d80-s15510166-sf547a31e",
+        "extract-r2-00001-27590d80-s15510166-sfef5f7da",
+        "extract-r2-00001-27590d80-s15510166-sa4db7e2a"
+      ],
+      "inherited_attempts": 1,
+      "records": 550
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00003-1660a891",
+      "children": [
+        "extract-r2-00003-1660a891-sf9399d86",
+        "extract-r2-00003-1660a891-s8c71a91a",
+        "extract-r2-00003-1660a891-s99c6eac4",
+        "extract-r2-00003-1660a891-sfc86b7af"
+      ],
+      "inherited_attempts": 1,
+      "records": 355
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00004-97fe29d2",
+      "children": [
+        "extract-r2-00004-97fe29d2-sa79c5d98",
+        "extract-r2-00004-97fe29d2-sc133f261",
+        "extract-r2-00004-97fe29d2-s8f22c72f",
+        "extract-r2-00004-97fe29d2-s848bd45a"
+      ],
+      "inherited_attempts": 1,
+      "records": 393
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00005-92de20a4",
+      "children": [
+        "extract-r2-00005-92de20a4-s052addf3",
+        "extract-r2-00005-92de20a4-s99d5442a",
+        "extract-r2-00005-92de20a4-s94ab8562",
+        "extract-r2-00005-92de20a4-s452bd820"
+      ],
+      "inherited_attempts": 1,
+      "records": 491
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00008-0a6868bf",
+      "children": [
+        "extract-r2-00008-0a6868bf-sf281a28e",
+        "extract-r2-00008-0a6868bf-s7d7bd6bd",
+        "extract-r2-00008-0a6868bf-s292c1239",
+        "extract-r2-00008-0a6868bf-sbf37904c"
+      ],
+      "inherited_attempts": 1,
+      "records": 391
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00010-08264243",
+      "children": [
+        "extract-r2-00010-08264243-seec10369",
+        "extract-r2-00010-08264243-s0417c746",
+        "extract-r2-00010-08264243-s1bfbe0c1",
+        "extract-r2-00010-08264243-s0d9734f2"
+      ],
+      "inherited_attempts": 1,
+      "records": 394
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00011-20951fbe",
+      "children": [
+        "extract-r2-00011-20951fbe-sddbcb341",
+        "extract-r2-00011-20951fbe-sa486236a",
+        "extract-r2-00011-20951fbe-s697ee9a7",
+        "extract-r2-00011-20951fbe-se5f1349f"
+      ],
+      "inherited_attempts": 2,
+      "records": 378
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00013-94c1bc7e",
+      "children": [
+        "extract-r2-00013-94c1bc7e-s14f9fae4",
+        "extract-r2-00013-94c1bc7e-s02cf184b",
+        "extract-r2-00013-94c1bc7e-sc0755e05",
+        "extract-r2-00013-94c1bc7e-sf3953307"
+      ],
+      "inherited_attempts": 2,
+      "records": 418
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00014-d2fde2d7",
+      "children": [
+        "extract-r2-00014-d2fde2d7-s7cedb5bb",
+        "extract-r2-00014-d2fde2d7-s67bb821e",
+        "extract-r2-00014-d2fde2d7-s6da56101",
+        "extract-r2-00014-d2fde2d7-s3b190020"
+      ],
+      "inherited_attempts": 1,
+      "records": 344
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00015-2e1a79ac",
+      "children": [
+        "extract-r2-00015-2e1a79ac-se4370768",
+        "extract-r2-00015-2e1a79ac-s306db672",
+        "extract-r2-00015-2e1a79ac-sae472521",
+        "extract-r2-00015-2e1a79ac-s746eb29b"
+      ],
+      "inherited_attempts": 1,
+      "records": 415
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00017-58e71e5f",
+      "children": [
+        "extract-r2-00017-58e71e5f-s7d11a666",
+        "extract-r2-00017-58e71e5f-sd53589bd",
+        "extract-r2-00017-58e71e5f-s2e205ac0",
+        "extract-r2-00017-58e71e5f-s0f6fb035"
+      ],
+      "inherited_attempts": 1,
+      "records": 392
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00018-6169abcd",
+      "children": [
+        "extract-r2-00018-6169abcd-s054298c3",
+        "extract-r2-00018-6169abcd-s7e2ee335",
+        "extract-r2-00018-6169abcd-s841ab7c8",
+        "extract-r2-00018-6169abcd-sb89e047d"
+      ],
+      "inherited_attempts": 1,
+      "records": 416
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00019-5a049036",
+      "children": [
+        "extract-r2-00019-5a049036-sd9682346",
+        "extract-r2-00019-5a049036-sc0304ec3",
+        "extract-r2-00019-5a049036-sc4948eb5",
+        "extract-r2-00019-5a049036-s0404a93b"
+      ],
+      "inherited_attempts": 1,
+      "records": 379
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00020-a115abde",
+      "children": [
+        "extract-r2-00020-a115abde-s0a9e408e",
+        "extract-r2-00020-a115abde-s11e53d47",
+        "extract-r2-00020-a115abde-s59ba79e3",
+        "extract-r2-00020-a115abde-sf981c9fd"
+      ],
+      "inherited_attempts": 1,
+      "records": 363
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00021-22ccbcb7",
+      "children": [
+        "extract-r2-00021-22ccbcb7-se84f0d2b",
+        "extract-r2-00021-22ccbcb7-sc15c1324",
+        "extract-r2-00021-22ccbcb7-se4abe874",
+        "extract-r2-00021-22ccbcb7-s65d2e217"
+      ],
+      "inherited_attempts": 1,
+      "records": 387
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00022-43c1d929",
+      "children": [
+        "extract-r2-00022-43c1d929-sf7f1b7fb",
+        "extract-r2-00022-43c1d929-saa919f8e",
+        "extract-r2-00022-43c1d929-sd5340e91",
+        "extract-r2-00022-43c1d929-sad37f0cf"
+      ],
+      "inherited_attempts": 1,
+      "records": 395
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00024-a8444021",
+      "children": [
+        "extract-r2-00024-a8444021-se2127173",
+        "extract-r2-00024-a8444021-s2f44dc71",
+        "extract-r2-00024-a8444021-sc205830c",
+        "extract-r2-00024-a8444021-s0d0ed344"
+      ],
+      "inherited_attempts": 2,
+      "records": 392
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00025-0fbdad18",
+      "children": [
+        "extract-r2-00025-0fbdad18-s74d89ba6",
+        "extract-r2-00025-0fbdad18-s9c97f23e",
+        "extract-r2-00025-0fbdad18-sf89579ea",
+        "extract-r2-00025-0fbdad18-sffb61562"
+      ],
+      "inherited_attempts": 1,
+      "records": 380
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00026-00ee51f3",
+      "children": [
+        "extract-r2-00026-00ee51f3-s013cce09",
+        "extract-r2-00026-00ee51f3-sfc1fd7bc",
+        "extract-r2-00026-00ee51f3-s3d1b5f8b",
+        "extract-r2-00026-00ee51f3-sa48a336f"
+      ],
+      "inherited_attempts": 1,
+      "records": 366
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00027-b433ace5",
+      "children": [
+        "extract-r2-00027-b433ace5-s9e7a4139",
+        "extract-r2-00027-b433ace5-sebac5232",
+        "extract-r2-00027-b433ace5-s68d043ab",
+        "extract-r2-00027-b433ace5-s759c40f2"
+      ],
+      "inherited_attempts": 1,
+      "records": 348
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00029-a5f8101f",
+      "children": [
+        "extract-r2-00029-a5f8101f-sdc5866ab",
+        "extract-r2-00029-a5f8101f-s30ec1067",
+        "extract-r2-00029-a5f8101f-s136e6e4a",
+        "extract-r2-00029-a5f8101f-sb172d0ce"
+      ],
+      "inherited_attempts": 1,
+      "records": 441
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00030-b4f8a470",
+      "children": [
+        "extract-r2-00030-b4f8a470-sdde6d7e9",
+        "extract-r2-00030-b4f8a470-s58ec641b",
+        "extract-r2-00030-b4f8a470-sc0de1302",
+        "extract-r2-00030-b4f8a470-sedd18275"
+      ],
+      "inherited_attempts": 1,
+      "records": 402
+    }
+  ]
+}

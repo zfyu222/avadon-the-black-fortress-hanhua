@@ -1,0 +1,78 @@
+{
+  "reason": "Six API extraction replies mislabeled proper_name as reference. Preserve validator acceptance rules; improve field-specific rejection and explicit generation instruction, split only six remaining scopes to 12 records, retain attempts and allow one diagnosed additional attempt.",
+  "previous_run": "5197cd28fa3e4588b80637576ccd34f7",
+  "config": {
+    "revision": 2,
+    "semantic_reset": false,
+    "affected_records": [],
+    "retry_limit_only": true
+  },
+  "splits": [
+    {
+      "status": "split",
+      "task_id": "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae",
+      "children": [
+        "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae-s008f8839",
+        "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae-sa0f3be51",
+        "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae-sfabf4819",
+        "extract-r2-00005-92de20a4-s052addf3-sc4f9c1ae-s2040bae3"
+      ],
+      "inherited_attempts": 4,
+      "records": 31
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952",
+      "children": [
+        "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952-s4da6e27c",
+        "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952-s9584543a",
+        "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952-s4d55c938",
+        "extract-r2-00013-94c1bc7e-sc0755e05-s1e994952-sac49634d"
+      ],
+      "inherited_attempts": 4,
+      "records": 26
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01",
+      "children": [
+        "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01-s8304bf4a",
+        "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01-s86090aef",
+        "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01-s786896dd",
+        "extract-r2-00018-6169abcd-s841ab7c8-s672e5a01-sc48cfa39"
+      ],
+      "inherited_attempts": 4,
+      "records": 26
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00021-22ccbcb7-sc15c1324-s0f6e586a",
+      "children": [
+        "extract-r2-00021-22ccbcb7-sc15c1324-s0f6e586a-sa3b2a1f5",
+        "extract-r2-00021-22ccbcb7-sc15c1324-s0f6e586a-s55723e2d"
+      ],
+      "inherited_attempts": 4,
+      "records": 24
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00035-5ca217d2-sdfadfe7d-sfa64f94e",
+      "children": [
+        "extract-r2-00035-5ca217d2-sdfadfe7d-sfa64f94e-sb6472a95",
+        "extract-r2-00035-5ca217d2-sdfadfe7d-sfa64f94e-s0b4a307b"
+      ],
+      "inherited_attempts": 2,
+      "records": 24
+    },
+    {
+      "status": "split",
+      "task_id": "extract-r2-00038-20b7ee42-s4b19c7ca-s87550117",
+      "children": [
+        "extract-r2-00038-20b7ee42-s4b19c7ca-s87550117-sba575677",
+        "extract-r2-00038-20b7ee42-s4b19c7ca-s87550117-s24813f8f"
+      ],
+      "inherited_attempts": 2,
+      "records": 23
+    }
+  ]
+}

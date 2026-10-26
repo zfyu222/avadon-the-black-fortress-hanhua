@@ -1,0 +1,14 @@
+{
+  "text": "## 游戏信息\n- 原名：Avadon: The Black Fortress\n- 中文名：阿瓦登：黑色要塞（项目暂译，非官方中文名）\n- 开发商 / 发行商：Spiderweb Software\n- 发行平台：本项目使用 Steam Windows 版；Steam App ID `112100`。\n- Steam 发售日期：2011-08-17（其他平台首发日期不据此推定）。\n- 原语言 / 商店支持语言：英语；Steam 语言表仅列英语界面。\n- 本地版本标识：Steam Build ID `4252712`，Depot `112101`，Manifest `6035336520543477858`；来自本机 `appmanifest_112100.acf`，不等同于程序版本号。\n- 引擎：32 位 x86 原生程序，采用自定义脚本与二进制场景结构；EXE 中有 PTK Game Library / OpenGL 线索，具体引擎名称及版本未确认。程序内版本字符串为 `v1.0s2, Copyright 2011-2, Spiderweb Software, All Rights Reserved`。\n- 本地游戏目录：`D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress`\n- 资料来源：[Steam 商店](https://store.steampowered.com/app/112100/)、[开发商官网](https://www.spiderwebsoftware.com/avadon/)。\n\n## 游戏简介\n玩家为黑色要塞 Avadon 效力，以战士与密探的身份调查威胁故土的阴谋。这是一部奇幻角色扮演游戏，提供四种职业、支线探索及受玩家选择影响的多种结局。简介据[开发商官方介绍](https://www.spiderwebsoftware.com/avadon/)转述。\n\n## 汉化目标\n- 范围：以常规可见文本和图片文字的简体中文汉化为目标；实际覆盖范围在提取与验证后记录。\n- 目标语言：简体中文。\n- 图片文字翻译：启用（用户于 2026-10-26 明确选择）。\n- 初始化阶段未修改游戏安装文件。",
+  "sha256": "d364b0f4c16a04a748bfeac6268b720167b11f1995c9df914c20ab103857d42f",
+  "source": {
+    "kind": "readme",
+    "path": "README.md",
+    "sha256": "8d462bda974407fd9459affc1e816aec55be55f5006f39505a47ef8bb5bd8706",
+    "sections": [
+      "游戏信息",
+      "游戏简介",
+      "汉化目标"
+    ]
+  }
+}

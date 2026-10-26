@@ -33,7 +33,7 @@
 | 初始化 | start-translate / Python / Git | 2026-10-26 / 3.12.10 / 2.55.0.windows.5 |
 | 常规提取 | game-unpack / Python / REA + Ghidra | 3.12.10 / 6.4.0 + 12.1.4；已导出 15,928 条 |
 | 图片提取 | game-image-extract / RapidOCR / ORT GPU / Qwen3-VL | v0.5 / 3.10.0 / 1.31.0 / 8B Instruct Q4_K_M；98 条确认子集 |
-| 翻译 | game-translate | SubAgent / API 路线尚未选择 |
+| 翻译 | game-translate / translation_workflow.py | API；官方 DeepSeek `deepseek-flash`，术语审校准备完成 |
 | 图片合入 | game-image-repack | 待正式图片译文完成 |
 | 回填 | game-repack；需逆向时使用 REA + Ghidra | 待分析 |
 | 发布 | game-release-patch | 待回填验证通过 |
@@ -68,7 +68,12 @@
 - 独立图片翻译工作区：`TranslateFiles/image-text/`；仅准备源文快照 / 图片上下文，不启动正文翻译。
 
 ## 翻译
-- 执行路线：尚未选择，首次进入翻译阶段时确认 SubAgent 或 API。
+- 执行路线：用户已选择 API，沿用本机已有接口配置；初始代理接口出现超时与推理正文混入后，显式使用已配置的官方 DeepSeek `deepseek-flash`，保留思考模式。凭据仅在工作区共享本地配置中读取，不进入项目。
+- 进度：全文术语提取已完成，337 个有效提取批次，覆盖 15,928 条原文；已准备术语语义审校，尚未冻结术语或开始正文翻译。
+- 恢复：失败范围依次拆至 128 / 32 / 12 条，保留成功结果和历史尝试；经诊断将尝试上限从 3 增至 5。最后 18 个提取批次全部通过。恢复范围及原因见 `TranslateFiles/reports/extract*20261026.json`。
+- 规则：保护 `_`、`|`、文档标题 `$` 及原有格式变量；`$` 后标题正文需要翻译。原生拼接片段保留有意义空白，不自行补齐成句。上下文由提取映射逐条提供，不以 CSV 邻接推断剧情。
+- 审校输入：高频 Avadon 汇总 241 份候选，单项约 94,628 输入 Token，原 65,536 上限无法容纳。共享输入调度上限提高至 131,072，保留全部必要证据；官方模型上下文上限为 1M（[官方规格](https://api-docs.deepseek.com/quick_start/pricing/)）。
+- 用户负责游戏实测；本流程只做静态验证，完成回填后交付测试清单，发布前停止。
 - 正式译文：`avadon-the-black-fortress_text_translated.csv`，与源文逐条对应。
 - 图片源文 / 译文：`avadon-the-black-fortress_images_text.csv` / `avadon-the-black-fortress_images_text_translated.csv`，来源及坐标独立保存为 mapping。
 - 术语、占位符规则、语义审校、校验结果：待翻译阶段补充；中间文件统一放 `TranslateFiles/`，缓存、备份和凭据不入库。
