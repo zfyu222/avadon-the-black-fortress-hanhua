@@ -66,7 +66,10 @@ def verify():
             assert all(not (root/n).exists() for n in expected if n not in original)
             assert sha(root/'Avadon.exe')==old.sha(P/'Game/Avadon.exe')
         for name in ['补丁说明.txt','PATCH_MANIFEST.json','SHA256SUMS.txt']:(P/'Dispatch'/name).write_bytes(z.read(name))
-        (P/'Release/release_notes.md').write_text(guide,encoding='utf-8')
+        notes=guide.replace('\r\n','\n')
+        for heading in ['安装汉化','补丁升级','卸载汉化','补丁介绍','适用版本','汉化内容','运行情况','说明','下载与反馈','更新日志']:
+            notes=notes.replace('\n'+heading+'\n','\n### '+heading+'\n\n')
+        (P/'Release/release_notes.md').write_text(notes,encoding='utf-8',newline='')
     write(P/'Dispatch/RELEASE_VALIDATION.json',dict(status='passed',version=VERSION,archive=ARCHIVE.name,sha256=sha(ARCHIVE),
         tested_game_payload_files=22,payload_unchanged_from='v1.1',auxiliary_files=4,archive_files=29,zip_crc=True,all_hashes=True,
         actual_windows_powershell_install_repeat_upgrade_uninstall=True,legacy_upgrade_steam_recovery_requested=True,
