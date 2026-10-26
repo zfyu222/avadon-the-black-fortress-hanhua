@@ -1,0 +1,17 @@
+{
+  "report_hash": "f4aa17d9083e420f8f8dcd235392efbfba6ff32a37cf3ad704d3277f2eb8ea8a",
+  "reviewer": "sol",
+  "summary": "已裁决2项：1项原文标签与说明不一致，译文忠实保留；1项译文准确可读，术语警告未证明本条有误。",
+  "decisions": [
+    {
+      "id": "R0015789_046646f9c1",
+      "disposition": "contextual",
+      "reason": "Quick Use Items 与 Quickspell slots 在原文中指向不同功能，疑似原文提示自身不一致；译文分别准确表达“快捷使用物品”和“快捷法术槽”，没有擅改源文，保留此原文语境疑点。"
+    },
+    {
+      "id": "R0015859_8f5a2bd812",
+      "disposition": "pass",
+      "reason": "基础属性、加号、右侧选择及操作顺序均与原文一致；abilities（原文拼作 abilites）译为“能力”准确可读。审校所述其他提示的“技能”译法不足以证明本条有误，不因同义或跨语境统一偏好返工。"
+    }
+  ]
+}

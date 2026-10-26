@@ -1,0 +1,145 @@
+{
+  "round": 1,
+  "report_hash": "f4aa17d9083e420f8f8dcd235392efbfba6ff32a37cf3ad704d3277f2eb8ea8a",
+  "checks": [
+    {
+      "id": "R0015789_046646f9c1",
+      "ordinal": 15789,
+      "source": "Quick Use Items: Only your characters can set Quickspell slots.",
+      "translation": "快捷使用物品：只有你的角色才能设置快捷法术槽。",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "risk_reasons": [
+        "conditions",
+        "review_warning"
+      ],
+      "review": {
+        "task_id": "review-r3-01073-85f289c5",
+        "instance": "api-review-01c14ad5baac461f8ac5253dc409b9b4",
+        "stage": "review",
+        "before": "快捷使用物品：只有你的角色才能设置快捷法术槽。",
+        "translation": "快捷使用物品：只有你的角色才能设置快捷法术槽。",
+        "changes": [],
+        "checks": {
+          "accuracy": {
+            "evidence": "原文标签为快捷使用物品，说明却称只有角色能设置 Quickspell slots；译文逐项照录两者，未擅自统一矛盾信息。",
+            "status": "pass"
+          },
+          "completeness": {
+            "evidence": "原文标签为快捷使用物品，说明却称只有角色能设置 Quickspell slots；译文逐项照录两者，未擅自统一矛盾信息。",
+            "status": "pass"
+          },
+          "logic": {
+            "evidence": "原文标签为快捷使用物品，说明却称只有角色能设置 Quickspell slots；译文逐项照录两者，未擅自统一矛盾信息。",
+            "status": "pass"
+          },
+          "placeholders": {
+            "evidence": "无变量、标签或占位符。",
+            "status": "not_applicable"
+          },
+          "terminology": {
+            "evidence": "t6 Quick Use 译为“快捷使用”，t1 Quickspell 译为“快捷法术”，均与冻结译名一致。",
+            "status": "pass"
+          },
+          "tone": {
+            "evidence": "系统提示口吻简洁；标签与说明的矛盾保留在原文层面。",
+            "status": "pass"
+          }
+        },
+        "exceptions": [],
+        "id": "R0015789_046646f9c1",
+        "issues": [
+          {
+            "reason": "原文标签“Quick Use Items”与说明中的“Quickspell slots”不一致，疑似源文复制错误；译文逐项照录，未擅自改设定，建议上游确认。",
+            "severity": "warning"
+          }
+        ],
+        "reason": "原文标签为快捷使用物品，说明却称只有角色能设置 Quickspell slots；译文逐项照录两者，未擅自统一矛盾信息。",
+        "reviewed": true,
+        "source_excerpt": "Quick Use Items: Only your characters can set Quickspell slots."
+      }
+    },
+    {
+      "id": "R0015859_8f5a2bd812",
+      "ordinal": 15859,
+      "source": "Press the '+' buttons to increase your base statistics (Strength, Dexterity, etc.). Then select the abilites to the right you wish to increase.",
+      "translation": "按 '+' 按钮提高你的基础属性（力量、敏捷等）。然后选择右侧你希望提升的能力。",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "risk_reasons": [
+        "review_warning"
+      ],
+      "review": {
+        "task_id": "review-r3-01076-8af6048c",
+        "instance": "api-review-134b7214b8284db28ebe85b1562cfbc6",
+        "stage": "review",
+        "before": "按 '+' 按钮提高你的基础属性（力量、敏捷等）。然后选择右侧你希望提升的能力。",
+        "translation": "按 '+' 按钮提高你的基础属性（力量、敏捷等）。然后选择右侧你希望提升的能力。",
+        "changes": [],
+        "checks": {
+          "accuracy": {
+            "evidence": "原文说按 '+' 按钮提高基础属性（力量、敏捷等），再选择右侧希望提升的能力；工具、对象与先后顺序均一致，'etc.' 译为“等”未遗漏。",
+            "status": "pass"
+          },
+          "completeness": {
+            "evidence": "原文说按 '+' 按钮提高基础属性（力量、敏捷等），再选择右侧希望提升的能力；工具、对象与先后顺序均一致，'etc.' 译为“等”未遗漏。",
+            "status": "pass"
+          },
+          "logic": {
+            "evidence": "原文说按 '+' 按钮提高基础属性（力量、敏捷等），再选择右侧希望提升的能力；工具、对象与先后顺序均一致，'etc.' 译为“等”未遗漏。",
+            "status": "pass"
+          },
+          "placeholders": {
+            "evidence": "'+' 原样保留，未被改写为中文符号。",
+            "status": "pass"
+          },
+          "terminology": {
+            "evidence": "base statistics 按术语表译为“基础属性”，'+' 按术语表原样保留。",
+            "status": "pass"
+          },
+          "tone": {
+            "evidence": "两组操作指令，译文简洁，符合升级界面提示口吻。",
+            "status": "pass"
+          }
+        },
+        "exceptions": [],
+        "id": "R0015859_8f5a2bd812",
+        "issues": [
+          {
+            "reason": "本条把 abilities 译为“能力”（第 12 条同），而第 1–3 条把 ability 译为“技能”；同一施放/升级系统的概念在同一组教程提示中出现两种叫法，玩家对应时可能不便。请确认统一译名（如统一为“技能”），并在后续批次保持一致；本条单看无词义错误，故未改译文。",
+            "severity": "warning"
+          }
+        ],
+        "reason": "原文说按 '+' 按钮提高基础属性（力量、敏捷等），再选择右侧希望提升的能力；工具、对象与先后顺序均一致，'etc.' 译为“等”未遗漏。",
+        "reviewed": true,
+        "source_excerpt": "Press the '+' buttons to increase your base statistics (Strength, Dexterity, etc.). Then select the abilites to the right you wish to increase."
+      }
+    }
+  ],
+  "instruction": "任务输入、分批、预算、ID、版本与字段结构由程序准备。直接完成本阶段工作，不运行任务校验或结果检查脚本，不重组批次、不扫描全库、不自行补建任务。按程序提供的输出模板写结果，不需要自行拼装任务 ID 或版本；空字段和待定状态须根据实际工作填写。发现文件缺失、字段损坏或源文不对应时简短报告 input_problem，交主流程处理，不修补输入；原文本身的语义歧义仍按本阶段 issues 或语境例外说明。审校中的语义核对属于本职工作；任务格式检查、结果合并和产出验收由程序负责。Sol 只裁决本包明确未解决的争议，记录 pass/contextual/repair；全部检查结束前不得派发修订。",
+  "output_template": {
+    "report_hash": "f4aa17d9083e420f8f8dcd235392efbfba6ff32a37cf3ad704d3277f2eb8ea8a",
+    "reviewer": "sol",
+    "summary": "",
+    "decisions": [
+      {
+        "id": "R0015789_046646f9c1",
+        "disposition": "pending",
+        "reason": ""
+      },
+      {
+        "id": "R0015859_8f5a2bd812",
+        "disposition": "pending",
+        "reason": ""
+      }
+    ]
+  }
+}

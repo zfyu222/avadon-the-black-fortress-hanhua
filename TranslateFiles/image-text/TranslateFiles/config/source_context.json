@@ -1,0 +1,511 @@
+{
+  "1": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G128.png",
+    "group": "image"
+  },
+  "2": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G128.png",
+    "group": "image"
+  },
+  "3": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G128.png",
+    "group": "image"
+  },
+  "4": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G128.png; Avadon Files/Graphics Core/G132.png; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "5": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "6": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "7": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "8": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "9": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "10": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "11": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "12": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "13": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "14": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "15": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "16": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "17": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "18": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "19": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "20": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "21": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "22": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "23": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "24": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "25": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G129.jpg",
+    "group": "image"
+  },
+  "26": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G133.png",
+    "group": "image"
+  },
+  "27": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G133.png",
+    "group": "image"
+  },
+  "28": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G133.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "29": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "30": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "31": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "32": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg; Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "33": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image"
+  },
+  "34": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "35": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg; Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "36": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G142.jpg; Avadon Files/Graphics Core/G143.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "37": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G153.png; Avadon Files/Graphics Core/G165.png",
+    "group": "image"
+  },
+  "38": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G153.png; Avadon Files/Graphics Core/G165.png",
+    "group": "image"
+  },
+  "39": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png",
+    "group": "image"
+  },
+  "40": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png",
+    "group": "image"
+  },
+  "41": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png",
+    "group": "image"
+  },
+  "42": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png",
+    "group": "image"
+  },
+  "43": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png",
+    "group": "image"
+  },
+  "44": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G158.png; Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "45": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G159.png",
+    "group": "image"
+  },
+  "46": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G159.png",
+    "group": "image"
+  },
+  "47": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G159.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "48": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png",
+    "group": "image"
+  },
+  "49": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png",
+    "group": "image"
+  },
+  "50": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png",
+    "group": "image"
+  },
+  "51": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png",
+    "group": "image"
+  },
+  "52": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png; Avadon Files/Graphics Core/G189.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "53": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png; Avadon Files/Graphics Core/G189.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "54": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png; Avadon Files/Graphics Core/G189.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "55": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G167.png; Avadon Files/Graphics Core/G189.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "56": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G169.bmp",
+    "group": "image"
+  },
+  "57": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G169.bmp",
+    "group": "image"
+  },
+  "58": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G169.bmp",
+    "group": "image"
+  },
+  "59": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "60": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "61": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "62": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg; Avadon Files/Graphics Core/G232.jpg",
+    "group": "image"
+  },
+  "63": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "64": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "65": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg; Avadon Files/Graphics Core/G220.png; Avadon Files/Graphics Core/G232.jpg",
+    "group": "image"
+  },
+  "66": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "67": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "68": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "69": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image"
+  },
+  "70": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G176.jpg",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "71": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "72": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "73": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg; Avadon Files/Graphics Core/G233.jpg",
+    "group": "image"
+  },
+  "74": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg; Avadon Files/Graphics Core/G231.jpg",
+    "group": "image"
+  },
+  "75": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "76": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "77": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G177.jpg",
+    "group": "image"
+  },
+  "78": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image"
+  },
+  "79": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image"
+  },
+  "80": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image"
+  },
+  "81": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image"
+  },
+  "82": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image"
+  },
+  "83": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G189.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "84": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G198.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "85": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G198.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "86": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G198.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  },
+  "87": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "88": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "89": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "90": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "91": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "92": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G203.png",
+    "group": "image"
+  },
+  "93": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G220.png",
+    "group": "image"
+  },
+  "94": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G231.jpg",
+    "group": "image"
+  },
+  "95": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G233.jpg",
+    "group": "image"
+  },
+  "96": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G233.jpg",
+    "group": "image"
+  },
+  "97": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G233.jpg",
+    "group": "image"
+  },
+  "98": {
+    "text_type": "image_text",
+    "resource": "Avadon Files/Graphics Core/G290.png",
+    "group": "image",
+    "note": "已核对技术字形/教程字母/数字/资源标记/商标品牌，原样保留"
+  }
+}
