@@ -14,6 +14,8 @@
 
 ZIP SHA-256：`95be3b4c0815682b1d5fef682a3a7d937444048142dad07aa077ac949bebd61f`。
 
+GitHub 会规范化中文附件名，因此下载文件名使用 `Avadon_The_Black_Fortress_1.0.zip`，中文显示标题为 `阿瓦登：黑色要塞_子非鱼汉化1.0.zip`；二者内容与 SHA-256 完全相同，无需改名即可解压安装。
+
 补丁后续可能会更新，建议关注或订阅本项目的 [GitHub 仓库](https://github.com/zfyu222/avadon-the-black-fortress-hanhua) / [Releases](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases)，及时获取新版补丁。
 
 更新日志

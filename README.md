@@ -132,6 +132,7 @@
 - 载荷：`winmm.dll`、`AvadonChinese/translations.bin`、MinHook 许可与19张修改图片，共22个文件；没有原 EXE、脚本、DAT、字体、系统 DLL、凭据或开发日志。
 - 验证：用户确认最新版已测试；正式 release-check 通过。ZIP CRC、22个解压载荷哈希、同路径 Dispatch/Files 副本及按安装说明进行的干净目录安装/卸载回放通过。原 EXE、原 JPG 和 G290 图集保持不变。代理未启动游戏。
 - ZIP SHA-256：`95be3b4c0815682b1d5fef682a3a7d937444048142dad07aa077ac949bebd61f`；详细验证见 `Dispatch/RELEASE_VALIDATION.json`。
+- GitHub 下载验证：公开、非草稿、非预发行、最新稳定版；已不带凭据下载附件并确认 SHA-256 与本地 ZIP 一致，记录为 `Dispatch/GITHUB_RELEASE_VERIFICATION.json`。GitHub 会规范化中文附件名，实际下载名为 `Avadon_The_Black_Fortress_1.0.zip`，中文显示名与本地包名仍为 `阿瓦登：黑色要塞_子非鱼汉化1.0.zip`，内容完全一致。
 - 已知问题：图片为98条确认子集，10张局部未决；未保证所有长句、分辨率、显卡组合、中文输入或其他 winmm 代理 MOD 共存兼容。保留原件备份。
 - GitHub Release：[v1.0 正式下载](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.0)；反馈请提交本仓库 Issues。补丁后续可能会更新，建议关注或订阅本项目的 GitHub 仓库 / Releases，及时获取新版补丁。
 
