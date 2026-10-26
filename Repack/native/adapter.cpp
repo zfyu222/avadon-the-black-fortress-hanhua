@@ -130,6 +130,7 @@ static_assert(sizeof(void*)==4,"Avadon adapter requires x86");
 BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
     try{
         wchar_t executable[MAX_PATH]{};if(!GetModuleFileNameW(nullptr,executable,MAX_PATH))return TRUE;std::wstring path(executable);size_t separator=path.find_last_of(L"\\/");if(separator==std::wstring::npos)return TRUE;data_path=path.substr(0,separator)+L"\\AvadonChinese";
+        log("initialize: adapter startup reached");
         if(file_exists(data_path+L"\\disabled.flag")){log("disabled.flag: forwarding only");return TRUE;}
         if(executable_hash(path)!="d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"){log("unsupported executable: forwarding only");return TRUE;}
         dictionary.load(data_path+L"\\translations.bin");game_base=reinterpret_cast<uintptr_t>(GetModuleHandleW(nullptr));
@@ -154,7 +155,23 @@ extern "C" void __cdecl ResolveForward(unsigned index) noexcept {
     if(!InitOnceExecuteOnce(&real_once,initialize_real,nullptr,nullptr) || index>=AVZH_FORWARD_COUNT || !g_forwards[index])ExitProcess(ERROR_PROC_NOT_FOUND);
 }
 extern "C" DWORD WINAPI ProxyClock(){ResolveForward(AVZH_CLOCK_INDEX);InitOnceExecuteOnce(&adapter_once,initialize_adapter,nullptr,nullptr);return reinterpret_cast<DWORD(WINAPI*)()>(g_forwards[AVZH_CLOCK_INDEX])();}
-BOOL WINAPI DllMain(HINSTANCE module,DWORD reason,void*){if(reason==DLL_PROCESS_ATTACH)module_handle=module;return TRUE;}
+namespace {
+DWORD WINAPI Bootstrap(void*) noexcept {
+    // Windows serializes DLL thread notifications: this entry runs after the
+    // attaching DllMain returns. Hashing, I/O and MinHook stay outside loader lock.
+    // The timer import is only a fallback when QueryPerformanceCounter is absent.
+    InitOnceExecuteOnce(&adapter_once,initialize_adapter,nullptr,nullptr);
+    return 0;
+}
+}
+BOOL WINAPI DllMain(HINSTANCE module,DWORD reason,void*){
+    if(reason==DLL_PROCESS_ATTACH){
+        module_handle=module;
+        HANDLE worker=CreateThread(nullptr,0,Bootstrap,nullptr,0,nullptr);
+        if(worker)CloseHandle(worker); // Never join/wait inside DllMain.
+    }
+    return TRUE;
+}
 
 #ifdef AVZH_SELF_TEST
 // Present only in the separately compiled component-test EXE, never in winmm.dll.

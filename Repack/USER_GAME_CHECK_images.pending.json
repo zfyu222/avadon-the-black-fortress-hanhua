@@ -111,7 +111,7 @@
     {
       "path": "Repack/Payload/winmm.dll",
       "game_path": "winmm.dll",
-      "sha256": "5133f4d3a5b8cbe96f9934dac1ad8a1d6a4e4745b62e7679cd0bf3c0b3f8d4b3"
+      "sha256": "6fe5d26d7098d10dac2ea9dea3d5d9fced3310f850f6d38ee9f68377c2d2ac83"
     }
   ],
   "evidence_files": [],

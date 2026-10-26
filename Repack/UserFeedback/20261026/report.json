@@ -1,0 +1,103 @@
+{
+  "user_test_result": "body_localization_failed_images_visible",
+  "screenshots": [
+    {
+      "path": "Repack/UserFeedback/20261026/screenshots/1.png",
+      "sha256": "f884caad672ed87c3060361e1651d069de367bc2dcf74a1cae6901759e2031b3"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026/screenshots/2.png",
+      "sha256": "9e6340ea7b6b3be114aa6384ca24878a3a0288b1e7157f30bda303c0399a8fb9"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026/screenshots/3.png",
+      "sha256": "aab9d0988feb2651e23fac7f64e9520a90660ec5d4fe32bd8bca0e0243c233f4"
+    }
+  ],
+  "reported_source_matches": [
+    {
+      "reported_probe": "Gameplay Settings",
+      "matches": [
+        {
+          "csv_row": 15469,
+          "source": "Gameplay Settings",
+          "approved_translation": "玩法设置",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Avadon Settings",
+      "matches": [
+        {
+          "csv_row": 15467,
+          "source": "Avadon Settings",
+          "approved_translation": "阿瓦登设置",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Avadon Instructions",
+      "matches": [
+        {
+          "csv_row": 15451,
+          "source": "Avadon Instructions",
+          "approved_translation": "阿瓦登说明",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Select a topic to the left.",
+      "matches": [
+        {
+          "csv_row": 15457,
+          "source": "Select a topic to the left.",
+          "approved_translation": "选择左侧的一个主题。",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Hold Tab key to see entire map.",
+      "matches": [
+        {
+          "csv_row": 15796,
+          "source": "Hold Tab key to see entire map.",
+          "approved_translation": "按住 Tab 键查看完整地图。",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Hold Shift key to see creature names.",
+      "matches": [
+        {
+          "csv_row": 15797,
+          "source": "Hold Shift key to see creature names.",
+          "approved_translation": "按住 Shift 键查看生物名称。",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    },
+    {
+      "reported_probe": "Welcome to Avadon! These messages will pop up",
+      "matches": [
+        {
+          "csv_row": 15809,
+          "source": "Welcome to Avadon! These messages will pop up to help you learn to play the game. Click somewhere to move your character.",
+          "approved_translation": "欢迎来到阿瓦登！这些提示会弹出，帮助你学习如何游玩本游戏。点击某处即可移动你的角色。",
+          "compiled_dictionary_exact_key": true
+        }
+      ]
+    }
+  ],
+  "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+  "translation_sha256": "8eacdf92ed763cb581209315c61c7db8168548004b04704a8d4f3f76868270a8",
+  "repair": "independent_DLL_bootstrap_instead_of_timer_only",
+  "repair_component_test": "passed_without_timeGetTime",
+  "repaired_game_test": "pending_user_retest",
+  "paid_api_requests": 0,
+  "game_started_by_agent": false
+}

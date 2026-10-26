@@ -68,7 +68,21 @@ int wmain(int argc,wchar_t** argv){
         require(dictionary.lookup("Choosing a Character Type",value) && value.find('$')==std::string::npos,"Manual heading display variant failed");
         avzh::Dictionary generic;generic.add("%s %s %s","%s %s %s");generic.prepare();require(!generic.lookup("one two three",value),"Unbound generic format matched prose");
         auto lines=avzh::wrap(L"甲乙丙丁，戊己。",3,[](const std::wstring&s){return static_cast<int>(s.size());});for(const auto& line:lines)require(line.empty() || !avzh::closing(line[0]),"Closing punctuation starts wrapped line");
+        std::wstring host_path=argv[0];auto slash=host_path.find_last_of(L"\\/");require(slash!=std::wstring::npos,"Need absolute component host path");
+        std::wstring startup_dir=host_path.substr(0,slash)+L"\\AvadonChinese";CreateDirectoryW(startup_dir.c_str(),nullptr);
+        std::wstring startup_log=startup_dir+L"\\runtime.log";DeleteFileW(startup_log.c_str());
         HMODULE proxy=LoadLibraryW(argv[3]);require(proxy!=nullptr,"Cannot load built x86 proxy");
+        bool bootstrapped=false;
+        // Do not resolve or invoke timeGetTime until the independent bootstrap
+        // has logged its unsupported-host decision. This catches the old bug.
+        for(int attempt=0;attempt<150 && !bootstrapped;++attempt){
+            std::ifstream file(startup_log.c_str(),std::ios::binary);std::string log((std::istreambuf_iterator<char>(file)),{});
+            bootstrapped=log.find("unsupported executable: forwarding only")!=std::string::npos;
+            if(!bootstrapped)Sleep(20);
+        }
+        require(bootstrapped,"Adapter never initialized without timeGetTime");
+        std::ofstream bootstrap_report((output+L"\\bootstrap_report.json").c_str(),std::ios::binary);
+        bootstrap_report<<"{\"status\":\"passed\",\"startup_without_timeGetTime\":true,\"game_started\":false}\n";bootstrap_report.close();
         for(unsigned i=0;i<AVZH_FORWARD_COUNT;++i)require(GetProcAddress(proxy,avzh_forward_names[i]?avzh_forward_names[i]:MAKEINTRESOURCEA(avzh_forward_ordinals[i]))!=nullptr,"Forwarding export missing");
         auto clock=reinterpret_cast<DWORD(WINAPI*)()>(GetProcAddress(proxy,"timeGetTime"));DWORD tick=clock();require(std::abs(static_cast<int32_t>(tick-GetTickCount()))<1000,"Clock forwarding differs from system clock");
         auto caps=reinterpret_cast<MMRESULT(WINAPI*)(LPTIMECAPS,UINT)>(GetProcAddress(proxy,"timeGetDevCaps"));TIMECAPS capabilities{};require(caps(&capabilities,sizeof(capabilities))==0 && capabilities.wPeriodMin>0,"Argument-bearing stdcall forwarding failed");

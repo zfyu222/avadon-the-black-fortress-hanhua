@@ -103,10 +103,13 @@ def verify():
     completed = subprocess.run([str(executable), str(bp.PAYLOAD/'AvadonChinese/translations.bin'), str(bp.BUILD/'required_glyphs.bin'), str(bp.PAYLOAD/'winmm.dll'), str(tests)], capture_output=True, text=True, timeout=60)
     (tests/'test_output.log').write_text(completed.stdout+'\n'+completed.stderr, encoding='utf-8')
     require(completed.returncode == 0, 'Own component test failed: '+completed.stdout+completed.stderr)
+    bootstrap = load(tests/'bootstrap_report.json')
+    require(bootstrap['status'] == 'passed' and bootstrap['startup_without_timeGetTime'] is True, 'Independent startup test failed')
     result = load(tests/'report.json')
     require(result['status'] == 'passed' and result['game_started'] is False and result['in_game_verified'] is False, 'Invalid component report')
     result['bindings'] = {str(path.relative_to(P)).replace('\\','/'): bp.sha(path) for path in [executable, bp.PAYLOAD/'winmm.dll', bp.PAYLOAD/'AvadonChinese/translations.bin', bp.BUILD/'required_glyphs.bin']}
     result['native_sources'] = manifest['native_sources']
+    result['startup_without_timeGetTime'] = True
     bp.write_json(tests/'report.json', result)
     Image.open(tests/'cjk_render.ppm').save(tests/'cjk_render.png')
     inventory = {path.relative_to(bp.PAYLOAD).as_posix(): bp.sha(path) for path in sorted(bp.PAYLOAD.rglob('*')) if path.is_file()}

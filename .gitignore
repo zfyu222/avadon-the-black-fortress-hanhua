@@ -51,5 +51,6 @@ Desktop.ini
 /Repack/NativeTests/*.log
 /Repack/NativeTests/unmatched.txt
 /Repack/NativeTests/runtime.log
+/Repack/UserFeedback/*/screenshots/
 /Analysis/font_atlas_inspection.png
 /Analysis/glyph_quote_comparison.png

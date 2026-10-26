@@ -15,15 +15,16 @@
   "game_started": false,
   "in_game_verified": false,
   "bindings": {
-    "Repack/Build/self_test.exe": "f42f35faecd8cffae1e30cd833f538b0104101666103900a70755653019d12fd",
-    "Repack/Payload/winmm.dll": "5133f4d3a5b8cbe96f9934dac1ad8a1d6a4e4745b62e7679cd0bf3c0b3f8d4b3",
+    "Repack/Build/self_test.exe": "200025d3bf907455ed79f3a49f8f3f8a929ec9d76d0bfc6381ff0e31f0ea65e9",
+    "Repack/Payload/winmm.dll": "6fe5d26d7098d10dac2ea9dea3d5d9fced3310f850f6d38ee9f68377c2d2ac83",
     "Repack/Payload/AvadonChinese/translations.bin": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
     "Repack/Build/required_glyphs.bin": "d21f5a4e7018b26b98648e2a5c485f2e946e36aaf382f27ba92ba0412b7d1f36"
   },
   "native_sources": {
-    "adapter.cpp": "a3cfda746e80034d861a182be427e12350d9e279c72ea65a5cc77964fd9831c4",
+    "adapter.cpp": "5873e5fa689f544cd1322de57ae1ae3bd1e5330921667b72e723ff3627cc6b89",
     "localization_core.hpp": "947a61d851f3b7e56886956ff68cb429cd5321838c0a024e573f2f5c4b5453a8",
     "renderer.hpp": "d6f05e0691830374bcaf5ce245063421a18479b646ded9e63a54ba558022a74e",
-    "self_test.cpp": "8362ae55ba9e61b9f5cd0c71ccc6b34f7f7e7fd38385c6aa241c9d4c1699647e"
-  }
+    "self_test.cpp": "4ab34a79c51a7e347f9d5027fc186ad55a691766fde1b8e9587aeff579c12c2b"
+  },
+  "startup_without_timeGetTime": true
 }
