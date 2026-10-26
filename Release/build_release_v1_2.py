@@ -4,6 +4,7 @@ import json,subprocess,sys,shutil,tempfile,zipfile,hashlib
 import build_release as old
 P=old.P
 VERSION='1.2'
+CHANGES='新增安装、升级和卸载脚本；简化补丁说明，加入网盘下载和腾讯文档反馈地址。汉化内容与v1.1一致。'
 ARCHIVE=P/f'Dispatch/阿瓦登：黑色要塞_子非鱼汉化{VERSION}.zip'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -18,7 +19,7 @@ def build():
         '--upgrade','将新版解压到同一文件夹，双击“安装汉化.cmd”即可升级。',
         '--uninstall','双击“卸载汉化.cmd”。',
         '--verification','开门提示、消息栏、快捷键和地图显示正常。',
-        '--changes','新增安装、升级和卸载脚本；简化补丁说明，加入网盘下载和腾讯文档反馈地址。汉化内容与v1.1一致。',
+        '--changes',CHANGES,
         '--installer-config',P/'Release/installer_config.json']
     for key,value in links.items():args.extend(['--'+key.replace('_','-'),value])
     for name,digest in installed['payload_files'].items():
@@ -38,6 +39,7 @@ def verify():
         assert {r.split('  ',1)[1]:r.split('  ',1)[0] for r in z.read('SHA256SUMS.txt').decode().splitlines()}==inventory
         guide=z.read('补丁说明.txt').decode('utf-8-sig')
         assert guide.index('安装汉化')<guide.index('补丁升级')<guide.index('卸载汉化')<guide.index('适用版本')
+        if VERSION!='1.2':assert guide.index('下载地址:')<guide.index('安装汉化')
         assert all(term not in guide for term in ['备份','拷贝','未决','未验证','代理','用户对','SHA-256','11 个','请先停止'])
         assert 'v1.0' in guide and 'v1.1' in guide and 'v1.2' in guide
         links=load(P/'Release/player_links.json');assert all(v in guide for v in links.values())

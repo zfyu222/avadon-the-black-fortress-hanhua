@@ -1,5 +1,13 @@
-﻿《阿瓦登：黑色要塞》子非鱼AI汉化补丁 v1.2
+﻿《阿瓦登：黑色要塞》子非鱼AI汉化补丁 v1.3
 ========================
+
+下载与反馈
+下载地址:https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/
+或者网盘通过网盘分享的知识：avadon-the-black-fortress
+链接: https://pan.baidu.com/s/5XgK3Q5cw-ZBPgviMxETdXg
+请订阅github地址或者网盘地址，以便在补丁更新时获得通知
+有问题请反馈至【腾讯文档】Avadon问题反馈
+https://docs.qq.com/sheet/DTkNXdm54YVFOSmJ0?tab=BB08J2
 
 安装汉化
 解压到 Avadon.exe 所在文件夹，双击“安装汉化.cmd”。
@@ -26,17 +34,10 @@ Steam Windows 11 x64（游戏与补丁均为 x86）
 说明
 本补丁使用 AI 辅助翻译。
 
-下载与反馈
-下载地址:https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/
-或者网盘通过网盘分享的知识：avadon-the-black-fortress
-链接: https://pan.baidu.com/s/5XgK3Q5cw-ZBPgviMxETdXg
-请订阅github地址或者网盘地址，以便在补丁更新时获得通知
-有问题请反馈至【腾讯文档】Avadon问题反馈
-https://docs.qq.com/sheet/DTkNXdm54YVFOSmJ0?tab=BB08J2
-
 发布日期：2026-10-27
 
 更新日志
 - v1.0（2026-10-26）：首次发布。
 - v1.1（2026-10-26）：修复开门提示数字拼接、消息栏空格及战斗提示、快捷键列表漏译；地图标签改用约25%不透明度的暖色底与描边，并补上两处跨贴图地名。
 - v1.2（2026-10-27）：新增安装、升级和卸载脚本；简化补丁说明，加入网盘下载和腾讯文档反馈地址。汉化内容与v1.1一致。
+- v1.3（2026-10-27）：下载地址、订阅及反馈移至说明最前面；安装与卸载方式不变。
