@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "source_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "translation_sha256": "18f9549844c36e9a67b0445d2a78ffcf0f1a22a4007646c2d82009a0864fff74",
+  "records": 98,
+  "semantic_review": "full",
+  "polish": false,
+  "revision": 3,
+  "glossary": {
+    "hash": "0207443e282e12ece1c0eb33ceb4ec4c6f276c6c8849dfa8e34d5688d07c696f",
+    "path": "glossary\\r2\\freeze_7c4e1c0c\\built\\glossary_reviewed.json",
+    "revision": 2
+  },
+  "ainiee": {
+    "actual_commit": "c50570c1dee7df7bd51316a253f0b42d10a8ca4c",
+    "expected_commit": "c50570c1dee7df7bd51316a253f0b42d10a8ca4c",
+    "license": "AGPL-3.0; Tools/AINiee/LICENSE",
+    "modules": {
+      "Domain/PromptBuilder/GlossaryHelper.py": "6b3072989b77c84787774439c79aaea7d4727fcda104667d8833b53bb490446f",
+      "Domain/TextProcessor/TextProcessor.py": "805f49f68302fab2c5832aad8c7597fb4c3382cea131618765248f30a5963eed",
+      "Infrastructure/LLMRequester/LLMClientFactory.py": "70d43af749640604813887241604edf0472a75afbbf106fb5e69cfd3753a1a4b",
+      "Infrastructure/LLMRequester/OpenaiRequester.py": "b2b1f5e6fd3a31727b2e1d2597e1bcca3e5e4db2cfec550ff6cfcd6a6cff3f79"
+    }
+  },
+  "path": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text\\avadon-the-black-fortress_images_text_translated.csv",
+  "quality_review": {
+    "report_hash": "cc9ab50d385c1941b720bf3a76641b50d8488e5e9ba3358df2c9f9cd50ceccc8",
+    "reviewer": "workflow:no-disputes"
+  },
+  "in_game_check": "pending_repack"
+}

@@ -1,0 +1,121 @@
+{
+  "files": [
+    {
+      "source": "Avadon Files/Graphics Core/G128.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "588e41396aa7b94177b2095ea3f2fed780d2ce1c03ad16adc07df58c6677fb2f"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G129.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "d359201cd68a77dcd632fda553ca599fb6406b3f858b65349bc326dc93136106"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G133.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "b5e04499eea4bd6d16d76f8511b10e351513cf1fc8f767eb9306da86ea5fab45"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G142.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "9b371fdc13b7ba973369a74b2c4bd1e44909676c1110c7563d8dc0670455aed4"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G143.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "4a3df1a3d1320c8deaddcd7da4af5f855c96e78a33d1260dab21a8edf71e3cf4"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G153.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "8496de98907fe0f40f84e8cf79961cdad8135b4daae38fac2f1e80f5802bee18"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G158.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "f27a6057c48f095bbe04748db6b0e1b75bdd2c963f597ef2898350e9035b915a"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G159.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "b14a40f2b34ad6e2a7a2effb6aa7ab9157ddc02afbadbeb37f968c4016aaefba"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G165.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "4bd32010c184fb219545d5c6e47378084de9cf5354ea313535fd924f169d40c1"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G167.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "f3754d0c0a10798c0696aa07ff87476908bbcd8d45688e78472c60fd0e535862"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G169.bmp",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "df4d6b51082ea32ea41d8a3f488cf179fac3816f589391569607aa0c2bf35a3b"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G176.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "0a2586ea963b9c96cfe2704a9e2b9df361144a742cd490fbb858b222b4a0c18a"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G177.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "9005c6ca2be369c9b648aa205650f1cd932eaf941d730077f59dadc0c9e22f61"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G189.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "cdffe5e2b1cb32eb88617a43eac5e0d789aaf0a3ed8be27b87406386f4c0bc4f"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G203.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "abccf2fce1f22384afb3be40f6fde5d52b74ae09157c807720fc95dd2072737e"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G220.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "3b5c0cee1c7cbb2f5ae6470be721011d327b378e2bab47163ab51e7279a624cc"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G231.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "fad3690929406b617366dcbf3b59d9cbda9ff42b8c884ff951a255ea0a100d90"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G232.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "2b770e2b101ad0cf23a1271b003333a1f8fb49a629cee87f7b6630a78a9b2ee0"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G233.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "sha256": "43824e4b98752ad24772d02aa4971988447f939b4c6e8ff69d1f4c2b3437cc2e"
+    }
+  ],
+  "under_10px": [],
+  "installed": false,
+  "in_game_verified": false
+}

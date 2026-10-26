@@ -35,3 +35,9 @@ Desktop.ini
 **/TranslateFiles/logs/
 **/TranslateFiles/reports/api_runs/
 **/TranslateFiles/reports/api_failover/
+
+# Generated image candidates / texture binaries (manifests remain tracked)
+/ImagePatch/build-v1/
+/ImagePatch/build-v2/
+/ImagePatch/build-v3/images/
+/ImagePatch/build-v3/contact.jpg

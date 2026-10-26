@@ -1,0 +1,1675 @@
+{
+  "characters": [
+    {
+      "enforcement": "required",
+      "gender": "其他",
+      "recommended_translation": "泽斯隆",
+      "source": "Zhethron",
+      "term_kind": "proper_name",
+      "term_reason": "地名 Zhethron's Aerie 中的专名，指角色泽斯隆；图中未说明性别",
+      "evidence_rows": [
+        75
+      ],
+      "extraction_candidates": [
+        {
+          "table": "characters",
+          "row": {
+            "enforcement": "required",
+            "gender": "其他",
+            "recommended_translation": "泽斯隆",
+            "source": "Zhethron",
+            "term_kind": "proper_name",
+            "term_reason": "地名 Zhethron's Aerie 中的专名，指角色泽斯隆；图中未说明性别"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            75
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    }
+  ],
+  "terms": [
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "贝拉扎森林",
+      "source": "Beraza\nWoods",
+      "term_kind": "proper_name",
+      "term_reason": "地图森林地名，采用常规审定译名",
+      "evidence_rows": [
+        32,
+        96
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "贝拉扎森林",
+            "source": "Beraza\nWoods",
+            "term_kind": "proper_name",
+            "term_reason": "地图森林地名，采用常规审定译名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            32,
+            96
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "韦博城堡",
+      "source": "Castle\nVebeaux",
+      "term_kind": "proper_name",
+      "term_reason": "地图城堡地名",
+      "evidence_rows": [
+        35
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "韦博城堡",
+            "source": "Castle\nVebeaux",
+            "term_kind": "proper_name",
+            "term_reason": "地图城堡地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            35
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "阿瓦登",
+      "source": "AVADON",
+      "term_kind": "proper_name",
+      "term_reason": "游戏标题及要塞地名",
+      "evidence_rows": [
+        37,
+        66
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "阿瓦登",
+            "source": "AVADON",
+            "term_kind": "proper_name",
+            "term_reason": "游戏标题及要塞地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            37
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "阿瓦登",
+            "source": "Avadon",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名，与游戏标题一致"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            66
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "黑色要塞",
+      "source": "the BLACK FORTRESS",
+      "term_kind": "proper_name",
+      "term_reason": "游戏标题中的要塞专名",
+      "evidence_rows": [
+        38
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "黑色要塞",
+            "source": "the BLACK FORTRESS",
+            "term_kind": "proper_name",
+            "term_reason": "游戏标题中的要塞专名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            38
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "组织",
+      "enforcement": "required",
+      "recommended_translation": "中部盟约",
+      "source": "MIDLANDS PACT",
+      "term_kind": "proper_name",
+      "term_reason": "地图政治实体名，指五国盟约",
+      "evidence_rows": [
+        59
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "组织",
+            "enforcement": "required",
+            "recommended_translation": "中部盟约",
+            "source": "MIDLANDS PACT",
+            "term_kind": "proper_name",
+            "term_reason": "地图政治实体名，指五国盟约"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            59
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "林奈乌斯",
+      "source": "LYNAEUS",
+      "term_kind": "proper_name",
+      "term_reason": "地图区域名",
+      "evidence_rows": [
+        60
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "林奈乌斯",
+            "source": "LYNAEUS",
+            "term_kind": "proper_name",
+            "term_reason": "地图区域名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            60
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "凯梅里亚",
+      "source": "KHEMERIA",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        62
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "凯梅里亚",
+            "source": "KHEMERIA",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            62
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "多尔斯特德",
+      "source": "Dhorl\nStead",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        63
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "多尔斯特德",
+            "source": "Dhorl\nStead",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            63
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "奥格里姆·托尔",
+      "source": "Ogrhym'Tor",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        64
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "奥格里姆·托尔",
+            "source": "Ogrhym'Tor",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            64
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "威尔德里姆",
+      "source": "THE WYLDRYLM",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        65
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "威尔德里姆",
+            "source": "THE WYLDRYLM",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            65
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "腐化之地",
+      "source": "THE CORRUPTION",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        67
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "腐化之地",
+            "source": "THE CORRUPTION",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            67
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "泰坦群峰",
+      "source": "THE TITAN PEAKS",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        69
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "泰坦群峰",
+            "source": "THE TITAN PEAKS",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            69
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "塔翁帝国",
+      "source": "THE TAWON EMPIRE",
+      "term_kind": "proper_name",
+      "term_reason": "地图帝国名",
+      "evidence_rows": [
+        71
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "塔翁帝国",
+            "source": "THE TAWON EMPIRE",
+            "term_kind": "proper_name",
+            "term_reason": "地图帝国名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            71
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "达拉姆",
+      "source": "DHARAM",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        72
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "达拉姆",
+            "source": "DHARAM",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            72
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "凯勒姆德里尔",
+      "source": "KELLEMDERIEL",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        73
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "凯勒姆德里尔",
+            "source": "KELLEMDERIEL",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            73
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "种族",
+      "enforcement": "required",
+      "recommended_translation": "克瓦",
+      "source": "THE KVA",
+      "term_kind": "proper_name",
+      "term_reason": "地图势力/种族名",
+      "evidence_rows": [
+        74
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "种族",
+            "enforcement": "required",
+            "recommended_translation": "克瓦",
+            "source": "THE KVA",
+            "term_kind": "proper_name",
+            "term_reason": "地图势力/种族名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            74
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "泽斯隆的巢穴",
+      "source": "Zhethron's\nAerie",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名，意为泽斯隆的巢穴",
+      "evidence_rows": [
+        75
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "泽斯隆的巢穴",
+            "source": "Zhethron's\nAerie",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名，意为泽斯隆的巢穴"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            75
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "金崖",
+      "source": "Goldcrag",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        76
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "金崖",
+            "source": "Goldcrag",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            76
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "斯沃加尔德",
+      "source": "SVORGALD",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        77
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "斯沃加尔德",
+            "source": "SVORGALD",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            77
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "literal_context",
+        "prefix": "E - ",
+        "reason": "仅教程按钮 E - Scarabs 中的物品栏分类义",
+        "suffix": ""
+      },
+      "category_path": "物品",
+      "enforcement": "reference",
+      "recommended_translation": "圣甲虫",
+      "source": "Scarabs",
+      "term_kind": "game_term",
+      "term_reason": "教程物品栏分类，指游戏中的圣甲虫类物品；非普通甲虫义",
+      "evidence_rows": [
+        82
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "E - ",
+              "reason": "仅教程按钮 E - Scarabs 中的物品栏分类义",
+              "suffix": ""
+            },
+            "category_path": "物品",
+            "enforcement": "reference",
+            "recommended_translation": "圣甲虫",
+            "source": "Scarabs",
+            "term_kind": "game_term",
+            "term_reason": "教程物品栏分类，指游戏中的圣甲虫类物品；非普通甲虫义"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            82
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "贱民之地",
+      "source": "WRETCH LANDS",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        94
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "贱民之地",
+            "source": "WRETCH LANDS",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            94
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "塔翁帝国",
+      "source": "THE TAWON\nEMPIRE",
+      "term_kind": "proper_name",
+      "term_reason": "地图帝国名，与 THE TAWON EMPIRE 同指",
+      "evidence_rows": [
+        95
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "塔翁帝国",
+            "source": "THE TAWON\nEMPIRE",
+            "term_kind": "proper_name",
+            "term_reason": "地图帝国名，与 THE TAWON EMPIRE 同指"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            95
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "category_path": "地名",
+      "enforcement": "required",
+      "recommended_translation": "霍尔克兰达",
+      "source": "HOLKLANDA",
+      "term_kind": "proper_name",
+      "term_reason": "地图地名",
+      "evidence_rows": [
+        97
+      ],
+      "extraction_candidates": [
+        {
+          "table": "terms",
+          "row": {
+            "category_path": "地名",
+            "enforcement": "required",
+            "recommended_translation": "霍尔克兰达",
+            "source": "HOLKLANDA",
+            "term_kind": "proper_name",
+            "term_reason": "地图地名"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            97
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    }
+  ],
+  "non_translate": [
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为占位符号"
+      },
+      "reason": "技术字形/占位符，原样保留",
+      "source": "?",
+      "evidence_rows": [
+        4
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为占位符号"
+            },
+            "reason": "技术字形/占位符，原样保留",
+            "source": "?"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            4
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为资源标记"
+      },
+      "reason": "图形资源/字形标记，原样保留",
+      "source": "G133",
+      "evidence_rows": [
+        28
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为资源标记"
+            },
+            "reason": "图形资源/字形标记，原样保留",
+            "source": "G133"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            28
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "10",
+      "evidence_rows": [
+        29
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "10"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            29
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "20",
+      "evidence_rows": [
+        30
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "20"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            30
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "30",
+      "evidence_rows": [
+        31
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "30"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            31
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "50",
+      "evidence_rows": [
+        34
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "50"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            34
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为符号"
+      },
+      "reason": "标点/符号，原样保留",
+      "source": "!",
+      "evidence_rows": [
+        36
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为符号"
+            },
+            "reason": "标点/符号，原样保留",
+            "source": "!"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            36
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "1",
+      "evidence_rows": [
+        47
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "1"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            47
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅保护独立教程字母记录 A；标签内字母随整句翻译保留"
+      },
+      "reason": "独立教程字母标记，原样保留；标签内字母由整句翻译保留",
+      "source": "A",
+      "evidence_rows": [
+        48,
+        52,
+        78
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Terrain Screen"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "A"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            48
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为单个教程字母"
+            },
+            "reason": "教程字母标记，原样保留",
+            "source": "A"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            52
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Items on Ground"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "A"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            78
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅保护独立教程字母记录 B；标签内字母随整句翻译保留"
+      },
+      "reason": "独立教程字母标记，原样保留；标签内字母由整句翻译保留",
+      "source": "B",
+      "evidence_rows": [
+        49,
+        53,
+        79
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Buttons"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "B"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            49
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为单个教程字母"
+            },
+            "reason": "教程字母标记，原样保留",
+            "source": "B"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            53
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Equipped Items"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "B"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            79
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅保护独立教程字母记录 C；标签内字母随整句翻译保留"
+      },
+      "reason": "独立教程字母标记，原样保留；标签内字母由整句翻译保留",
+      "source": "C",
+      "evidence_rows": [
+        50,
+        54,
+        80
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Party Roster"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "C"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            50
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为单个教程字母"
+            },
+            "reason": "教程字母标记，原样保留",
+            "source": "C"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            54
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Quick Use Items"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "C"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            80
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅保护独立教程字母记录 D；标签内字母随整句翻译保留"
+      },
+      "reason": "独立教程字母标记，原样保留；标签内字母由整句翻译保留",
+      "source": "D",
+      "evidence_rows": [
+        51,
+        55,
+        81
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Automap"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "D"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            51
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为单个教程字母"
+            },
+            "reason": "教程字母标记，原样保留",
+            "source": "D"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            55
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Your Pack"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "D"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            81
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为数字"
+      },
+      "reason": "数字标记，原样保留",
+      "source": "6312",
+      "evidence_rows": [
+        61
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为数字"
+            },
+            "reason": "数字标记，原样保留",
+            "source": "6312"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            61
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为罗盘方位字母"
+      },
+      "reason": "地图方位字母，原样保留",
+      "source": "N",
+      "evidence_rows": [
+        70
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为罗盘方位字母"
+            },
+            "reason": "地图方位字母，原样保留",
+            "source": "N"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            70
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "literal_context",
+        "prefix": "",
+        "reason": "仅保护该教程标签开头的字母标记",
+        "suffix": " - Scarabs"
+      },
+      "reason": "教程标签开头的按钮字母，原样保留",
+      "source": "E",
+      "evidence_rows": [
+        82,
+        83
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "literal_context",
+              "prefix": "",
+              "reason": "仅保护该教程标签开头的字母标记",
+              "suffix": " - Scarabs"
+            },
+            "reason": "教程标签开头的按钮字母，原样保留",
+            "source": "E"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            82
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        },
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为单个教程字母"
+            },
+            "reason": "教程字母标记，原样保留",
+            "source": "E"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            83
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为品牌名"
+      },
+      "reason": "品牌标识，原样保留",
+      "source": "Spiderweb",
+      "evidence_rows": [
+        84
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为品牌名"
+            },
+            "reason": "品牌标识，原样保留",
+            "source": "Spiderweb"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            84
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为商标符号"
+      },
+      "reason": "商标符号，原样保留",
+      "source": "TM",
+      "evidence_rows": [
+        85
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为商标符号"
+            },
+            "reason": "商标符号，原样保留",
+            "source": "TM"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            85
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为品牌名组成部分"
+      },
+      "reason": "品牌标识，原样保留",
+      "source": "SOFTWARE",
+      "evidence_rows": [
+        86
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为品牌名组成部分"
+            },
+            "reason": "品牌标识，原样保留",
+            "source": "SOFTWARE"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            86
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅该记录为完整字形表"
+      },
+      "reason": "字形表，原样保留",
+      "source": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "evidence_rows": [
+        98
+      ],
+      "extraction_candidates": [
+        {
+          "table": "non_translate",
+          "row": {
+            "applicability": {
+              "case_sensitive": true,
+              "mode": "whole_record",
+              "reason": "仅该记录为完整字形表"
+            },
+            "reason": "字形表，原样保留",
+            "source": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+          },
+          "extraction_count": 1,
+          "evidence_rows": [
+            98
+          ],
+          "extraction_tasks": [
+            "extract-r2-00001-148bb644"
+          ]
+        }
+      ],
+      "provisional_selection": "most_extraction_proposals_then_first_seen"
+    },
+    {
+      "applicability": {
+        "case_sensitive": true,
+        "mode": "whole_record",
+        "reason": "仅保护完整记录 E（教程字母，ordinal 83）"
+      },
+      "reason": "教程字母，原样保留",
+      "source": "E"
+    }
+  ],
+  "applicability_policy": 1,
+  "terminology_policy": 1,
+  "corpus_evidence_policy": 1,
+  "stats": {
+    "character_count": 1,
+    "term_count": 23,
+    "non_translate_count": 20,
+    "total_hits": 44
+  }
+}

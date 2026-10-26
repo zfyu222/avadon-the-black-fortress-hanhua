@@ -1,0 +1,45 @@
+{
+  "original_mapping_sha256": "28ec08956967e97c62cca6deb6849dfc4e29c414a1258f99d01013582c8f2f25",
+  "changes": [
+    {
+      "csv_row": 63,
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "source_box": [
+        465.0002,
+        169.0,
+        498.0003,
+        193.0
+      ],
+      "render_box": [
+        443,
+        160,
+        503,
+        194
+      ],
+      "reviewer": "conversation_agent",
+      "reason": "Viewed original G176 at full size: blank land around small settlement labels permits these rectangles without covering Khemeria title or neighboring settlement label; expand only render area for readable CJK (>=10px).",
+      "evidence": "ImageText/exported/Avadon Files/Graphics Core/G176.jpg"
+    },
+    {
+      "csv_row": 64,
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "source_box": [
+        516.0001,
+        171.0,
+        579.0001,
+        193.0
+      ],
+      "render_box": [
+        516,
+        161,
+        609,
+        194
+      ],
+      "reviewer": "conversation_agent",
+      "reason": "Viewed original G176 at full size: blank land around small settlement labels permits these rectangles without covering Khemeria title or neighboring settlement label; expand only render area for readable CJK (>=10px).",
+      "evidence": "ImageText/exported/Avadon Files/Graphics Core/G176.jpg"
+    }
+  ],
+  "source_text_unchanged": true,
+  "original_extraction_mapping_unchanged": true
+}

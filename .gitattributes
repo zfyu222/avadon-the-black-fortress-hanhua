@@ -1,4 +1,5 @@
 *.csv -text
 *.json text eol=lf
 TranslateFiles/**/*.json -text
+ImagePatch/**/*.json -text
 *.py text eol=lf

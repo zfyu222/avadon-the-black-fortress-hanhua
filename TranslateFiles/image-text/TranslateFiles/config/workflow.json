@@ -1,0 +1,121 @@
+{
+  "workflow": "custom",
+  "backend": "api",
+  "model": "gpt-6-luna",
+  "record_constraints": {
+    "R0000032_638e745201": {
+      "source_sha256": "638e74520107a489d5e1b5a31bdc89c2eeed929c6462b1ebcfb12e650898e0b1",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000035_1d7f6e244a": {
+      "source_sha256": "1d7f6e244aafcc5b5071c0916b90f4278e48b91cf153d983255cb537466dbd09",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000059_cf86c62482": {
+      "source_sha256": "cf86c62482df175bba23397d4987d63f35dd6f31c69c8bc40e31a62970f010d8",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000063_e8238bc3b8": {
+      "source_sha256": "e8238bc3b815e1ef799b2773510e6f3fcec7c7020d45802deabe82e506734f41",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000068_31564fc7e4": {
+      "source_sha256": "31564fc7e4d75ee9f2721be0b389db5007b7145999fb40e6d89818097f4a8b7e",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000075_a3fd828dc9": {
+      "source_sha256": "a3fd828dc9e6b003b86f4e2649f7fc344dcf2bc2e7578311d28e915456f3e667",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000095_41920cb0f2": {
+      "source_sha256": "41920cb0f2a65c86650d804fb4bc4d709b7298ded82c5fa73128020da2576338",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    },
+    "R0000096_0529dd1574": {
+      "source_sha256": "0529dd15740d35099c16e2e867203ff04a0b15ad4ec525464d49127200968a60",
+      "reason": "Confirmed multiline map caption/title in a single image region; Chinese caption is one logical line and renderer lays it out to the original rectangle; source image line breaks are not game control syntax.",
+      "physical_newlines": []
+    }
+  },
+  "escalation_backend": "codex",
+  "source_language": "英语",
+  "target_language": "简体中文",
+  "style": "图片简体中文：UI简洁明确，地图专名与常规文本审定术语一致；保留受保护的教程字母、数字、资源标记、字形表、商标品牌。地图地名和地图标题的中文使用单行逻辑文本，换行由图片合入按原矩形排版；教程说明按原文行数。图片相邻条目不代表剧情顺序。",
+  "game_background": "Avadon: The Black Fortress，Spiderweb Software 的奇幻角色扮演游戏。此子工程只翻译已确认图片文字，不修改常规翻译状态。常规文本已独立审校的相关专名参考：[[\"Zhethron\", \"泽斯隆\"], [\"Kva\", \"克瓦\"], [\"Kellem\", \"凯勒姆\"], [\"Avadon\", \"阿瓦登\"], [\"Pact\", \"盟约\"], [\"The Kva\", \"克瓦\"], [\"Khemeria\", \"凯梅里亚\"], [\"Wyldrylm\", \"威尔德里姆\"], [\"Holklanda\", \"霍尔克兰达\"], [\"Lynaeus\", \"林奈乌斯\"], [\"Goldcrag\", \"金崖\"], [\"Zhethron's Aerie\", \"泽斯隆的巢穴\"], [\"Beraza Woods\", \"贝拉扎森林\"], [\"Dharam\", \"达拉姆\"], [\"Tawon Empire\", \"塔翁帝国\"], [\"Svorgald\", \"斯沃加尔德\"], [\"Corruption\", \"腐化之地\"], [\"Titan Peaks\", \"泰坦群峰\"], [\"Dhorl Stead\", \"多尔斯特德\"], [\"Black Fortress\", \"黑色要塞\"], [\"Kellemderiel\", \"凯勒姆德里尔\"], [\"the Corruption\", \"腐化之地\"], [\"Castle Vebeaux\", \"韦博城堡\"], [\"Wretch Lands\", \"贱民之地\"], [\"Vebeaux\", \"韦博\"], [\"Tawon\", \"塔翁\"], [\"Midlands Pact\", \"中部盟约\"], [\"The Black Fortress\", \"黑色要塞\"], [\"The Titan Peaks\", \"泰坦群峰\"], [\"Khemer\", \"凯梅尔\"], [\"the Tawon\", \"塔翁人\"], [\"Ogrhym'Tor\", \"奥格里姆·托尔\"], [\"Aerie\", \"巢穴\"], [\"Holkland\", \"霍尔克兰达\"], [\"Beraza\", \"贝拉扎\"]]。图片语境优先，仍须本子工程完整术语审校；地图中的大写标题是地名，字母和数字保护标记原样保留。",
+  "quality_version": 2,
+  "pilot_records": 150,
+  "pilot_ordinals": [],
+  "pilot_batch_count": null,
+  "pilot_call_limit": null,
+  "batch_records": null,
+  "batch_chars": 12000,
+  "context_records": 0,
+  "agent_task_limit": 1,
+  "agent_attempt_limit": 2,
+  "task_input_chars": 48000,
+  "review_batch_records": 80,
+  "extract_batch_records": null,
+  "glossary_review_batch_records": 12,
+  "batch_tokens": 1024,
+  "extract_batch_tokens": 10000,
+  "glossary_review_batch_tokens": 10000,
+  "review_batch_tokens": 1024,
+  "task_input_tokens": 65536,
+  "review_output_tokens": 32768,
+  "sol_repair_round_limit": 3,
+  "sol_no_progress_limit": 2,
+  "review_output_reserve_percent": 20,
+  "review_estimate": {
+    "ascii_chars_per_token": 3,
+    "full_base_tokens": 420,
+    "non_ascii_tokens_per_char": 2,
+    "pilot_base_tokens": 120,
+    "translation_multiplier": 3
+  },
+  "draft_scan_workers": 1,
+  "layout_normalization": "exact_v1",
+  "case_sensitive": false,
+  "whole_word": true,
+  "protect_named_curly": false,
+  "polish": false,
+  "max_attempts": 3,
+  "body_repair_round_limit": 6,
+  "sol_repair_model": "gpt-6-sol",
+  "lease_seconds": 3600,
+  "exclusions": [
+    {
+      "info": "已确认的图片技术字形/教程字母/数字/资源标记/商标品牌，精确保留",
+      "markers": "",
+      "regex": "\\A(?:ABCDEFGHIJKLMNOPQRSTUVWXYZ|Spiderweb|SOFTWARE|G133|6312|20|10|50|TM|30|D|N|C|1|!|\\?|A|E|B)\\Z|\\A[A-E] - "
+    }
+  ],
+  "stage_backends": {},
+  "placeholder_family_overrides": {
+    "dollar_var": null,
+    "square_bracket": null
+  },
+  "api": {
+    "api_format": "OpenAI",
+    "api_key_env": "SHH_TRANSLATION_API_KEY",
+    "api_url": "",
+    "concurrency": 50,
+    "extra_body": {},
+    "max_completion_tokens": 16384,
+    "max_requests": 10000,
+    "model_name": "",
+    "request_timeout": 120,
+    "requests_per_minute": 0,
+    "stream": false,
+    "target_platform": "custom_platform_shh",
+    "temperature": 1,
+    "think_switch": false,
+    "tls_switch": false
+  }
+}

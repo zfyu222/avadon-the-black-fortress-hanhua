@@ -1,0 +1,5541 @@
+{
+  "schema": 1,
+  "status": "ready_for_engine_adapter",
+  "mode": "texture",
+  "installed": false,
+  "source_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "translation_sha256": "18f9549844c36e9a67b0445d2a78ffcf0f1a22a4007646c2d82009a0864fff74",
+  "mapping_sha256": "7b47e53c1bfac3d1f4c1ad8b30306cdeae5a94c7c101390a369f5f02c68bd546",
+  "font": {
+    "name": "NotoSansSC-variable.ttf",
+    "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "variable_weight_requested": 400
+  },
+  "files": [
+    {
+      "path": "images/953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377.png",
+      "sha256": "588e41396aa7b94177b2095ea3f2fed780d2ce1c03ad16adc07df58c6677fb2f",
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2.png",
+      "sha256": "d359201cd68a77dcd632fda553ca599fb6406b3f858b65349bc326dc93136106",
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051.png",
+      "sha256": "b5e04499eea4bd6d16d76f8511b10e351513cf1fc8f767eb9306da86ea5fab45",
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G133.png",
+          "file_sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+          "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+          "width": 519,
+          "height": 608,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G133.png",
+            "sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+            "size": [
+              519,
+              608
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec.png",
+      "sha256": "9b371fdc13b7ba973369a74b2c4bd1e44909676c1110c7563d8dc0670455aed4",
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e.png",
+      "sha256": "4a3df1a3d1320c8deaddcd7da4af5f855c96e78a33d1260dab21a8edf71e3cf4",
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c.png",
+      "sha256": "8496de98907fe0f40f84e8cf79961cdad8135b4daae38fac2f1e80f5802bee18",
+      "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G153.png",
+          "file_sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+          "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+          "width": 610,
+          "height": 202,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G153.png",
+            "sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+            "size": [
+              610,
+              202
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b.png",
+      "sha256": "f27a6057c48f095bbe04748db6b0e1b75bdd2c963f597ef2898350e9035b915a",
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb.png",
+      "sha256": "b14a40f2b34ad6e2a7a2effb6aa7ab9157ddc02afbadbeb37f968c4016aaefba",
+      "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G159.png",
+          "file_sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+          "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+          "width": 300,
+          "height": 127,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G159.png",
+            "sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+            "size": [
+              300,
+              127
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5.png",
+      "sha256": "4bd32010c184fb219545d5c6e47378084de9cf5354ea313535fd924f169d40c1",
+      "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G165.png",
+          "file_sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+          "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+          "width": 303,
+          "height": 97,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G165.png",
+            "sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+            "size": [
+              303,
+              97
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7.png",
+      "sha256": "f3754d0c0a10798c0696aa07ff87476908bbcd8d45688e78472c60fd0e535862",
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd.png",
+      "sha256": "df4d6b51082ea32ea41d8a3f488cf179fac3816f589391569607aa0c2bf35a3b",
+      "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G169.bmp",
+          "file_sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+          "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+          "width": 157,
+          "height": 131,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G169.bmp",
+            "sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+            "size": [
+              157,
+              131
+            ],
+            "format": "BMP"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314.png",
+      "sha256": "0a2586ea963b9c96cfe2704a9e2b9df361144a742cd490fbb858b222b4a0c18a",
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9.png",
+      "sha256": "9005c6ca2be369c9b648aa205650f1cd932eaf941d730077f59dadc0c9e22f61",
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6.png",
+      "sha256": "cdffe5e2b1cb32eb88617a43eac5e0d789aaf0a3ed8be27b87406386f4c0bc4f",
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7.png",
+      "sha256": "abccf2fce1f22384afb3be40f6fde5d52b74ae09157c807720fc95dd2072737e",
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e.png",
+      "sha256": "3b5c0cee1c7cbb2f5ae6470be721011d327b378e2bab47163ab51e7279a624cc",
+      "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G220.png",
+          "file_sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+          "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+          "width": 559,
+          "height": 253,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G220.png",
+            "sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+            "size": [
+              559,
+              253
+            ],
+            "format": "PNG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7.png",
+      "sha256": "fad3690929406b617366dcbf3b59d9cbda9ff42b8c884ff951a255ea0a100d90",
+      "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G231.jpg",
+          "file_sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+          "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G231.jpg",
+            "sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627.png",
+      "sha256": "2b770e2b101ad0cf23a1271b003333a1f8fb49a629cee87f7b6630a78a9b2ee0",
+      "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G232.jpg",
+          "file_sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+          "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G232.jpg",
+            "sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    },
+    {
+      "path": "images/a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63.png",
+      "sha256": "43824e4b98752ad24772d02aa4971988447f939b4c6e8ff69d1f4c2b3437cc2e",
+      "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G233.jpg",
+          "file_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+          "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G233.jpg",
+            "sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        734.9999,
+        2.0001,
+        774.0005,
+        23.9996
+      ],
+      "text": "地图",
+      "csv_row": 1,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 14,
+        "lines": [
+          "地图"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        781.0001,
+        498.9997,
+        827.9999,
+        521.9998
+      ],
+      "text": "队伍名册",
+      "csv_row": 2,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "队伍名册"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        133.9995,
+        593.9997,
+        207.0,
+        616.0003
+      ],
+      "text": "载入中",
+      "csv_row": 3,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 16,
+        "lines": [
+          "载入中"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        133.9995,
+        629.9996,
+        207.0,
+        650.9997
+      ],
+      "text": "载入中",
+      "csv_row": 3,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 14,
+        "lines": [
+          "载入中"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        24.9998,
+        16.0001,
+        66.9997,
+        33.0003
+      ],
+      "text": "等级",
+      "csv_row": 5,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "等级"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        82.9998,
+        17.0001,
+        169.0001,
+        34.0002
+      ],
+      "text": "经验",
+      "csv_row": 6,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "经验"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        188.0001,
+        17.0001,
+        272.9999,
+        34.0002
+      ],
+      "text": "下一等级",
+      "csv_row": 7,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "下一等级"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        438.0002,
+        15.0002,
+        492.0003,
+        35.0002
+      ],
+      "text": "技能",
+      "csv_row": 8,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "技能"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        46.9997,
+        83.0001,
+        130.0002,
+        102.0002
+      ],
+      "text": "属性",
+      "csv_row": 9,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "属性"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        199.9997,
+        83.0001,
+        260.0003,
+        103.0001
+      ],
+      "text": "生命",
+      "csv_row": 10,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "生命"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        30.0003,
+        111.9999,
+        97.0,
+        130.0
+      ],
+      "text": "力量",
+      "csv_row": 11,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "力量"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        24.9998,
+        136.9999,
+        99.9999,
+        152.0
+      ],
+      "text": "敏捷",
+      "csv_row": 12,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "敏捷"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        20.9999,
+        157.9999,
+        108.0003,
+        176.9999
+      ],
+      "text": "智力",
+      "csv_row": 13,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "智力"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        22.9999,
+        183.9998,
+        101.9998,
+        201.9999
+      ],
+      "text": "耐力",
+      "csv_row": 14,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "耐力"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        192.0,
+        155.9999,
+        266.0001,
+        176.0
+      ],
+      "text": "活力",
+      "csv_row": 15,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "活力"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        99.9999,
+        223.9999,
+        206.0002,
+        242.9999
+      ],
+      "text": "抗性",
+      "csv_row": 16,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "抗性"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        30.0003,
+        255.0002,
+        90.0002,
+        273.0002
+      ],
+      "text": "护甲：",
+      "csv_row": 17,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "护甲："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        162.9997,
+        254.0002,
+        222.0003,
+        273.0002
+      ],
+      "text": "毒素：",
+      "csv_row": 18,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "毒素："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        32.0002,
+        281.0001,
+        91.0002,
+        299.0001
+      ],
+      "text": "魔法：",
+      "csv_row": 19,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "魔法："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        176.9999,
+        280.0001,
+        219.9997,
+        299.0001
+      ],
+      "text": "酸液：",
+      "csv_row": 20,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "酸液："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        49.0003,
+        305.0,
+        89.0002,
+        323.0001
+      ],
+      "text": "火焰：",
+      "csv_row": 21,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "火焰："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        159.9998,
+        305.0,
+        222.0003,
+        323.0001
+      ],
+      "text": "精神：",
+      "csv_row": 22,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "精神："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        46.9997,
+        328.9999,
+        91.0002,
+        349.0
+      ],
+      "text": "寒冷：",
+      "csv_row": 23,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "寒冷："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        161.9997,
+        329.9999,
+        225.0002,
+        349.0
+      ],
+      "text": "诅咒：",
+      "csv_row": 24,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "诅咒："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+      "box": [
+        88.0003,
+        370.0,
+        245.0002,
+        390.0001
+      ],
+      "text": "专精",
+      "csv_row": 25,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G129.jpg",
+          "file_sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+          "image_id": "68f0900641b7f63cf4006d2031193236c29c1fe621d2ff9e17c1011517686cb2",
+          "width": 654,
+          "height": 523,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G129.jpg",
+            "sha256": "2ffd23ec663ffbd07f2da846de005d2ceeae7c050ba1b81264ef54a1954783c9",
+            "size": [
+              654,
+              523
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "专精"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "box": [
+        2.9998,
+        54.0001,
+        37.0,
+        70.9998
+      ],
+      "text": "购买",
+      "csv_row": 26,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G133.png",
+          "file_sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+          "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+          "width": 519,
+          "height": 608,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G133.png",
+            "sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+            "size": [
+              519,
+              608
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "购买"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "box": [
+        2.9998,
+        73.0001,
+        37.0,
+        88.0001
+      ],
+      "text": "购买",
+      "csv_row": 26,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G133.png",
+          "file_sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+          "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+          "width": 519,
+          "height": 608,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G133.png",
+            "sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+            "size": [
+              519,
+              608
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "购买"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "box": [
+        52.0002,
+        91.0,
+        103.9998,
+        108.0003
+      ],
+      "text": "合成",
+      "csv_row": 27,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G133.png",
+          "file_sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+          "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+          "width": 519,
+          "height": 608,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G133.png",
+            "sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+            "size": [
+              519,
+              608
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "合成"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        8.0,
+        80.0002,
+        63.0002,
+        103.0
+      ],
+      "text": "贝拉扎森林",
+      "csv_row": 32,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "贝拉扎森林"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        84.0001,
+        277.0,
+        111.9999,
+        291.0002
+      ],
+      "text": "安息",
+      "csv_row": 33,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "安息"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        222.0001,
+        347.0,
+        325.0002,
+        374.0001
+      ],
+      "text": "韦博城堡",
+      "csv_row": 35,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 18,
+        "lines": [
+          "韦博城堡"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        8.0,
+        80.0002,
+        63.0002,
+        103.0
+      ],
+      "text": "贝拉扎森林",
+      "csv_row": 32,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "贝拉扎森林"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        84.0001,
+        277.0,
+        111.9999,
+        291.0002
+      ],
+      "text": "安息",
+      "csv_row": 33,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "安息"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        222.0001,
+        347.0,
+        325.0002,
+        374.0001
+      ],
+      "text": "韦博城堡",
+      "csv_row": 35,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 18,
+        "lines": [
+          "韦博城堡"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+      "box": [
+        0.0,
+        0.0,
+        610.0,
+        131.0
+      ],
+      "text": "阿瓦登",
+      "csv_row": 37,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G153.png",
+          "file_sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+          "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+          "width": 610,
+          "height": 202,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G153.png",
+            "sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+            "size": [
+              610,
+              202
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 87,
+        "lines": [
+          "阿瓦登"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+      "box": [
+        6.9997,
+        129.0,
+        601.9998,
+        202.0
+      ],
+      "text": "黑色要塞",
+      "csv_row": 38,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G153.png",
+          "file_sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+          "image_id": "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c",
+          "width": 610,
+          "height": 202,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G153.png",
+            "sha256": "33727189370a876ad57bb0b23f618dc35249100f5f793177cfc0c06c3c6e4ecb",
+            "size": [
+              610,
+              202
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 47,
+        "lines": [
+          "黑色要塞"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        11.9999,
+        12.0001,
+        302.0,
+        45.0001
+      ],
+      "text": "开始新游戏",
+      "csv_row": 39,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 20,
+        "lines": [
+          "开始新游戏"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        54.9999,
+        56.9999,
+        258.0001,
+        92.0001
+      ],
+      "text": "载入游戏",
+      "csv_row": 40,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 22,
+        "lines": [
+          "载入游戏"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        45.0,
+        104.9999,
+        263.9999,
+        140.0
+      ],
+      "text": "说明",
+      "csv_row": 41,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 21,
+        "lines": [
+          "说明"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        79.0001,
+        150.9999,
+        238.0001,
+        189.9999
+      ],
+      "text": "设置",
+      "csv_row": 42,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 24,
+        "lines": [
+          "设置"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        91.0,
+        199.0002,
+        227.0,
+        235.9999
+      ],
+      "text": "勋章",
+      "csv_row": 43,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 22,
+        "lines": [
+          "勋章"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+      "box": [
+        112.0001,
+        246.0001,
+        195.0001,
+        282.9999
+      ],
+      "text": "退出",
+      "csv_row": 44,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G158.png",
+          "file_sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+          "image_id": "b112c4a017b8392b26da4147622f1effe6a67b947e766ecf96d9132c7d64ac7b",
+          "width": 315,
+          "height": 312,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G158.png",
+            "sha256": "ed382650ac658089d1860469eaaf66cc03aff3d85ebf09477f368d6434550fd5",
+            "size": [
+              315,
+              312
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 22,
+        "lines": [
+          "退出"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+      "box": [
+        6.9999,
+        23.0,
+        144.0,
+        87.0
+      ],
+      "text": "按下这些\n按钮以\n使用物品。",
+      "csv_row": 45,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G159.png",
+          "file_sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+          "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+          "width": 300,
+          "height": 127,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G159.png",
+            "sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+            "size": [
+              300,
+              127
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "按下这些",
+          "按钮以",
+          "使用物品。"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+      "box": [
+        179.0001,
+        4.0,
+        285.0,
+        25.9999
+      ],
+      "text": "你的背包：",
+      "csv_row": 46,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G159.png",
+          "file_sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+          "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+          "width": 300,
+          "height": 127,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G159.png",
+            "sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+            "size": [
+              300,
+              127
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 14,
+        "lines": [
+          "你的背包："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+      "box": [
+        0.0,
+        0.0,
+        303.0,
+        66.0
+      ],
+      "text": "阿瓦登",
+      "csv_row": 37,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G165.png",
+          "file_sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+          "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+          "width": 303,
+          "height": 97,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G165.png",
+            "sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+            "size": [
+              303,
+              97
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 42,
+        "lines": [
+          "阿瓦登"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+      "box": [
+        5.0001,
+        61.0,
+        297.0,
+        96.0
+      ],
+      "text": "黑色要塞",
+      "csv_row": 38,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G165.png",
+          "file_sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+          "image_id": "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5",
+          "width": 303,
+          "height": 97,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G165.png",
+            "sha256": "3bb8e3d0833222c34ac23e2d93cae8a36225ab7e49407879e0c9163c7e9fa087",
+            "size": [
+              303,
+              97
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 20,
+        "lines": [
+          "黑色要塞"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        218.0,
+        28.0,
+        386.0,
+        51.0
+      ],
+      "text": "A - 地形界面",
+      "csv_row": 48,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "A - 地形界面"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        218.0,
+        52.0,
+        343.0,
+        73.0
+      ],
+      "text": "B - 按钮",
+      "csv_row": 49,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "B - 按钮"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        218.0,
+        75.0,
+        370.0,
+        96.0
+      ],
+      "text": "C - 队伍名册",
+      "csv_row": 50,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "C - 队伍名册"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        218.0,
+        96.9999,
+        355.0,
+        119.0
+      ],
+      "text": "D - 自动地图",
+      "csv_row": 51,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "D - 自动地图"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+      "box": [
+        3.0,
+        0.0,
+        153.0,
+        15.0
+      ],
+      "text": "默认攻击按钮：",
+      "csv_row": 56,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G169.bmp",
+          "file_sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+          "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+          "width": 157,
+          "height": 131,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G169.bmp",
+            "sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+            "size": [
+              157,
+              131
+            ],
+            "format": "BMP"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "默认攻击按钮："
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+      "box": [
+        24.0,
+        115.0001,
+        82.0,
+        131.0
+      ],
+      "text": "武器",
+      "csv_row": 57,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G169.bmp",
+          "file_sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+          "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+          "width": 157,
+          "height": 131,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G169.bmp",
+            "sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+            "size": [
+              157,
+              131
+            ],
+            "format": "BMP"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "武器"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+      "box": [
+        85.0,
+        115.0001,
+        122.0,
+        131.0
+      ],
+      "text": "法术",
+      "csv_row": 58,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G169.bmp",
+          "file_sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+          "image_id": "d40bd2b0b7145a5856273257ba3d2e24e60fa882ef1890b1d734665ad4e57edd",
+          "width": 157,
+          "height": 131,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G169.bmp",
+            "sha256": "1e8bbab2d3299b0d6f7dff0cf11175391f56146ffc19643204f7a384bfe0e569",
+            "size": [
+              157,
+              131
+            ],
+            "format": "BMP"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "法术"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        68.0001,
+        402.0,
+        337.0003,
+        465.0
+      ],
+      "text": "中部盟约五国",
+      "csv_row": 59,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 43,
+        "lines": [
+          "中部盟约五国"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        80.0002,
+        477.0,
+        278.0001,
+        498.0
+      ],
+      "text": "林奈乌斯之地",
+      "csv_row": 60,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "林奈乌斯之地"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        505.0003,
+        126.0,
+        623.0,
+        159.0
+      ],
+      "text": "凯梅里亚",
+      "csv_row": 62,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 22,
+        "lines": [
+          "凯梅里亚"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        443,
+        160,
+        503,
+        194
+      ],
+      "text": "多尔斯特德",
+      "csv_row": 63,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "多尔斯特德"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        516,
+        161,
+        609,
+        194
+      ],
+      "text": "奥格里姆·托尔",
+      "csv_row": 64,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 13,
+        "lines": [
+          "奥格里姆·托尔"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        414.0003,
+        475.0,
+        598.0002,
+        506.0
+      ],
+      "text": "威尔德里姆",
+      "csv_row": 65,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 20,
+        "lines": [
+          "威尔德里姆"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        624.9999,
+        474.0,
+        684.0001,
+        497.0
+      ],
+      "text": "阿瓦登",
+      "csv_row": 66,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 15,
+        "lines": [
+          "阿瓦登"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        238.0,
+        625.0,
+        423.0002,
+        678.0
+      ],
+      "text": "腐化之地",
+      "csv_row": 67,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 36,
+        "lines": [
+          "腐化之地"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        582.0003,
+        611.0,
+        640.0002,
+        641.0
+      ],
+      "text": "争夺领土",
+      "csv_row": 68,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 14,
+        "lines": [
+          "争夺领土"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        460.0001,
+        744.0,
+        635.9997,
+        776.0
+      ],
+      "text": "泰坦群峰",
+      "csv_row": 69,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 21,
+        "lines": [
+          "泰坦群峰"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        320.0001,
+        176.0,
+        532.0,
+        210.0
+      ],
+      "text": "塔翁帝国",
+      "csv_row": 71,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 23,
+        "lines": [
+          "塔翁帝国"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        154.0,
+        260.0,
+        208.9997,
+        286.0
+      ],
+      "text": "贝拉扎森林",
+      "csv_row": 32,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "贝拉扎森林"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        239.9999,
+        277.0,
+        287.0,
+        301.0
+      ],
+      "text": "韦博城堡",
+      "csv_row": 35,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "韦博城堡"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        344.9999,
+        430.0,
+        449.9999,
+        459.0
+      ],
+      "text": "达拉姆",
+      "csv_row": 72,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 19,
+        "lines": [
+          "达拉姆"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        96.0001,
+        556.0,
+        227.9998,
+        582.0
+      ],
+      "text": "凯勒姆德里尔",
+      "csv_row": 73,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 17,
+        "lines": [
+          "凯勒姆德里尔"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        0.0,
+        667.0,
+        108.0002,
+        699.0
+      ],
+      "text": "克瓦",
+      "csv_row": 74,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 21,
+        "lines": [
+          "克瓦"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        59.9998,
+        721.0,
+        120.0003,
+        746.0
+      ],
+      "text": "泽斯隆的巢穴",
+      "csv_row": 75,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "泽斯隆的巢穴"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        120.9999,
+        750.0,
+        169.0003,
+        766.0
+      ],
+      "text": "金崖",
+      "csv_row": 76,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "金崖"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+      "box": [
+        409.9998,
+        768.0,
+        519.0003,
+        853.0
+      ],
+      "text": "斯沃加尔德",
+      "csv_row": 77,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G177.jpg",
+          "file_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+          "image_id": "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G177.jpg",
+            "sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 28,
+        "lines": [
+          "斯沃加",
+          "尔德"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        161.0001,
+        15.0,
+        310.0,
+        35.0
+      ],
+      "text": "A - 地上物品",
+      "csv_row": 78,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 12,
+        "lines": [
+          "A - 地上物品"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        161.0001,
+        35.0,
+        307.0001,
+        54.0
+      ],
+      "text": "B - 已装备物品",
+      "csv_row": 79,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "B - 已装备物品"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        161.0001,
+        54.0,
+        310.0,
+        73.0
+      ],
+      "text": "C - 快捷使用物品",
+      "csv_row": 80,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "C - 快捷使用物品"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        161.0001,
+        74.0,
+        274.0,
+        92.0
+      ],
+      "text": "D - 你的背包",
+      "csv_row": 81,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "D - 你的背包"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        161.0001,
+        93.0,
+        263.0,
+        111.0
+      ],
+      "text": "E - 圣甲虫",
+      "csv_row": 82,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 10,
+        "lines": [
+          "E - 圣甲虫"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        47.0,
+        1.9999,
+        246.0,
+        26.9999
+      ],
+      "text": "返回游戏",
+      "csv_row": 87,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 16,
+        "lines": [
+          "返回游戏"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        72.0,
+        57.0,
+        227.0001,
+        83.9999
+      ],
+      "text": "保存游戏",
+      "csv_row": 88,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 17,
+        "lines": [
+          "保存游戏"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        36.0,
+        85.0,
+        257.0,
+        110.0
+      ],
+      "text": "载入存档",
+      "csv_row": 89,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 15,
+        "lines": [
+          "载入存档"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        57.0001,
+        140.9999,
+        234.0001,
+        165.9999
+      ],
+      "text": "游戏设置",
+      "csv_row": 90,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 16,
+        "lines": [
+          "游戏设置"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        22.9999,
+        168.9999,
+        268.9999,
+        193.9999
+      ],
+      "text": "键盘快捷键",
+      "csv_row": 91,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 16,
+        "lines": [
+          "键盘快捷键"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        10.0001,
+        225.0001,
+        282.0001,
+        249.0
+      ],
+      "text": "返回标题画面",
+      "csv_row": 92,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 14,
+        "lines": [
+          "返回标题画面"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+      "box": [
+        116.0,
+        253.0,
+        174.0,
+        278.0
+      ],
+      "text": "退出",
+      "csv_row": 44,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G203.png",
+          "file_sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+          "image_id": "8084319256a4defa0bfa465d4f2f0b9df6c1c88bdec0b373ab98225eedb6fef7",
+          "width": 290,
+          "height": 281,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G203.png",
+            "sha256": "9335085250a0a56a7b2dfa6ff2fc1002b3b79c718434ec32245d71350d097796",
+            "size": [
+              290,
+              281
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 15,
+        "lines": [
+          "退出"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+      "box": [
+        8.9999,
+        0.0,
+        345.9998,
+        26.9999
+      ],
+      "text": "冒险仍在继续……",
+      "csv_row": 93,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G220.png",
+          "file_sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+          "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+          "width": 559,
+          "height": 253,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G220.png",
+            "sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+            "size": [
+              559,
+              253
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rendering": {
+        "font_size": 17,
+        "lines": [
+          "冒险仍在继续……"
+        ],
+        "background_mode": "transparent_text_replacement"
+      }
+    },
+    {
+      "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+      "box": [
+        209.0,
+        205.0001,
+        285.0,
+        221.9999
+      ],
+      "text": "威尔德里姆",
+      "csv_row": 65,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G220.png",
+          "file_sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+          "image_id": "8bdd793e25c365e8c5918a1de7a3034db5fd0ca40082e35c39d16355a4e27c0e",
+          "width": 559,
+          "height": 253,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G220.png",
+            "sha256": "34e94394eedd51e83c271e09da3ebd99e7b88dc140396ffa7742953518a1ae9f",
+            "size": [
+              559,
+              253
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 11,
+        "lines": [
+          "威尔德里姆"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+      "box": [
+        319.9995,
+        48.0001,
+        609.9998,
+        111.9997
+      ],
+      "text": "克瓦",
+      "csv_row": 74,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G231.jpg",
+          "file_sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+          "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G231.jpg",
+            "sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 43,
+        "lines": [
+          "克瓦"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+      "box": [
+        288.0001,
+        372.0002,
+        691.9996,
+        566.0001
+      ],
+      "text": "贱民之地",
+      "csv_row": 94,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G231.jpg",
+          "file_sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+          "image_id": "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G231.jpg",
+            "sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 96,
+        "lines": [
+          "贱民之地"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+      "box": [
+        400.9997,
+        221.9998,
+        709.9996,
+        283.9998
+      ],
+      "text": "凯梅里亚",
+      "csv_row": 62,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G232.jpg",
+          "file_sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+          "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G232.jpg",
+            "sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 43,
+        "lines": [
+          "凯梅里亚"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+      "box": [
+        464.9996,
+        549.9998,
+        854.9997,
+        610.9997
+      ],
+      "text": "威尔德里姆",
+      "csv_row": 65,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G232.jpg",
+          "file_sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+          "image_id": "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G232.jpg",
+            "sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 42,
+        "lines": [
+          "威尔德里姆"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+      "box": [
+        718.0004,
+        15.0001,
+        1004.9999,
+        114.0
+      ],
+      "text": "塔翁帝国",
+      "csv_row": 95,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G233.jpg",
+          "file_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+          "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G233.jpg",
+            "sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 68,
+        "lines": [
+          "塔翁帝国"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+      "box": [
+        380.0,
+        325.0003,
+        566.0,
+        467.0002
+      ],
+      "text": "贝拉扎森林（争夺领土）",
+      "csv_row": 96,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G233.jpg",
+          "file_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+          "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G233.jpg",
+            "sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 31,
+        "lines": [
+          "贝拉扎森林（",
+          "争夺领土）"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+      "box": [
+        15.0001,
+        600.9996,
+        321.0001,
+        653.9998
+      ],
+      "text": "霍尔克兰达",
+      "csv_row": 97,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G233.jpg",
+          "file_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+          "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G233.jpg",
+            "sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 37,
+        "lines": [
+          "霍尔克兰达"
+        ],
+        "background_mode": "mask"
+      }
+    },
+    {
+      "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+      "box": [
+        625.9995,
+        629.9997,
+        961.9997,
+        682.9998
+      ],
+      "text": "凯勒姆德里尔",
+      "csv_row": 73,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G233.jpg",
+          "file_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+          "image_id": "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63",
+          "width": 1020,
+          "height": 760,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G233.jpg",
+            "sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9",
+            "size": [
+              1020,
+              760
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "mask_rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "rendering": {
+        "font_size": 37,
+        "lines": [
+          "凯勒姆德里尔"
+        ],
+        "background_mode": "mask"
+      }
+    }
+  ],
+  "preserved_regions": [
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        762.0001,
+        589.9996,
+        777.9995,
+        614.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+      "box": [
+        318.9999,
+        739.9995,
+        337.9999,
+        772.9999
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G128.png",
+          "file_sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+          "image_id": "953e39401f24912885d89753c357df30ef751369a423457fed589de0c5324377",
+          "width": 1022,
+          "height": 1022,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G128.png",
+            "sha256": "251b34e30ad5de9b1b536888c298522c57da0abe3aae7ce5f677cf7657cbd78f",
+            "size": [
+              1022,
+              1022
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "6985478da7761934b517660a8a02a1069cbabb2b0ff9579469d7318c2e7fa4a7",
+      "box": [
+        198.9999,
+        55.0001,
+        223.0001,
+        85.9999
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G132.png",
+          "file_sha256": "5b69bc7d199002d5e2a5d17bec91d8e5db23d1fc7d8f8eb7e82be770fedaa6f0",
+          "image_id": "6985478da7761934b517660a8a02a1069cbabb2b0ff9579469d7318c2e7fa4a7",
+          "width": 471,
+          "height": 471,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G132.png",
+            "sha256": "5b69bc7d199002d5e2a5d17bec91d8e5db23d1fc7d8f8eb7e82be770fedaa6f0",
+            "size": [
+              471,
+              471
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "6985478da7761934b517660a8a02a1069cbabb2b0ff9579469d7318c2e7fa4a7",
+      "box": [
+        299.0002,
+        12.0001,
+        314.0002,
+        29.9999
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G132.png",
+          "file_sha256": "5b69bc7d199002d5e2a5d17bec91d8e5db23d1fc7d8f8eb7e82be770fedaa6f0",
+          "image_id": "6985478da7761934b517660a8a02a1069cbabb2b0ff9579469d7318c2e7fa4a7",
+          "width": 471,
+          "height": 471,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G132.png",
+            "sha256": "5b69bc7d199002d5e2a5d17bec91d8e5db23d1fc7d8f8eb7e82be770fedaa6f0",
+            "size": [
+              471,
+              471
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+      "box": [
+        478.0,
+        587.9998,
+        519.0,
+        608.0
+      ],
+      "csv_row": 28,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G133.png",
+          "file_sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+          "image_id": "bf35b3ad8a65f275ab6304f46b68039c4c9aea5babd32dbb2e60117d9e6b5051",
+          "width": 519,
+          "height": 608,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G133.png",
+            "sha256": "76a847ee6d22b36de8be49bd3c64cef4144b6650f0ef58e0ea26282b0ed167a9",
+            "size": [
+              519,
+              608
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        78.9999,
+        22.0,
+        113.9999,
+        51.9999
+      ],
+      "csv_row": 29,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        142.0001,
+        22.0,
+        179.0001,
+        51.9999
+      ],
+      "csv_row": 30,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        206.9999,
+        22.0,
+        247.9999,
+        51.9999
+      ],
+      "csv_row": 31,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        150.9999,
+        293.9999,
+        192.0,
+        319.0001
+      ],
+      "csv_row": 29,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        78.0001,
+        354.0001,
+        119.0001,
+        383.0001
+      ],
+      "csv_row": 34,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+      "box": [
+        8.9999,
+        209.9998,
+        22.0001,
+        246.0
+      ],
+      "csv_row": 36,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G142.jpg",
+          "file_sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+          "image_id": "357edc8a569ee733ec3b4b31ac2f7d8fec60b3e8031857edbfecd1f4c4846eec",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G142.jpg",
+            "sha256": "11be13b60455ed9e468924bdd6143f05a154533aa43c049ba14e361c7e5beb6e",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        78.9999,
+        22.0,
+        113.9999,
+        51.9999
+      ],
+      "csv_row": 29,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        142.0001,
+        22.0,
+        179.0001,
+        51.9999
+      ],
+      "csv_row": 30,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        206.9999,
+        22.0,
+        247.9999,
+        51.9999
+      ],
+      "csv_row": 31,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        150.9999,
+        293.9999,
+        192.0,
+        319.0001
+      ],
+      "csv_row": 29,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        78.0001,
+        354.0001,
+        119.0001,
+        383.0001
+      ],
+      "csv_row": 34,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        8.9999,
+        209.9998,
+        22.0001,
+        246.0
+      ],
+      "csv_row": 36,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        14.0001,
+        143.9998,
+        51.9999,
+        190.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        78.9999,
+        143.9998,
+        117.0001,
+        190.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        144.0001,
+        143.9998,
+        181.9999,
+        190.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        208.9999,
+        143.9998,
+        247.0001,
+        190.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+      "box": [
+        274.0001,
+        143.9998,
+        311.9999,
+        190.0002
+      ],
+      "csv_row": 4,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G143.jpg",
+          "file_sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+          "image_id": "5c4f9161453eb783aaa2b9456f8f725f1e4ad989292d6d32d0ca5629231f7b1e",
+          "width": 326,
+          "height": 391,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G143.jpg",
+            "sha256": "1c52383ac49811b49556c9cfb1aedd1a32e3007969606f570187277d3a2816c1",
+            "size": [
+              326,
+              391
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+      "box": [
+        237.0,
+        58.0,
+        248.0001,
+        78.0
+      ],
+      "csv_row": 47,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G159.png",
+          "file_sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+          "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+          "width": 300,
+          "height": 127,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G159.png",
+            "sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+            "size": [
+              300,
+              127
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+      "box": [
+        237.0,
+        101.0001,
+        249.0,
+        120.0
+      ],
+      "csv_row": 47,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G159.png",
+          "file_sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+          "image_id": "dc3f27d527ea7a3ce75d10b0c83c59ed91c5d529e21d869ef40d38026734a5fb",
+          "width": 300,
+          "height": 127,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G159.png",
+            "sha256": "eb41096ba7e442e85eb331920ae18c097b9274955605b2e5dc7717ff9d8c30d5",
+            "size": [
+              300,
+              127
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        90.0,
+        64.0,
+        107.0,
+        83.9999
+      ],
+      "csv_row": 52,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        82.0,
+        135.0,
+        101.0,
+        153.0
+      ],
+      "csv_row": 53,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        9.0,
+        20.0,
+        26.0,
+        41.0
+      ],
+      "csv_row": 54,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+      "box": [
+        181.0,
+        16.9999,
+        201.0,
+        38.0
+      ],
+      "csv_row": 55,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G167.png",
+          "file_sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+          "image_id": "0cc82a14d007e8e64d789804536837576671bf6055fcf429d9fab6b87ba64de7",
+          "width": 400,
+          "height": 155,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G167.png",
+            "sha256": "d33d87fe5a0ff88483953c8651ac0c69164ce786d2b3f0e5222504a144afc01e",
+            "size": [
+              400,
+              155
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        290.9998,
+        477.0,
+        323.9999,
+        498.0
+      ],
+      "csv_row": 61,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+      "box": [
+        96.0001,
+        836.0,
+        122.9998,
+        864.0
+      ],
+      "csv_row": 70,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G176.jpg",
+          "file_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+          "image_id": "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+          "width": 700,
+          "height": 1000,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G176.jpg",
+            "sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66",
+            "size": [
+              700,
+              1000
+            ],
+            "format": "JPEG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        111.0001,
+        90.0,
+        125.0001,
+        105.0
+      ],
+      "csv_row": 52,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        38.9999,
+        40.0,
+        49.9999,
+        54.0
+      ],
+      "csv_row": 53,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        37.0001,
+        98.0,
+        49.0002,
+        112.0
+      ],
+      "csv_row": 54,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        109.0,
+        34.0,
+        121.9999,
+        48.0
+      ],
+      "csv_row": 55,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+      "box": [
+        22.0001,
+        62.0,
+        33.9999,
+        77.0
+      ],
+      "csv_row": 83,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G189.png",
+          "file_sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+          "image_id": "3c40dbd3ba6f7a91345fb239cd6bca1cb491920fc3bae56071396d4f5556aea6",
+          "width": 310,
+          "height": 125,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G189.png",
+            "sha256": "9839d6a9bd17eea1b0403c625ca050fe3d229fd1c418a57fc0c4cc604af79474",
+            "size": [
+              310,
+              125
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+      "box": [
+        0.0,
+        0.0,
+        515.0002,
+        121.0
+      ],
+      "csv_row": 84,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G198.png",
+          "file_sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+          "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+          "width": 540,
+          "height": 145,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G198.png",
+            "sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+            "size": [
+              540,
+              145
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+      "box": [
+        511.9999,
+        21.0001,
+        531.9999,
+        39.0001
+      ],
+      "csv_row": 85,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G198.png",
+          "file_sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+          "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+          "width": 540,
+          "height": 145,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G198.png",
+            "sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+            "size": [
+              540,
+              145
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+      "box": [
+        104.9998,
+        109.0,
+        540.0,
+        145.0
+      ],
+      "csv_row": 86,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G198.png",
+          "file_sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+          "image_id": "178d7a80ab43c61702c1b8a7243a1fe07e21571495321544d5badfc23e48cad7",
+          "width": 540,
+          "height": 145,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G198.png",
+            "sha256": "523573d2dfcbcd43244268569e77e3a9bef9f1899c5837b69d40bb6d0a942e56",
+            "size": [
+              540,
+              145
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    },
+    {
+      "image_id": "b9d3943b7ec96dfb829b545d6b956bc486e17eae5b7e8d26d66a56bc739842a8",
+      "box": [
+        0.0,
+        0.0,
+        283.0,
+        16.9999
+      ],
+      "csv_row": 98,
+      "sources": [
+        {
+          "path": "Avadon Files/Graphics Core/G290.png",
+          "file_sha256": "f9daff62e33c2e99b332ed78609011623b228b8161bb251c4636bce9c9140e05",
+          "image_id": "b9d3943b7ec96dfb829b545d6b956bc486e17eae5b7e8d26d66a56bc739842a8",
+          "width": 504,
+          "height": 499,
+          "provenance": {
+            "asset": "Avadon Files/Graphics Core/G290.png",
+            "sha256": "f9daff62e33c2e99b332ed78609011623b228b8161bb251c4636bce9c9140e05",
+            "size": [
+              504,
+              499
+            ],
+            "format": "PNG"
+          }
+        }
+      ],
+      "reason": "Translation explicitly preserves the original text; original pixels unchanged"
+    }
+  ],
+  "note": "Exported image/overlay resources only. Engine-specific Texture2D/Sprite binding or runtime adapter and user in-game validation are still required."
+}
