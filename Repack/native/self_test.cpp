@@ -67,6 +67,14 @@ int wmain(int argc,wchar_t** argv){
         require(dictionary.lookup(quoted,value) && value.find('_')==std::string::npos && value.find('"')!=std::string::npos,"Script quote display variant failed");
         require(dictionary.lookup("Choosing a Character Type",value) && value.find('$')==std::string::npos,"Manual heading display variant failed");
         avzh::Dictionary generic;generic.add("%s %s %s","%s %s %s");generic.prepare();require(!generic.lookup("one two three",value),"Unbound generic format matched prose");
+        const char* dialogue_choices[]={"(Watch them quietly.)","(Back away.)","Ummm ... Could you control those ... things?"};
+        for(int i=0;i<3;++i){std::string plain,numbered;require(dictionary.lookup(dialogue_choices[i],plain),"Approved choice absent");std::string prefix=std::to_string(i+1)+". ";require(dictionary.lookup(prefix+dialogue_choices[i],numbered) && numbered==prefix+plain,"Numbered dialogue choice failed");}
+        require(!dictionary.lookup("1. AVZH_UNKNOWN_CHOICE_391",value),"Unknown choice must fall back");
+        require(!dictionary.lookup("01. (Back away.)",value),"Malformed leading zero must not be stripped");
+        require(!dictionary.lookup("100. (Back away.)",value),"Unobserved three-digit prefix must not match");
+        avzh::Dictionary priority;priority.add("Body","Inner");priority.add("1. Body","Exact");require(priority.lookup("1. Body",value) && value=="Exact","Canonical numbered record must win");
+        std::ofstream choice_report((output+L"\\dialogue_choice_report.json").c_str(),std::ios::binary);
+        choice_report<<"{\"status\":\"passed\",\"reported_choices\":3,\"exact_record_priority\":true,\"unknown_and_malformed_fall_back\":true,\"game_started\":false}\n";choice_report.close();
         auto lines=avzh::wrap(L"甲乙丙丁，戊己。",3,[](const std::wstring&s){return static_cast<int>(s.size());});for(const auto& line:lines)require(line.empty() || !avzh::closing(line[0]),"Closing punctuation starts wrapped line");
         std::wstring host_path=argv[0];auto slash=host_path.find_last_of(L"\\/");require(slash!=std::wstring::npos,"Need absolute component host path");
         std::wstring startup_dir=host_path.substr(0,slash)+L"\\AvadonChinese";CreateDirectoryW(startup_dir.c_str(),nullptr);

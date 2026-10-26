@@ -59,6 +59,17 @@ public:
     bool lookup(const std::string& source,std::string& target,unsigned depth=0) const {
         auto found=exact_.find(source);if(found!=exact_.end()){target=found->second;return true;}
         if(depth>2 || source.size()>4096)return false;
+        // The dialogue UI prepends an option number after fetching the script
+        // text (observed runtime inputs: "1. (Watch them quietly.)", etc.).
+        // Preserve that wrapper and require an EXACT approved inner record.
+        // No trimming, recursive prefix stripping or free-text word matching.
+        if(source.size()>3 && source[0]>='1' && source[0]<='9'){
+            size_t digits=1;if(source[1]>='0' && source[1]<='9')digits=2;
+            if(source.compare(digits,2,". ")==0){
+                auto inner=exact_.find(source.substr(digits+2));
+                if(inner!=exact_.end()){target=source.substr(0,digits+2)+inner->second;return true;}
+            }
+        }
         for(const auto& pattern:patterns_){std::smatch match;if(!std::regex_match(source,match,pattern.expression))continue;
             std::string candidate;size_t index=1;bool known_argument=false;
             for(const auto& part:pattern.target){candidate+=part.literal;if(part.spec=="%%")candidate+='%';else if(!part.spec.empty()){

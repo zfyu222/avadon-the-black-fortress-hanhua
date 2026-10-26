@@ -1,8 +1,8 @@
 {
   "status": "installed",
   "game_root": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress",
-  "created_utc": "20261026T103223941161Z",
-  "backup_directory": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Backups\\20261026T103223941161Z",
+  "created_utc": "20261026T103932455128Z",
+  "backup_directory": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Backups\\20261026T103932455128Z",
   "records": [
     {
       "path": "Avadon Files/Graphics Core/G128.png",
@@ -112,7 +112,7 @@
     {
       "path": "winmm.dll",
       "original_sha256": null,
-      "installed_sha256": "6fe5d26d7098d10dac2ea9dea3d5d9fced3310f850f6d38ee9f68377c2d2ac83"
+      "installed_sha256": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390"
     }
   ],
   "payload_files": {
@@ -137,9 +137,9 @@
     "Avadon Files/Graphics Core/G233.png": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e",
     "AvadonChinese/MinHook-LICENSE.txt": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335",
     "AvadonChinese/translations.bin": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
-    "winmm.dll": "6fe5d26d7098d10dac2ea9dea3d5d9fced3310f850f6d38ee9f68377c2d2ac83"
+    "winmm.dll": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390"
   },
-  "static_validation_sha256": "304741b4985acdf562bc2ade8140f66d40f5c7c69e704aaf19fc94422bc31fe8",
+  "static_validation_sha256": "82c3de5605d41e8b15a4eac888cfab51e7f09bc1fdea13f6e563fb2f8c84996e",
   "game_started": false,
   "in_game_verified": false
 }

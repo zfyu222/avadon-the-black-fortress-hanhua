@@ -1,0 +1,42 @@
+{
+  "user_observation": "Chinese narrative and NPC title visible; three numbered choices remain English",
+  "screenshot": {
+    "path": "Repack/UserFeedback/20261026-dialogue/screenshots/1.png",
+    "sha256": "35bcc8c4e9cb3b3a1ed0c8f651ac64acdc50d36fd9b4fbf3213874df52f7680b"
+  },
+  "runtime_log_sha256": "35db5d687f5709aa44f05155d802d7e0705e2ef53fc54a10f60a98504959011f",
+  "confirmed_cases": [
+    {
+      "runtime_input": "1. (Watch them quietly.)",
+      "csv_row": 2302,
+      "approved_source": "(Watch them quietly.)",
+      "approved_translation": "（安静地观察它们。）",
+      "preserved_prefix": "1. "
+    },
+    {
+      "runtime_input": "2. (Back away.)",
+      "csv_row": 2305,
+      "approved_source": "(Back away.)",
+      "approved_translation": "（后退。）",
+      "preserved_prefix": "2. "
+    },
+    {
+      "runtime_input": "3. Ummm ... Could you control those ... things?",
+      "csv_row": 2307,
+      "approved_source": "Ummm ... Could you control those ... things?",
+      "approved_translation": "嗯……你能控制住那些……东西吗？",
+      "preserved_prefix": "3. "
+    }
+  ],
+  "repair": "Preserve observed one/two-digit option wrapper; require exact approved inner record; canonical full match wins",
+  "native_regression": {
+    "status": "passed",
+    "reported_choices": 3,
+    "exact_record_priority": true,
+    "unknown_and_malformed_fall_back": true,
+    "game_started": false
+  },
+  "repaired_in_game_result": "pending_user_retest",
+  "paid_api_requests": 0,
+  "game_started_by_agent": false
+}

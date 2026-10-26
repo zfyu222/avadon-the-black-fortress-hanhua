@@ -87375,13 +87375,13 @@
   ],
   "native_sources": {
     "adapter.cpp": "5873e5fa689f544cd1322de57ae1ae3bd1e5330921667b72e723ff3627cc6b89",
-    "localization_core.hpp": "947a61d851f3b7e56886956ff68cb429cd5321838c0a024e573f2f5c4b5453a8",
+    "localization_core.hpp": "ba13f04aed387af34c6f9baafa73d5af47738fe7bc472d0bdeae6c779cc2db8d",
     "renderer.hpp": "d6f05e0691830374bcaf5ce245063421a18479b646ded9e63a54ba558022a74e",
-    "self_test.cpp": "4ab34a79c51a7e347f9d5027fc186ad55a691766fde1b8e9587aeff579c12c2b"
+    "self_test.cpp": "47683d2fcd9f098ab78c4e2549537926838283c8241b06183c0eea7363d94c2d"
   },
   "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "6fe5d26d7098d10dac2ea9dea3d5d9fced3310f850f6d38ee9f68377c2d2ac83"
+  "dll_sha256": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390"
 }
