@@ -46,6 +46,7 @@ Desktop.ini
 /Repack/Build/
 /Repack/Payload/
 /TranslateFiles/image-text/Repack/Payload/
+/TranslateFiles/glossary/retrain_scope_fix/
 /Repack/Backups/
 /Repack/NativeTests/*.ppm
 /Repack/NativeTests/*.log

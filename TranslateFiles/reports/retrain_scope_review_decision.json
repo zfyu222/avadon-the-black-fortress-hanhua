@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "purpose": "Single-ref semantic decision for the shared revise-glossary workflow; retain every other original entry review unchanged.",
+  "ref": "non_translate:22",
+  "edits": [
+    {
+      "table": "non_translate",
+      "index": 22,
+      "patch": {
+        "applicability": {
+          "mode": "whole_record",
+          "case_sensitive": true,
+          "reason": "正式源文第 15333 条的完整记录仅为小写 retrain，来自 Avadon.exe 地址 0x5a8cc8；Ghidra 字符串表中它紧邻 healmenow、rechargeme、shieldsup、backtoavadon 等指令形态字串。只保护这一完整原生字串；第 1144、1587 条显示文句中的 retrain 为可译的技能重训动词。该字串的单独调用点尚未追踪，因此不将命令用途宣称为已证明。"
+        }
+      },
+      "reason": "旧 non_translate 条目只引用独立原生字串第 15333 条，却无范围限制，已造成第 1144、1587 条中文自然句残留英文 retrain。把保护范围收窄到大小写一致的完整记录；保留原生字串，不新建普通动词术语。",
+      "evidence_rows": [15333, 1144, 1587]
+    }
+  ],
+  "entry_reviews": [
+    {
+      "ref": "non_translate:22",
+      "evidence_rows": [15333, 1144, 1587],
+      "source_excerpt": "retrain",
+      "reason": "第 15333 条是独立原生字串，邻近一组指令形态短串，保留其原文；第 1144、1587 条分别说明技能重置后再次训练、训练师允许重新训练所有技能，retrain 在这两条是自然语言动词。此前全局禁翻使两条正式译文夹入英文，故仅收窄适用范围，不改变原生字串或其他术语。",
+      "checks": {
+        "source": {
+          "status": "pass",
+          "evidence": "正式 CSV 第 15333 条完整原文为 retrain，映射至 Avadon.exe 0x5a8cc8；第 1144 条为 textdialogs.txt 第 15 行显示句，第 1587 条为 texthints.txt 第 18 行显示句，两者的 retrain 都嵌于描述技能重训的英文完整句。"
+        },
+        "translation": {
+          "status": "corrected",
+          "evidence": "第 15333 条继续原样保留。第 1144、1587 条的现有中文译文分别含“能够 retrain 它们”和“让你 retrain 你的所有技能”，自然语言动词未译；第 7185、7193 条关于 Leala 机制及冻结 required 词 retraining=重训证实应按重训语义处理。"
+        },
+        "category": {
+          "status": "corrected",
+          "evidence": "第 15333 条可以留在 non_translate，但只作为独立 native 字串保护。whole_record、case_sensitive=true 限定为完整小写记录，避免把普通动词的句内用法纳入禁翻。"
+        },
+        "consistency": {
+          "status": "corrected",
+          "evidence": "旧审校已将独立 native retrain 与可译 retraining 机制区分，却未在适用范围落实。新范围保留第 15333 条原文，并让第 1144、1587 条按同一技能重训语义翻译；其余 47 项禁翻在本次实证扫描中未发现同型自然语言泄漏。"
+        }
+      }
+    }
+  ],
+  "untouched_refs": "All refs other than non_translate:22. No approval or pass is supplied for them by this file.",
+  "affected_translation_rows": [1144, 1587],
+  "native_literal_row_to_preserve": 15333
+}

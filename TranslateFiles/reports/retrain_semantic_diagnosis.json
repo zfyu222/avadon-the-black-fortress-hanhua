@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "diagnosis_type": "targeted_semantic_diagnosis",
+  "project": "avadon-the-black-fortress",
+  "date": "2026-10-26",
+  "scope": {
+    "source_records": 15928,
+    "translation_records": 15928,
+    "csv_row_numbering": "1-based logical CSV records, not physical file lines",
+    "read_only_inputs": [
+      "README.md",
+      "avadon-the-black-fortress_text.csv",
+      "avadon-the-black-fortress_text_translated.csv",
+      "avadon-the-black-fortress_text.mapping.json",
+      "TranslateFiles/glossary/r3/freeze_9ac86720/built/glossary_reviewed.json",
+      "TranslateFiles/glossary/r3/freeze_9ac86720/glossary_decisions.json",
+      "Analysis/ghidra-strings.json"
+    ],
+    "excluded_actions": "No CSV, glossary, database or game modification; no model API request."
+  },
+  "finding": {
+    "conclusion": "The non_translate entry for standalone native retrain has leaked into two ordinary training descriptions. In those sentences retrain is an English verb about reallocating character skills, and leaving it in English makes the Chinese incomplete. The standalone native literal should remain unchanged until its exact call site is traced; its nearby strings strongly suggest a command token, but the mapping expressly says it was not individually traced.",
+    "glossary_evidence": {
+      "non_translate": {
+        "index_zero_based": 22,
+        "source": "retrain",
+        "evidence_rows": [
+          15333
+        ],
+        "applicability": "No per-context applicability in the frozen entry; its single source is a standalone native string."
+      },
+      "related_required_term": {
+        "source": "retraining",
+        "recommended_translation": "重训",
+        "enforcement": "required",
+        "evidence_rows": [
+          7185,
+          7193
+        ]
+      },
+      "review_record": "glossary_decisions.json entry_reviews ref terms:854 calls retraining Leala's skill redistribution mechanism and distinguishes it from native retrain; ref non_translate:22 cites only ordinal 15333 and calls it a protected native string. This supports a context distinction, not a blanket prohibition on translating the verb in dialogue or UI prose."
+    },
+    "affected_rows": [
+      1144,
+      1587
+    ],
+    "affected_records": [
+      {
+        "row": 1144,
+        "source_excerpt": "enabling you to retrain them",
+        "current_translation_excerpt": "使你能够 retrain 它们",
+        "source_location": "Avadon Files/Scripts/textdialogs.txt, line 15, assignment 10 =, display text",
+        "meaning": "Resetting the first selected character's skills enables the player to train or allocate those skills again.",
+        "disposition": "repair_translation",
+        "repair_requirement": "Translate the verb in natural Chinese in the full sentence, keep the reference to the selected character's skills, and preserve the confirmation question. Review pronoun fluency without changing game semantics."
+      },
+      {
+        "row": 1587,
+        "source_excerpt": "She can enable you to retrain all of your skills.",
+        "current_translation_excerpt": "她可以让你 retrain 你的所有技能",
+        "source_location": "Avadon Files/Scripts/texthints.txt, line 18, assignment 12 =, display text",
+        "meaning": "Trainer Leala enables retraining of all skills, consistent with the Leala dialogue and the reviewed term retraining.",
+        "disposition": "repair_translation",
+        "repair_requirement": "Translate the verb in natural Chinese, consistent with the reviewed 重训 mechanism; retain that all skills can be retrained."
+      }
+    ],
+    "retain_row": {
+      "row": 15333,
+      "source": "retrain",
+      "current_translation": "retrain",
+      "source_location": "Avadon.exe, VA 0x5a8cc8, RVA 0x1a8cc8, ASCII, capacity 8",
+      "evidence": "Ghidra string listing places the literal amid combatsave, healmenow, rechargeme, shieldsup, backtoavadon, iamweak and other short command-like strings. The extraction mapping says 'not individually traced; reviewed game literal/table region'.",
+      "disposition": "retain_native_literal",
+      "confidence": "Command-token role is a strong contextual inference, not an individually traced call-site proof.",
+      "repair_requirement": "Do not translate or alter this standalone native literal during the targeted prose repair."
+    }
+  },
+  "other_non_translate_audit": {
+    "count_excluding_retrain": 47,
+    "method": "Compared all 48 frozen non_translate source strings against every logical source and translated CSV record. For alphabetic standalone candidates, checked case-insensitive word occurrences in longer source sentences and whether the same English token survived in the corresponding Chinese translation; inspected the resulting cases and the evidence rows. Punctuation, placeholders, key names and command-like literals were considered according to their actual context.",
+    "result": "No additional evidenced case of a natural-language word being left in English because of a command-token non_translate entry. No batch retranslation is justified by this audit.",
+    "specific_checks": [
+      {
+        "source": "location",
+        "frozen_evidence_row": 15342,
+        "observation": "The standalone native literal appears in the same command-like region as retrain. Eleven other logical source records include location as ordinary prose or part of a longer phrase; none retains the English word location in its corresponding translation.",
+        "disposition": "retain; no evidenced prose repair"
+      },
+      {
+        "sources": [
+          "Tab",
+          "Shift",
+          "Escape",
+          "F1",
+          "F3",
+          "F4",
+          "Control-S",
+          "Control-O",
+          "Control-Q"
+        ],
+        "observation": "English retained in inspected mixed sentences denotes actual keyboard keys or shortcuts, such as source row 1170 for Tab and Shift and row 1169 for Escape.",
+        "disposition": "retain key spellings"
+      },
+      {
+        "sources": [
+          "combatsave",
+          "healmenow",
+          "rechargeme",
+          "shieldsup",
+          "backtoavadon",
+          "iamweak",
+          "giveasnack",
+          "iampoor",
+          "showmeall",
+          "dontshowmeall",
+          "whereami",
+          "showwaypoint"
+        ],
+        "observation": "Each is evidenced as a standalone native literal in the command-like region; no mixed natural-language translation retaining these tokens was found.",
+        "disposition": "retain"
+      },
+      {
+        "sources": [
+          "[N]",
+          "_",
+          "$",
+          "\t",
+          "__",
+          "%s",
+          "%d",
+          "%d.%d",
+          "%%",
+          "%s%%",
+          "'NY'",
+          "'X'",
+          "'w'",
+          "'+'",
+          "*.SAV",
+          "*.TXT",
+          "*.*",
+          "support@spiderwebsoftware.com",
+          "Save18",
+          "SteamAPI_Init()",
+          "Ka-Ching!",
+          "sorrysevilin",
+          "sorryshima",
+          "sorryjenell",
+          "sorrynathalie"
+        ],
+        "observation": "These are format tokens, literal UI or file identifiers, contact or code strings, or standalone native strings. The targeted scan supplied no comparable natural-language leak.",
+        "disposition": "retain pending any separate, concrete contrary evidence"
+      }
+    ]
+  },
+  "recommended_workflow": {
+    "translation_rows_to_reopen": [
+      1144,
+      1587
+    ],
+    "glossary_issue": "Revise the non_translate retrain applicability through the shared glossary revision workflow so it protects only the standalone native token or evidenced command context, rather than every occurrence in prose. Preserve the reviewed retraining required term and all unrelated glossary entries. Do not directly edit the frozen table or database.",
+    "translation_issue": "After the scoped glossary revision, reopen only logical CSV rows 1144 and 1587 by ID through the shared workflow, request complete corrected translations and independent semantic review, then export through the program's normal gates. Keep row 15333 as retrain. Refresh any derived repack translation dictionary only after formal export and validation.",
+    "scope_limit": "Do not restart full translation, reopen all 48 non_translate entries or retranslate unflagged records."
+  },
+  "latin_candidate_audit": {
+    "candidate_file": "TranslateFiles/reports/latin_in_chinese_candidates.json",
+    "candidate_count": 63,
+    "method": "逐条对照正式源文、正式译文、来源 mapping；对疑似非专名片段核对脚本显示上下文。以下分类覆盖候选文件中的每一个逻辑 CSV 行。",
+    "confirmed_additional_ordinary_word_omissions": [],
+    "confirmed_existing_omissions": [
+      1144,
+      1587
+    ],
+    "classifications": [
+      {
+        "category": "confirmed_prose_leak",
+        "rows": [
+          1144,
+          1587
+        ],
+        "disposition": "repair",
+        "reason": "retrain 是技能重新训练的普通动词；两句中文夹留英文。第 1144 条来自 textdialogs.txt 第 15 行，第 1587 条来自 texthints.txt 第 18 行。须按既有定向修复处理。"
+      },
+      {
+        "category": "credits_and_platform_labels",
+        "rows": [
+          1174,
+          1175,
+          1176,
+          1177,
+          1178,
+          1179,
+          1180,
+          1181
+        ],
+        "disposition": "retain",
+        "reason": "textdocs.txt 第 53—63 行是制作人员与测试人员署名。人名、网名和 Macintosh/Windows 平台标识保持原拼写；Beta 测试这一搭配仍有明确中文类别，不据个人偏好返修。"
+      },
+      {
+        "category": "keys_and_shortcuts",
+        "rows": [
+          1169,
+          1170,
+          1171,
+          1195,
+          1247,
+          1248,
+          1258,
+          1283,
+          1293,
+          1300,
+          1301,
+          1345,
+          1356,
+          1582,
+          1583,
+          1585,
+          2371,
+          2455,
+          15241,
+          15242,
+          15255,
+          15265,
+          15296,
+          15501,
+          15502,
+          15679,
+          15680,
+          15681,
+          15767,
+          15796,
+          15797,
+          15821,
+          15856,
+          15858
+        ],
+        "disposition": "retain",
+        "reason": "对应原文明确是键盘键名、功能键或组合键（Escape、Tab、Shift、Control、Delete、Option、F1、Control-S/O/Q 等）；15502 的 OK 也是按钮标签。保留拉丁拼写便于与实际按键/界面对应，不是普通英文散文漏译。"
+      },
+      {
+        "category": "drake_hissing",
+        "rows": [
+          7657,
+          7661,
+          7665
+        ],
+        "disposition": "retain",
+        "reason": "z16berpitsdlg.txt 第 1646、1669、1684 行中龙兽 Zhossa 的 Ahssss、thisss、oddsss、woodsss 刻意拖长 s 音。译文中的 sss/ssss 是复现其嘶声口癖，有来源依据；是否改成纯汉字拟声属于另行文风选择，不作为本次确定错误。"
+      },
+      {
+        "category": "partial_sign_clue",
+        "rows": [
+          7762
+        ],
+        "disposition": "retain",
+        "reason": "z17banroadsdlg.txt 第 118 行写明油漆剥落后旧标牌仅剩单词前三个字母 _Her_；保留原三字母线索，不能把它当代词「她」机械翻译。"
+      },
+      {
+        "category": "company_product_and_technical_names",
+        "rows": [
+          10216,
+          10218,
+          10231,
+          10236,
+          10242,
+          11985,
+          15306,
+          15307,
+          15324,
+          15325,
+          15328,
+          15810,
+          15836,
+          15913,
+          15914
+        ],
+        "disposition": "retain",
+        "reason": "原文各处分别是 Spiderweb Software 公司名、可复制客服邮箱、DRM 缩写、PC/Mac 平台名、FPS 标签、Save18 真实文件夹名、Steam 品牌及 SteamAPI_Init() 函数名、*.SAV/*.TXT 文件扩展名。周围说明已汉译，拉丁片段是识别或复制所需的名称/标记。"
+      }
+    ],
+    "scope_limit": "结论仅覆盖该候选文件的 63 条；并非全文零漏译证明。三处 s 嘶声保留有原文依据，若未来收到明确文风反馈再单独审视。"
+  }
+}

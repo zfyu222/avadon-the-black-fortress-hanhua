@@ -1,0 +1,372 @@
+{
+  "user_observation": "Chinese hint contains untranslated natural-language retrain",
+  "screenshot": {
+    "path": "Repack/UserFeedback/20261026-retrain/screenshots/1.png",
+    "sha256": "c675a13ca56916bb64ce82ab2ad4eb5af8c155b286889507540a7f70e3cdc135"
+  },
+  "cause": "Global non-translate for isolated native command leaked into ordinary verb usage",
+  "scope_revision_receipt": "TranslateFiles/reports/retrain_scope_revision_receipt.json",
+  "semantic_diagnosis": "TranslateFiles/reports/retrain_semantic_diagnosis.json",
+  "changed_rows": [
+    {
+      "row": 1144,
+      "before": "这将重置所选的第一名角色的所有技能，使你能够 retrain 它们。你确定吗？",
+      "after": "这将重置所选第一名角色的所有技能，使你能够重新训练它们。你确定吗？"
+    },
+    {
+      "row": 1587,
+      "before": "你对某个角色的训练方式不满意吗？去贝拉扎森林找训练师莉拉。她可以让你 retrain 你的所有技能。",
+      "after": "你对某个角色的训练方式不满意吗？去贝拉扎森林找训练师莉拉。她可以让你重新训练所有技能。"
+    }
+  ],
+  "unchanged_translation_rows": 15926,
+  "native_literal_preserved_row": 15333,
+  "mixed_retrain_remaining": 0,
+  "final_validation": {
+    "status": "passed",
+    "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+    "translation_sha256": "bf8cb69da9e6f327b9f8a8c9c4e75dcc0168fbf9cdb052241d97f50749a7f6b7",
+    "records": 15928,
+    "semantic_review": "full",
+    "polish": false,
+    "revision": 4,
+    "glossary": {
+      "hash": "2a154b57dd2d7799c85a7866821582ae8a0c252c3f53a1bb1b396de8ab47efa4",
+      "path": "glossary\\revision_4_7791a19e\\built\\glossary_reviewed.json",
+      "revision": 4
+    },
+    "ainiee": {
+      "actual_commit": "c50570c1dee7df7bd51316a253f0b42d10a8ca4c",
+      "expected_commit": "c50570c1dee7df7bd51316a253f0b42d10a8ca4c",
+      "license": "AGPL-3.0; Tools/AINiee/LICENSE",
+      "modules": {
+        "Domain/PromptBuilder/GlossaryHelper.py": "6b3072989b77c84787774439c79aaea7d4727fcda104667d8833b53bb490446f",
+        "Domain/TextProcessor/TextProcessor.py": "805f49f68302fab2c5832aad8c7597fb4c3382cea131618765248f30a5963eed",
+        "Infrastructure/LLMRequester/LLMClientFactory.py": "70d43af749640604813887241604edf0472a75afbbf106fb5e69cfd3753a1a4b",
+        "Infrastructure/LLMRequester/OpenaiRequester.py": "b2b1f5e6fd3a31727b2e1d2597e1bcca3e5e4db2cfec550ff6cfcd6a6cff3f79"
+      }
+    },
+    "path": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\avadon-the-black-fortress_text_translated.csv",
+    "quality_review": {
+      "report_hash": "cdfec0ab5bbf754db7db344c17540336d8f424482be6b13a9b5b15ea0adaf59d",
+      "reviewer": "workflow:no-disputes"
+    },
+    "in_game_check": "pending_repack"
+  },
+  "api_runs": [
+    {
+      "stage": "draft_check",
+      "status": "completed",
+      "accepted": 1,
+      "failed": 5,
+      "stage_clean": true,
+      "elapsed_seconds": 96.1225,
+      "performance": {
+        "run_id": "44ea4cfe2686477c8bf2660af810e3ea",
+        "stage": "draft_check",
+        "status": "completed",
+        "elapsed_seconds": 94.7237,
+        "first_request_seconds": 8.0678,
+        "requests_started": 6,
+        "accepted_batches": 1,
+        "failed_attempts": 5,
+        "peak_in_flight": 1,
+        "total_batches": 1,
+        "completed_before_run": 0,
+        "recovered_batches": 0,
+        "records_saved_this_run": 5,
+        "api_cycles": [
+          {
+            "cycle": 1,
+            "accepted": 1,
+            "failed": 5,
+            "records_saved": 5,
+            "scan": {
+              "phase": "final_full",
+              "status": "clean",
+              "clean": true,
+              "checked_records": 15933,
+              "failed_records": 0,
+              "report_file": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\reports\\full_draft_scan.json"
+            }
+          }
+        ],
+        "stage_clean": true,
+        "phase_seconds": {
+          "draft_scan": 78.8547,
+          "setup": 0.0067,
+          "prepare": 0.0656,
+          "execute": 15.6676
+        },
+        "unfinished_phases": [],
+        "run_tokens": {
+          "prompt_tokens": 2763,
+          "completion_tokens": 870,
+          "total_tokens": 3633,
+          "cached_prompt_tokens": 0,
+          "reasoning_tokens": 753,
+          "reported_requests": 1,
+          "unknown_requests": 5
+        },
+        "project_tokens": {
+          "prompt_tokens": 13051433,
+          "completion_tokens": 24234885,
+          "total_tokens": 37286318,
+          "cached_prompt_tokens": 3306239,
+          "reasoning_tokens": 4696780,
+          "reported_requests": 2068,
+          "unknown_requests": 121
+        },
+        "counters": {
+          "term_cache_misses": 15929,
+          "term_plans_built": 1,
+          "term_cache_hits": 69
+        },
+        "timings": {
+          "db_lock_wait": {
+            "count": 350,
+            "sum_seconds": 0.021673,
+            "max_seconds": 0.007787
+          },
+          "config_validate": {
+            "count": 94,
+            "sum_seconds": 0.152311,
+            "max_seconds": 0.057305
+          },
+          "glossary_load": {
+            "count": 20,
+            "sum_seconds": 0.031613,
+            "max_seconds": 0.030522
+          },
+          "token_count": {
+            "count": 21,
+            "sum_seconds": 0.582028,
+            "max_seconds": 0.568188
+          },
+          "term_match": {
+            "count": 16000,
+            "sum_seconds": 37.872874,
+            "max_seconds": 0.565339
+          },
+          "input_render": {
+            "count": 8,
+            "sum_seconds": 0.016957,
+            "max_seconds": 0.003006
+          },
+          "task_allocate": {
+            "count": 1,
+            "sum_seconds": 0.033858,
+            "max_seconds": 0.033858
+          },
+          "draft_scan": {
+            "count": 2,
+            "sum_seconds": 78.854051,
+            "max_seconds": 73.168694
+          },
+          "dispatch_index_setup": {
+            "count": 1,
+            "sum_seconds": 6.1e-05,
+            "max_seconds": 6.1e-05
+          },
+          "resume": {
+            "count": 1,
+            "sum_seconds": 1e-06,
+            "max_seconds": 1e-06
+          },
+          "prepare": {
+            "count": 1,
+            "sum_seconds": 0.065193,
+            "max_seconds": 0.065193
+          },
+          "dispatch_lock_wait": {
+            "count": 31,
+            "sum_seconds": 58.559317,
+            "max_seconds": 2.71394
+          },
+          "batch_open": {
+            "count": 26,
+            "sum_seconds": 2.352423,
+            "max_seconds": 2.155239
+          },
+          "rate_limit_wait": {
+            "count": 6,
+            "sum_seconds": 1.2e-05,
+            "max_seconds": 3e-06
+          },
+          "api_request": {
+            "count": 6,
+            "sum_seconds": 13.196245,
+            "max_seconds": 7.914083
+          },
+          "result_collect": {
+            "count": 1,
+            "sum_seconds": 0.024578,
+            "max_seconds": 0.024578
+          }
+        },
+        "timing_note": "Nested spans overlap; concurrent request sums may exceed elapsed wall time.",
+        "profile_log": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\logs\\api_runs\\44ea4cfe2686477c8bf2660af810e3ea.profile.jsonl",
+        "profile_summary": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\reports\\api_runs\\44ea4cfe2686477c8bf2660af810e3ea.profile.json"
+      }
+    },
+    {
+      "stage": "review",
+      "status": "completed",
+      "accepted": 1,
+      "failed": 5,
+      "stage_clean": true,
+      "elapsed_seconds": 63.0269,
+      "performance": {
+        "run_id": "b7196f8a88c64cba9c12466d845517c8",
+        "stage": "review",
+        "status": "completed",
+        "elapsed_seconds": 62.2977,
+        "first_request_seconds": 1.3227,
+        "requests_started": 6,
+        "accepted_batches": 1,
+        "failed_attempts": 5,
+        "peak_in_flight": 1,
+        "total_batches": 1,
+        "completed_before_run": 0,
+        "recovered_batches": 0,
+        "records_saved_this_run": 8,
+        "api_cycles": [
+          {
+            "cycle": 1,
+            "accepted": 1,
+            "failed": 5,
+            "records_saved": 8,
+            "scan": {
+              "phase": "round_checked",
+              "status": "clean",
+              "clean": true,
+              "checked_records": 8,
+              "failed_records": 0,
+              "report_file": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\reports\\review_round_status.json"
+            }
+          }
+        ],
+        "stage_clean": true,
+        "phase_seconds": {
+          "setup": 0.019,
+          "prepare": 1.149,
+          "execute": 58.1909,
+          "review_scan": 2.8389
+        },
+        "unfinished_phases": [],
+        "run_tokens": {
+          "prompt_tokens": 4187,
+          "completion_tokens": 8221,
+          "total_tokens": 12408,
+          "cached_prompt_tokens": 0,
+          "reasoning_tokens": 5602,
+          "reported_requests": 1,
+          "unknown_requests": 5
+        },
+        "project_tokens": {
+          "prompt_tokens": 13055620,
+          "completion_tokens": 24243106,
+          "total_tokens": 37298726,
+          "cached_prompt_tokens": 3306239,
+          "reasoning_tokens": 4702382,
+          "reported_requests": 2069,
+          "unknown_requests": 126
+        },
+        "counters": {
+          "term_cache_misses": 9,
+          "term_plans_built": 1,
+          "term_cache_hits": 111
+        },
+        "timings": {
+          "db_lock_wait": {
+            "count": 344,
+            "sum_seconds": 0.024516,
+            "max_seconds": 0.007666
+          },
+          "config_validate": {
+            "count": 98,
+            "sum_seconds": 0.219806,
+            "max_seconds": 0.083574
+          },
+          "dispatch_index_setup": {
+            "count": 1,
+            "sum_seconds": 7.2e-05,
+            "max_seconds": 7.2e-05
+          },
+          "resume": {
+            "count": 1,
+            "sum_seconds": 1e-06,
+            "max_seconds": 1e-06
+          },
+          "glossary_load": {
+            "count": 13,
+            "sum_seconds": 0.031554,
+            "max_seconds": 0.030915
+          },
+          "token_count": {
+            "count": 27,
+            "sum_seconds": 0.381752,
+            "max_seconds": 0.359129
+          },
+          "term_match": {
+            "count": 122,
+            "sum_seconds": 1.061359,
+            "max_seconds": 0.575793
+          },
+          "input_render": {
+            "count": 8,
+            "sum_seconds": 0.026605,
+            "max_seconds": 0.003864
+          },
+          "task_allocate": {
+            "count": 1,
+            "sum_seconds": 0.038728,
+            "max_seconds": 0.038728
+          },
+          "prepare": {
+            "count": 1,
+            "sum_seconds": 1.148704,
+            "max_seconds": 1.148704
+          },
+          "dispatch_lock_wait": {
+            "count": 31,
+            "sum_seconds": 10.209842,
+            "max_seconds": 0.895395
+          },
+          "batch_open": {
+            "count": 26,
+            "sum_seconds": 0.351211,
+            "max_seconds": 0.039503
+          },
+          "rate_limit_wait": {
+            "count": 6,
+            "sum_seconds": 1e-05,
+            "max_seconds": 2e-06
+          },
+          "api_request": {
+            "count": 6,
+            "sum_seconds": 57.675021,
+            "max_seconds": 53.68431
+          },
+          "result_collect": {
+            "count": 1,
+            "sum_seconds": 0.040624,
+            "max_seconds": 0.040624
+          },
+          "review_scan": {
+            "count": 1,
+            "sum_seconds": 2.838602,
+            "max_seconds": 2.838602
+          }
+        },
+        "timing_note": "Nested spans overlap; concurrent request sums may exceed elapsed wall time.",
+        "profile_log": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\logs\\api_runs\\b7196f8a88c64cba9c12466d845517c8.profile.jsonl",
+        "profile_summary": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\reports\\api_runs\\b7196f8a88c64cba9c12466d845517c8.profile.json"
+      }
+    }
+  ],
+  "api_selection": "Existing configured priority and failover; no --api override; no budget increase",
+  "failed_request_usage": "Executors report five failed attempts with unknown usage in each stage; unknown is not zero",
+  "in_game_retest": "pending_user",
+  "game_started_by_agent": false
+}

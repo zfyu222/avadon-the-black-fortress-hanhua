@@ -106,12 +106,12 @@
     {
       "path": "Repack/Payload/AvadonChinese/translations.bin",
       "game_path": "AvadonChinese/translations.bin",
-      "sha256": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a"
+      "sha256": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c"
     },
     {
       "path": "Repack/Payload/winmm.dll",
       "game_path": "winmm.dll",
-      "sha256": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3"
+      "sha256": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a"
     }
   ],
   "evidence_files": [],

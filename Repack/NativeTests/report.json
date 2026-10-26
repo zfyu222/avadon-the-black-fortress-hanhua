@@ -15,9 +15,9 @@
   "game_started": false,
   "in_game_verified": false,
   "bindings": {
-    "Repack/Build/self_test.exe": "4fdb98548e1195f399f91c0baabc4ef854f47c7c7d6c2c2cf9f27563a7c74659",
-    "Repack/Payload/winmm.dll": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3",
-    "Repack/Payload/AvadonChinese/translations.bin": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
+    "Repack/Build/self_test.exe": "9cf4ca49d59a04f52d70c8c55b836a2dbd929a6399488d39ecaf1baee8a485ad",
+    "Repack/Payload/winmm.dll": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a",
+    "Repack/Payload/AvadonChinese/translations.bin": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c",
     "Repack/Build/required_glyphs.bin": "d21f5a4e7018b26b98648e2a5c485f2e946e36aaf382f27ba92ba0412b7d1f36"
   },
   "native_sources": {

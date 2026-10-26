@@ -5,8 +5,8 @@
     "records": 15928,
     "keys": 21808,
     "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
-    "translation_sha256": "8eacdf92ed763cb581209315c61c7db8168548004b04704a8d4f3f76868270a8",
-    "dictionary_sha256": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
+    "translation_sha256": "bf8cb69da9e6f327b9f8a8c9c4e75dcc0168fbf9cdb052241d97f50749a7f6b7",
+    "dictionary_sha256": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c",
     "variants": [
       {
         "row": 1,
@@ -87383,5 +87383,5 @@
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3"
+  "dll_sha256": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a"
 }

@@ -1,0 +1,567 @@
+[
+  {
+    "row": 1144,
+    "translation": "这将重置所选的第一名角色的所有技能，使你能够 retrain 它们。你确定吗？",
+    "latin_words": [
+      "retrain"
+    ]
+  },
+  {
+    "row": 1169,
+    "translation": "要暂停游戏，请按 Escape 键。Escape 键也会取消你正在执行的任何操作。",
+    "latin_words": [
+      "Escape",
+      "Escape"
+    ]
+  },
+  {
+    "row": 1170,
+    "translation": "按住 Tab 键时，你会看到所在区域的完整地图。按住 Shift 键时，你会看到屏幕上所有角色的名字。",
+    "latin_words": [
+      "Tab",
+      "Shift"
+    ]
+  },
+  {
+    "row": 1171,
+    "translation": "要保存游戏，请输入 Control-S。要打开存档，请输入 Control-O。要退出，请输入 Control-Q。要调出这些说明，请按 F1。",
+    "latin_words": [
+      "Control",
+      "Control",
+      "Control"
+    ]
+  },
+  {
+    "row": 1174,
+    "translation": "设计、编程 - Jeff Vogel",
+    "latin_words": [
+      "Jeff",
+      "Vogel"
+    ]
+  },
+  {
+    "row": 1175,
+    "translation": "角色美术、设计助理 - Linda Strout",
+    "latin_words": [
+      "Linda",
+      "Strout"
+    ]
+  },
+  {
+    "row": 1176,
+    "translation": "色彩、界面美术 - Ben Resnick ",
+    "latin_words": [
+      "Ben",
+      "Resnick"
+    ]
+  },
+  {
+    "row": 1177,
+    "translation": "墙壁图标 - Raymond Arnold",
+    "latin_words": [
+      "Raymond",
+      "Arnold"
+    ]
+  },
+  {
+    "row": 1178,
+    "translation": "商务经理 - Mariann Krizsan",
+    "latin_words": [
+      "Mariann",
+      "Krizsan"
+    ]
+  },
+  {
+    "row": 1179,
+    "translation": "附加地形图标 - Reiner 'Tiles' Prokein",
+    "latin_words": [
+      "Reiner",
+      "Tiles",
+      "Prokein"
+    ]
+  },
+  {
+    "row": 1180,
+    "translation": "Macintosh Beta 测试 - David Abromson、Allan Anderson、Michael 'txa1265' Anderson、James G. Crawford、Cremorn、Chris Drouin、Ben Fields、Katherine Foreman、Douglas Frederick、Andrew Hartung、Trish Hausmann、Daniel Helman、Istara、Ben Kimmett、Maria A. Leza、Nikolas Manak、Erica Jeanne Marceau、Pam Marschall、John Simon、Darin Takemoto、Edwin Thomson、Evan Williams、Ted Woodward、Joshua Zucker",
+    "latin_words": [
+      "Macintosh",
+      "Beta",
+      "David",
+      "Abromson",
+      "Allan",
+      "Anderson",
+      "Michael",
+      "txa",
+      "Anderson",
+      "James",
+      "Crawford",
+      "Cremorn",
+      "Chris",
+      "Drouin",
+      "Ben",
+      "Fields",
+      "Katherine",
+      "Foreman",
+      "Douglas",
+      "Frederick",
+      "Andrew",
+      "Hartung",
+      "Trish",
+      "Hausmann",
+      "Daniel",
+      "Helman",
+      "Istara",
+      "Ben",
+      "Kimmett",
+      "Maria",
+      "Leza",
+      "Nikolas",
+      "Manak",
+      "Erica",
+      "Jeanne",
+      "Marceau",
+      "Pam",
+      "Marschall",
+      "John",
+      "Simon",
+      "Darin",
+      "Takemoto",
+      "Edwin",
+      "Thomson",
+      "Evan",
+      "Williams",
+      "Ted",
+      "Woodward",
+      "Joshua",
+      "Zucker"
+    ]
+  },
+  {
+    "row": 1181,
+    "translation": "Windows Beta 测试 - Sharna Alt、Michael 'txa1265' Anderson、Emma Atkins、Atterratt、Jason Blazec、Will Cooper、Meredith Dixon、Paul Ellsworth、Colin Ferguson、Jenny Sue Hane、Joel Jayarajasingam、Mark Kennedy、Kingsley Muir、Michael Negranol、Dan Nicholson、Matt Pasek、H C Petrie、Lauri Randall、Marge Rhode、Heidi Schaub、Tobias Scheuer、David Setchell、Lori Tagawa",
+    "latin_words": [
+      "Windows",
+      "Beta",
+      "Sharna",
+      "Alt",
+      "Michael",
+      "txa",
+      "Anderson",
+      "Emma",
+      "Atkins",
+      "Atterratt",
+      "Jason",
+      "Blazec",
+      "Will",
+      "Cooper",
+      "Meredith",
+      "Dixon",
+      "Paul",
+      "Ellsworth",
+      "Colin",
+      "Ferguson",
+      "Jenny",
+      "Sue",
+      "Hane",
+      "Joel",
+      "Jayarajasingam",
+      "Mark",
+      "Kennedy",
+      "Kingsley",
+      "Muir",
+      "Michael",
+      "Negranol",
+      "Dan",
+      "Nicholson",
+      "Matt",
+      "Pasek",
+      "Petrie",
+      "Lauri",
+      "Randall",
+      "Marge",
+      "Rhode",
+      "Heidi",
+      "Schaub",
+      "Tobias",
+      "Scheuer",
+      "David",
+      "Setchell",
+      "Lori",
+      "Tagawa"
+    ]
+  },
+  {
+    "row": 1195,
+    "translation": "找到喜欢的角色后，如果愿意，你可以更改他或她的名字。按 Delete 键删除已有名字，然后输入新名字。",
+    "latin_words": [
+      "Delete"
+    ]
+  },
+  {
+    "row": 1247,
+    "translation": "在地形区域中，北方位于右上方，西方位于左上方。按住 Tab 键可查看相关提示。",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 1248,
+    "translation": "如果你想查看某个角色的名称（以及影响它的任何状态效果），请将鼠标光标移到它上面。要查看所有可见角色的名称，请按住 Shift 键。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 1258,
+    "translation": "自动地图只会显示你正在探索区域的一部分。按住 Tab 键可查看整个区域。展开后的地图还会用灰色标记你已经探索过的区域。这能帮助你辨认尚未探索的区域。 ",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 1283,
+    "translation": "你也可以按 F5-F8 键选择这四个按钮。要查看其中包含哪些法术，可以按住 Tab 键。",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 1293,
+    "translation": "按住 Shift 键时，地形画面上每个可见角色的名字会叠加在其图像上。有趣的角色往往有具体的名字（如“乔”），而不是泛称（如“守卫”）。要靠近某个角色并与其交谈，点击它即可。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 1300,
+    "translation": "要保存游戏，按磁盘按钮（或按 Escape 键），然后选择“保存游戏”。这会打开“保存游戏”窗口。接着你可以选择一个存档槽来保存游戏。你也可以输入 Control-S 来打开此窗口。",
+    "latin_words": [
+      "Escape",
+      "Control"
+    ]
+  },
+  {
+    "row": 1301,
+    "translation": "之后，你可以在标题画面上选择“载入游戏”，载入该存档并从那个时间点继续游玩。游玩过程中，要载入存档，按磁盘按钮（或按 Escape 键），然后选择“载入已保存游戏”。这会打开“载入游戏”窗口。你也可以输入 Control-O 来打开此窗口。",
+    "latin_words": [
+      "Escape",
+      "Control"
+    ]
+  },
+  {
+    "row": 1345,
+    "translation": "要拆分一叠物品（比如八瓶治疗药水），按住 Shift 键并点击它。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 1356,
+    "translation": "要打开杂物袋，请在物品栏窗口中选择“打开杂物袋”。然后你就可以把东西放进杂物袋。你也可以按住 Control 键并点击物品，将其移入杂物袋。",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 1582,
+    "translation": "按住 Shift 键可查看所有可见生物的名称。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 1583,
+    "translation": "按住 Tab 键可查看你所在区域的完整地图。",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 1585,
+    "translation": "你可以按住 Control 点击背包中或地上的物品，将它们移入杂物袋。之后在商店出售物品时，就能很快把它们全部卖掉。",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 1587,
+    "translation": "你对某个角色的训练方式不满意吗？去贝拉扎森林找训练师莉拉。她可以让你 retrain 你的所有技能。",
+    "latin_words": [
+      "retrain"
+    ]
+  },
+  {
+    "row": 2371,
+    "translation": "（他们的位置在区域地图上以星号标出。按住 Tab 键可查看整张地图。）",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 2455,
+    "translation": "（他们的位置已用星标在你的地图上标出。按住 Tab 键可查看整个区域的地图。）",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 7657,
+    "translation": "佐萨·夺心者注意到其中一名战士已身受重伤。 _啊ssss……很快，我的玩物的身体就要伤重到无法运作了。我可不能让这种事sss发生。这一分算你的……_ 龙兽消耗自身部分能量施放了一道强力的治疗法术。那士兵受损的血肉粗糙地愈合在一起。",
+    "latin_words": [
+      "ssss",
+      "sss"
+    ]
+  },
+  {
+    "row": 7661,
+    "translation": "龙兽说道：_我看我们势均力敌。我们的实力太接近，令我不安。若我亲自与你交手，胜算sss会比现在大得多。_",
+    "latin_words": [
+      "sss"
+    ]
+  },
+  {
+    "row": 7665,
+    "translation": "佐萨·夺心者转过身，隔着大门望向你。_你是个值得一战的敌手。相当有趣。现在我要逃进森林深处sss了。你想追就追吧。我希望我们再也不见。_",
+    "latin_words": [
+      "sss"
+    ]
+  },
+  {
+    "row": 7762,
+    "translation": "这块旧标牌上曾经写着一个词，但大部分油漆已经剥落。这个词只剩下前三个字母：_Her_",
+    "latin_words": [
+      "Her"
+    ]
+  },
+  {
+    "row": 10216,
+    "translation": "_请允许我问你一个问题。你确实是从 Spiderweb Software 购买它的吗？_",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 10218,
+    "translation": "_那么，我为给你带来的不便深表歉意。请写信至 support@spiderwebsoftware.com 索取新的密钥。请附上你注册的游戏以及下单时使用的地址。我们会立即免费提供一份替换密钥。_",
+    "latin_words": [
+      "support",
+      "spiderwebsoftware",
+      "com"
+    ]
+  },
+  {
+    "row": 10231,
+    "translation": "_我们相信你有自己的理由。版权法确实被大公司滥用。许多其他公司的游戏都带有令人反感的 DRM，用来欺压付费顾客。_",
+    "latin_words": [
+      "DRM"
+    ]
+  },
+  {
+    "row": 10236,
+    "translation": "_现在，你来决定是否愿意购买这款游戏。近年来，小型 PC 和 Mac 开发者越来越难以维持生计，这在很大程度上要归咎于盗版。_",
+    "latin_words": [
+      "Mac"
+    ]
+  },
+  {
+    "row": 10242,
+    "translation": "_我们非常感谢。能有相信并支持我们工作的诚实顾客，我们感到很幸运。退出阿瓦登并重新启动，当注册界面出现时，选择前往 Spiderweb Software 在线商店。_",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 11985,
+    "translation": "_要购买《阿瓦登》，请访问 Spiderweb Software 在线商店。每次运行或退出游戏时，你都有机会前往那里！嘶嘶嘶！_",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 15241,
+    "translation": "要查看其他角色的物品栏，请选择其头像。点击物品旁的宝石即可使用该物品。按住 Shift 点击一叠物品可将其拆分。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 15242,
+    "translation": "点击物品旁的宝石即可使用该物品。按住 Shift 点击一叠物品可将其拆分。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 15255,
+    "translation": "你把一件物品放进了杂物袋。（你也可以按住 Control 键点击背包中的物品，将其放到这里。）",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 15265,
+    "translation": "你把一件物品放进了杂物袋。（你也可以按住 Control 键点击背包中或地面上的物品，将其放到这里。）",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 15296,
+    "translation": "要获得物品的完整详细描述，请按住 Control 键并点击该物品。",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 15306,
+    "translation": "如果你想体验完整游戏，请选择下方选项前往 Spiderweb Software 的安全在线商店。希望很快再见到你！",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 15307,
+    "translation": "前往 Spiderweb Software 在线商店",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 15324,
+    "translation": "FPS 计数器：开启。",
+    "latin_words": [
+      "FPS"
+    ]
+  },
+  {
+    "row": 15325,
+    "translation": "FPS 计数器：关闭。",
+    "latin_words": [
+      "FPS"
+    ]
+  },
+  {
+    "row": 15328,
+    "translation": "战斗中的存档现已存入快速存档槽（文件夹 'Save18'）。",
+    "latin_words": [
+      "Save"
+    ]
+  },
+  {
+    "row": 15501,
+    "translation": "输入新的键盘快捷键，或按 Escape 不设置快捷键。你可以使用 Shift、Control 或 Option 键。",
+    "latin_words": [
+      "Escape",
+      "Shift",
+      "Control",
+      "Option"
+    ]
+  },
+  {
+    "row": 15502,
+    "translation": "点击一个命令以更改（或移除）其键盘快捷键。部分组合（Control-O、S、Q 和 Shift-D）为保留组合。完成后按“OK”按钮。",
+    "latin_words": [
+      "Control",
+      "Shift"
+    ]
+  },
+  {
+    "row": 15679,
+    "translation": "：选择目标（或按 Escape 取消）。",
+    "latin_words": [
+      "Escape"
+    ]
+  },
+  {
+    "row": 15680,
+    "translation": "：选择目标位置（或按 Escape 取消）。",
+    "latin_words": [
+      "Escape"
+    ]
+  },
+  {
+    "row": 15681,
+    "translation": "：选择友方角色（或按 Escape 取消）。",
+    "latin_words": [
+      "Escape"
+    ]
+  },
+  {
+    "row": 15767,
+    "translation": "保存/读取/退出菜单（Escape）",
+    "latin_words": [
+      "Escape"
+    ]
+  },
+  {
+    "row": 15796,
+    "translation": "按住 Tab 键查看完整地图。",
+    "latin_words": [
+      "Tab"
+    ]
+  },
+  {
+    "row": 15797,
+    "translation": "按住 Shift 键查看生物名称。",
+    "latin_words": [
+      "Shift"
+    ]
+  },
+  {
+    "row": 15810,
+    "translation": "作弊码已停用。要了解如何重新启用它们，请访问 Spiderweb Software 的网站并查看阿瓦登技术支持页面。",
+    "latin_words": [
+      "Spiderweb",
+      "Software"
+    ]
+  },
+  {
+    "row": 15821,
+    "translation": "移动：指定技能目标时无法移动。（按 Escape 取消该技能。）",
+    "latin_words": [
+      "Escape"
+    ]
+  },
+  {
+    "row": 15836,
+    "translation": "必须运行 Steam 才能游玩本游戏（SteamAPI_Init() 失败）。",
+    "latin_words": [
+      "Steam",
+      "SteamAPI",
+      "Init"
+    ]
+  },
+  {
+    "row": 15856,
+    "translation": "之后，你可以使用文件菜单（或输入 Control-O）打开载入游戏窗口并载入你的存档。",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 15858,
+    "translation": "既然你已经玩了一段时间，应该保存游戏了。按此按钮可打开文件菜单。（或键入 Control-S 直接保存游戏。）",
+    "latin_words": [
+      "Control"
+    ]
+  },
+  {
+    "row": 15913,
+    "translation": "阿瓦登存档文件 (*.SAV)",
+    "latin_words": [
+      "SAV"
+    ]
+  },
+  {
+    "row": 15914,
+    "translation": "文本文件 (*.TXT)",
+    "latin_words": [
+      "TXT"
+    ]
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "row": 1170,
+    "term": "Tab",
+    "source": "When you hold down the Tab key, you will see a map of the entire area you are in. When you hold down the Shift key, you will see the names of all of the characters on the screen.",
+    "translation": "按住 Tab 键时，你会看到所在区域的完整地图。按住 Shift 键时，你会看到屏幕上所有角色的名字。"
+  },
+  {
+    "row": 1247,
+    "term": "Tab",
+    "source": "In the terrain area, north is to the upper right and west is to the upper left. To see a reminder of this, hold down the Tab key.",
+    "translation": "在地形区域中，北方位于右上方，西方位于左上方。按住 Tab 键可查看相关提示。"
+  },
+  {
+    "row": 1258,
+    "term": "Tab",
+    "source": "The automap will only show a portion of the area you are exploring. Hold down the Tab key to see the entire area. This expanded map will also mark the areas you have explored with gray. This will help you to identify areas you have not yet explored. ",
+    "translation": "自动地图只会显示你正在探索区域的一部分。按住 Tab 键可查看整个区域。展开后的地图还会用灰色标记你已经探索过的区域。这能帮助你辨认尚未探索的区域。 "
+  },
+  {
+    "row": 1283,
+    "term": "Tab",
+    "source": "You can also select these four buttons by pressing keys F5-F8. To be reminded what spells they contain, you can hold down the Tab key.",
+    "translation": "你也可以按 F5-F8 键选择这四个按钮。要查看其中包含哪些法术，可以按住 Tab 键。"
+  },
+  {
+    "row": 1583,
+    "term": "Tab",
+    "source": "Hold down the Tab key to see a full map of the area you are in.",
+    "translation": "按住 Tab 键可查看你所在区域的完整地图。"
+  },
+  {
+    "row": 2371,
+    "term": "Tab",
+    "source": "(Their locations are marked with stars on the area map. Hold the Tab key to see the entire map.)",
+    "translation": "（他们的位置在区域地图上以星号标出。按住 Tab 键可查看整张地图。）"
+  },
+  {
+    "row": 2455,
+    "term": "Tab",
+    "source": "(Their locations are marked on your map with stars. Hold down the Tab key to see a map of the entire area.)",
+    "translation": "（他们的位置已用星标在你的地图上标出。按住 Tab 键可查看整个区域的地图。）"
+  },
+  {
+    "row": 15796,
+    "term": "Tab",
+    "source": "Hold Tab key to see entire map.",
+    "translation": "按住 Tab 键查看完整地图。"
+  },
+  {
+    "row": 1170,
+    "term": "Shift",
+    "source": "When you hold down the Tab key, you will see a map of the entire area you are in. When you hold down the Shift key, you will see the names of all of the characters on the screen.",
+    "translation": "按住 Tab 键时，你会看到所在区域的完整地图。按住 Shift 键时，你会看到屏幕上所有角色的名字。"
+  },
+  {
+    "row": 1248,
+    "term": "Shift",
+    "source": "If you would like to see the names of a character (and any status effects that afflict it), move the mouse cursor onto it. To see the names of all visible characters, hold down the Shift key.",
+    "translation": "如果你想查看某个角色的名称（以及影响它的任何状态效果），请将鼠标光标移到它上面。要查看所有可见角色的名称，请按住 Shift 键。"
+  },
+  {
+    "row": 1293,
+    "term": "Shift",
+    "source": "When you hold down the Shift key, the name of each visible character will be superimposed over its graphic on the terrain screen. Interesting characters tend to have specific names (like 'Joe') as opposed to generic ones (like 'Guard'). To approach a character and speak with it, click on it.",
+    "translation": "按住 Shift 键时，地形画面上每个可见角色的名字会叠加在其图像上。有趣的角色往往有具体的名字（如“乔”），而不是泛称（如“守卫”）。要靠近某个角色并与其交谈，点击它即可。"
+  },
+  {
+    "row": 1345,
+    "term": "Shift",
+    "source": "To split up a stack of items (like, say, eight healing potions), hold the Shift key down and click on it.",
+    "translation": "要拆分一叠物品（比如八瓶治疗药水），按住 Shift 键并点击它。"
+  },
+  {
+    "row": 1582,
+    "term": "Shift",
+    "source": "Hold down the Shift key to see the names of all visible creatures.",
+    "translation": "按住 Shift 键可查看所有可见生物的名称。"
+  },
+  {
+    "row": 15241,
+    "term": "Shift",
+    "source": "To see another character's inventory, select his or her portrait. Click the gem by an item to use it. Shift-click a stack of items to split it up.",
+    "translation": "要查看其他角色的物品栏，请选择其头像。点击物品旁的宝石即可使用该物品。按住 Shift 点击一叠物品可将其拆分。"
+  },
+  {
+    "row": 15242,
+    "term": "Shift",
+    "source": "Click the gem by an item to use it. Shift-click a stack of items to split it up.",
+    "translation": "点击物品旁的宝石即可使用该物品。按住 Shift 点击一叠物品可将其拆分。"
+  },
+  {
+    "row": 15501,
+    "term": "Shift",
+    "source": "Type the new keyboard shortcut, or press Escape to not have a shortcut. You can use the Shift, Control, or Option key.",
+    "translation": "输入新的键盘快捷键，或按 Escape 不设置快捷键。你可以使用 Shift、Control 或 Option 键。"
+  },
+  {
+    "row": 15502,
+    "term": "Shift",
+    "source": "Click on a command to change (or remove) the keyboard shortcut. Some combinations (Control-O,S,Q and Shift-D) are reserved. Press the OK button when done.",
+    "translation": "点击一个命令以更改（或移除）其键盘快捷键。部分组合（Control-O、S、Q 和 Shift-D）为保留组合。完成后按“OK”按钮。"
+  },
+  {
+    "row": 15797,
+    "term": "Shift",
+    "source": "Hold Shift key to see creature names.",
+    "translation": "按住 Shift 键查看生物名称。"
+  },
+  {
+    "row": 1169,
+    "term": "Escape",
+    "source": "To pause the game, press the Escape key. The Escape key also cancels whatever action you are doing.",
+    "translation": "要暂停游戏，请按 Escape 键。Escape 键也会取消你正在执行的任何操作。"
+  },
+  {
+    "row": 1300,
+    "term": "Escape",
+    "source": "To save the game, press the disk button (or press the Escape key) and select Save Game. This brings up the Save Game window. You can then choose a slot to save the game into. You can also bring up this window by typing Control-S.",
+    "translation": "要保存游戏，按磁盘按钮（或按 Escape 键），然后选择“保存游戏”。这会打开“保存游戏”窗口。接着你可以选择一个存档槽来保存游戏。你也可以输入 Control-S 来打开此窗口。"
+  },
+  {
+    "row": 1301,
+    "term": "Escape",
+    "source": "Later, you can load that saved game and continue to play from that point by selecting Load Game on the title screen. While playing, to load a saved game, press on the disk button (or hit the Escape key) and select Load Saved Game. This brings up the Load Game window. You can also bring up this window by typing Control-O.",
+    "translation": "之后，你可以在标题画面上选择“载入游戏”，载入该存档并从那个时间点继续游玩。游玩过程中，要载入存档，按磁盘按钮（或按 Escape 键），然后选择“载入已保存游戏”。这会打开“载入游戏”窗口。你也可以输入 Control-O 来打开此窗口。"
+  },
+  {
+    "row": 15501,
+    "term": "Escape",
+    "source": "Type the new keyboard shortcut, or press Escape to not have a shortcut. You can use the Shift, Control, or Option key.",
+    "translation": "输入新的键盘快捷键，或按 Escape 不设置快捷键。你可以使用 Shift、Control 或 Option 键。"
+  },
+  {
+    "row": 15679,
+    "term": "Escape",
+    "source": ": Select target (or hit Escape to cancel).",
+    "translation": "：选择目标（或按 Escape 取消）。"
+  },
+  {
+    "row": 15680,
+    "term": "Escape",
+    "source": ": Select target space (or hit Escape to cancel).",
+    "translation": "：选择目标位置（或按 Escape 取消）。"
+  },
+  {
+    "row": 15681,
+    "term": "Escape",
+    "source": ": Select friendly character (or hit Escape to cancel).",
+    "translation": "：选择友方角色（或按 Escape 取消）。"
+  },
+  {
+    "row": 15767,
+    "term": "Escape",
+    "source": "Save/Load/Quit Menu (Escape)",
+    "translation": "保存/读取/退出菜单（Escape）"
+  },
+  {
+    "row": 15821,
+    "term": "Escape",
+    "source": "Move: You can't move when targeting an ability. (Press Escape to cancel the ability.)",
+    "translation": "移动：指定技能目标时无法移动。（按 Escape 取消该技能。）"
+  },
+  {
+    "row": 1144,
+    "term": "retrain",
+    "source": "This will reset all of the first selected character's skills, enabling you to retrain them. Are you sure?",
+    "translation": "这将重置所选的第一名角色的所有技能，使你能够 retrain 它们。你确定吗？"
+  },
+  {
+    "row": 1587,
+    "term": "retrain",
+    "source": "Are you unhappy with how you trained a character? Find Trainer Leala in the Beraza Woods. She can enable you to retrain all of your skills.",
+    "translation": "你对某个角色的训练方式不满意吗？去贝拉扎森林找训练师莉拉。她可以让你 retrain 你的所有技能。"
+  }
+]

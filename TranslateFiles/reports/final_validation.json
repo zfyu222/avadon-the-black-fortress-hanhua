@@ -1,15 +1,15 @@
 {
   "status": "passed",
   "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
-  "translation_sha256": "8eacdf92ed763cb581209315c61c7db8168548004b04704a8d4f3f76868270a8",
+  "translation_sha256": "bf8cb69da9e6f327b9f8a8c9c4e75dcc0168fbf9cdb052241d97f50749a7f6b7",
   "records": 15928,
   "semantic_review": "full",
   "polish": false,
-  "revision": 3,
+  "revision": 4,
   "glossary": {
-    "hash": "831317812e8e871f1e0ec360c9ca6534425d4a1f258bb0d4bfc11f375f7b0f5b",
-    "path": "glossary\\r3\\freeze_9ac86720\\built\\glossary_reviewed.json",
-    "revision": 3
+    "hash": "2a154b57dd2d7799c85a7866821582ae8a0c252c3f53a1bb1b396de8ab47efa4",
+    "path": "glossary\\revision_4_7791a19e\\built\\glossary_reviewed.json",
+    "revision": 4
   },
   "ainiee": {
     "actual_commit": "c50570c1dee7df7bd51316a253f0b42d10a8ca4c",
@@ -24,8 +24,8 @@
   },
   "path": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\avadon-the-black-fortress_text_translated.csv",
   "quality_review": {
-    "report_hash": "f4aa17d9083e420f8f8dcd235392efbfba6ff32a37cf3ad704d3277f2eb8ea8a",
-    "reviewer": "sol"
+    "report_hash": "cdfec0ab5bbf754db7db344c17540336d8f424482be6b13a9b5b15ea0adaf59d",
+    "reviewer": "workflow:no-disputes"
   },
   "in_game_check": "pending_repack"
 }
