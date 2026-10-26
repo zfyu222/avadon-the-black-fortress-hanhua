@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "repository": "https://github.com/zfyu222/avadon-the-black-fortress-hanhua",
+  "public": true,
+  "release_url": "https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.1",
+  "tag": "v1.1",
+  "latest_stable": true,
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-10-26T15:13:00Z",
+  "asset_id": 678533941,
+  "asset_name": "Avadon_The_Black_Fortress_1.1.zip",
+  "asset_bytes": 12471471,
+  "asset_url": "https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/download/v1.1/Avadon_The_Black_Fortress_1.1.zip",
+  "anonymous_download_verified": true,
+  "asset_display_label": "阿瓦登：黑色要塞_子非鱼汉化1.1.zip",
+  "local_archive_name": "阿瓦登：黑色要塞_子非鱼汉化1.1.zip",
+  "filename_note": "GitHub normalizes this Chinese filename; the download uses an ASCII alias and the required Chinese name remains its display label and local ZIP name.",
+  "downloaded_sha256": "7b2468fa60f70a7bb4423e1edaa24148a9f59b50a2ccda693633100197a769bc",
+  "local_sha256": "7b2468fa60f70a7bb4423e1edaa24148a9f59b50a2ccda693633100197a769bc"
+}

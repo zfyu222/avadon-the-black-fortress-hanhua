@@ -4,7 +4,9 @@ import json
 import subprocess
 import urllib.request
 from pathlib import Path
-from build_release import P,DISPATCH,ARCHIVE,RELEASE,VERSION,sha,write
+from build_release import P,DISPATCH,sha,write
+from build_release_v1_2 import ARCHIVE,VERSION
+RELEASE='https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v'+VERSION
 
 def api(path):
     result=subprocess.run(['gh','api',path],check=True,capture_output=True)
@@ -16,16 +18,17 @@ def main():
     release=api('repos/'+repository+'/releases/latest')
     assert not repo['private'] and release['tag_name']=='v'+VERSION and not release['draft'] and not release['prerelease']
     assert release['html_url']==RELEASE
-    matches=[a for a in release['assets'] if a['name'] in (ARCHIVE.name,'Avadon_The_Black_Fortress_1.1.zip')]
+    alias=f'Avadon_The_Black_Fortress_{VERSION}.zip'
+    matches=[a for a in release['assets'] if a['name'] in (ARCHIVE.name,alias)]
     if not matches:
         assert len(release['assets'])==1 and release['assets'][0]['size']==ARCHIVE.stat().st_size
         candidate=release['assets'][0]
         metadata=P/'Release/github_asset_metadata.json'
-        write(metadata,dict(name='Avadon_The_Black_Fortress_1.1.zip',label=ARCHIVE.name))
+        write(metadata,dict(name=alias,label=ARCHIVE.name))
         changed=subprocess.run(['gh','api','repos/'+repository+'/releases/assets/'+str(candidate['id']),
             '--method','PATCH','--input',str(metadata)],check=True,capture_output=True)
         asset=json.loads(changed.stdout)
-        assert asset['name']=='Avadon_The_Black_Fortress_1.1.zip' and asset['label']==ARCHIVE.name
+        assert asset['name']==alias and asset['label']==ARCHIVE.name
     else:asset=matches[0]
     assert asset['state']=='uploaded' and asset['size']==ARCHIVE.stat().st_size
     url=asset['browser_download_url']

@@ -1,13 +1,19 @@
 {
   "status": "passed",
-  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.1.zip",
-  "sha256": "7b2468fa60f70a7bb4423e1edaa24148a9f59b50a2ccda693633100197a769bc",
-  "payload_files": 22,
-  "archive_files": 25,
+  "version": "1.2",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.2.zip",
+  "sha256": "36be63f14540ba85be6d3d1c3b694a7b63c024edf45ca2066698e6248289a35a",
+  "tested_game_payload_files": 22,
+  "payload_unchanged_from": "v1.1",
+  "auxiliary_files": 4,
+  "archive_files": 29,
   "zip_crc": true,
-  "extracted_hashes": true,
-  "guide_install_uninstall_roundtrip": true,
-  "source_exe_and_original_jpg_and_atlas_unchanged": true,
-  "agent_started_game": false,
-  "user_test_evidence": "Repack/UserTests/confirmation_v1.1_20261026.json"
+  "all_hashes": true,
+  "actual_windows_powershell_install_repeat_upgrade_uninstall": true,
+  "legacy_upgrade_steam_recovery_requested": true,
+  "steam_recovery_network_not_executed_in_test": true,
+  "installer_synthetic_regressions": 6,
+  "exe_unchanged": true,
+  "game_started": false,
+  "original_game_test_evidence": "Repack/UserTests/confirmation_v1.1_20261026.json"
 }
