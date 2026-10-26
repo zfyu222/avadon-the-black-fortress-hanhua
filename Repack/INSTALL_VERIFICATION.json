@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "installation_manifest_sha256": "62ecbd393a596e0c22af7e26b9c5fd885903712749594573b99c098c55e7c4a9",
+  "installed_payload_files": 22,
+  "protected_exe_scripts_dat_files_unchanged": 281,
+  "native_atlas_unchanged": {
+    "Avadon Files/Graphics Core/G290.png": "f9daff62e33c2e99b332ed78609011623b228b8161bb251c4636bce9c9140e05"
+  },
+  "all_backups_verified": true,
+  "game_started": false,
+  "in_game_verified": false,
+  "next_step": "user_game_test"
+}

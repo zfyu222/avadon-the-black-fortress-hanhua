@@ -41,3 +41,15 @@ Desktop.ini
 /ImagePatch/build-v2/
 /ImagePatch/build-v3/images/
 /ImagePatch/build-v3/contact.jpg
+/ImagePatch/build-v4/images/
+/ImagePatch/build-v4/contact.jpg
+/Repack/Build/
+/Repack/Payload/
+/TranslateFiles/image-text/Repack/Payload/
+/Repack/Backups/
+/Repack/NativeTests/*.ppm
+/Repack/NativeTests/*.log
+/Repack/NativeTests/unmatched.txt
+/Repack/NativeTests/runtime.log
+/Analysis/font_atlas_inspection.png
+/Analysis/glyph_quote_comparison.png

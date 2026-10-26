@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "source": "Avadon Files/Graphics Core/G128.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "571e34647aa0a838ee080ec8df74fcf2fec1861db7ceb3c8672b78f02132bfc8"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G129.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "7fb7c88d6c43ac7883180a09e0a1af8433f1efbac76d5711a7a8a64591878070"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G133.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "39a178c7d25ed54379c1426d12ba8e4a6610d230f2faa5c285ee410c3f4f1ccb"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G142.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "0cef902d36160f27584495a9c4f4dfaeb8490aa8481c73c306c4a8ad6aecca0c"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G143.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "c57bcf91c4a452ff70e330c922580db85a94bbef9a624ebab313d5c0f36697de"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G153.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "f958cc097be7709ca4b43737ba8daa458f6cf24fe870a41d9174954bbccf1e63"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G158.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "700918eaf26a0d3fadb3f51b093fa376919f2c2571c2fea17d709d1879e8d3a0"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G159.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "a21119f7b27429ab918bd985e965a9ab01b304273962323bf57bfb83d2a8b12a"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G165.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "eb8a209e8a3807b8cc3a5c3909154bfbdbf2e26fd2aa56650faf654eda5854cd"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G167.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "dbc82d9b17aea27f8c819756d51bb3ce8b460db75da5ffb82b57016afdf9cc1c"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G169.bmp",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "25cebf122ba2c2346f1b6982b1f74838b1894e90dc1ec89662b09fe491572b66"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G176.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "92b718201921e398a88cb7cf4d7c29c37101ecc74e0ae10365637734e373773f"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G177.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "65f2f9cfdad06ba46554311970807229418d2f47c34710f1b584591c5bd208c8"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G189.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "1018a6265cb4edc9c0e7757a4cfe2dcfad9de015e07f1d03295d5a33c1b42c2c"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G203.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "14b2a0b88eef74d25e9b45cd73cbe43ba0fc910a20511dc869019a4b875cfc3e"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G220.png",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "0c5ed7182af8454555eeb65e6f4dbea7b22766842145712f7aa10a1adac70c3b"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G231.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "e746145f3c0ac09316868d0e6dcfaf9bbae03df50c121f00d53b627d3e683bd4"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G232.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "d077b3b4b49228a71ace2b729942576a09dc5b77b463c2c1f555874904818ba6"
+    },
+    {
+      "source": "Avadon Files/Graphics Core/G233.jpg",
+      "dimensions_preserved": true,
+      "outside_render_rectangles_unchanged": true,
+      "non_white_glyphs_survive_native_color_key": true,
+      "sha256": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e"
+    }
+  ],
+  "changed_regions": 94,
+  "preserved_regions": 39,
+  "manifest_sha256": "e5d2b5dbb41ab490e90d10fc60a4401ad1d290e8fe4ee4c6f2e6cabee8f96e9f",
+  "game_started": false
+}

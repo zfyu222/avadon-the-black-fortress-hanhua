@@ -2,4 +2,8 @@
 *.json text eol=lf
 TranslateFiles/**/*.json -text
 ImagePatch/**/*.json -text
+Repack/**/*.json -text
+Analysis/render*.json -text
 *.py text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
