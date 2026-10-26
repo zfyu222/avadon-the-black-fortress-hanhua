@@ -1,5 +1,6 @@
 *.csv -text
 *.json text eol=lf
+*.json whitespace=cr-at-eol
 TranslateFiles/**/*.json -text
 ImagePatch/**/*.json -text
 Repack/**/*.json -text
