@@ -168,3 +168,5 @@
 - 2026-10-27：v1.2已作为最新稳定版发布，公开ZIP匿名下载哈希一致（`36be63f14540ba85be6d3d1c3b694a7b63c024edf45ca2066698e6248289a35a`）；同步简化v1.0/v1.1网页说明，历史ZIP不改动。百度网盘与腾讯文档链接按用户提供原样收录，本轮未向网盘上传文件。
 
 - 2026-10-27：v1.3仅将下载/订阅/反馈区移至玩家说明最前面，ZIP内汉化载荷、安装/卸载脚本及其SHA256SUMS与v1.2完全相同。实际检查确认脚本仅依赖CMD、系统Windows PowerShell与.NET，不依赖Python、Node或PowerShell 7。新版目录安装/升级/卸载回放与模板顺序检查通过。v1.2历史清单保存于 `Dispatch/v1.2/`。发布页：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.3 。
+
+- 2026-10-27：v1.3已发布为最新稳定版；公开ZIP匿名下载SHA-256一致，旧发布页下载区也已全部置顶。
