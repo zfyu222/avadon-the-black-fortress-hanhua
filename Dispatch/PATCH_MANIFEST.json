@@ -1,5 +1,5 @@
 {
-  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.0.zip",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.1.zip",
   "created": "2026-10-26",
   "files": [
     {
@@ -59,13 +59,13 @@
     },
     {
       "path": "Avadon Files/Graphics Core/G176.png",
-      "sha256": "92b718201921e398a88cb7cf4d7c29c37101ecc74e0ae10365637734e373773f",
-      "size": 1327907
+      "sha256": "6e658d5f437a23557c9213e056d733187ea1bdc3cb76b36d57a3ec50c256ede2",
+      "size": 1414226
     },
     {
       "path": "Avadon Files/Graphics Core/G177.png",
-      "sha256": "65f2f9cfdad06ba46554311970807229418d2f47c34710f1b584591c5bd208c8",
-      "size": 1310027
+      "sha256": "380f437d3aefc915e6d10231152944a4421d1cde71bccea0d2687289bf4f78d2",
+      "size": 1361264
     },
     {
       "path": "Avadon Files/Graphics Core/G189.png",
@@ -84,18 +84,18 @@
     },
     {
       "path": "Avadon Files/Graphics Core/G231.png",
-      "sha256": "e746145f3c0ac09316868d0e6dcfaf9bbae03df50c121f00d53b627d3e683bd4",
-      "size": 1293667
+      "sha256": "af26a2c0226f91980df452e3d3cd0a4c8a7a70d9ff30aff51b50a7d290b03d0b",
+      "size": 1460955
     },
     {
       "path": "Avadon Files/Graphics Core/G232.png",
-      "sha256": "d077b3b4b49228a71ace2b729942576a09dc5b77b463c2c1f555874904818ba6",
-      "size": 1647447
+      "sha256": "b572f85720a8059c555704062b2d8ed23be9c818d0e12d3d879e40ec3a459324",
+      "size": 1720660
     },
     {
       "path": "Avadon Files/Graphics Core/G233.png",
-      "sha256": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e",
-      "size": 1474534
+      "sha256": "4ad13bf9705b875b67fcdf1601aeffa14937bd9f3e7236df187dfe98ea89417d",
+      "size": 1613868
     },
     {
       "path": "AvadonChinese/MinHook-LICENSE.txt",
@@ -109,8 +109,8 @@
     },
     {
       "path": "winmm.dll",
-      "sha256": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a",
-      "size": 369152
+      "sha256": "a29b5246265b56c76f7dd7215433abd9db19097725690f7e880aa4c37e5fc7e3",
+      "size": 375296
     }
   ]
 }

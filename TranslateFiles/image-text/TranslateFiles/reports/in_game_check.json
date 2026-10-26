@@ -60,12 +60,12 @@
     },
     {
       "path": "Repack/Payload/Avadon Files/Graphics Core/G176.png",
-      "sha256": "92b718201921e398a88cb7cf4d7c29c37101ecc74e0ae10365637734e373773f",
+      "sha256": "6e658d5f437a23557c9213e056d733187ea1bdc3cb76b36d57a3ec50c256ede2",
       "game_path": "Avadon Files/Graphics Core/G176.png"
     },
     {
       "path": "Repack/Payload/Avadon Files/Graphics Core/G177.png",
-      "sha256": "65f2f9cfdad06ba46554311970807229418d2f47c34710f1b584591c5bd208c8",
+      "sha256": "380f437d3aefc915e6d10231152944a4421d1cde71bccea0d2687289bf4f78d2",
       "game_path": "Avadon Files/Graphics Core/G177.png"
     },
     {
@@ -85,17 +85,17 @@
     },
     {
       "path": "Repack/Payload/Avadon Files/Graphics Core/G231.png",
-      "sha256": "e746145f3c0ac09316868d0e6dcfaf9bbae03df50c121f00d53b627d3e683bd4",
+      "sha256": "af26a2c0226f91980df452e3d3cd0a4c8a7a70d9ff30aff51b50a7d290b03d0b",
       "game_path": "Avadon Files/Graphics Core/G231.png"
     },
     {
       "path": "Repack/Payload/Avadon Files/Graphics Core/G232.png",
-      "sha256": "d077b3b4b49228a71ace2b729942576a09dc5b77b463c2c1f555874904818ba6",
+      "sha256": "b572f85720a8059c555704062b2d8ed23be9c818d0e12d3d879e40ec3a459324",
       "game_path": "Avadon Files/Graphics Core/G232.png"
     },
     {
       "path": "Repack/Payload/Avadon Files/Graphics Core/G233.png",
-      "sha256": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e",
+      "sha256": "4ad13bf9705b875b67fcdf1601aeffa14937bd9f3e7236df187dfe98ea89417d",
       "game_path": "Avadon Files/Graphics Core/G233.png"
     },
     {
@@ -110,46 +110,46 @@
     },
     {
       "path": "Repack/Payload/winmm.dll",
-      "sha256": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a",
+      "sha256": "a29b5246265b56c76f7dd7215433abd9db19097725690f7e880aa4c37e5fc7e3",
       "game_path": "winmm.dll"
     }
   ],
   "evidence_files": [
     {
-      "path": "Repack/UserTests/confirmation_20261026.json",
-      "sha256": "c0407d59fb8e9534e08fdb5fd9eb92f81acac3161ddd0a015dfd53fbf7ab839b"
+      "path": "Repack/UserTests/confirmation_v1.1_20261026.json",
+      "sha256": "d4cb50e93652921d0a42153b46c2675c19cd1cf7421d5ada9552f17bc3855f91"
     }
   ],
   "checks": [
     {
       "category": "fonts",
       "status": "pass",
-      "scene": "用户确认的最新版中文显示复测（未另提供具体场景名）",
-      "notes": "用户对最新版五类检查是否已通过的询问答复“检测过了”，并要求发布；据此记录用户实测结果，非代理实测，不推断全流程覆盖。"
+      "scene": "修正版开门提示、消息栏、快捷键及地图中文显示",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
     },
     {
       "category": "layout",
       "status": "pass",
-      "scene": "用户确认的最新版文字排版复测（未另提供具体场景名）",
-      "notes": "用户对最新版五类检查是否已通过的询问答复“检测过了”，并要求发布；据此记录用户实测结果，非代理实测，不推断全流程覆盖。"
+      "scene": "修正版消息栏、快捷键及半透明地图标签排版",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
     },
     {
       "category": "ui",
       "status": "pass",
-      "scene": "用户确认的最新版菜单操作复测（未另提供具体场景名）",
-      "notes": "用户对最新版五类检查是否已通过的询问答复“检测过了”，并要求发布；据此记录用户实测结果，非代理实测，不推断全流程覆盖。"
+      "scene": "修正版开门提示、消息栏、快捷键及地图界面",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
     },
     {
       "category": "dialogue",
       "status": "not_applicable",
       "scene": "",
-      "notes": "此子工程只包含确认图片文字；对白及任务逻辑由正文项目的用户实测确认记录覆盖。"
+      "notes": "本轮为显示匹配和地图样式增量修复，正式正文译文未改变；未声称本轮重新测试对白分支或全流程任务。v1.0完整类别的用户确认保留于历史记录。消息栏显示本轮已回归。"
     },
     {
       "category": "quest",
       "status": "not_applicable",
       "scene": "",
-      "notes": "此子工程只包含确认图片文字；对白及任务逻辑由正文项目的用户实测确认记录覆盖。"
+      "notes": "本轮为显示匹配和地图样式增量修复，正式正文译文未改变；未声称本轮重新测试对白分支或全流程任务。v1.0完整类别的用户确认保留于历史记录。消息栏显示本轮已回归。"
     }
   ],
   "quality_report_hash": "cc9ab50d385c1941b720bf3a76641b50d8488e5e9ba3358df2c9f9cd50ceccc8",

@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.0.zip",
-  "sha256": "95be3b4c0815682b1d5fef682a3a7d937444048142dad07aa077ac949bebd61f",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.1.zip",
+  "sha256": "7b2468fa60f70a7bb4423e1edaa24148a9f59b50a2ccda693633100197a769bc",
   "payload_files": 22,
   "archive_files": 25,
   "zip_crc": true,
@@ -9,5 +9,5 @@
   "guide_install_uninstall_roundtrip": true,
   "source_exe_and_original_jpg_and_atlas_unchanged": true,
   "agent_started_game": false,
-  "user_test_evidence": "Repack/UserTests/confirmation_20261026.json"
+  "user_test_evidence": "Repack/UserTests/confirmation_v1.1_20261026.json"
 }

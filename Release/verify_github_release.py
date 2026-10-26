@@ -4,7 +4,7 @@ import json
 import subprocess
 import urllib.request
 from pathlib import Path
-from build_release import P,DISPATCH,ARCHIVE,RELEASE,sha,write
+from build_release import P,DISPATCH,ARCHIVE,RELEASE,VERSION,sha,write
 
 def api(path):
     result=subprocess.run(['gh','api',path],check=True,capture_output=True)
@@ -14,22 +14,22 @@ def main():
     repository='zfyu222/avadon-the-black-fortress-hanhua'
     repo=api('repos/'+repository)
     release=api('repos/'+repository+'/releases/latest')
-    assert not repo['private'] and release['tag_name']=='v1.0' and not release['draft'] and not release['prerelease']
+    assert not repo['private'] and release['tag_name']=='v'+VERSION and not release['draft'] and not release['prerelease']
     assert release['html_url']==RELEASE
-    matches=[a for a in release['assets'] if a['name'] in (ARCHIVE.name,'Avadon_The_Black_Fortress_1.0.zip')]
+    matches=[a for a in release['assets'] if a['name'] in (ARCHIVE.name,'Avadon_The_Black_Fortress_1.1.zip')]
     if not matches:
         assert len(release['assets'])==1 and release['assets'][0]['size']==ARCHIVE.stat().st_size
         candidate=release['assets'][0]
         metadata=P/'Release/github_asset_metadata.json'
-        write(metadata,dict(name='Avadon_The_Black_Fortress_1.0.zip',label=ARCHIVE.name))
+        write(metadata,dict(name='Avadon_The_Black_Fortress_1.1.zip',label=ARCHIVE.name))
         changed=subprocess.run(['gh','api','repos/'+repository+'/releases/assets/'+str(candidate['id']),
             '--method','PATCH','--input',str(metadata)],check=True,capture_output=True)
         asset=json.loads(changed.stdout)
-        assert asset['name']=='Avadon_The_Black_Fortress_1.0.zip' and asset['label']==ARCHIVE.name
+        assert asset['name']=='Avadon_The_Black_Fortress_1.1.zip' and asset['label']==ARCHIVE.name
     else:asset=matches[0]
     assert asset['state']=='uploaded' and asset['size']==ARCHIVE.stat().st_size
     url=asset['browser_download_url']
-    assert url.startswith('https://github.com/'+repository+'/releases/download/v1.0/')
+    assert url.startswith('https://github.com/'+repository+'/releases/download/v'+VERSION+'/')
     directory=DISPATCH/'Verification/download';directory.mkdir(parents=True,exist_ok=True)
     downloaded=directory/ARCHIVE.name
     request=urllib.request.Request(url,headers={'User-Agent':'Avadon-localization-release-check'})

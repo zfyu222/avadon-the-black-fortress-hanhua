@@ -1,0 +1,155 @@
+{
+  "translation_sha256": "18f9549844c36e9a67b0445d2a78ffcf0f1a22a4007646c2d82009a0864fff74",
+  "game_version": "Steam Build 4252712 / Avadon v1.0s2",
+  "platform": "Steam Windows 11 x64（游戏与补丁均为 x86）",
+  "payload_files": [
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G128.png",
+      "game_path": "Avadon Files/Graphics Core/G128.png",
+      "sha256": "571e34647aa0a838ee080ec8df74fcf2fec1861db7ceb3c8672b78f02132bfc8"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G129.png",
+      "game_path": "Avadon Files/Graphics Core/G129.png",
+      "sha256": "7fb7c88d6c43ac7883180a09e0a1af8433f1efbac76d5711a7a8a64591878070"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G133.png",
+      "game_path": "Avadon Files/Graphics Core/G133.png",
+      "sha256": "39a178c7d25ed54379c1426d12ba8e4a6610d230f2faa5c285ee410c3f4f1ccb"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G142.png",
+      "game_path": "Avadon Files/Graphics Core/G142.png",
+      "sha256": "0cef902d36160f27584495a9c4f4dfaeb8490aa8481c73c306c4a8ad6aecca0c"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G143.png",
+      "game_path": "Avadon Files/Graphics Core/G143.png",
+      "sha256": "c57bcf91c4a452ff70e330c922580db85a94bbef9a624ebab313d5c0f36697de"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G153.png",
+      "game_path": "Avadon Files/Graphics Core/G153.png",
+      "sha256": "f958cc097be7709ca4b43737ba8daa458f6cf24fe870a41d9174954bbccf1e63"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G158.png",
+      "game_path": "Avadon Files/Graphics Core/G158.png",
+      "sha256": "700918eaf26a0d3fadb3f51b093fa376919f2c2571c2fea17d709d1879e8d3a0"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G159.png",
+      "game_path": "Avadon Files/Graphics Core/G159.png",
+      "sha256": "a21119f7b27429ab918bd985e965a9ab01b304273962323bf57bfb83d2a8b12a"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G165.png",
+      "game_path": "Avadon Files/Graphics Core/G165.png",
+      "sha256": "eb8a209e8a3807b8cc3a5c3909154bfbdbf2e26fd2aa56650faf654eda5854cd"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G167.png",
+      "game_path": "Avadon Files/Graphics Core/G167.png",
+      "sha256": "dbc82d9b17aea27f8c819756d51bb3ce8b460db75da5ffb82b57016afdf9cc1c"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G169.bmp",
+      "game_path": "Avadon Files/Graphics Core/G169.bmp",
+      "sha256": "a16e4b73288c3c789531d039d4dd18fcb73c24046fed796cb9ba3b08ae58dc8e"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G176.png",
+      "game_path": "Avadon Files/Graphics Core/G176.png",
+      "sha256": "6e658d5f437a23557c9213e056d733187ea1bdc3cb76b36d57a3ec50c256ede2"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G177.png",
+      "game_path": "Avadon Files/Graphics Core/G177.png",
+      "sha256": "380f437d3aefc915e6d10231152944a4421d1cde71bccea0d2687289bf4f78d2"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G189.png",
+      "game_path": "Avadon Files/Graphics Core/G189.png",
+      "sha256": "1018a6265cb4edc9c0e7757a4cfe2dcfad9de015e07f1d03295d5a33c1b42c2c"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G203.png",
+      "game_path": "Avadon Files/Graphics Core/G203.png",
+      "sha256": "14b2a0b88eef74d25e9b45cd73cbe43ba0fc910a20511dc869019a4b875cfc3e"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G220.png",
+      "game_path": "Avadon Files/Graphics Core/G220.png",
+      "sha256": "0c5ed7182af8454555eeb65e6f4dbea7b22766842145712f7aa10a1adac70c3b"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G231.png",
+      "game_path": "Avadon Files/Graphics Core/G231.png",
+      "sha256": "af26a2c0226f91980df452e3d3cd0a4c8a7a70d9ff30aff51b50a7d290b03d0b"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G232.png",
+      "game_path": "Avadon Files/Graphics Core/G232.png",
+      "sha256": "b572f85720a8059c555704062b2d8ed23be9c818d0e12d3d879e40ec3a459324"
+    },
+    {
+      "path": "Repack/Payload/Avadon Files/Graphics Core/G233.png",
+      "game_path": "Avadon Files/Graphics Core/G233.png",
+      "sha256": "4ad13bf9705b875b67fcdf1601aeffa14937bd9f3e7236df187dfe98ea89417d"
+    },
+    {
+      "path": "Repack/Payload/AvadonChinese/MinHook-LICENSE.txt",
+      "game_path": "AvadonChinese/MinHook-LICENSE.txt",
+      "sha256": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335"
+    },
+    {
+      "path": "Repack/Payload/AvadonChinese/translations.bin",
+      "game_path": "AvadonChinese/translations.bin",
+      "sha256": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c"
+    },
+    {
+      "path": "Repack/Payload/winmm.dll",
+      "game_path": "winmm.dll",
+      "sha256": "a29b5246265b56c76f7dd7215433abd9db19097725690f7e880aa4c37e5fc7e3"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "Repack/UserTests/confirmation_v1.1_20261026.json",
+      "sha256": "d4cb50e93652921d0a42153b46c2675c19cd1cf7421d5ada9552f17bc3855f91"
+    }
+  ],
+  "checks": [
+    {
+      "category": "fonts",
+      "status": "pass",
+      "scene": "修正版开门提示、消息栏、快捷键及地图中文显示",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
+    },
+    {
+      "category": "layout",
+      "status": "pass",
+      "scene": "修正版消息栏、快捷键及半透明地图标签排版",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
+    },
+    {
+      "category": "ui",
+      "status": "pass",
+      "scene": "修正版开门提示、消息栏、快捷键及地图界面",
+      "notes": "用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。"
+    },
+    {
+      "category": "dialogue",
+      "status": "not_applicable",
+      "scene": "",
+      "notes": "本轮为显示匹配和地图样式增量修复，正式正文译文未改变；未声称本轮重新测试对白分支或全流程任务。v1.0完整类别的用户确认保留于历史记录。消息栏显示本轮已回归。"
+    },
+    {
+      "category": "quest",
+      "status": "not_applicable",
+      "scene": "",
+      "notes": "本轮为显示匹配和地图样式增量修复，正式正文译文未改变；未声称本轮重新测试对白分支或全流程任务。v1.0完整类别的用户确认保留于历史记录。消息栏显示本轮已回归。"
+    }
+  ]
+}
