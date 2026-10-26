@@ -1,5 +1,9 @@
 # Avadon: The Black Fortress 汉化项目
 
+正式下载：[《阿瓦登：黑色要塞》子非鱼AI汉化补丁 v1.0](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.0)
+
+支持 Steam Build 4252712 / Avadon v1.0s2，用户测试环境为 Windows 11 x64（游戏和补丁为 x86）。安装前请阅读 ZIP 根目录的 `补丁说明.txt` 并备份原文件。补丁后续可能会更新，建议关注或订阅本仓库 / Releases，及时获取新版补丁。
+
 ## 游戏信息
 - 原名：Avadon: The Black Fortress
 - 中文名：阿瓦登：黑色要塞（项目暂译，非官方中文名）
@@ -36,8 +40,8 @@
 | 图片提取 | game-image-extract / RapidOCR / ORT GPU / Qwen3-VL | v0.5 / 3.10.0 / 1.31.0 / 8B Instruct Q4_K_M；98 条确认子集 |
 | 翻译 | game-translate / translation_workflow.py | API；按原优先级；正文 15,928 条、图片 98 条正式验收导出 |
 | 图片合入 | game-image-repack / Pillow / Noto Sans SC | build-v4；19 张纹理，94 处修改、39 处保留 |
-| 回填 | REA + Ghidra / MSVC x86 / MinHook | 6.4.0 + 12.1.4 / 14.51.36231 / v1.3.4；已安装，实机待用户验证 |
-| 发布 | game-release-patch | 待回填验证通过 |
+| 回填 | REA + Ghidra / MSVC x86 / MinHook | 6.4.0 + 12.1.4 / 14.51.36231 / v1.3.4；已安装，用户确认最新版已测试 |
+| 发布 | game-release-patch | v1.0；载荷22文件，ZIP25文件，哈希与目录安装/卸载回放通过 |
 
 ## 文本提取
 - 状态：2026-10-26 完成首版静态提取，共 **15,928 条去重原文 / 18,379 个来源位置**。脚本 17,350 处、DAT 192 处、EXE 837 处；同文精确去重，全部来源保留。
@@ -85,7 +89,7 @@
 - 恢复说明：用户已澄清继续翻译，禁止的是绕过优先级，而非停止全部翻译。后续命令不带 `--api`，程序按原 `yjapi → vortex → acy7 → deepseek` 优先级及故障转移规则运行；不擅自修改选路、重试或 Token 预算。
 - 协议恢复：一份真实 API 审校回复仅省略外层 decisions，程序按完整原始字段恢复包装并通过相同引用及语义证据校验，无新增模型请求。另一个缺少术语等级的提案由 API 在剩余原预算内重新审校。
 - 同形多义：Corruption 的地名/状态和 Charm 的状态/道具由真实审校分别给出译名和范围。仅当 whole_record 与带可见前后缀的 literal_context、或两组 literal_context 可机械证明互不重叠时允许同源词并存；重叠/无范围/跨表冲突仍拒绝。已做针对性回归，未由程序代填语义通过。
-- 用户负责游戏实测；本流程只做静态验证，完成回填后交付测试清单，发布前停止。
+- 用户负责游戏实测；代理未启动游戏。用户已确认最新版“检测过了”并要求发布，实测来源、原话、载荷绑定和未细述场景的边界见 `Repack/UserTests/confirmation_20261026.json`。
 - 正式译文：`avadon-the-black-fortress_text_translated.csv`，与源文逐条对应。
 - 图片源文 / 译文：`avadon-the-black-fortress_images_text.csv` / `avadon-the-black-fortress_images_text_translated.csv`，来源及坐标独立保存为 mapping。
 - 术语、占位符规则、语义审校和校验报告保存在 `TranslateFiles/`；缓存、备份和凭据不入库。
@@ -100,7 +104,7 @@
 - 图片适配：`0x471290` 按 BMP → PNG → JPG 探测。原 JPG 的中文候选以同名 PNG 优先加载，保留原 JPG；G169 仍为真实 BMP。引擎纯白色键会清除 RGB 255,255,255，最终中文字使用 245,240,220，透明资产保留 alpha。
 - 离线验证：`Repack/verify_patch.py` 核验正式源文/译文、词典全部标准键、贴图及载荷，并运行自建 `self_test.exe`。检查 193 个导出、3,126 个字符、x86 栈/寄存器、未知原文回退、GL 状态恢复、中文换行/裁剪及姓名占位符。测试只运行自建组件与合成函数，不启动 Avadon、不执行游戏测试。证据见 `Repack/STATIC_VALIDATION.json` 和 `NativeTests/report.json`。
 - 安装核验：原 EXE、279 个脚本、DAT 共 281 个提取源文件哈希全部不变；G290 原字形图集不变；全部备份与安装文件哈希一致。原始 JPG 也全部保留。
-- 实机状态：**未启动游戏、未实机通过**；字体视觉效果、选项热区、任务推进、动态拼接、保存/载入及显卡兼容性由用户测试。详见 `Repack/测试清单.md`；两份 `USER_GAME_CHECK_*.pending.json` 保持 pending，未调用 record-game-check 冒记通过。未生成发布包。
+- 实机状态：用户对最新版字体、排版、菜单、对白及任务推进是否已检查通过的询问答复“检测过了”，据此归档用户实测；未另提供本轮任务名称或逐项截图，不宣称全流程通关。正文及图片子工程的 record-game-check / release-check 均通过，正式记录为各自 `TranslateFiles/reports/in_game_check.json`；此前 pending 模板及静态报告保留历史原状，不当作实测记录。代理未启动游戏。
 
 ## 图片文字合入
 - 当前候选：`ImagePatch/build-v4/IMAGE_PATCH_MANIFEST.json`，19 张同尺寸 RGBA PNG、94 处中文绘制区域；39 处明确保留原文的技术字形 / 数字 / 教程字母 / 品牌维持原像素，G290 位图字形图集不重绘。
@@ -111,6 +115,8 @@
 - 状态：图片工具清单仍为 `ready_for_engine_adapter`、`installed=false`，表示其自身阶段边界；后续引擎适配已实际完成并安装，权威安装记录在 `Repack/INSTALLATION.json`。用户游戏实测待进行。
 
 ## 已知问题
+
+以下前四条为修复经过；用户已在发布前确认最新版经过测试，旧段落中的“待复测”描述为当时状态。仍存在的范围边界在本节末尾及发行说明中列明。
 - 用户提示句中夹 `retrain`：该词作为独立原生命令被列为禁翻，但未限定范围，误影响自然句；先前审校漏掉了 1144、1587 两处。已正式收窄禁翻范围，修正两句并通过局部独立审校、最终质量闭环和全库导出。中文混合拉丁片段的 63 个候选另由 Sol 逐条核对，未确认更多普通词漏译；该结论仅限这些候选，不保证全游戏零漏译。独立命令第 15333 条仍原样保留；新载荷已安装，待用户复测。
 - 用户进一步反馈动态疲劳/恢复回合、带空格的重量、快捷键标签仍英文，以及说明书字体偏小。已补充仅由完整数字消息组成的拼接、最多四个 UI 空格包装、结构明确的数值/按键值标签及括号快捷键匹配；所有片段必须完整消费，未知散文仍回退，不做逐词拼贴。实测原正高度 13 的字体申请得到 11 像素字格、3 像素内部留白、汉字墨迹仅 7 像素；改用字符高度后汉字墨迹为 11 像素，原 13 像素行距不变。组件回归及离线前后预览通过，已安装，游戏内长提示的换行/裁剪和阅读效果待用户复测。证据见 `Repack/UserFeedback/20261026-dynamic-font/report.json`、`NativeTests/dynamic_font_report.json` 及前后预览 PNG。
 - 用户后续截图确认 NPC 标题及叙述正文已有中文，三个对白选项仍为英文。运行日志已显示 enabled；unmatched 实际输入为 `1. (Watch them quietly.)` 等，正式译文键不含界面添加的编号。已增加一至两位正整数加 `. ` 的对白编号包装适配，仅当内部原句精确存在于正式词典时替换，编号原样保留；完整原句键优先，未知或异常格式仍回退原文。截图中三条真实选项、完整键优先及未知/错误编号的组件回归通过；已重新安装，选项显示待用户复测。证据见 `Repack/UserFeedback/20261026-dialogue/report.json`。
@@ -121,8 +127,13 @@
 - 项目 `Game/` 为安装目录的 junction；后续对其写入将影响实际游戏，回填前须备份。
 
 ## 对外发布
-- 补丁文件 / 支持版本 / 载荷 / 验证结果：待完成回填和验证后记录。
-- 发布目录：`Dispatch/`；当前无发布补丁。
+- 补丁：`Dispatch/阿瓦登：黑色要塞_子非鱼汉化1.0.zip`，标题《阿瓦登：黑色要塞》子非鱼AI汉化补丁 v1.0。
+- 支持版本：Steam Build 4252712 / Avadon v1.0s2；Windows 11 x64（x86 游戏/补丁），EXE 哈希绑定见回填节。
+- 载荷：`winmm.dll`、`AvadonChinese/translations.bin`、MinHook 许可与19张修改图片，共22个文件；没有原 EXE、脚本、DAT、字体、系统 DLL、凭据或开发日志。
+- 验证：用户确认最新版已测试；正式 release-check 通过。ZIP CRC、22个解压载荷哈希、同路径 Dispatch/Files 副本及按安装说明进行的干净目录安装/卸载回放通过。原 EXE、原 JPG 和 G290 图集保持不变。代理未启动游戏。
+- ZIP SHA-256：`95be3b4c0815682b1d5fef682a3a7d937444048142dad07aa077ac949bebd61f`；详细验证见 `Dispatch/RELEASE_VALIDATION.json`。
+- 已知问题：图片为98条确认子集，10张局部未决；未保证所有长句、分辨率、显卡组合、中文输入或其他 winmm 代理 MOD 共存兼容。保留原件备份。
+- GitHub Release：[v1.0 正式下载](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.0)；反馈请提交本仓库 Issues。补丁后续可能会更新，建议关注或订阅本项目的 GitHub 仓库 / Releases，及时获取新版补丁。
 
 ## 版本记录
 - 2026-10-26：初始化独立汉化仓库及 Game 目录联接；启用图片文字汉化；补充官方资料、本地资源线索和 Steam 构建标识。
@@ -134,3 +145,4 @@
 - 2026-10-26：用户复测确认正文出现中文；修复界面为对白选项添加编号后无法命中词典的问题，新增三条真实选项回归并重新安装。未重译、未发起付费 API 请求，选项仍待用户复测。
 - 2026-10-26：修复完整动态消息拼接、UI 空格及快捷键后缀；纠正字体高度定义导致的小字问题，测得小号汉字墨迹由 7 增至 11 像素。组件测试、字形覆盖、裁剪及安装核验通过，已重新安装，用户实测待反馈。
 - 2026-10-26：修订 retrain 禁翻作用域，8 条定向复审后实际改正 2 句；审阅 63 个中文混合拉丁片段候选，重新正式导出、构建和安装，等待实机复测。
+- 2026-10-26：用户确认最新版已测试并要求发布；归档实测确认，生成及校验 v1.0 首发 ZIP，建立独立公开仓库与 GitHub Release。
