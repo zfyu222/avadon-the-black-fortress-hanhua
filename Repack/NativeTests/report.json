@@ -4,7 +4,7 @@
   "format_patterns": 87,
   "glyphs_checked": 3126,
   "exports_checked": 193,
-  "visible_text_pixels": 2117,
+  "visible_text_pixels": 3500,
   "x86_abi_stack_and_registers": true,
   "unknown_text_trampoline": true,
   "gl_state_preserved": true,
@@ -15,16 +15,16 @@
   "game_started": false,
   "in_game_verified": false,
   "bindings": {
-    "Repack/Build/self_test.exe": "25df59bd3a792d41d5de78d3b033e8c0f94a02a148ac32db04664925d0889788",
-    "Repack/Payload/winmm.dll": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390",
+    "Repack/Build/self_test.exe": "4fdb98548e1195f399f91c0baabc4ef854f47c7c7d6c2c2cf9f27563a7c74659",
+    "Repack/Payload/winmm.dll": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3",
     "Repack/Payload/AvadonChinese/translations.bin": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
     "Repack/Build/required_glyphs.bin": "d21f5a4e7018b26b98648e2a5c485f2e946e36aaf382f27ba92ba0412b7d1f36"
   },
   "native_sources": {
     "adapter.cpp": "5873e5fa689f544cd1322de57ae1ae3bd1e5330921667b72e723ff3627cc6b89",
-    "localization_core.hpp": "ba13f04aed387af34c6f9baafa73d5af47738fe7bc472d0bdeae6c779cc2db8d",
-    "renderer.hpp": "d6f05e0691830374bcaf5ce245063421a18479b646ded9e63a54ba558022a74e",
-    "self_test.cpp": "47683d2fcd9f098ab78c4e2549537926838283c8241b06183c0eea7363d94c2d"
+    "localization_core.hpp": "11026d2b51a322a5e7bc667fb6aea2d07069d181e7bcac465a8d9881b0c61c99",
+    "renderer.hpp": "d54d65658c80b66bdeef7742404b2058f58d2fe45cf7e7707e021cc65ea97564",
+    "self_test.cpp": "9bce7dd063c5987cc4ef1bdc5974655b3768f179cee48a9a08e11dd6adb3da7b"
   },
   "startup_without_timeGetTime": true,
   "numbered_dialogue_choices": {
@@ -32,6 +32,15 @@
     "reported_choices": 3,
     "exact_record_priority": true,
     "unknown_and_malformed_fall_back": true,
+    "game_started": false
+  },
+  "dynamic_text_and_font": {
+    "status": "passed",
+    "complete_message_composition": true,
+    "padding_and_shortcut_labels": true,
+    "partial_prose_falls_back": true,
+    "cjk_body_ink_height": 11,
+    "native_line_step": 13,
     "game_started": false
   }
 }

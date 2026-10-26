@@ -24,7 +24,9 @@ class Renderer {
         if(!dc_)dc_=CreateCompatibleDC(nullptr);
         if(!dc_)throw std::runtime_error("Cannot create font DC");
         auto it=fonts_.find(height);if(it==fonts_.end()){
-            HFONT font=CreateFontW(height,0,0,0,FW_NORMAL,FALSE,FALSE,FALSE,DEFAULT_CHARSET,OUT_TT_PRECIS,CLIP_DEFAULT_PRECIS,ANTIALIASED_QUALITY,DEFAULT_PITCH,L"Microsoft YaHei");
+            // Use character height rather than a positive GDI cell request:
+            // measured positive 13 yielded a 7-pixel CJK ink box on this font.
+            HFONT font=CreateFontW(-std::max(1,height-1),0,0,0,FW_NORMAL,FALSE,FALSE,FALSE,DEFAULT_CHARSET,OUT_TT_PRECIS,CLIP_DEFAULT_PRECIS,ANTIALIASED_QUALITY,DEFAULT_PITCH,L"Microsoft YaHei");
             if(!font)throw std::runtime_error("Cannot create CJK font");it=fonts_.emplace(height,font).first;
         }
         SelectObject(dc_,it->second);return height;
@@ -41,7 +43,8 @@ class Renderer {
         BITMAPINFO info{};info.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);info.bmiHeader.biWidth=item.texture_width;info.bmiHeader.biHeight=-item.texture_height;info.bmiHeader.biPlanes=1;info.bmiHeader.biBitCount=32;info.bmiHeader.biCompression=BI_RGB;
         void* bits=nullptr;HBITMAP dib=CreateDIBSection(dc_,&info,DIB_RGB_COLORS,&bits,nullptr,0);if(!dib || !bits)throw std::runtime_error("Cannot rasterize CJK text");
         HGDIOBJ old=SelectObject(dc_,dib);size_t bytes=static_cast<size_t>(item.texture_width)*item.texture_height*4;memset(bits,0,bytes);SetTextColor(dc_,RGB(255,255,255));SetBkMode(dc_,TRANSPARENT);
-        BOOL rendered=TextOutW(dc_,1,1,text.data(),static_cast<int>(text.size()));GdiFlush();
+        TEXTMETRICW metrics{};if(!GetTextMetricsW(dc_,&metrics))throw std::runtime_error("Cannot read font metrics");
+        BOOL rendered=TextOutW(dc_,1,2-metrics.tmInternalLeading,text.data(),static_cast<int>(text.size()));GdiFlush();
         std::vector<unsigned char> rgba(bytes);const auto* input=static_cast<const unsigned char*>(bits);
         for(size_t i=0;i<bytes;i+=4){rgba[i]=rgba[i+1]=rgba[i+2]=255;rgba[i+3]=std::max(input[i],std::max(input[i+1],input[i+2]));}
         SelectObject(dc_,old);DeleteObject(dib);if(!rendered)throw std::runtime_error("Cannot draw CJK glyphs");
@@ -50,6 +53,7 @@ class Renderer {
         return textures_.emplace(key,item).first->second;
     }
 public:
+    int ink_height(wchar_t character,int height){select(height);MAT2 matrix={{0,1},{0,0},{0,0},{0,1}};GLYPHMETRICS metrics{};if(GetGlyphOutlineW(dc_,character,GGO_METRICS,&metrics,0,nullptr,&matrix)==GDI_ERROR)throw std::runtime_error("Cannot measure glyph ink");return static_cast<int>(metrics.gmBlackBoxY);}
     int measure(const std::wstring& text,int height){select(height);SIZE size{};if(!GetTextExtentPoint32W(dc_,text.data(),static_cast<int>(text.size()),&size))throw std::runtime_error("Cannot measure text");return size.cx;}
     std::wstring face(){select(13);wchar_t name[128]{};GetTextFaceW(dc_,128,name);return name;}
     bool glyphs(const std::wstring& text){select(13);std::vector<WORD> glyph(text.size());if(GetGlyphIndicesW(dc_,text.data(),static_cast<int>(text.size()),glyph.data(),GGI_MARK_NONEXISTING_GLYPHS)==GDI_ERROR)return false;return std::find(glyph.begin(),glyph.end(),0xffff)==glyph.end();}

@@ -75,6 +75,16 @@ int wmain(int argc,wchar_t** argv){
         avzh::Dictionary priority;priority.add("Body","Inner");priority.add("1. Body","Exact");require(priority.lookup("1. Body",value) && value=="Exact","Canonical numbered record must win");
         std::ofstream choice_report((output+L"\\dialogue_choice_report.json").c_str(),std::ios::binary);
         choice_report<<"{\"status\":\"passed\",\"reported_choices\":3,\"exact_record_priority\":true,\"unknown_and_malformed_fall_back\":true,\"game_started\":false}\n";choice_report.close();
+        std::string a,b,joined;
+        require(dictionary.lookup("Fatigue: 1. ",a) && dictionary.lookup("Turns to recover: 6. ",b),"Approved numeric messages missing");
+        require(dictionary.lookup("Fatigue: 1. Turns to recover: 6. ",joined) && joined==a+b,"Complete message composition failed");
+        require(dictionary.lookup("Weight: 4 lbs.",a) && dictionary.lookup(" Weight: 4 lbs.",b) && b==" "+a,"UI padding adaptation failed");
+        require(dictionary.lookup("Shortcut: ",a) && dictionary.lookup("Shortcut: w",b) && b==a+"w","Shortcut label binding failed");
+        require(dictionary.lookup("Health: ",a) && dictionary.lookup("Health: 64/65",b) && b==a+"64/65","Fractional label binding failed");
+        require(dictionary.lookup("Instructions",a) && dictionary.lookup("Instructions (F1)",b) && b==a+" (F1)","Hotkey label binding failed");
+        require(!dictionary.lookup("Fatigue: 1. Unapproved trailing prose.",value),"Partial numeric composition must fall back");
+        require(!dictionary.lookup("Shortcut: unapproved prose",value),"Unapproved label prose must fall back");
+        require(!dictionary.lookup("Instructions (unapproved prose)",value),"Unapproved parenthetical must fall back");
         auto lines=avzh::wrap(L"甲乙丙丁，戊己。",3,[](const std::wstring&s){return static_cast<int>(s.size());});for(const auto& line:lines)require(line.empty() || !avzh::closing(line[0]),"Closing punctuation starts wrapped line");
         std::wstring host_path=argv[0];auto slash=host_path.find_last_of(L"\\/");require(slash!=std::wstring::npos,"Need absolute component host path");
         std::wstring startup_dir=host_path.substr(0,slash)+L"\\AvadonChinese";CreateDirectoryW(startup_dir.c_str(),nullptr);
@@ -101,6 +111,8 @@ int wmain(int argc,wchar_t** argv){
         PIXELFORMATDESCRIPTOR format{};format.nSize=sizeof(format);format.nVersion=1;format.dwFlags=PFD_DRAW_TO_BITMAP|PFD_SUPPORT_OPENGL|PFD_SUPPORT_GDI;format.iPixelType=PFD_TYPE_RGBA;format.cColorBits=32;format.cDepthBits=0;format.iLayerType=PFD_MAIN_PLANE;int pixel_format=ChoosePixelFormat(dc,&format);require(pixel_format!=0 && SetPixelFormat(dc,pixel_format,&format),"Offscreen GL pixel format unavailable");HGLRC context=wglCreateContext(dc);require(context && wglMakeCurrent(dc,context),"Offscreen GL context unavailable");
         glViewport(0,0,320,160);glMatrixMode(GL_PROJECTION);glLoadIdentity();glOrtho(0,320,0,160,-100,100);glMatrixMode(GL_MODELVIEW);glLoadIdentity();glClearColor(12/255.0f,16/255.0f,20/255.0f,1);glClear(GL_COLOR_BUFFER_BIT);
         avzh::Renderer renderer;std::ifstream glyph_file(argv[2],std::ios::binary);std::string bytes((std::istreambuf_iterator<char>(glyph_file)),{});require(bytes.size()%2==0 && !bytes.empty(),"Glyph inventory unavailable");std::wstring glyphs(bytes.size()/2,L'\0');memcpy(&glyphs[0],bytes.data(),bytes.size());require(renderer.glyphs(glyphs),"Selected GDI font lacks an approved character");
+        int ink=renderer.ink_height(L'汉',13);require(ink>=10 && ink<=13,"CJK body glyph too small or too tall");
+        std::ofstream dynamic_report((output+L"\\dynamic_font_report.json").c_str(),std::ios::binary);dynamic_report<<"{\"status\":\"passed\",\"complete_message_composition\":true,\"padding_and_shortcut_labels\":true,\"partial_prose_falls_back\":true,\"cjk_body_ink_height\":"<<ink<<",\"native_line_step\":13,\"game_started\":false}\n";dynamic_report.close();
         auto* memory=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x300000,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));require(memory!=nullptr,"Fixture allocation failed");
         unsigned char text_code[]={0x55,0x8b,0xec,0x81,0xec,0x40,0x08,0,0,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};unsigned char measure_code[]={0x55,0x8b,0xec,0x81,0xec,0x14,0x04,0,0,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};memcpy(memory+0x6e080,text_code,sizeof(text_code));memcpy(memory+0x6df00,measure_code,sizeof(measure_code));
         unsigned char name_code[]={0xc7,0x01,'T','e','s','t',0xc7,0x41,0x04,'H','e','r','o',0xc6,0x41,0x08,0,0xc3};memcpy(memory+0x6ede0,name_code,sizeof(name_code));

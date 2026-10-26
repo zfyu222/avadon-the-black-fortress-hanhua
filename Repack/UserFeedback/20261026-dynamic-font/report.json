@@ -1,0 +1,80 @@
+{
+  "user_observation": [
+    "English dynamic fatigue/recovery, weight and shortcut labels",
+    "Chinese help/body text appears too small"
+  ],
+  "screenshots": [
+    {
+      "path": "Repack/UserFeedback/20261026-dynamic-font/screenshots/1.png",
+      "sha256": "f841ce82aa8e75326be4fe3fe8adc75d37e158d08c770f69d9a6a8d45a6ec169"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026-dynamic-font/screenshots/2.png",
+      "sha256": "68a3e1cd9a808942661eaa5496ce7a5e2f51449a3dec466d26a0ab95fcd0dfc7"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026-dynamic-font/screenshots/3.png",
+      "sha256": "df2cb75fe70849c3147234b3932b2538c4068da935c716cabdfc148adaa2b3a9"
+    }
+  ],
+  "canonical_messages": [
+    {
+      "csv_row": 15129,
+      "source": "Fatigue: %d. ",
+      "approved_translation": "疲劳：%d。 "
+    },
+    {
+      "csv_row": 15130,
+      "source": "Turns to recover: %d. ",
+      "approved_translation": "恢复所需回合：%d。 "
+    },
+    {
+      "csv_row": 15572,
+      "source": "Weight: %d lbs.",
+      "approved_translation": "重量：%d 磅。"
+    },
+    {
+      "csv_row": 15560,
+      "source": "Shortcut: ",
+      "approved_translation": "快捷键： "
+    },
+    {
+      "csv_row": 15743,
+      "source": "Health: ",
+      "approved_translation": "生命： "
+    },
+    {
+      "csv_row": 15766,
+      "source": "Instructions",
+      "approved_translation": "说明"
+    }
+  ],
+  "runtime_inputs": [
+    "Fatigue: 1. Turns to recover: 6. ",
+    " Weight: 4 lbs.",
+    "Shortcut: w"
+  ],
+  "font_before": {
+    "requested_positive_cell_height": 13,
+    "measured_cell_height": 11,
+    "internal_leading": 3,
+    "measured_CJK_ink_height": 7
+  },
+  "font_after_component_test": {
+    "status": "passed",
+    "complete_message_composition": true,
+    "padding_and_shortcut_labels": true,
+    "partial_prose_falls_back": true,
+    "cjk_body_ink_height": 11,
+    "native_line_step": 13,
+    "game_started": false
+  },
+  "repair": [
+    "Whole numeric-message composition with complete consumption",
+    "Bounded whitespace wrappers and structured numeric/key label values",
+    "Character-height font request and removal of internal top padding; original line step retained"
+  ],
+  "repaired_in_game_result": "pending_user_retest",
+  "paid_api_requests": 0,
+  "game_started_by_agent": false
+}

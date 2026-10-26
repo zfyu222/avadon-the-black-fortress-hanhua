@@ -24,10 +24,18 @@ inline std::vector<FormatPart> format_parts(const std::string& text) {
 inline std::string regex_literal(const std::string& text) {
     std::string out;for(char c:text){if(std::string(R"(\.^$|()[]{}*+?)").find(c)!=std::string::npos)out+='\\';out+=c;}return out;
 }
-struct Pattern { std::regex expression; std::vector<FormatPart> target; size_t specificity; bool require_known_argument; };
+struct Pattern { std::regex expression,prefix_expression; std::vector<FormatPart> target; size_t specificity; bool require_known_argument,composable; };
 class Dictionary {
     std::unordered_map<std::string,std::string> exact_;
     std::vector<Pattern> patterns_;
+    std::vector<std::pair<std::string,std::string>> labels_;
+    bool apply(const Pattern& pattern,const std::smatch& match,std::string& target,unsigned depth)const{
+        std::string candidate;size_t index=1;bool known_argument=false;
+        for(const auto& part:pattern.target){candidate+=part.literal;if(part.spec=="%%")candidate+='%';else if(!part.spec.empty()){
+            std::string argument=match[index++].str(),localized;
+            if(part.spec.back()=='s' && lookup(argument,localized,depth+1) && localized!=argument){candidate+=localized;known_argument=true;}else candidate+=argument;
+        }}if(pattern.require_known_argument && !known_argument)return false;target=std::move(candidate);return true;
+    }
 public:
     void add(const std::string& source,const std::string& target) {
         auto found=exact_.find(source);
@@ -35,8 +43,9 @@ public:
         exact_[source]=target;
     }
     void prepare() {
-        patterns_.clear();
+        patterns_.clear();labels_.clear();
         for(const auto& pair:exact_) {
+            if(pair.first.size()>2 && pair.first.compare(pair.first.size()-2,2,": ")==0 && pair.first.find('%')==std::string::npos)labels_.push_back(pair);
             auto source=format_parts(pair.first),target=format_parts(pair.second);size_t captures=0,literals=0,words=0;bool has_string=false,has_number=false;std::string expression="^";
             for(const auto& part:source){bool in_word=false;for(unsigned char c:part.literal){bool letter=(c>='A'&&c<='Z')||(c>='a'&&c<='z');if(letter&&!in_word)++words;in_word=letter;}expression+=regex_literal(part.literal);literals+=part.literal.size();if(part.spec=="%%"){expression+='%';++literals;}else if(!part.spec.empty()){
                 // Positional conversion is left to an explicitly supported adapter.
@@ -52,9 +61,11 @@ public:
             if(!captures || literals<2)continue;
             size_t target_captures=0;for(const auto& p:target)if(!p.spec.empty() && p.spec!="%%")++target_captures;
             if(captures!=target_captures)throw std::runtime_error("Printf argument count differs");
-            patterns_.push_back({std::regex(expression+"$",std::regex::ECMAScript|std::regex::optimize),std::move(target),literals,has_string && words<2 && !(has_number && words>0)});
+            const auto& ending=source.back().literal;bool composable=has_number && !has_string && ending.size()>=2 && ending.compare(ending.size()-2,2,". ")==0;
+            patterns_.push_back({std::regex(expression+"$",std::regex::ECMAScript|std::regex::optimize),std::regex(expression,std::regex::ECMAScript|std::regex::optimize),std::move(target),literals,has_string && words<2 && !(has_number && words>0),composable});
         }
         std::stable_sort(patterns_.begin(),patterns_.end(),[](const Pattern&a,const Pattern&b){return a.specificity>b.specificity;});
+        std::sort(labels_.begin(),labels_.end(),[](const auto&a,const auto&b){return a.first.size()>b.first.size();});
     }
     bool lookup(const std::string& source,std::string& target,unsigned depth=0) const {
         auto found=exact_.find(source);if(found!=exact_.end()){target=found->second;return true;}
@@ -71,12 +82,36 @@ public:
             }
         }
         for(const auto& pattern:patterns_){std::smatch match;if(!std::regex_match(source,match,pattern.expression))continue;
-            std::string candidate;size_t index=1;bool known_argument=false;
-            for(const auto& part:pattern.target){candidate+=part.literal;if(part.spec=="%%")candidate+='%';else if(!part.spec.empty()){
-                std::string argument=match[index++].str(),localized;
-                if(part.spec.back()=='s' && lookup(argument,localized,depth+1) && localized!=argument){candidate+=localized;known_argument=true;}else candidate+=argument;
-            }}if(pattern.require_known_argument && !known_argument)continue;target=std::move(candidate);return true;
-        }return false;
+            if(apply(pattern,match,target,depth))return true;
+        }
+        // Join only complete numeric messages with their original ". " boundary.
+        // Every byte must be consumed; never translate isolated words in prose.
+        std::string remainder=source,compound;unsigned pieces=0;
+        while(!remainder.empty() && pieces<4){bool matched=false;
+            for(const auto& pattern:patterns_){if(!pattern.composable)continue;std::smatch match;std::string part;
+                if(std::regex_search(remainder,match,pattern.prefix_expression,std::regex_constants::match_continuous) && match.length()>0 && apply(pattern,match,part,depth)){
+                    compound+=part;remainder.erase(0,match.length());++pieces;matched=true;break;
+                }
+            }if(!matched)break;
+        }
+        if(remainder.empty() && pieces>=2){target=std::move(compound);return true;}
+        static const std::regex opaque_value(R"((?:[+\-]?[0-9]+(?:[.,/][0-9]+)*%?|[A-Za-z]))");
+        for(const auto& label:labels_){if(source.compare(0,label.first.size(),label.first)!=0)continue;auto tail=source.substr(label.first.size());
+            if(std::regex_match(tail,opaque_value)){target=label.second+tail;return true;}
+        }
+        auto key_at=source.rfind(" (");
+        if(key_at!=std::string::npos && source.back()==')'){
+            auto key=source.substr(key_at+2,source.size()-key_at-3);
+            static const std::regex hotkey(R"((?:[A-Za-z0-9]|F(?:[1-9]|1[0-2])|Tab|Shift|Ctrl|Alt|Space|Esc))");
+            auto base=exact_.find(source.substr(0,key_at));
+            if(base!=exact_.end() && std::regex_match(key,hotkey)){target=base->second+source.substr(key_at);return true;}
+        }
+        // Preserve bounded UI padding while matching the whole inner message.
+        size_t leading=source.find_first_not_of(' ');
+        if(leading!=std::string::npos && leading>0 && leading<=4){std::string inner;if(lookup(source.substr(leading),inner,depth+1)){target=source.substr(0,leading)+inner;return true;}}
+        size_t last=source.find_last_not_of(' ');
+        if(last!=std::string::npos && last+1<source.size() && source.size()-last-1<=4){std::string inner;if(lookup(source.substr(0,last+1),inner,depth+1)){target=inner+source.substr(last+1);return true;}}
+        return false;
     }
     size_t size()const{return exact_.size();}
     size_t patterns()const{return patterns_.size();}

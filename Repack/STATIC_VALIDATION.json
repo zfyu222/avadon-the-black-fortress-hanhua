@@ -2,9 +2,9 @@
   "status": "passed",
   "scope": "offline_static_and_own_component_tests_only",
   "supported_exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
-  "build_manifest_sha256": "8ac36f64d62cdf79b14cecb4b9ca1d017c301e7c926b4a15b5ca78c485dfddba",
+  "build_manifest_sha256": "2c638b8c5936c86015a013a1c0e08186a100cdd59d9c169e98f9f98f42c77442",
   "image_manifest_sha256": "e5d2b5dbb41ab490e90d10fc60a4401ad1d290e8fe4ee4c6f2e6cabee8f96e9f",
-  "component_report_sha256": "18d1b42b9500721b422a89a191fb33aeb705b53dea9d782949cb5eab9cb04a92",
+  "component_report_sha256": "cab1e922c15bc89fb261c526c9895c8afbf948dc9fae0893bc12ffc0506585a4",
   "canonical_records_checked": 15928,
   "dictionary_keys": 21808,
   "payload_files": {
@@ -29,7 +29,7 @@
     "Avadon Files/Graphics Core/G233.png": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e",
     "AvadonChinese/MinHook-LICENSE.txt": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335",
     "AvadonChinese/translations.bin": "cdb76256e4367c97bd91f2112efa68ad42d3cccdf2ef8aaa787d52527eba301a",
-    "winmm.dll": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390"
+    "winmm.dll": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3"
   },
   "game_started": false,
   "in_game_verified": false,

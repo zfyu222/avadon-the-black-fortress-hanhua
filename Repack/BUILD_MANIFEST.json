@@ -87375,13 +87375,13 @@
   ],
   "native_sources": {
     "adapter.cpp": "5873e5fa689f544cd1322de57ae1ae3bd1e5330921667b72e723ff3627cc6b89",
-    "localization_core.hpp": "ba13f04aed387af34c6f9baafa73d5af47738fe7bc472d0bdeae6c779cc2db8d",
-    "renderer.hpp": "d6f05e0691830374bcaf5ce245063421a18479b646ded9e63a54ba558022a74e",
-    "self_test.cpp": "47683d2fcd9f098ab78c4e2549537926838283c8241b06183c0eea7363d94c2d"
+    "localization_core.hpp": "11026d2b51a322a5e7bc667fb6aea2d07069d181e7bcac465a8d9881b0c61c99",
+    "renderer.hpp": "d54d65658c80b66bdeef7742404b2058f58d2fe45cf7e7707e021cc65ea97564",
+    "self_test.cpp": "9bce7dd063c5987cc4ef1bdc5974655b3768f179cee48a9a08e11dd6adb3da7b"
   },
   "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "727b592b0a607000022323f662a63444235c4a8db0ad98910e49c3fc07192390"
+  "dll_sha256": "0c806de4d778f0a0f087dccef83fd6aa259448f6c4335135ce3ad9c498d8a7a3"
 }
