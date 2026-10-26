@@ -1,0 +1,2999 @@
+{
+  "schema": 1,
+  "kind": "pilot",
+  "purpose": "calibration",
+  "pilot_key": "aa2a749c251acb0bbe51811bc64f8cff51031245e278edd9f082f94a320ede83",
+  "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+  "glossary": {
+    "hash": "831317812e8e871f1e0ec360c9ca6534425d4a1f258bb0d4bfc11f375f7b0f5b",
+    "path": "glossary\\r3\\freeze_9ac86720\\built\\glossary_reviewed.json",
+    "revision": 3
+  },
+  "config": {
+    "agent_attempt_limit": 2,
+    "agent_task_limit": 1,
+    "api": {
+      "api_format": "OpenAI",
+      "api_key_env": "SHH_TRANSLATION_API_KEY",
+      "api_url": "",
+      "concurrency": 50,
+      "extra_body": {},
+      "max_completion_tokens": 16384,
+      "max_requests": 10000,
+      "model_name": "",
+      "request_timeout": 120,
+      "requests_per_minute": 0,
+      "stream": false,
+      "target_platform": "custom_platform_shh",
+      "temperature": 1,
+      "think_switch": false,
+      "tls_switch": false
+    },
+    "backend": "api",
+    "batch_chars": 12000,
+    "batch_records": null,
+    "batch_tokens": 1024,
+    "body_repair_round_limit": 6,
+    "case_sensitive": false,
+    "context_records": 0,
+    "draft_scan_workers": 1,
+    "escalation_backend": "codex",
+    "exclusions": [
+      {
+        "info": "脚本引号/换行及说明书标题控制符",
+        "markers": "",
+        "regex": "[_|]|\\$(?=[A-Za-z])"
+      }
+    ],
+    "extract_batch_records": null,
+    "extract_batch_tokens": 10000,
+    "game_background": "## 游戏信息\n- 原名：Avadon: The Black Fortress\n- 中文名：阿瓦登：黑色要塞（项目暂译，非官方中文名）\n- 开发商 / 发行商：Spiderweb Software\n- 发行平台：本项目使用 Steam Windows 版；Steam App ID `112100`。\n- Steam 发售日期：2011-08-17（其他平台首发日期不据此推定）。\n- 原语言 / 商店支持语言：英语；Steam 语言表仅列英语界面。\n- 本地版本标识：Steam Build ID `4252712`，Depot `112101`，Manifest `6035336520543477858`；来自本机 `appmanifest_112100.acf`，不等同于程序版本号。\n- 引擎：32 位 x86 原生程序，采用自定义脚本与二进制场景结构；EXE 中有 PTK Game Library / OpenGL 线索，具体引擎名称及版本未确认。程序内版本字符串为 `v1.0s2, Copyright 2011-2, Spiderweb Software, All Rights Reserved`。\n- 本地游戏目录：`D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress`\n- 资料来源：[Steam 商店](https://store.steampowered.com/app/112100/)、[开发商官网](https://www.spiderwebsoftware.com/avadon/)。\n\n## 游戏简介\n玩家为黑色要塞 Avadon 效力，以战士与密探的身份调查威胁故土的阴谋。这是一部奇幻角色扮演游戏，提供四种职业、支线探索及受玩家选择影响的多种结局。简介据[开发商官方介绍](https://www.spiderwebsoftware.com/avadon/)转述。\n\n## 汉化目标\n- 范围：以常规可见文本和图片文字的简体中文汉化为目标；实际覆盖范围在提取与验证后记录。\n- 目标语言：简体中文。\n- 图片文字翻译：启用（用户于 2026-10-26 明确选择）。\n- 初始化阶段未修改游戏安装文件。",
+    "glossary_review_batch_records": 12,
+    "glossary_review_batch_tokens": 10000,
+    "layout_normalization": "exact_v1",
+    "lease_seconds": 3600,
+    "max_attempts": 5,
+    "model": "gpt-6-luna",
+    "pilot_batch_count": null,
+    "pilot_call_limit": null,
+    "pilot_ordinals": [],
+    "pilot_records": 150,
+    "placeholder_family_overrides": {
+      "dollar_var": null,
+      "square_bracket": null
+    },
+    "polish": false,
+    "protect_named_curly": false,
+    "quality_version": 2,
+    "record_constraints": {},
+    "review_batch_records": 80,
+    "review_batch_tokens": 1024,
+    "review_estimate": {
+      "ascii_chars_per_token": 3,
+      "full_base_tokens": 420,
+      "non_ascii_tokens_per_char": 2,
+      "pilot_base_tokens": 120,
+      "translation_multiplier": 3
+    },
+    "review_output_reserve_percent": 20,
+    "review_output_tokens": 32768,
+    "sol_no_progress_limit": 2,
+    "sol_repair_model": "gpt-6-sol",
+    "sol_repair_round_limit": 3,
+    "source_language": "英语",
+    "stage_backends": {},
+    "style": "忠实自然的奇幻角色扮演游戏译文。对白保留人物性格与讽刺，叙事清楚流畅，UI简洁。专名按审定术语统一；不添加原文没有的信息。保留原文句内所有格式符、下划线、竖线、字面转义以及有意义的首尾空白。美元符为说明书标题标记，只保留符号，标题正文需要翻译。原生消息片段会与人名/数值拼接，不擅自补主语或将片段改为独立句。",
+    "target_language": "简体中文",
+    "task_input_chars": 48000,
+    "task_input_tokens": 65536,
+    "whole_word": true,
+    "workflow": "custom"
+  },
+  "records": [
+    {
+      "id": "R0000092_766464671f",
+      "ordinal": 92,
+      "source": "Blademaster",
+      "translation": "剑术大师",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER / assign:cr_name / native_ui_or_message",
+        "resource": "Avadon Files/Scripts/avitemschars.txt; Avadon Files/Scripts/textskills.txt; Avadon.exe",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000200_c01576cf23",
+      "ordinal": 200,
+      "source": "Shade",
+      "translation": "幽影",
+      "metadata": {
+        "group": "script",
+        "note": "assign:cr_name",
+        "resource": "Avadon Files/Scripts/avitemschars.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000496_109acbc60c",
+      "ordinal": 496,
+      "source": "Assault Crystal",
+      "translation": "突击水晶",
+      "metadata": {
+        "group": "script",
+        "note": "assign:it_name",
+        "resource": "Avadon Files/Scripts/avitemschars.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000559_f302f0ea1d",
+      "ordinal": 559,
+      "source": "Rock",
+      "translation": "岩石",
+      "metadata": {
+        "group": "script",
+        "note": "assign:it_name",
+        "resource": "Avadon Files/Scripts/avitemschars.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000588_116917370f",
+      "ordinal": 588,
+      "source": "Dried Meat",
+      "translation": "肉干",
+      "metadata": {
+        "group": "script",
+        "note": "assign:it_name",
+        "resource": "Avadon Files/Scripts/avitemschars.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000669_00e37be11c",
+      "ordinal": 669,
+      "source": "Searing Spray",
+      "translation": "灼热喷射",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER / assign:ab_name",
+        "resource": "Avadon Files/Scripts/avobjsmisc.txt; Avadon Files/Scripts/textfullskills.txt; Avadon Files/Scripts/textskills.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000788_47e7bdb23f",
+      "ordinal": 788,
+      "source": "Oven",
+      "translation": "烤炉",
+      "metadata": {
+        "group": "script",
+        "note": "assign:ob_name",
+        "resource": "Avadon Files/Scripts/avobjsmisc.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0000977_f4eaaad0e8",
+      "ordinal": 977,
+      "source": "Well, actually, there are legends of lands beyond the sea. Centuries ago, supposedly, some brave mariners departed and returned, bearing proof of other lands far beyond. But that was long ago, and any such 'evidence' is lost. If it ever existed. Which it almost assuredly didn't.",
+      "translation": "嗯，其实，确实有关于海外陆地的传说。据说几个世纪前，一些勇敢的水手出海后又回来了，还带回了遥远异域存在的证据。但那是很久以前的事了，任何这样的“证据”都已失传。如果它真的存在过的话。而它几乎肯定从未存在过。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textcodex.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0001136_f4079c09ca",
+      "ordinal": 1136,
+      "source": "Are you sure you want to write over this save file?",
+      "translation": "你确定要覆盖这个存档文件吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textdialogs.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0001188_7984836a99",
+      "ordinal": 1188,
+      "source": "Medals - There are fifteen medals you can earn while playing Avadon. There is a different thing you need to accomplish to earn each one. This shows you which medals you have earned.",
+      "translation": "勋章 - 在游玩阿瓦登时，你可以获得十五枚勋章。每枚勋章都需要完成不同的事项才能获得。这里显示了你已获得的勋章。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textdocs.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0001271_5708259013",
+      "ordinal": 1271,
+      "source": "  The Action Buttons",
+      "translation": "  动作按钮",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textdocs.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0001397_d2157c1435",
+      "ordinal": 1397,
+      "source": "At level 6, gain Sharpshooter Spray:",
+      "translation": "达到 6 级时，获得神射箭雨：",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textfullskills.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0001414_4255f96a0f",
+      "ordinal": 1414,
+      "source": "Adds 3%/level chance of starting to regenerate when struck in melee.",
+      "translation": "近战被击中时，每级增加 3% 的几率开始再生。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:NUMBER",
+        "resource": "Avadon Files/Scripts/textfullskills.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002271_cfeface01b",
+      "ordinal": 2271,
+      "source": "There is a young woman walking among the trees. She is barefoot and wears a loose leather tunic and dress. You suspect that she is from the Wyldrylm. When she sees you, she nods solemnly.",
+      "translation": "树林间走着一位年轻女子。她赤着脚，身穿宽松的皮制束腰外衣和长裙。你猜她来自威尔德里姆。她看见你时，庄重地点了点头。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002396_8ef1ccd9d6",
+      "ordinal": 2396,
+      "source": "_You will soon learn that, in Avadon, you are told only what you need to know. This is for your protection and ours._",
+      "translation": "_你很快就会明白，在阿瓦登，别人只会告诉你需要知道的事。这是为了你和我们的安全。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002412_ce8226b253",
+      "ordinal": 2412,
+      "source": "Who is the Keeper?",
+      "translation": "守护者是谁？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002424_151415a38b",
+      "ordinal": 2424,
+      "source": "I will go right away.",
+      "translation": "我马上就去。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002618_4e56c8abaa",
+      "ordinal": 2618,
+      "source": "Redbeard sent me back here. What are my orders?",
+      "translation": "红胡子把我派回这里。我有什么命令？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002646_4b59bbaa43",
+      "ordinal": 2646,
+      "source": "_But Zhethron seems to have found that they were instigating the attacks against him. He was angry, and he did what enraged dragons do._",
+      "translation": "_但泽斯隆似乎发现，是他们在煽动针对他的袭击。他愤怒了，于是做出了被激怒的龙族会做的事。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002716_6e3af55b93",
+      "ordinal": 2716,
+      "source": "_We must return to business._",
+      "translation": "_我们得回到正事上来。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002727_e7a10ed975",
+      "ordinal": 2727,
+      "source": "Moments later, several more warriors pass under the open gate, chasing them. They wear the garb of shadowwalkers, black masks obscuring their faces. And yet, they don't move like shadowwalkers, and the weapons are wrong.",
+      "translation": "片刻之后，又有几名战士从敞开的城门下穿过，追赶他们。他们穿着暗影行者的装束，黑色面具遮住了脸。然而，他们的动作不像暗影行者，武器也不对劲。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002779_ed7c53df90",
+      "ordinal": 2779,
+      "source": "_It is not like Avadon, where one man is the law and all fear him. Not, I hasten to add, that I would ever criticize Avadon._",
+      "translation": "_这里不像阿瓦登，在那里，一个人就是法律，所有人都怕他。我得赶紧补充一句，我绝不是要批评阿瓦登。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002843_7f2253c55f",
+      "ordinal": 2843,
+      "source": "_You did, of course, let a vicious thug and murderer go free. But I ... I must try to accept that Avadon is the way it is. It is futile for me to try to change it._",
+      "translation": "_当然，你放走了一个凶残的暴徒和杀人犯。但我……我必须试着接受阿瓦登就是这个样子。我想改变它也是徒劳。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text3",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002917_2c8d9df67a",
+      "ordinal": 2917,
+      "source": "_I will simply say that we are a place of culture, good breeding, long tradition, and great order. Even a Holklandan must admit that, whatever else he convinces himself of._",
+      "translation": "_我只想说，我们这里是一个有文化、有教养、传统悠久、秩序井然的地方。哪怕是一个霍尔克兰达人，无论他如何说服自己相信别的，也必须承认这一点。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0002993_db266d54ed",
+      "ordinal": 2993,
+      "source": "_Come with me. I will find where it is, and we will hunt it!_",
+      "translation": "_跟我来。我会找到它在哪儿，然后我们去猎杀它！_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003068_0d143dd661",
+      "ordinal": 3068,
+      "source": "He points to the east. _I will have an assistant unlock one of my storerooms. There is such a crystal in there. You may use it._",
+      "translation": "他指向东边。 _我会让助手打开我的一间储藏室。里面有一块这样的水晶。你可以使用它。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003155_809ee23441",
+      "ordinal": 3155,
+      "source": "Tell me about them.",
+      "translation": "跟我说说他们吧。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003179_7a0ed4df72",
+      "ordinal": 3179,
+      "source": "_No. I fear I will never see them again. Happily, my position here gives me some influence. I have made sure that they are looked after and protected. And they will be._",
+      "translation": "_不。我恐怕再也见不到他们了。幸运的是，我在这里的职位给了我一些影响力。我已经确保他们得到照料和保护。而且他们也会受到保护。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003241_ffd10cd6ee",
+      "ordinal": 3241,
+      "source": "_No. I confess we are having more difficulties with the forces we are meeting than I expected. But ... I think we will be victorious soon._",
+      "translation": "_不。我承认，我们遭遇的敌军比预想的更难对付。但是……我想我们很快就能获胜。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003476_58e6e02022",
+      "ordinal": 3476,
+      "source": "And you have served here ever since?",
+      "translation": "从那以后你就一直在这里服役吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003700_e09e04b323",
+      "ordinal": 3700,
+      "source": "_The Honored Forge is in the Beraza Woods. I do not know why, or if it is related to our purpose there. It does not matter._",
+      "translation": "_荣耀熔炉在贝拉扎森林里。我不知道原因，也不知道它是否与我们在那里的目的有关。这不重要。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text3",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003897_ead7c6add6",
+      "ordinal": 3897,
+      "source": "I am hungry.",
+      "translation": "我饿了。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003950_8c1aa146d9",
+      "ordinal": 3950,
+      "source": "Duke Gryfyn was a traitor. He is dead at my hand.",
+      "translation": "格里芬公爵是个叛徒。他死在我手里了。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0003993_feb38a0e74",
+      "ordinal": 3993,
+      "source": "Why are you telling me all this?",
+      "translation": "你为什么把这些都告诉我？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z0avadondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004052_952458e1e3",
+      "ordinal": 4052,
+      "source": "You are [N]?",
+      "translation": "你是[N]？",
+      "metadata": {
+        "group": "script",
+        "note": "call:give_char_text_bubble",
+        "resource": "Avadon Files/Scripts/z0shima.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004118_ee65c9a6ac",
+      "ordinal": 4118,
+      "source": "Oghrym'Tor is five rings of stone, arranged in a circle. This ring is full of thick vegetation. The plants are carefully tended, green, and amazingly thick and lush. Wildlife watches you from the undergrowth.",
+      "translation": "奥格里姆托尔由五道石环组成，围成一圈。这一环中长满了茂密的植被。这些植物经过精心照料，绿意盎然，而且浓密茂盛得惊人。野生动物从灌木丛中注视着你。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z10ogrhymtordlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004137_ea0284d507",
+      "ordinal": 4137,
+      "source": "You immediately suspect an ambush. You are not disappointed. Suddenly, archers step out from behind the huge stone pillars to the east and west. As you look around for a place to take shelter, you are sprayed with projectiles.",
+      "translation": "你立刻怀疑有埋伏。你没有猜错。突然，弓箭手从东西两侧的巨大石柱后现身。你正环顾四周寻找藏身之处，投射物便纷纷朝你射来。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z10ogrhymtordlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004147_77dfefba6e",
+      "ordinal": 4147,
+      "source": "Lord Carsta'Arl smiles wryly and starts to applaud.",
+      "translation": "卡斯塔阿尔领主苦笑一声，开始鼓掌。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text3",
+        "resource": "Avadon Files/Scripts/z10ogrhymtordlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004157_da4b998297",
+      "ordinal": 4157,
+      "source": "Another defender of Lord Carsta'Arl has fallen, but you are still far from where he is making his final stand.",
+      "translation": "卡斯塔阿尔领主的又一名守卫倒下了，但你离他最后据守之处仍然很远。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z10ogrhymtordlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004716_b57ea88063",
+      "ordinal": 4716,
+      "source": "That will be fine.",
+      "translation": "那样可以。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z11dhorlawdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004849_291fb71f07",
+      "ordinal": 4849,
+      "source": "I haven't retrieved the information you asked for.",
+      "translation": "我还没有取得你要的情报。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z11dhorlawdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0004858_930bf7e6a5",
+      "ordinal": 4858,
+      "source": "He thinks about it and shakes his head. _Not for that bit of information. I am mainly here to watch, not to spy._",
+      "translation": "他想了想，摇了摇头。 _不是为了那点情报。我主要是在这里观察，而不是刺探。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z11dhorlawdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005172_1a575305cc",
+      "ordinal": 5172,
+      "source": "Jenell frowns. _No, not now. But it will be discussed. I will not let ..._ She shakes her head. _Later._ And she walks on.",
+      "translation": "珍妮尔皱起眉头。 _不，不是现在。但这件事会被讨论的。我不会让……_ 她摇了摇头。 _以后再说。_ 然后她继续往前走。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z12beastwddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005277_fe964e4f3d",
+      "ordinal": 5277,
+      "source": "Keep calm. Speak slowly.",
+      "translation": "保持冷静。慢慢说。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z12beastwddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005385_2150cb312b",
+      "ordinal": 5385,
+      "source": "Watchbat",
+      "translation": "警戒蝙蝠",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z13mortower.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005388_81b0f68a42",
+      "ordinal": 5388,
+      "source": "Curse the wizard.",
+      "translation": "该死的巫师。",
+      "metadata": {
+        "group": "script",
+        "note": "call:give_char_text_bubble",
+        "resource": "Avadon Files/Scripts/z13mortower.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005404_6e34040ca1",
+      "ordinal": 5404,
+      "source": "And to the northwest, a line of black, greasy smoke rises from behind the rocky spires. You can hear rumbles and howls, and the grass and other plants grow more sickly in that direction.",
+      "translation": "而在西北方，一道黑腻的浓烟从岩石尖塔后升起。你能听到轰隆声和嚎叫声，那个方向的草和其他植物也越发显得病弱枯萎。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text3",
+        "resource": "Avadon Files/Scripts/z13mortowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005413_ec2dcfa79f",
+      "ordinal": 5413,
+      "source": "The reek of prisoners and wild beasts is heavy in the air. The sound of shouts and roars echoes through the halls. This is the place where he creates many of his horrors.",
+      "translation": "空气里弥漫着囚犯和野兽的浓重恶臭。喊叫声和咆哮声在大厅中回荡。这里就是他制造许多恐怖造物的地方。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z13mortowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005502_29fe90aada",
+      "ordinal": 5502,
+      "source": "There are several grimy books on this pedestal. They mostly contain lists of the creatures imprisoned here, the magical treatments they received in this room, and the horrible ends. It's unsettling reading.",
+      "translation": "这个基座上放着几本污迹斑斑的书。书中大多记载着关押在此的生物名单、它们在这个房间里接受的魔法处置，以及可怕的下场。读来令人不安。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z13mortowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00001-b9e19c68",
+        "instance": "api-pilot_translate-8d70a7175b074e0e94a026ae98d710f0"
+      }
+    },
+    {
+      "id": "R0005548_a1d79f7b5f",
+      "ordinal": 5548,
+      "source": "Beloch says, _This is your chance for revenge, scum. Help me drive these pitiful creatures away._",
+      "translation": "贝洛克说，_这是你报仇的机会，渣滓。帮我把这些可怜虫赶走。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text4",
+        "resource": "Avadon Files/Scripts/z13mortowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0005565_293f7b8119",
+      "ordinal": 5565,
+      "source": "Nathalie winces. _I admire enthusiasm in one's magical work, but this is definitely excessive._",
+      "translation": "娜塔莉皱起眉头。_我欣赏一个人对魔法工作的热情，但这绝对过头了。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z13mortowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0005821_aa7f792813",
+      "ordinal": 5821,
+      "source": "I can help you.",
+      "translation": "我可以帮你。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question / call:give_char_text_bubble",
+        "resource": "Avadon Files/Scripts/z14vebeaux.txt; Avadon Files/Scripts/z17banroads.txt; Avadon Files/Scripts/z18deepwood.txt; Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0005867_31cf42b9d6",
+      "ordinal": 5867,
+      "source": "You step out of the pylon grotto and into the grand garden of Castle Vebeaux. Since this is a major fortress of the Pact, its portal to Avadon has a prominent placement in a particularly lovely area of the fortress.",
+      "translation": "你走出传送塔洞窟，进入韦博城堡的大花园。由于这里是盟约的重要要塞，其通往阿瓦登的传送门被醒目地设在城堡中一处格外优美的区域。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0005951_f5ecb43e6d",
+      "ordinal": 5951,
+      "source": "You want peace with Holklanda?",
+      "translation": "你想与霍尔克兰达讲和？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0005952_8173acc3c3",
+      "ordinal": 5952,
+      "source": "_Yes. An honorable peace. That is why I have invited an envoy of Holklanda here. His name is Monitor Shigaz. He is highly esteemed by his people._",
+      "translation": "_是的。一个体面的和平。正因如此，我才邀请了一位霍尔克兰达特使来这里。他叫监察官希加兹。他深受自己人民的敬重。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006005_ac56b921c4",
+      "ordinal": 6005,
+      "source": "You tell Duke Gryfyn the tale of your adventure. He listens with rapt attention and laughs with delight. _My sending a Holklandan to kill Kellem. Oh, the nobles will have fits! Never mind that they were thugs and killers and deserved every bit of their reward._",
+      "translation": "你把冒险的经历讲给格里芬公爵听。他全神贯注地听着，开心地大笑起来。_我派一个霍尔克兰达人去杀凯勒姆人。哦，那些贵族会气得发疯的！别管他们本来就是暴徒和杀手，得到这样的报应一点也不冤。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006063_cc230a0a76",
+      "ordinal": 6063,
+      "source": "_I need to decide what is best for Kellemderiel. That means that, at this point, I am trying to bring greater peace and stability to the Pact, even if it costs our pride._",
+      "translation": "_我需要决定什么对凯勒姆德里尔最有利。这意味着，眼下我正在努力为盟约带来更大的和平与稳定，即使这会牺牲我们的骄傲。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006098_48e0a5592b",
+      "ordinal": 6098,
+      "source": "_Greetings,_ she says, with a shallow curtsy. _I am Scribe Jenaya, the duke's assistant. I thank you for coming, and I hope that you will not take too much of his time._",
+      "translation": "_您好，_她说着，浅浅地行了个屈膝礼。_我是书记官杰纳娅，公爵的助手。感谢您前来，希望您不要占用他太多时间。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006108_3e3bb2f96e",
+      "ordinal": 6108,
+      "source": "There is a path winding through the woods, going to the north and to the west. From the north, you hear shouting and howling. Already, the defenders of Castle Vebeaux are sending hunting parties in the woods. It is as if they were already prepared to do so.",
+      "translation": "有一条小路蜿蜒穿过树林，通向北方和西方。北方传来喊叫声和嚎叫声。韦博城堡的守军已经在派遣狩猎队进入树林。就好像他们早已准备好这么做。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006287_c5d68e5be2",
+      "ordinal": 6287,
+      "source": "Isn't Castle Vebeaux on a free road?",
+      "translation": "韦博城堡不是在自由之路上吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006470_9ff4472522",
+      "ordinal": 6470,
+      "source": "_I don't get to sell to many Hands. It's an honor, no matter what harm you're trying to do here._",
+      "translation": "_我没多少机会把东西卖给阿瓦登之手。不管你打算在这里搞什么破坏，这都是我的荣幸。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006518_f06efe1806",
+      "ordinal": 6518,
+      "source": "Where should I look for him?",
+      "translation": "我该去哪里找他？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006609_96c992a4cc",
+      "ordinal": 6609,
+      "source": "_You ... [N], is it true? I ... I fought by you. I ... Why did you come down here?_",
+      "translation": "_你……[N]，这是真的吗？我……我曾与你并肩作战。我……你为什么会到下面来？_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006673_164ce94b65",
+      "ordinal": 6673,
+      "source": "The sound of stone grinding on stone is surprisingly quiet. A narrow doorway opens before you. Gavin starts to rise. And then you hear it. A soft, high-pitched noise.",
+      "translation": "石头与石头相互摩擦的声音轻得出奇。一道狭窄的门在你面前打开。加文开始起身。然后你听到了那个声音。一种轻柔而尖细的声响。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z14vebeauxdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006888_7d326c70a4",
+      "ordinal": 6888,
+      "source": "Vinvella retrieves her blade and puts her bow back onto her shoulder. _Thank you for your help. You can take whatever you find here. I don't use the tools of the dead, but I know that some are far less picky._",
+      "translation": "温维拉捡回她的剑，把弓重新背到肩上。_谢谢你的帮助。你在这里找到什么都可以拿走。我不用死人的工具，但我知道有些人远没那么挑剔。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0006940_b1615438d8",
+      "ordinal": 6940,
+      "source": "All right. I'll be back later.",
+      "translation": "好吧。我稍后再回来。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007042_02f7c68bf4",
+      "ordinal": 7042,
+      "source": "_I will be brief. I am at Castle Vebeaux for many reasons. One of them is that there is a merchant who is being treated unjustly. She wishes for someone of influence to speak on her behalf._",
+      "translation": "_我会长话短说。我来韦博城堡有很多原因。其中之一是，有一位商人正受到不公正的对待。她希望有位有影响力的人替她说话。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007078_ceec46874c",
+      "ordinal": 7078,
+      "source": "She snorts. _He started at ten thousand coins. Then he raises the amount by a thousand every time I come to him. He so loves to toy with me._",
+      "translation": "她哼了一声。_他一开始要价一万枚钱币。后来我每次去找他，他就把价钱提高一千。他可真爱戏弄我。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007080_5b40ef4175",
+      "ordinal": 7080,
+      "source": "_I have my suspicions. I suspect that Trader Charon is trying to force me to trade in a different region, or to put me out of business altogether. He wants to be the only merchant trading in this settlement._",
+      "translation": "_我有我的怀疑。我怀疑商人卡戎想逼我去别的地区做生意，或者干脆让我彻底破产。他想成为这个定居点里唯一的商人。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007089_203650e59f",
+      "ordinal": 7089,
+      "source": "_And, when it's done, I will have a ... A reward for your noble service._",
+      "translation": "_而且，等这件事办完，我会有一份……一份酬谢，报答你高尚的服务。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007134_fb228f2cee",
+      "ordinal": 7134,
+      "source": "He nods. _Oh, yes. Thugs and monsters. Monsters and thugs. Happily, the might of Castle Vebeaux keeps them from my door._",
+      "translation": "他点点头。_哦，是的。暴徒和怪物。怪物和暴徒。幸好，韦博城堡的武力把他们挡在我的门外。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007149_dd6f3386a4",
+      "ordinal": 7149,
+      "source": "When you approach him, he nods. _Welcome, traveler. I am Padget. Please try not to step on the cabbage._",
+      "translation": "当你走近他时，他点了点头。_欢迎，旅行者。我是帕吉特。请尽量别踩到卷心菜。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007178_887f44215b",
+      "ordinal": 7178,
+      "source": "Have you hunted out there yourself?",
+      "translation": "你自己去外面打过猎吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z15berwoodsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007200_a1f6b2cb61",
+      "ordinal": 7200,
+      "source": "Sorceress Shade",
+      "translation": "女术士幽影",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z15ghost.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007203_b4f098e996",
+      "ordinal": 7203,
+      "source": "Deep Woods Widow",
+      "translation": "深林寡妇",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z15vinvella.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007602_9866a58054",
+      "ordinal": 7602,
+      "source": "You approach the drake. He is a large specimen of his kind, old and withered. Not as awe-inspiring as a dragon, but with the same cruel, avaricious intelligence. He watches you, trying to determine how much of your surroundings you can see. The answer is, of course, all of them.",
+      "translation": "你走近那头龙兽。它是同类中体型庞大的一只，苍老而枯槁。它不像龙那样令人敬畏，却有着同样残忍而贪婪的智慧。它注视着你，想弄清你能看见周围多少东西。答案当然是，全部都能看见。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z16berpitsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007653_62a0de3805",
+      "ordinal": 7653,
+      "source": "He casts the spell of restoration again. The bodies of Serlait and Dabert are made whole, though their wounds bear ugly scars and their bones knit at unnatural angles.",
+      "translation": "他再次施放复原法术。瑟莱特和达伯特的躯体被恢复完整，尽管他们的伤口留下了丑陋的疤痕，骨头也在不自然的角度上愈合。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z16berpitsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007849_42b471da30",
+      "ordinal": 7849,
+      "source": "_I ... I fled the Tawon Empire. I am in exile here. I have broken no Pact laws. I only want to be left alone._",
+      "translation": "_我……我逃离了塔翁帝国。我在这里流亡。我没有违反任何盟约法律。我只想一个人待着。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0007924_21028d6940",
+      "ordinal": 7924,
+      "source": "What services do you offer?",
+      "translation": "你提供什么服务？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008087_ff1ae443c2",
+      "ordinal": 8087,
+      "source": "Do the bandits know we are here?",
+      "translation": "那些强盗知道我们在这里吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008091_25fafe1583",
+      "ordinal": 8091,
+      "source": "Doesn't that worry you?",
+      "translation": "那你不担心吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008211_d8ab275311",
+      "ordinal": 8211,
+      "source": "Shima must know of this.",
+      "translation": "希玛必须知道这件事。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008233_366488a5ab",
+      "ordinal": 8233,
+      "source": "Harua already seems to be planning for the battle. Shigaz says, _Please try to dissuade him. This is not the time for Pact to fight Pact. I hope ... hope what I fear will happen does not happen._",
+      "translation": "哈鲁亚似乎已经在为战斗做打算了。希加兹说：_请试着劝他打消念头。现在不是盟约内部开战的时候。我希望……希望我所担心的事不会发生。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z17banroadsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008321_d9cc84a36f",
+      "ordinal": 8321,
+      "source": "Woodwalker Drya",
+      "translation": "林地行者德莉娅",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z18deepwooddlg.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008389_73aa3b8aa8",
+      "ordinal": 8389,
+      "source": "I prefer to fight my way through.",
+      "translation": "我更愿意一路打过去。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z18deepwooddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008397_8671597574",
+      "ordinal": 8397,
+      "source": "And when I am across?",
+      "translation": "等我过去之后呢？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z18deepwooddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008417_1b1506eef2",
+      "ordinal": 8417,
+      "source": "Duke Gryfyn sent you after me?",
+      "translation": "是格里芬公爵派你来追我的？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z18deepwooddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0008644_dc816c5eee",
+      "ordinal": 8644,
+      "source": "_You will speak with me. If not, you will not be protected from grim consequences._",
+      "translation": "_你必须和我谈谈。否则，没人能保护你免遭严酷的后果。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z18deepwooddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0009005_9590cd1d29",
+      "ordinal": 9005,
+      "source": "_Because I am on the hunt, and because I am ready. The first time I fought Cahil, I was young. Untrained. Easy prey._",
+      "translation": "_因为我正在追猎，而且我已经准备好了。我第一次与卡希尔交手时还很年轻。未受过训练。是轻易到手的猎物。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z19whitepldlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0009181_fbe48b9892",
+      "ordinal": 9181,
+      "source": "You keep the prisoners safe?",
+      "translation": "你负责保证囚犯的安全？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z1dungeondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00002-be320cab",
+        "instance": "api-pilot_translate-54ac434a022847de809b78a8acd1a266"
+      }
+    },
+    {
+      "id": "R0009217_936220e6b8",
+      "ordinal": 9217,
+      "source": "_All is under control. I am proud to say that only one has escaped. There has been no sign of Shadow Tarkus. And yet, I am sure we will find him. None have ever escaped these dungeons for long._",
+      "translation": "_一切都在控制之中。我可以自豪地说，只有一个人逃走了。目前还没有暗影塔库斯的踪迹。不过，我相信我们会找到他。从来没有人能逃出这些地牢太久。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z1dungeondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009391_140103a57f",
+      "ordinal": 9391,
+      "source": "_Am I? After waiting for so long, to ... I apologize. It has been some time since I was on a mission. I am not used to it. Do not worry. I will fight in a way that does honor to my training._",
+      "translation": "_是吗？等了这么久，却……我道歉。我已经有一段时间没执行任务了。我不太习惯。别担心。我会以不辜负我所受训练的方式战斗。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z1dungeondlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009632_54fb7a42fe",
+      "ordinal": 9632,
+      "source": "Vid nods. _She is here and well. However, there has been a disagreement over her. There are many warriors of the Wyldrylm hiding here, but ... my group has been cast out._ You look at them. They look like the warriors you met in the Dhorla Woods.",
+      "translation": "维德点点头。_她在这里，安然无恙。不过，关于她的事出现了分歧。这里藏着许多威尔德里姆的战士，但是……我的队伍被赶了出去。_你看着他们。他们看起来就像你在多拉森林遇到的战士。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z20jarlswdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009658_57afb341d6",
+      "ordinal": 9658,
+      "source": "_I'm not sure that the nearby Khemerians even know that they are camped here._",
+      "translation": "_我不确定附近的凯梅里亚人是否甚至知道他们在这里扎营。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z20jarlswdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009737_65d7f18b95",
+      "ordinal": 9737,
+      "source": "What do you think should be done?",
+      "translation": "你认为应该怎么做？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z20jarlswdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009852_5c8bc2fb99",
+      "ordinal": 9852,
+      "source": "To the east, you can see that a small group of ogres have made the inevitably fatal error of thinking that they can set up a small village inside Pact territory. With typical ogre ego and lack of foresight, they have built a palisade and set up totems along the pathways.",
+      "translation": "向东看，你能看到一小群食人魔犯下了必然致命的错误：他们以为自己能在盟约的领土内建立一个小村庄。带着食人魔典型的自负和缺乏远见，他们筑起了木栅栏，并沿小路立起了图腾。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z21moncampdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0009921_25ed75bb2d",
+      "ordinal": 9921,
+      "source": "You think the Holklandans prepare for war with Kellemderiel?",
+      "translation": "你认为霍尔克兰达人正在准备与凯勒姆德里尔开战吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z21moncampdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010372_b2e0d5ecdc",
+      "ordinal": 10372,
+      "source": "Heart Jarvina continues to run around the library, searching for records and maps.",
+      "translation": "心者贾维娜继续在图书馆里四处奔走，寻找记录和地图。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text5",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010377_e3ad92be49",
+      "ordinal": 10377,
+      "source": "What are you looking for?",
+      "translation": "你在找什么？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010420_b99d7d3671",
+      "ordinal": 10420,
+      "source": "_There is. And you will be very well paid. There is an exile from Kellemderiel. Her name is Angevine. She is hiding in The Kva, somewhere near Goldcrag._",
+      "translation": "_有。而且你会得到非常丰厚的报酬。有一个来自凯勒姆德里尔的流亡者。她叫安格薇。她藏在克瓦，金崖附近的某个地方。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010594_82a6fbf902",
+      "ordinal": 10594,
+      "source": "What has been happening? Where are the Hands?",
+      "translation": "发生什么事了？阿瓦登之手在哪里？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010610_8125ff1d40",
+      "ordinal": 10610,
+      "source": "You grew up on the farm?",
+      "translation": "你是在农场长大的？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010620_5843d9bf01",
+      "ordinal": 10620,
+      "source": "_The sort of scum that thrives in chaos and feeds off the weak. I got a good, long look at the sort of vileness that comes about when leadership is absent and chaos is allowed._",
+      "translation": "_那种在混乱中如鱼得水、靠欺凌弱者过活的渣滓。当领导缺失、混乱被纵容时，会滋生出怎样的丑恶，我可是看得清清楚楚、看得够久。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010833_2d9fdb64c5",
+      "ordinal": 10833,
+      "source": "I went into your tower, but I had nothing to do with the gate.",
+      "translation": "我进了你的塔，但我和大门的事毫无关系。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0010895_c8b8cba8fb",
+      "ordinal": 10895,
+      "source": "_That hurts,_ he roars, _but if you want to kill me, you have to kill all the parts of me!_",
+      "translation": "_好痛，_他吼道，_但如果你想杀我，就得把我所有的部分都杀掉！_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z2redtowerdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011172_d1ed3af622",
+      "ordinal": 11172,
+      "source": "Seeker Azarni",
+      "translation": "探寻者阿扎尼",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z3goldcrag.txt; Avadon Files/Scripts/z7azarni.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011180_56f581a4c1",
+      "ordinal": 11180,
+      "source": "Kva Farmer",
+      "translation": "克瓦农夫",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_name",
+        "resource": "Avadon Files/Scripts/z3goldcrag.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011340_8eb2e8fd32",
+      "ordinal": 11340,
+      "source": "Tell me about the wretches.",
+      "translation": "跟我说说那些贱民吧。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt; Avadon Files/Scripts/z6wretchwardlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011378_7a72380b97",
+      "ordinal": 11378,
+      "source": "Does Redbeard know?",
+      "translation": "红胡子知道吗？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011460_9a4f4ed4b8",
+      "ordinal": 11460,
+      "source": "_But the Code is the same._",
+      "translation": "_但是法典是一样的。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011551_c3ae9d1b2a",
+      "ordinal": 11551,
+      "source": "I could use a drink.",
+      "translation": "我倒想喝一杯。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011559_ee5ca4a2f5",
+      "ordinal": 11559,
+      "source": "She thinks. _One of the soldiers was in recently. Said she saw a dragon flying overhead. Everyone else thought it must have been Zhethron, but she said she was sure it wasn't._",
+      "translation": "她想了想。_最近有个士兵来过。她说她看见一条龙从头顶飞过。其他人都觉得那一定是泽斯隆，但她说她肯定不是。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011722_661ea99fa3",
+      "ordinal": 11722,
+      "source": "She frowns. _That is an impolite question. None ever reveal why they seek the dragon unless they have to. To do so would remove some of the advantage gained._",
+      "translation": "她皱起眉头。_这是个不礼貌的问题。除非迫不得已，否则没人会透露自己为何寻找那条龙。这么做会削弱已获得的部分优势。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011757_d9e539afe4",
+      "ordinal": 11757,
+      "source": "_I prefer solitude. I mean no offense. Please leave me._ There is nothing to say to that. You leave him alone.",
+      "translation": "_我更喜欢独处。我无意冒犯。请让我一个人待着。_ 对此没什么可说的。你不再打扰他。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011802_59bf872d9f",
+      "ordinal": 11802,
+      "source": "Goldcrag could be overgrown?",
+      "translation": "金崖可能会杂草丛生？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z3goldcragdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011848_708454aa09",
+      "ordinal": 11848,
+      "source": "Heh.",
+      "translation": "呵。",
+      "metadata": {
+        "group": "script",
+        "note": "call:give_char_text_bubble",
+        "resource": "Avadon Files/Scripts/z4kvalands.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011861_2676f35613",
+      "ordinal": 11861,
+      "source": "When you get close, your hair stands on end. There is power within this tower, raw magic barely controlled.",
+      "translation": "当你靠近时，你的头发都竖了起来。这座塔里有一股力量，那是几乎失控的原始魔法。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z4kvalandsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0011956_a81563262d",
+      "ordinal": 11956,
+      "source": "Tell me about your father.",
+      "translation": "跟我说说你父亲吧。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z4kvalandsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012220_7e684e9eec",
+      "ordinal": 12220,
+      "source": "I took this job. I will complete it. (Attack.)",
+      "translation": "我接下了这份工作。我会完成它。（攻击。）",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z4kvalandsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012234_646ea3c2ab",
+      "ordinal": 12234,
+      "source": "I will speak with you, but make it quick.",
+      "translation": "我可以和你谈，但长话短说。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z4kvalandsdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012340_7e48f7f696",
+      "ordinal": 12340,
+      "source": "You walk into the cavernous halls of Zhethron's Aerie, home to this region's most powerful and cooperative dragon. His lair must be set on top of a volcanic vent. The stifling heat within is enough to instantly make you miss the desert outside.",
+      "translation": "你走进泽斯隆的巢穴那洞穴般的大厅，这里是本地区最强大、也最愿意合作的龙的家。他的巢穴想必建在一处火山喷口之上。里面令人窒息的酷热，足以让你立刻怀念外面的沙漠。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012587_2341a17f0e",
+      "ordinal": 12587,
+      "source": "_I thought I have been hearing less screaming. I am happy that it was not my imagination._ He fetches a pouch of coins and a fine cloak of drakeskin. _Here is a bit of genuine dragon tribute, set aside to hire aid for us._",
+      "translation": "_我觉得我听到的惨叫声变少了。我很高兴这不是我的错觉。_他取来一袋金币和一件上好的龙皮斗篷。_这是一点真正的巨龙贡品，专门留作给我们雇佣援手之用。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012651_20102f19a4",
+      "ordinal": 12651,
+      "source": "Teria responds, _It is unusual, sister, I know, but it is a fair response to the assassins they have hired._",
+      "translation": "泰莉娅答道：_这很不寻常，姐妹，我知道，但这是对他们雇来的刺客的合理回应。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text3",
+        "resource": "Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012701_d6cfee6415",
+      "ordinal": 12701,
+      "source": "And yet he fought the titans?",
+      "translation": "可他和泰坦战斗过？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0012892_d14f56a45f",
+      "ordinal": 12892,
+      "source": "_So I have learned. I must contact her, though it means a challenge, and ..._ He thinks. _I have asked Thara to deal with this. You should speak with her._",
+      "translation": "_我已经知道了。我必须联系她，尽管这意味着挑战，而且……_他思索着。_我已经让塔拉处理这件事了。你应该去和她谈谈。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z5zhethaeriedlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013263_b1463b2fc9",
+      "ordinal": 13263,
+      "source": "_Lead on. I am ready to fight._",
+      "translation": "_带路吧。我准备好战斗了。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z6wretchwardlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013312_b33bd97cc2",
+      "ordinal": 13312,
+      "source": "A stone sentinel is charging up. The tether of energy between it and the dragon grows stronger.",
+      "translation": "一尊石制哨卫正在充能。它与龙之间的能量纽带变得越来越强。",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_top_string",
+        "resource": "Avadon Files/Scripts/z7golem.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013361_4da0837f06",
+      "ordinal": 13361,
+      "source": "You enter an old, abandoned mine, now taken over by the ogres and being rebuilt for their own purposes. You still don't know why ogres would come to settle in the Wretch Lands. Now that you have found a way into their lair, you might be able to find an answer.",
+      "translation": "你进入一座古老废弃的矿坑，如今它已被食人魔占据，并正为他们的目的而重建。你仍然不知道食人魔为何会来贱民之地定居。既然你已找到进入他们巢穴的路，或许就能找到答案。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013363_b87a2e7689",
+      "ordinal": 13363,
+      "source": "The tunnel to the east is full of dark, slimy water, blocking your progress. This mine has pipes and pumps to clear excess water out of the tunnels, but they aren't working right now.",
+      "translation": "东边的隧道里充满黑暗黏滑的积水，挡住了你的去路。这座矿坑有管道和水泵，用来清除隧道中多余的水，但它们现在无法运作。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013400_13f0d287c7",
+      "ordinal": 13400,
+      "source": "Even though you are far from civilization, in a land infested with ogres, it somehow doesn't surprise you that the first person you meet is the Wayfarer. He emerges from the cliff shadow, still in his black shadowwalker garb. The heat seems to barely faze him.",
+      "translation": "尽管你远离文明，身处一片食人魔肆虐的土地，但第一个遇见的人竟是旅者，这不知为何并不令你意外。他从悬崖的阴影中走出，仍穿着那身黑色的暗影行者装束。酷热似乎几乎影响不到他。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00003-057d3d2c",
+        "instance": "api-pilot_translate-60346f5f26ba4cc189dce104d4eb9585"
+      }
+    },
+    {
+      "id": "R0013422_04667a5d4d",
+      "ordinal": 13422,
+      "source": "_That was only the first step. Once Zhethron was north, the fading empire could contact him and try to break his ties with the Pact. Do not be fooled. It is a complicated game._",
+      "translation": "_那只是第一步。一旦泽斯隆到了北方，衰落的帝国就能联系他，并试图切断他与盟约的联系。别上当。这是一场复杂的博弈。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0013447_ae8ee2f30e",
+      "ordinal": 13447,
+      "source": "I am [N], a Hand of Avadon on an important mission.",
+      "translation": "我是[N]，阿瓦登之手，正在执行一项重要任务。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0013459_1052039575",
+      "ordinal": 13459,
+      "source": "One of the other scouts laughs and says, _Maybe we dreamed it._",
+      "translation": "另一名斥候笑着说：_也许是我们做梦吧。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z7jharethdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0013758_9d8ff715c2",
+      "ordinal": 13758,
+      "source": "One of the escaping scouts falls in battle.",
+      "translation": "一名逃跑的斥候在战斗中倒下了。",
+      "metadata": {
+        "group": "script",
+        "note": "call:set_top_string",
+        "resource": "Avadon Files/Scripts/z7scout.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0013849_3cb01e1fb8",
+      "ordinal": 13849,
+      "source": "Shnrunk lets out another howl of rage, if anything more bestial and mindless than the one before. He reaches deep into his insane heart and redoubles his efforts to crush you.",
+      "translation": "什伦克又发出一声愤怒的嚎叫，甚至比先前那声更加野蛮、更加失去理智。他从自己疯狂的心底深处汲取力量，加倍拼命地要碾碎你。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z8titkeepdlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014136_fe614626c8",
+      "ordinal": 14136,
+      "source": "Talking: These young Khemerians are busy running away.",
+      "translation": "交谈：这些年轻的凯梅里亚人正忙着逃跑。",
+      "metadata": {
+        "group": "script",
+        "note": "call:print_str",
+        "resource": "Avadon Files/Scripts/z9boy.txt",
+        "text_type": "名称/显示提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014210_11b58d5f19",
+      "ordinal": 14210,
+      "source": "You will pay!",
+      "translation": "你会付出代价的！",
+      "metadata": {
+        "group": "script",
+        "note": "call:give_char_text_bubble",
+        "resource": "Avadon Files/Scripts/z9dhorlstead.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014252_c31f672e58",
+      "ordinal": 14252,
+      "source": "Several young apprentices are hauling and shaping large blocks of stone. They do their best to pretend that you aren't there.",
+      "translation": "几名年轻学徒正搬运并加工大块石料。他们竭力装作你不存在。",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z9dhorlsteaddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014311_f28d0dcbce",
+      "ordinal": 14311,
+      "source": "How has Lord Carsta'Arl reacted?",
+      "translation": "卡斯塔阿尔领主有什么反应？",
+      "metadata": {
+        "group": "script",
+        "note": "assign:question",
+        "resource": "Avadon Files/Scripts/z9dhorlsteaddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014486_a9de977270",
+      "ordinal": 14486,
+      "source": "_Thus, I regret to say that the gates will remain closed._",
+      "translation": "_因此，我遗憾地告知，大门仍将关闭。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text2",
+        "resource": "Avadon Files/Scripts/z9dhorlsteaddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0014536_241d22890b",
+      "ordinal": 14536,
+      "source": "_Once the northerners had steel weapons and stone walls, they also adopted the savage ways of the east. Building empires. Not being content with their own lands. Sending siege trains across the west, leaving a trail of blood and screams._",
+      "translation": "_一旦北方人拥有了钢制武器和石墙，他们便也沿袭了东方的野蛮方式。建立帝国。不满足于自己的土地。派遣攻城器械队横扫西方，留下一路的鲜血与惨叫。_",
+      "metadata": {
+        "group": "script",
+        "note": "assign:text1",
+        "resource": "Avadon Files/Scripts/z9dhorlsteaddlg.txt",
+        "text_type": "对白/叙事"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015025_eef990926c",
+      "ordinal": 15025,
+      "source": "Portal to Khemeria",
+      "translation": "通往凯梅里亚的传送门",
+      "metadata": {
+        "group": "dat",
+        "note": "map_label",
+        "resource": "Avadon Files/AvScenData.dat",
+        "text_type": "地图地名/标注"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015027_3f8df19db5",
+      "ordinal": 15027,
+      "source": "Your Quarters",
+      "translation": "你的居所",
+      "metadata": {
+        "group": "dat",
+        "note": "map_label",
+        "resource": "Avadon Files/AvScenData.dat",
+        "text_type": "地图地名/标注"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015264_2e220f3e9e",
+      "ordinal": 15264,
+      "source": "Get Item: You stole the item without anyone seeing you.",
+      "translation": "获得物品：你偷走了物品，没被任何人看见。",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015353_0cc9cee746",
+      "ordinal": 15353,
+      "source": "sorryjenell",
+      "translation": "sorryjenell",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015465_e1a10e0bfa",
+      "ordinal": 15465,
+      "source": "Your Coins: %d",
+      "translation": "你的金币：%d",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015513_247bde2d46",
+      "ordinal": 15513,
+      "source": "Quicksave (F4 to load)",
+      "translation": "快速存档（按 F4 读取）",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015643_ca630a1a88",
+      "ordinal": 15643,
+      "source": "Enhancement: +4%% magical/elemental resistance.",
+      "translation": "强化：+4%% 魔法/元素抗性。",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015745_46719b185c",
+      "ordinal": 15745,
+      "source": "AP: 1",
+      "translation": "行动点：1",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    },
+    {
+      "id": "R0015761_734ec0bab4",
+      "ordinal": 15761,
+      "source": "Inventory (",
+      "translation": "物品栏（",
+      "metadata": {
+        "group": "native",
+        "note": "native_ui_or_message",
+        "resource": "Avadon.exe",
+        "text_type": "UI/系统提示"
+      },
+      "exceptions": [],
+      "issues": [],
+      "diagnostics": [],
+      "producer": {
+        "task_id": "pilot_translate-r3-00004-8c4d0fe3",
+        "instance": "api-pilot_translate-daacaeee5e70454c97484544fcf7b6bc"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "pilot_translate-r3-00001-b9e19c68",
+      "stage": "pilot_translate",
+      "status": "done",
+      "attempt": 1,
+      "backend": "api",
+      "ids": "[\"R0000092_766464671f\",\"R0000200_c01576cf23\",\"R0000496_109acbc60c\",\"R0000559_f302f0ea1d\",\"R0000588_116917370f\",\"R0000669_00e37be11c\",\"R0000788_47e7bdb23f\",\"R0000977_f4eaaad0e8\",\"R0001136_f4079c09ca\",\"R0001188_7984836a99\",\"R0001271_5708259013\",\"R0001397_d2157c1435\",\"R0001414_4255f96a0f\",\"R0002271_cfeface01b\",\"R0002396_8ef1ccd9d6\",\"R0002412_ce8226b253\",\"R0002424_151415a38b\",\"R0002618_4e56c8abaa\",\"R0002646_4b59bbaa43\",\"R0002716_6e3af55b93\",\"R0002727_e7a10ed975\",\"R0002779_ed7c53df90\",\"R0002843_7f2253c55f\",\"R0002917_2c8d9df67a\",\"R0002993_db266d54ed\",\"R0003068_0d143dd661\",\"R0003155_809ee23441\",\"R0003179_7a0ed4df72\",\"R0003241_ffd10cd6ee\",\"R0003476_58e6e02022\",\"R0003700_e09e04b323\",\"R0003897_ead7c6add6\",\"R0003950_8c1aa146d9\",\"R0003993_feb38a0e74\",\"R0004052_952458e1e3\",\"R0004118_ee65c9a6ac\",\"R0004137_ea0284d507\",\"R0004147_77dfefba6e\",\"R0004157_da4b998297\",\"R0004716_b57ea88063\",\"R0004849_291fb71f07\",\"R0004858_930bf7e6a5\",\"R0005172_1a575305cc\",\"R0005277_fe964e4f3d\",\"R0005385_2150cb312b\",\"R0005388_81b0f68a42\",\"R0005404_6e34040ca1\",\"R0005413_ec2dcfa79f\",\"R0005502_29fe90aada\"]",
+      "error": null
+    },
+    {
+      "id": "pilot_translate-r3-00002-be320cab",
+      "stage": "pilot_translate",
+      "status": "done",
+      "attempt": 1,
+      "backend": "api",
+      "ids": "[\"R0005548_a1d79f7b5f\",\"R0005565_293f7b8119\",\"R0005821_aa7f792813\",\"R0005867_31cf42b9d6\",\"R0005951_f5ecb43e6d\",\"R0005952_8173acc3c3\",\"R0006005_ac56b921c4\",\"R0006063_cc230a0a76\",\"R0006098_48e0a5592b\",\"R0006108_3e3bb2f96e\",\"R0006287_c5d68e5be2\",\"R0006470_9ff4472522\",\"R0006518_f06efe1806\",\"R0006609_96c992a4cc\",\"R0006673_164ce94b65\",\"R0006888_7d326c70a4\",\"R0006940_b1615438d8\",\"R0007042_02f7c68bf4\",\"R0007078_ceec46874c\",\"R0007080_5b40ef4175\",\"R0007089_203650e59f\",\"R0007134_fb228f2cee\",\"R0007149_dd6f3386a4\",\"R0007178_887f44215b\",\"R0007200_a1f6b2cb61\",\"R0007203_b4f098e996\",\"R0007602_9866a58054\",\"R0007653_62a0de3805\",\"R0007849_42b471da30\",\"R0007924_21028d6940\",\"R0008087_ff1ae443c2\",\"R0008091_25fafe1583\",\"R0008211_d8ab275311\",\"R0008233_366488a5ab\",\"R0008321_d9cc84a36f\",\"R0008389_73aa3b8aa8\",\"R0008397_8671597574\",\"R0008417_1b1506eef2\",\"R0008644_dc816c5eee\",\"R0009005_9590cd1d29\",\"R0009181_fbe48b9892\"]",
+      "error": null
+    },
+    {
+      "id": "pilot_translate-r3-00003-057d3d2c",
+      "stage": "pilot_translate",
+      "status": "done",
+      "attempt": 1,
+      "backend": "api",
+      "ids": "[\"R0009217_936220e6b8\",\"R0009391_140103a57f\",\"R0009632_54fb7a42fe\",\"R0009658_57afb341d6\",\"R0009737_65d7f18b95\",\"R0009852_5c8bc2fb99\",\"R0009921_25ed75bb2d\",\"R0010372_b2e0d5ecdc\",\"R0010377_e3ad92be49\",\"R0010420_b99d7d3671\",\"R0010594_82a6fbf902\",\"R0010610_8125ff1d40\",\"R0010620_5843d9bf01\",\"R0010833_2d9fdb64c5\",\"R0010895_c8b8cba8fb\",\"R0011172_d1ed3af622\",\"R0011180_56f581a4c1\",\"R0011340_8eb2e8fd32\",\"R0011378_7a72380b97\",\"R0011460_9a4f4ed4b8\",\"R0011551_c3ae9d1b2a\",\"R0011559_ee5ca4a2f5\",\"R0011722_661ea99fa3\",\"R0011757_d9e539afe4\",\"R0011802_59bf872d9f\",\"R0011848_708454aa09\",\"R0011861_2676f35613\",\"R0011956_a81563262d\",\"R0012220_7e684e9eec\",\"R0012234_646ea3c2ab\",\"R0012340_7e48f7f696\",\"R0012587_2341a17f0e\",\"R0012651_20102f19a4\",\"R0012701_d6cfee6415\",\"R0012892_d14f56a45f\",\"R0013263_b1463b2fc9\",\"R0013312_b33bd97cc2\",\"R0013361_4da0837f06\",\"R0013363_b87a2e7689\",\"R0013400_13f0d287c7\"]",
+      "error": null
+    },
+    {
+      "id": "pilot_translate-r3-00004-8c4d0fe3",
+      "stage": "pilot_translate",
+      "status": "done",
+      "attempt": 1,
+      "backend": "api",
+      "ids": "[\"R0013422_04667a5d4d\",\"R0013447_ae8ee2f30e\",\"R0013459_1052039575\",\"R0013758_9d8ff715c2\",\"R0013849_3cb01e1fb8\",\"R0014136_fe614626c8\",\"R0014210_11b58d5f19\",\"R0014252_c31f672e58\",\"R0014311_f28d0dcbce\",\"R0014486_a9de977270\",\"R0014536_241d22890b\",\"R0015025_eef990926c\",\"R0015027_3f8df19db5\",\"R0015264_2e220f3e9e\",\"R0015353_0cc9cee746\",\"R0015465_e1a10e0bfa\",\"R0015513_247bde2d46\",\"R0015643_ca630a1a88\",\"R0015745_46719b185c\",\"R0015761_734ec0bab4\"]",
+      "error": null
+    }
+  ],
+  "config_note": "Current configuration. Saved outputs retain their producer task/input snapshots; a settings change alone does not mean these outputs were regenerated.",
+  "ready_for_assessment": true,
+  "statistics": {
+    "sample_records": 150,
+    "translated_records": 150,
+    "mechanical_failed_records": 0,
+    "task_statuses": {
+      "done": 4
+    },
+    "api_request_statuses_cumulative": {
+      "received": 4
+    }
+  },
+  "failures": [],
+  "note": "Mechanical findings are diagnostic, not a semantic error rate. Main AI assesses pipeline reliability, style and recurring quality problems. Individual errors need not be cleared before accepting calibration.",
+  "snapshot_hash": "c4995ac1631bba91ff46ad7391d81d4e706f8af7b6e8ee132c33d8a2e34bae66",
+  "report_hash": "72cdd4ef4301f4420fb03095c349da2aa97279f1a6842ba70564432223b207f2"
+}

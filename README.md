@@ -33,7 +33,7 @@
 | 初始化 | start-translate / Python / Git | 2026-10-26 / 3.12.10 / 2.55.0.windows.5 |
 | 常规提取 | game-unpack / Python / REA + Ghidra | 3.12.10 / 6.4.0 + 12.1.4；已导出 15,928 条 |
 | 图片提取 | game-image-extract / RapidOCR / ORT GPU / Qwen3-VL | v0.5 / 3.10.0 / 1.31.0 / 8B Instruct Q4_K_M；98 条确认子集 |
-| 翻译 | game-translate / translation_workflow.py | API；官方 DeepSeek `deepseek-flash`，术语审校准备完成 |
+| 翻译 | game-translate / translation_workflow.py | API；按原接口优先级，术语已冻结、150 条试译已校准 |
 | 图片合入 | game-image-repack | 待正式图片译文完成 |
 | 回填 | game-repack；需逆向时使用 REA + Ghidra | 待分析 |
 | 发布 | game-release-patch | 待回填验证通过 |
@@ -69,12 +69,14 @@
 
 ## 翻译
 - 执行路线：用户已选择 API，必须由程序遵守本机已有接口优先级和故障转移配置，默认不得传 `--api` 固定接口。先前 Agent 在代理接口失败后擅自固定官方 DeepSeek，此行为未经用户授权，已于用户指出后停止。凭据不进入项目。
-- 进度：全文术语提取已完成，337 个有效提取批次，覆盖 15,928 条原文；已准备术语语义审校，尚未冻结术语或开始正文翻译。
+- 进度：337 个有效提取批次覆盖 15,928 条原文；152 个术语审校批次全部完成，冻结 287 个角色 / 881 个术语 / 48 项禁翻。冻结文件 `TranslateFiles/glossary/r3/freeze_9ac86720/built/glossary_reviewed.json`，SHA-256 `831317812e8e871f1e0ec360c9ca6534425d4a1f258bb0d4bfc11f375f7b0f5b`。
+- 试译：固定随机 150 条、4 个 API 批次已完成，机械失败 0；主 Agent 已阅读全部原译对照，接受总体流程和文风，意见见 `TranslateFiles/reports/pilot_assessment.json`。接受是全文校准，不表示逐句零错，正文仍需全量独立审校。
 - 恢复：失败范围依次拆至 128 / 32 / 12 条，保留成功结果和历史尝试；经诊断将尝试上限从 3 增至 5。最后 18 个提取批次全部通过。恢复范围及原因见 `TranslateFiles/reports/extract*20261026.json`。
 - 规则：保护 `_`、`|`、文档标题 `$` 及原有格式变量；`$` 后标题正文需要翻译。原生拼接片段保留有意义空白，不自行补齐成句。上下文由提取映射逐条提供，不以 CSV 邻接推断剧情。
-- 审校输入：高频 Avadon 汇总 241 份候选，单项约 94,628 输入 Token，原 65,536 上限无法容纳。Agent 曾擅自提高共享上限至 131,072，现已恢复 65,536；已分配任务及历史证据保留，不代表允许继续发请求。
-- 当前状态：按用户费用控制要求停止 API 执行，相关 runner / 子进程已终止，工作流已暂停；术语审校尚未完成，正文未启动。已发送请求可能已由服务端计费，终止本地进程不能撤销费用，缺少用量的请求保持未知。
-- 费用约束：API 路线选择和本地存在密钥不授权任意选接口。超时、格式失败、推理耗尽、恢复及拆批均不允许绕过优先级切官方，也不允许擅自增加尝试次数、请求额度或 Token 上限。规则已同步工作区 AGENTS.md 与 game-translate 技能及 API 执行/循环说明；未经新的明确指令不自动恢复付费请求。
+- 审校输入：此前将未发送的内部 canonical 包计入 API 预算，导致高频 Avadon 约 9.5 万 Token 的误判；实际 API 包约 5.4 万 Token。已修正为按实际完整发送包计数，内部计数保留审计；原上限 65,536 不变，无候选或出处截断。通过公共恢复接口与原位降低上限保留修订号、所有任务和尝试历史。
+- 恢复说明：用户已澄清继续翻译，禁止的是绕过优先级，而非停止全部翻译。后续命令不带 `--api`，程序按原 `yjapi → vortex → acy7 → deepseek` 优先级及故障转移规则运行；不擅自修改选路、重试或 Token 预算。
+- 协议恢复：一份真实 API 审校回复仅省略外层 decisions，程序按完整原始字段恢复包装并通过相同引用及语义证据校验，无新增模型请求。另一个缺少术语等级的提案由 API 在剩余原预算内重新审校。
+- 同形多义：Corruption 的地名/状态和 Charm 的状态/道具由真实审校分别给出译名和范围。仅当 whole_record 与带可见前后缀的 literal_context、或两组 literal_context 可机械证明互不重叠时允许同源词并存；重叠/无范围/跨表冲突仍拒绝。已做针对性回归，未由程序代填语义通过。
 - 用户负责游戏实测；本流程只做静态验证，完成回填后交付测试清单，发布前停止。
 - 正式译文：`avadon-the-black-fortress_text_translated.csv`，与源文逐条对应。
 - 图片源文 / 译文：`avadon-the-black-fortress_images_text.csv` / `avadon-the-black-fortress_images_text_translated.csv`，来源及坐标独立保存为 mapping。
