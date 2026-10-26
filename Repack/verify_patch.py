@@ -22,8 +22,15 @@ def load(path):
 
 
 def image_checks():
-    root = P / 'ImagePatch/build-v4'
+    root = P / 'ImagePatch/build-v7'
     manifest = load(root / 'IMAGE_PATCH_MANIFEST.json')
+    if manifest.get('composite_labels'):
+        with (P/'avadon-the-black-fortress_images_text.csv').open(encoding='utf-8-sig',newline='') as stream:source_rows=[r[0] for r in csv.reader(stream)]
+        with (P/'avadon-the-black-fortress_images_text_translated.csv').open(encoding='utf-8-sig',newline='') as stream:target_rows=[r[0] for r in csv.reader(stream)]
+        for label in manifest['composite_labels']:
+            require(source_rows[label['csv_row']-1]==label['source'] and target_rows[label['csv_row']-1]==label['translation'], 'Composite label not bound to approved text')
+            for key,digest in label['source_image_sha256'].items():require(bp.sha(P/f'ImageText/work/images/{key}.png')==digest,'Composite source image changed')
+        require(bp.sha(P/'ImagePatch/v7_texture_styles.json')==manifest['texture_styles_sha256'],'Texture style changed after build')
     checks = []
     cells = []
     for item in manifest['files']:
@@ -41,7 +48,10 @@ def image_checks():
             require(entry['rendering']['font_size'] >= 10, 'Unreadable font size')
             # Check actual opaque ink pixels survive the native white color key.
             crop = target.crop(box)
-            require(any(pixel[:3] == (245, 240, 220) and pixel[3] for pixel in crop.getdata()), 'No visible non-key glyph core')
+            if entry['rendering']['background_mode']=='composite_source_erase':
+                require(any(e['csv_row']==entry['csv_row'] and entry['image_id'] in e['image_ids'] for e in manifest.get('composite_labels',[])), 'Erase-only region needs a confirmed composite label')
+            else:
+                require(any(pixel[:3] == (245, 240, 220) and pixel[3] for pixel in crop.getdata()), 'No visible non-key glyph core')
         original = Image.open(P / 'Game' / item['sources'][0]['path']).convert('RGBA')
         require(original.size == target.size, 'Dimensions changed')
         require(all(a == b or allowed for a, b, allowed in zip(original.getdata(), target.getdata(), mask.getdata())), 'Pixels outside render rectangles changed')
@@ -109,6 +119,8 @@ def verify():
     require(choices['status'] == 'passed' and choices['reported_choices'] == 3 and choices['exact_record_priority'] and choices['unknown_and_malformed_fall_back'], 'Numbered dialogue regression failed')
     dynamic_font = load(tests/'dynamic_font_report.json')
     require(dynamic_font['status'] == 'passed' and 10 <= dynamic_font['cjk_body_ink_height'] <= 13, 'Dynamic text or CJK size regression failed')
+    console = load(tests/'console_binding_report.json')
+    require(console['status']=='passed' and console['bindings']==50 and console['console_cases']==13 and console['padding'] and console['numeric_script_fragment'], 'Console/binding regression failed')
     result = load(tests/'report.json')
     require(result['status'] == 'passed' and result['game_started'] is False and result['in_game_verified'] is False, 'Invalid component report')
     result['bindings'] = {str(path.relative_to(P)).replace('\\','/'): bp.sha(path) for path in [executable, bp.PAYLOAD/'winmm.dll', bp.PAYLOAD/'AvadonChinese/translations.bin', bp.BUILD/'required_glyphs.bin']}
@@ -116,6 +128,7 @@ def verify():
     result['startup_without_timeGetTime'] = True
     result['numbered_dialogue_choices'] = choices
     result['dynamic_text_and_font'] = dynamic_font
+    result['console_and_bindings'] = console
     bp.write_json(tests/'report.json', result)
     Image.open(tests/'cjk_render.ppm').save(tests/'cjk_render.png')
     inventory = {path.relative_to(bp.PAYLOAD).as_posix(): bp.sha(path) for path in sorted(bp.PAYLOAD.rglob('*')) if path.is_file()}

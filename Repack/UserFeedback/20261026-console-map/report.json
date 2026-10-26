@@ -1,0 +1,53 @@
+{
+  "status": "installed_pending_user_game_test",
+  "feedback_screenshots": [
+    {
+      "path": "Repack/UserFeedback/20261026-console-map/screenshots/codex-clipboard-dd55fa8b-bb81-49d4-8bd7-4d8495e6f15e.png",
+      "sha256": "5d0a6ad50547b6520465ebfe8013295133d17b99290bbb76f5ae1ef375ca5926"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026-console-map/screenshots/codex-clipboard-a4a5603d-9669-4ef0-bc61-d4bc4708274a.png",
+      "sha256": "fd27501e2d5dd3216e7232b0c7eab2c8a341a40dc037206829bef14acc1b4647"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026-console-map/screenshots/codex-clipboard-e727dba5-3aa1-4d89-ae35-52962228be58.png",
+      "sha256": "b6c38d92de9595a39d37c96d6c93dc45f0e9e1deee89b1a62a9c71ec91dc3d23"
+    },
+    {
+      "path": "Repack/UserFeedback/20261026-console-map/screenshots/codex-clipboard-9798fc4f-d377-4e5c-b849-9ed4f0a63619.png",
+      "sha256": "05eadb669d54bac9ba9f2cd07f434d9aba21e0f870aa4c3a1e094b078d2803c0"
+    }
+  ],
+  "diagnosis": [
+    "runtime numeric completion of approved script fragment",
+    "fixed-width console padding",
+    "approved action plus dynamic key binding",
+    "opaque map label plates and two seam occurrences"
+  ],
+  "formal_translation_csv_changed": false,
+  "paid_api_requests": 0,
+  "console_and_binding_tests": {
+    "status": "passed",
+    "padding": true,
+    "bindings": 50,
+    "console_cases": 13,
+    "numeric_script_fragment": true,
+    "name_label": true,
+    "unknown_prose_falls_back": true,
+    "game_started": false
+  },
+  "image_build": "ImagePatch/build-v7",
+  "map_mask_alpha": 64,
+  "map_mask_opacity": 0.25098039215686274,
+  "map_ink_cleanup": "approximate local inpaint within confirmed rectangles only",
+  "confirmed_extra_seam_occurrences": 2,
+  "image_unit_tests_passed": 9,
+  "agent_viewed": [
+    "map_preview.png",
+    "contact.jpg"
+  ],
+  "public_v1_0_changed": false,
+  "game_started": false,
+  "in_game_verified": false,
+  "installation_verification": "Repack/INSTALL_VERIFICATION.json"
+}

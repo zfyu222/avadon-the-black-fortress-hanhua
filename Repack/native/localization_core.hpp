@@ -29,6 +29,7 @@ class Dictionary {
     std::unordered_map<std::string,std::string> exact_;
     std::vector<Pattern> patterns_;
     std::vector<std::pair<std::string,std::string>> labels_;
+    std::vector<std::pair<std::string,std::string>> fragments_;
     bool apply(const Pattern& pattern,const std::smatch& match,std::string& target,unsigned depth)const{
         std::string candidate;size_t index=1;bool known_argument=false;
         for(const auto& part:pattern.target){candidate+=part.literal;if(part.spec=="%%")candidate+='%';else if(!part.spec.empty()){
@@ -43,8 +44,9 @@ public:
         exact_[source]=target;
     }
     void prepare() {
-        patterns_.clear();labels_.clear();
+        patterns_.clear();labels_.clear();fragments_.clear();
         for(const auto& pair:exact_) {
+            if(pair.first.size()>=32 && pair.first.back()==' ' && pair.first.find('%')==std::string::npos)fragments_.push_back(pair);
             if(pair.first.size()>2 && pair.first.compare(pair.first.size()-2,2,": ")==0 && pair.first.find('%')==std::string::npos)labels_.push_back(pair);
             auto source=format_parts(pair.first),target=format_parts(pair.second);size_t captures=0,literals=0,words=0;bool has_string=false,has_number=false;std::string expression="^";
             for(const auto& part:source){bool in_word=false;for(unsigned char c:part.literal){bool letter=(c>='A'&&c<='Z')||(c>='a'&&c<='z');if(letter&&!in_word)++words;in_word=letter;}expression+=regex_literal(part.literal);literals+=part.literal.size();if(part.spec=="%%"){expression+='%';++literals;}else if(!part.spec.empty()){
@@ -66,6 +68,7 @@ public:
         }
         std::stable_sort(patterns_.begin(),patterns_.end(),[](const Pattern&a,const Pattern&b){return a.specificity>b.specificity;});
         std::sort(labels_.begin(),labels_.end(),[](const auto&a,const auto&b){return a.first.size()>b.first.size();});
+        std::sort(fragments_.begin(),fragments_.end(),[](const auto&a,const auto&b){return a.first.size()>b.first.size();});
     }
     bool lookup(const std::string& source,std::string& target,unsigned depth=0) const {
         auto found=exact_.find(source);if(found!=exact_.end()){target=found->second;return true;}
@@ -95,9 +98,51 @@ public:
             }if(!matched)break;
         }
         if(remainder.empty() && pieces>=2){target=std::move(compound);return true;}
-        static const std::regex opaque_value(R"((?:[+\-]?[0-9]+(?:[.,/][0-9]+)*%?|[A-Za-z]))");
+        static const std::regex opaque_value(R"((?:[+\-]?[0-9]+(?:[.,/][0-9]+)*%?|[A-Za-z][A-Za-z0-9_'\-]{0,31}\.?))");
+        // Observed combat console joins. Each fixed fragment must itself be
+        // approved; ability names require an exact record and damage is numeric.
+        for(const std::string separator:{" uses ability: "," takes "}){
+            auto at=source.find(separator);auto join=exact_.find(separator);
+            if(at==std::string::npos || join==exact_.end())continue;
+            auto subject=source.substr(0,at),tail=source.substr(at+separator.size());
+            auto name=exact_.find(subject);std::string localized_name;
+            if(name!=exact_.end())localized_name=name->second;
+            else if(std::regex_match(subject,opaque_value))localized_name=subject;
+            else continue;
+            if(separator==" uses ability: " && !tail.empty() && tail.back()=='.'){
+                auto ability=exact_.find(tail.substr(0,tail.size()-1));
+                if(ability!=exact_.end()){target=localized_name+join->second+ability->second+'.';return true;}
+            }
+            if(separator==" takes "){
+                static const std::regex damage(R"(([0-9]+)( points of damage\.))");std::smatch match;
+                if(std::regex_match(tail,match,damage)){auto ending=exact_.find(match[2].str());
+                    if(ending!=exact_.end()){target=localized_name+join->second+match[1].str()+ending->second;return true;}}
+            }
+        }
         for(const auto& label:labels_){if(source.compare(0,label.first.size(),label.first)!=0)continue;auto tail=source.substr(label.first.size());
+            auto known=exact_.find(tail);if(known!=exact_.end()){target=label.second+known->second;return true;}
+            if(!tail.empty() && tail.back()=='.'){known=exact_.find(tail.substr(0,tail.size()-1));if(known!=exact_.end()){target=label.second+known->second+'.';return true;}}
             if(std::regex_match(tail,opaque_value)){target=label.second+tail;return true;}
+        }
+        // Key-binding rows are a complete known action plus an opaque key,
+        // never an arbitrary English suffix or word-by-word replacement.
+        auto separator=source.rfind(" - ");
+        if(separator!=std::string::npos){
+            auto action=exact_.find(source.substr(0,separator));auto key=source.substr(separator+3);
+            static const std::regex binding(R"((?:(?:Shift|Ctrl|Control|Alt)[+\-])*(?:[A-Za-z0-9/]|F(?:[1-9]|1[0-2])|Space|Tab|Enter|Return|Esc|Escape|Backspace|Delete|Home|End|PageUp|PageDown|Up|Down|Left|Right))");
+            if(action!=exact_.end()){
+                auto none=exact_.find(key);
+                if(key=="No Shortcut" && none!=exact_.end()){target=action->second+" - "+none->second;return true;}
+                if(std::regex_match(key,binding)){target=action->second+" - "+key;return true;}
+            }
+        }
+        // Some script UI messages concatenate a numeric value onto an
+        // extracted long fragment. Only numeric/punctuation completion is
+        // accepted; arbitrary prose remains unmatched.
+        static const std::regex numeric_completion(R"([+\-]?[0-9]+[.)%!:,;\]]{0,3})");
+        for(const auto& pair:fragments_){
+            if(source.compare(0,pair.first.size(),pair.first)!=0)continue;
+            auto tail=source.substr(pair.first.size());if(std::regex_match(tail,numeric_completion)){target=pair.second+tail;return true;}
         }
         auto key_at=source.rfind(" (");
         if(key_at!=std::string::npos && source.back()==')'){
@@ -108,9 +153,9 @@ public:
         }
         // Preserve bounded UI padding while matching the whole inner message.
         size_t leading=source.find_first_not_of(' ');
-        if(leading!=std::string::npos && leading>0 && leading<=4){std::string inner;if(lookup(source.substr(leading),inner,depth+1)){target=source.substr(0,leading)+inner;return true;}}
+        if(leading!=std::string::npos && leading>0 && source.size()<512){std::string inner;if(lookup(source.substr(leading),inner,depth+1)){target=source.substr(0,leading)+inner;return true;}}
         size_t last=source.find_last_not_of(' ');
-        if(last!=std::string::npos && last+1<source.size() && source.size()-last-1<=4){std::string inner;if(lookup(source.substr(0,last+1),inner,depth+1)){target=inner+source.substr(last+1);return true;}}
+        if(last!=std::string::npos && last+1<source.size() && source.size()<512){std::string inner;if(lookup(source.substr(0,last+1),inner,depth+1)){target=inner+source.substr(last+1);return true;}}
         return false;
     }
     size_t size()const{return exact_.size();}

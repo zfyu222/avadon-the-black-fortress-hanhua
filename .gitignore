@@ -58,3 +58,11 @@ Desktop.ini
 /Repack/UserFeedback/*/screenshots/
 /Analysis/font_atlas_inspection.png
 /Analysis/glyph_quote_comparison.png
+/ImagePatch/build-v5/
+/ImagePatch/build-v6/
+/ImagePatch/v5_texture_styles.json
+/ImagePatch/v6_texture_styles.json
+/ImagePatch/map_original_stitched.png
+/ImagePatch/build-v7/images/
+/ImagePatch/build-v7/map_preview.png
+/ImagePatch/build-v7/contact.jpg

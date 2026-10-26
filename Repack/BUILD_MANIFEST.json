@@ -87257,6 +87257,7 @@
     ],
     "original_game_data_modified": false
   },
+  "image_build": "ImagePatch/build-v7",
   "images": [
     {
       "path": "Avadon Files/Graphics Core/G128.png",
@@ -87326,13 +87327,13 @@
     },
     {
       "path": "Avadon Files/Graphics Core/G176.png",
-      "sha256": "92b718201921e398a88cb7cf4d7c29c37101ecc74e0ae10365637734e373773f",
+      "sha256": "6e658d5f437a23557c9213e056d733187ea1bdc3cb76b36d57a3ec50c256ede2",
       "original_source": "Avadon Files/Graphics Core/G176.jpg",
       "original_sha256": "a3c981e93e6dde20229e12776a8b9e878f2255d49108ff2cca64ce985c2a8d66"
     },
     {
       "path": "Avadon Files/Graphics Core/G177.png",
-      "sha256": "65f2f9cfdad06ba46554311970807229418d2f47c34710f1b584591c5bd208c8",
+      "sha256": "380f437d3aefc915e6d10231152944a4421d1cde71bccea0d2687289bf4f78d2",
       "original_source": "Avadon Files/Graphics Core/G177.jpg",
       "original_sha256": "3135dc541f2db5512174593f1836c42e9f50dc566afb0249f6e8d4f31bf98197"
     },
@@ -87356,32 +87357,32 @@
     },
     {
       "path": "Avadon Files/Graphics Core/G231.png",
-      "sha256": "e746145f3c0ac09316868d0e6dcfaf9bbae03df50c121f00d53b627d3e683bd4",
+      "sha256": "af26a2c0226f91980df452e3d3cd0a4c8a7a70d9ff30aff51b50a7d290b03d0b",
       "original_source": "Avadon Files/Graphics Core/G231.jpg",
       "original_sha256": "36f6594e708fe07c42fd1656fe6924d32fbfd17a67a4f3bc45d877124a904c1c"
     },
     {
       "path": "Avadon Files/Graphics Core/G232.png",
-      "sha256": "d077b3b4b49228a71ace2b729942576a09dc5b77b463c2c1f555874904818ba6",
+      "sha256": "b572f85720a8059c555704062b2d8ed23be9c818d0e12d3d879e40ec3a459324",
       "original_source": "Avadon Files/Graphics Core/G232.jpg",
       "original_sha256": "508062e8dc3c06bb5c5b8c8cdb80845b4408c6e62d0efc23715239fc15870122"
     },
     {
       "path": "Avadon Files/Graphics Core/G233.png",
-      "sha256": "d2991e8d3d5b906918dbbec2b6a9a7b7d780edc23538b1a9fc129b231ecf924e",
+      "sha256": "4ad13bf9705b875b67fcdf1601aeffa14937bd9f3e7236df187dfe98ea89417d",
       "original_source": "Avadon Files/Graphics Core/G233.jpg",
       "original_sha256": "0c869475a017cf08b5055dda07d5754a3d095f1eb3f2a8f89dc19e2e9268c8b9"
     }
   ],
   "native_sources": {
     "adapter.cpp": "5873e5fa689f544cd1322de57ae1ae3bd1e5330921667b72e723ff3627cc6b89",
-    "localization_core.hpp": "11026d2b51a322a5e7bc667fb6aea2d07069d181e7bcac465a8d9881b0c61c99",
+    "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "d54d65658c80b66bdeef7742404b2058f58d2fe45cf7e7707e021cc65ea97564",
-    "self_test.cpp": "9bce7dd063c5987cc4ef1bdc5974655b3768f179cee48a9a08e11dd6adb3da7b"
+    "self_test.cpp": "de54abb3b92b5e4f71d754bbdeafb2619a4ebd1480b02760f2d862bfa58c6d0b"
   },
   "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "186afe3ada06c93c2144fb93c6830be5cc1b990a8f64564e798c1fc5dfb6069a"
+  "dll_sha256": "a29b5246265b56c76f7dd7215433abd9db19097725690f7e880aa4c37e5fc7e3"
 }

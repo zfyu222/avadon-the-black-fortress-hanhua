@@ -1,0 +1,55 @@
+{
+  "source_csv_sha256": "ff0c9891e7f7235f1431b1c6c4be0a2f51d05a190ea143cf17d50e560129b80d",
+  "translation_sha256": "18f9549844c36e9a67b0445d2a78ffcf0f1a22a4007646c2d82009a0864fff74",
+  "observations": [
+    {
+      "source": "HOLKLANDA",
+      "csv_row": 97,
+      "translation": "霍尔克兰达",
+      "stitched_box": [
+        680,
+        365,
+        830,
+        398
+      ],
+      "confirmation": {
+        "status": "agent_visual_confirmed",
+        "human_approval": false,
+        "reason": "Viewed both original tiles and their exact horizontal composite; complete red map label is readable across the seam."
+      },
+      "image_ids": [
+        "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+        "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9"
+      ],
+      "source_image_sha256": {
+        "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314": "d9c0428eb14b32b1d9e6d2df4cce106b624dc44cc328536c46893c9ea662b61c",
+        "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9": "8c4fd3193faff00658e8853d6a8cd5c47565669502e34c9e5038346d40cb4b5b"
+      }
+    },
+    {
+      "source": "WRETCH LANDS",
+      "csv_row": 94,
+      "translation": "贱民之地",
+      "stitched_box": [
+        684,
+        809,
+        868,
+        887
+      ],
+      "confirmation": {
+        "status": "agent_visual_confirmed",
+        "human_approval": false,
+        "reason": "Viewed both original tiles and their exact horizontal composite; complete red map label is readable across the seam."
+      },
+      "image_ids": [
+        "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314",
+        "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9"
+      ],
+      "source_image_sha256": {
+        "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314": "d9c0428eb14b32b1d9e6d2df4cce106b624dc44cc328536c46893c9ea662b61c",
+        "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9": "8c4fd3193faff00658e8853d6a8cd5c47565669502e34c9e5038346d40cb4b5b"
+      }
+    }
+  ],
+  "agent_viewed_original_composite": true
+}

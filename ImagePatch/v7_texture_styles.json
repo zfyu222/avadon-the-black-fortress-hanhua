@@ -1,0 +1,60 @@
+{
+  "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314": {
+    "mask_rgba": [
+      72,
+      50,
+      25,
+      64
+    ],
+    "erase_text_ink": true,
+    "stroke_width": 1,
+    "dark_rows": [
+      59,
+      60
+    ]
+  },
+  "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9": {
+    "mask_rgba": [
+      72,
+      50,
+      25,
+      64
+    ],
+    "erase_text_ink": true,
+    "stroke_width": 1,
+    "dark_rows": []
+  },
+  "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7": {
+    "mask_rgba": [
+      72,
+      50,
+      25,
+      64
+    ],
+    "erase_text_ink": true,
+    "stroke_width": 1,
+    "dark_rows": []
+  },
+  "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627": {
+    "mask_rgba": [
+      72,
+      50,
+      25,
+      64
+    ],
+    "erase_text_ink": true,
+    "stroke_width": 1,
+    "dark_rows": []
+  },
+  "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63": {
+    "mask_rgba": [
+      72,
+      50,
+      25,
+      64
+    ],
+    "erase_text_ink": true,
+    "stroke_width": 1,
+    "dark_rows": []
+  }
+}

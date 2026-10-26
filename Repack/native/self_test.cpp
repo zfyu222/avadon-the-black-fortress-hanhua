@@ -85,6 +85,23 @@ int wmain(int argc,wchar_t** argv){
         require(!dictionary.lookup("Fatigue: 1. Unapproved trailing prose.",value),"Partial numeric composition must fall back");
         require(!dictionary.lookup("Shortcut: unapproved prose",value),"Unapproved label prose must fall back");
         require(!dictionary.lookup("Instructions (unapproved prose)",value),"Unapproved parenthetical must fall back");
+        require(dictionary.lookup("Starting new round.",a) && dictionary.lookup("Starting new round."+std::string(60,' '),b) && b==a+std::string(60,' '),"Fixed-width console padding failed");
+        const char* actions[]={"Use Ability","Train Character/See Stats","Inventory","Get Item","Journal","Start Combat","End Combat","Instructions","Switch Default Weapon","Quick Save","Quick Load","Wait","Select Char 1","Select Key C","Show/Hide Text Console"};
+        const char* keys[]={"a","Shift+/","i","g","No Shortcut","f","f","F1","w","F3","F4","Space","1","c","t"};
+        for(int i=0;i<15;++i){require(dictionary.lookup(actions[i],a),"Approved key action absent");std::string key=keys[i],expected=key;if(key=="No Shortcut")require(dictionary.lookup(key,expected),"Approved empty-key value absent");require(dictionary.lookup(std::string(actions[i])+" - "+key,b) && b==a+" - "+expected,"Key-binding composition failed");}
+        unsigned binding_tests=15;
+        for(int i=1;i<=4;++i)for(int item=0;item<2;++item){std::string action=std::string(item?"Quick Use Item ":"Quick Spell ")+std::to_string(i),key="F"+std::to_string(i+(item?8:4));require(dictionary.lookup(action,a) && dictionary.lookup(action+" - "+key,b) && b==a+" - "+key,"Numbered quick binding failed");++binding_tests;}
+        for(int i=2;i<=5;++i){std::string action="Select Char "+std::to_string(i),key=std::to_string(i);require(dictionary.lookup(action,a) && dictionary.lookup(action+" - "+key,b) && b==a+" - "+key,"Character binding failed");++binding_tests;}
+        for(char letter='A';letter<='X';++letter){if(letter=='C')continue;std::string action="Select Key "+std::string(1,letter),key(1,letter-'A'+'a');require(dictionary.lookup(action,a) && dictionary.lookup(action+" - "+key,b) && b==a+" - "+key,"Alphabet binding failed");++binding_tests;}
+        const char* console_cases[]={"Starting new round.","A quest has been completed.","A new quest has been added to your list.","  (To see your quest list, press the Journal button.)","Now active: Tristram.","Ending Combat Mode","Save: Game saved.","Load: Game loaded.","Experimental Wolf takes 19 points of damage.","Experimental Wolf uses ability: Bite.","Tristram uses ability: Melee Attack.","Experimental Wolf takes 11 points of physical damage. (0 blocked.)","Combat has begun! (To end combat, press the Peace button below.)"};
+        for(auto input:console_cases){if(!dictionary.lookup(input,a))throw std::runtime_error(std::string("Reported console message failed: ")+input);require(dictionary.lookup(std::string(input)+std::string(60,' '),b) && b==a+std::string(60,' '),"Reported padded console message failed");}
+        std::string door="Open Door: The door is locked, and you don't have enough lockpicks to get it open. (You need ";
+        require(dictionary.lookup(door,a) && dictionary.lookup(door+"12.)",b) && b==a+"12.)","Numeric script fragment failed");
+        std::string approved_name;require(dictionary.lookup("Tristram",approved_name) && dictionary.lookup("Now active: ",a) && dictionary.lookup("Now active: Tristram.",b) && b==a+approved_name+'.',"Approved character-name field failed");
+        require(dictionary.lookup("Now active: ZyxHero.",b) && b==a+"ZyxHero.","Opaque player-name field failed");
+        require(!dictionary.lookup(door+"unknown prose.)",value),"Unapproved prose must not complete a numeric fragment");
+        require(!dictionary.lookup("Inventory - arbitrary prose",value),"Non-key suffix must not be accepted");
+        std::ofstream console_report((output+L"\\console_binding_report.json").c_str(),std::ios::binary);console_report<<"{\"status\":\"passed\",\"padding\":true,\"bindings\":"<<binding_tests<<",\"console_cases\":13,\"numeric_script_fragment\":true,\"name_label\":true,\"unknown_prose_falls_back\":true,\"game_started\":false}\n";console_report.close();
         auto lines=avzh::wrap(L"甲乙丙丁，戊己。",3,[](const std::wstring&s){return static_cast<int>(s.size());});for(const auto& line:lines)require(line.empty() || !avzh::closing(line[0]),"Closing punctuation starts wrapped line");
         std::wstring host_path=argv[0];auto slash=host_path.find_last_of(L"\\/");require(slash!=std::wstring::npos,"Need absolute component host path");
         std::wstring startup_dir=host_path.substr(0,slash)+L"\\AvadonChinese";CreateDirectoryW(startup_dir.c_str(),nullptr);

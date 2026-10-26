@@ -20,7 +20,7 @@ def main():
         if item['path'] != item['original_source']:
             check(bp.sha(safe(root,item['original_source'])) == item['original_sha256'], 'Original JPG unexpectedly changed')
     # G290 is the native Latin glyph atlas and is explicitly excluded from the payload.
-    image_manifest = load(bp.PROJECT/'ImagePatch/build-v4/IMAGE_PATCH_MANIFEST.json')
+    image_manifest = load(bp.PROJECT/build['image_build']/'IMAGE_PATCH_MANIFEST.json')
     atlas = {origin['path']:origin['file_sha256'] for entry in image_manifest['preserved_regions'] for origin in entry['sources'] if '/G290.' in origin['path']}
     check(atlas, 'Glyph atlas preservation evidence missing')
     for relative,expected in atlas.items():

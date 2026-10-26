@@ -164,7 +164,7 @@ def forwarders(dumpbin):
     return exports
 
 def image_payload():
-    root = PROJECT / 'ImagePatch/build-v4'
+    root = PROJECT / 'ImagePatch/build-v7'
     manifest = json.loads((root / 'IMAGE_PATCH_MANIFEST.json').read_text(encoding='utf-8-sig'))
     translated = PROJECT / 'avadon-the-black-fortress_images_text_translated.csv'
     if manifest['translation_sha256'] != sha(translated):
@@ -229,7 +229,7 @@ def build(compile_code=True):
         (BUILD/'compiler.log').write_text(result.stdout+'\n'+result.stderr, encoding='utf-8')
         if result.returncode:
             print(result.stdout[-9000:]);print(result.stderr[-2000:]);raise RuntimeError('Native build failed; see compiler.log')
-    manifest = {'status': 'built_not_installed' if compile_code else 'prepared', 'supported_exe_sha256': SUPPORTED, 'dictionary': report,
+    manifest = {'status': 'built_not_installed' if compile_code else 'prepared', 'supported_exe_sha256': SUPPORTED, 'dictionary': report, 'image_build': 'ImagePatch/build-v7',
                 'images': images, 'native_sources': {p.name: sha(p) for p in (HERE/'native').glob('*') if p.is_file()}, 'minhook_commit': commit,
                 'game_started': False, 'in_game_verified': False, 'installed': False}
     if (PAYLOAD/'winmm.dll').exists():
