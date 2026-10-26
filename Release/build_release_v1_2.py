@@ -18,7 +18,6 @@ def build():
         '--install','解压到 Avadon.exe 所在文件夹，双击“安装汉化.cmd”。',
         '--upgrade','将新版解压到同一文件夹，双击“安装汉化.cmd”即可升级。',
         '--uninstall','双击“卸载汉化.cmd”。',
-        '--verification','开门提示、消息栏、快捷键和地图显示正常。',
         '--changes',CHANGES,
         '--installer-config',P/'Release/installer_config.json']
     for key,value in links.items():args.extend(['--'+key.replace('_','-'),value])
@@ -40,6 +39,8 @@ def verify():
         guide=z.read('补丁说明.txt').decode('utf-8-sig')
         assert guide.index('安装汉化')<guide.index('补丁升级')<guide.index('卸载汉化')<guide.index('适用版本')
         if VERSION!='1.2':assert guide.index('下载地址:')<guide.index('安装汉化')
+        if VERSION not in ('1.2','1.3'):
+            assert '运行情况' not in guide and '本补丁使用 AI 辅助翻译，请适当降低预期。' in guide
         assert all(term not in guide for term in ['备份','拷贝','未决','未验证','代理','用户对','SHA-256','11 个','请先停止'])
         assert 'v1.0' in guide and 'v1.1' in guide and 'v1.2' in guide
         links=load(P/'Release/player_links.json');assert all(v in guide for v in links.values())

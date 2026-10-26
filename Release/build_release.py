@@ -32,38 +32,6 @@ def write(path,value):
     path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='')
 def run(args):subprocess.run([str(x) for x in args],check=True)
 
-def record_user_tests():
-    installed=load(P/'Repack/INSTALLATION.json')
-    for name,expected in installed['payload_files'].items():
-        assert sha(P/'Repack/Payload'/name)==expected
-        assert sha(P/'Game'/name)==expected
-    evidence={'date':'2026-10-26','tester':'用户本人','source':'本对话用户消息',
-        'release_request':'发布吧',
-        'question':'当前本地修正版安装后，你是否已重开游戏，确认开门提示、消息栏、快捷键和地图显示正常？若已测试，请简要说明结果；未测试的项目也请注明。',
-        'user_response_verbatim':'已测试，上述项目均正常',
-        'interpretation':'用户确认当前修正版四项回归均正常并要求发布。仅记录本轮范围；正文译文未改变。',
-        'limits':'用户没有另提供本轮逐项场景名称、任务名称或新版截图；不记录全流程通关、全部场景或每张贴图覆盖。此前问题截图不作新版通过证据。',
-        'game_version':GAME_VERSION,'platform':PLATFORM,'tested_payload_files':installed['payload_files'],
-        'agent_started_game':False}
-    evidence_path=P/'Repack/UserTests/confirmation_v1.1_20261026.json';write(evidence_path,evidence)
-    for kind,project,template in [
-        ('normal',P,P/'Repack/USER_GAME_CHECK_normal.pending.json'),
-        ('images',P/'TranslateFiles/image-text',P/'Repack/USER_GAME_CHECK_images.pending.json')]:
-        report=load(template);report['game_version']=GAME_VERSION;report['platform']=PLATFORM
-        local_evidence=project/'Repack/UserTests/confirmation_v1.1_20261026.json'
-        if local_evidence!=evidence_path:write(local_evidence,evidence)
-        report['evidence_files']=[dict(path=local_evidence.relative_to(project).as_posix(),sha256=sha(local_evidence))]
-        for check in report['checks']:
-            category=check['category']
-            if category in ('dialogue','quest'):
-                check.update(status='not_applicable',scene='',notes='本轮为显示匹配和地图样式增量修复，正式正文译文未改变；未声称本轮重新测试对白分支或全流程任务。v1.0完整类别的用户确认保留于历史记录。消息栏显示本轮已回归。')
-            else:
-                check.update(status='pass',scene={'fonts':'修正版开门提示、消息栏、快捷键及地图中文显示','layout':'修正版消息栏、快捷键及半透明地图标签排版','ui':'修正版开门提示、消息栏、快捷键及地图界面'}[category],
-                    notes='用户对本轮四项回归答复“已测试，上述项目均正常”。据用户实测确认记录；代理未启动游戏，未另提供逐项截图，不推断其他场景覆盖。')
-        path=project/f'Repack/UserTests/{kind}_v1.1_game_check.json';write(path,report)
-        run([PYTHON,FLOW,'--project',project,'record-game-check','--file',path])
-        run([PYTHON,FLOW,'--project',project,'release-check'])
-
 def metadata():
     links=load(P/'Release/player_links.json')
     return dict(introduction='《Avadon: The Black Fortress》简体中文汉化补丁。',
@@ -71,7 +39,7 @@ def metadata():
         install='将补丁解压到 Avadon.exe 所在文件夹。',
         upgrade='将新版解压到同一文件夹即可升级。',
         uninstall='使用最新版提供的“卸载汉化.cmd”。',
-        verification='开门提示、消息栏、快捷键和地图显示正常。',**links)
+        **links)
 
 def package(dry_run=False):
     installed=load(P/'Repack/INSTALLATION.json');args=[PYTHON,PACKAGER,'--project',P,'--game-name',GAME_NAME,'--version',VERSION,
@@ -135,9 +103,8 @@ def verify():
     print(json.dumps(dict(status='passed',archive=str(ARCHIVE),sha256=sha(ARCHIVE)),ensure_ascii=False))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['record-tests','dry-run','stage','package','verify']);action=parser.parse_args().action
-    if action=='record-tests':record_user_tests()
-    elif action=='dry-run':package(True)
+    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['dry-run','stage','package','verify']);action=parser.parse_args().action
+    if action=='dry-run':package(True)
     elif action=='package':package()
     elif action=='stage':stage()
     else:verify()

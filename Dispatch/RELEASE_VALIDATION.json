@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "version": "1.3",
-  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.3.zip",
-  "sha256": "ed858010218ba20605538bd0bb447d77845f24fda6c35d5e05ca31d2a9826c74",
+  "version": "1.4",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.4.zip",
+  "sha256": "789b0b6f7e376a3c0920b3c7b4a96a03e6ac0f98bc9e03fbb3313eed36a2d778",
   "tested_game_payload_files": 22,
   "payload_unchanged_from": "v1.1",
   "auxiliary_files": 4,

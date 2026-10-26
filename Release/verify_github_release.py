@@ -5,7 +5,7 @@ import subprocess
 import urllib.request
 from pathlib import Path
 from build_release import P,DISPATCH,sha,write
-from build_release_v1_3 import ARCHIVE,VERSION
+from build_release_v1_4 import ARCHIVE,VERSION
 RELEASE='https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v'+VERSION
 
 def api(path):
