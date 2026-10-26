@@ -11,9 +11,9 @@
   },
   "exclusions": [
     {
+      "info": "脚本引号/换行及说明书标题控制符",
       "markers": "",
-      "regex": "[_|]|\\$(?=[A-Za-z])",
-      "info": "脚本引号/换行及说明书标题控制符"
+      "regex": "[_|$]"
     }
   ],
   "polish": false

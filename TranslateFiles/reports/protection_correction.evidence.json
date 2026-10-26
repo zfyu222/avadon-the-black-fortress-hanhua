@@ -1,0 +1,44 @@
+{
+  "reason": "Dollar is a literal manual heading marker; Latin lookahead incorrectly rejected CJK headings. Verify identical full-corpus source protection and full existing-candidate checks; retire unissued repair only, retain all attempts.",
+  "before": [
+    {
+      "info": "脚本引号/换行及说明书标题控制符",
+      "markers": "",
+      "regex": "[_|]|\\$(?=[A-Za-z])"
+    }
+  ],
+  "after": [
+    {
+      "info": "脚本引号/换行及说明书标题控制符",
+      "markers": "",
+      "regex": "[_|$]"
+    }
+  ],
+  "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+  "all_source_matches_unchanged": true,
+  "validated_saved_ids": [
+    "R0001193_36a7ae7656",
+    "R0001197_9d89454083",
+    "R0001200_7c61b49843",
+    "R0001238_787572d01d",
+    "R0001245_9e7ec8d832",
+    "R0001262_79018a4839",
+    "R0001266_2063935767",
+    "R0001268_98d1caa3f8",
+    "R0001289_b6553abc89",
+    "R0001295_5888dc2799",
+    "R0001304_5419c199b8",
+    "R0001317_fa92bc1360",
+    "R0001322_2cef7bfd52",
+    "R0001330_664bf74ff2",
+    "R0001350_f4ea29c6c9",
+    "R0001358_a805468765",
+    "R0001364_f1cd0852b8",
+    "R0001366_085e2c7732"
+  ],
+  "obsolete_unissued_tasks": [
+    "draft-repair-3f65c8a22fa04622805b"
+  ],
+  "attempt_history_preserved": true,
+  "semantic_approval": false
+}
