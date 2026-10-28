@@ -24,8 +24,13 @@
   },
   "path": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text\\avadon-the-black-fortress_images_text_translated.csv",
   "quality_review": {
-    "report_hash": "cc9ab50d385c1941b720bf3a76641b50d8488e5e9ba3358df2c9f9cd50ceccc8",
-    "reviewer": "workflow:no-disputes"
+    "report_hash": "2b849a1bc8790f81c9cc2bceaba3d2cb9709ac97eb61173b25f0d5e9579bce2b",
+    "reviewer": "standard"
   },
-  "in_game_check": "pending_repack"
+  "in_game_check": "pending_repack",
+  "mixed_language_audit": {
+    "path": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\TranslateFiles\\image-text\\TranslateFiles\\reports\\mixed_language_audit.json",
+    "candidate_records": 0,
+    "status": "candidates_only"
+  }
 }

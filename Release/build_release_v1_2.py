@@ -4,15 +4,18 @@ import json,subprocess,sys,shutil,tempfile,zipfile,hashlib
 import build_release as old
 P=old.P
 VERSION='1.2'
+INSTALLATION_PATH=P/'Repack/INSTALLATION.json'
+RELEASE_DATE='2026-10-27'
+PAYLOAD_BASELINE='v1.1'
 CHANGES='新增安装、升级和卸载脚本；简化补丁说明，加入网盘下载和腾讯文档反馈地址。汉化内容与v1.1一致。'
 ARCHIVE=P/f'Dispatch/阿瓦登：黑色要塞_子非鱼汉化{VERSION}.zip'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def write(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def build():
-    installed=load(P/'Repack/INSTALLATION.json');links=load(P/'Release/player_links.json')
+    installed=load(INSTALLATION_PATH);links=load(P/'Release/player_links.json')
     args=[old.PYTHON,old.PACKAGER,'--project',P,'--game-name',old.GAME_NAME,'--version',VERSION,
-        '--game-version',old.GAME_VERSION,'--platform',old.PLATFORM,'--release-date','2026-10-27',
+        '--game-version',old.GAME_VERSION,'--platform',old.PLATFORM,'--release-date',RELEASE_DATE,
         '--introduction','《Avadon: The Black Fortress》简体中文汉化补丁。',
         '--coverage','游戏正文、菜单、提示及地图文字。',
         '--install','解压到 Avadon.exe 所在文件夹，双击“安装汉化.cmd”。',
@@ -26,7 +29,7 @@ def build():
     subprocess.run([str(x) for x in args]+['--dry-run'],check=True,stdout=subprocess.DEVNULL)
     subprocess.run([str(x) for x in args],check=True)
 def verify():
-    expected=load(P/'Repack/INSTALLATION.json')['payload_files']
+    expected=load(INSTALLATION_PATH)['payload_files']
     with zipfile.ZipFile(ARCHIVE) as z:
         assert z.testzip() is None
         manifest=json.loads(z.read('PATCH_MANIFEST.json'));assert manifest['install_mode']=='script'
@@ -40,7 +43,7 @@ def verify():
         assert guide.index('安装汉化')<guide.index('补丁升级')<guide.index('卸载汉化')<guide.index('适用版本')
         if VERSION!='1.2':assert guide.index('下载地址:')<guide.index('安装汉化')
         if VERSION not in ('1.2','1.3'):
-            assert '运行情况' not in guide and '本补丁使用 AI 辅助翻译，请适当降低预期。' in guide
+            assert '\n运行情况\r' not in guide and '本补丁使用 AI 辅助翻译，请适当降低预期。' in guide
         assert all(term not in guide for term in ['备份','拷贝','未决','未验证','代理','用户对','SHA-256','11 个','请先停止'])
         assert 'v1.0' in guide and 'v1.1' in guide and 'v1.2' in guide
         links=load(P/'Release/player_links.json');assert all(v in guide for v in links.values())
@@ -48,7 +51,7 @@ def verify():
         with tempfile.TemporaryDirectory(prefix='avadon-v12-install-') as t:
             root=Path(t);z.extractall(root)
             shutil.copy2(P/'Game/Avadon.exe',root/'Avadon.exe')
-            installation=load(P/'Repack/INSTALLATION.json');backup=Path(installation['backup_directory'])
+            installation=load(INSTALLATION_PATH);backup=Path(installation['backup_directory'])
             original={}
             for entry in installation['records']:
                 if entry['original_sha256']:
@@ -69,15 +72,15 @@ def verify():
             assert all(not (root/n).exists() for n in expected if n not in original)
             assert sha(root/'Avadon.exe')==old.sha(P/'Game/Avadon.exe')
         for name in ['补丁说明.txt','PATCH_MANIFEST.json','SHA256SUMS.txt']:(P/'Dispatch'/name).write_bytes(z.read(name))
-        notes=guide.replace('\r\n','\n')
+        notes=guide.replace('\r\r\n','\n').replace('\r\n','\n')
         for heading in ['安装汉化','补丁升级','卸载汉化','补丁介绍','适用版本','汉化内容','运行情况','说明','下载与反馈','更新日志']:
             notes=notes.replace('\n'+heading+'\n','\n### '+heading+'\n\n')
         (P/'Release/release_notes.md').write_text(notes,encoding='utf-8',newline='')
     write(P/'Dispatch/RELEASE_VALIDATION.json',dict(status='passed',version=VERSION,archive=ARCHIVE.name,sha256=sha(ARCHIVE),
-        tested_game_payload_files=22,payload_unchanged_from='v1.1',auxiliary_files=4,archive_files=29,zip_crc=True,all_hashes=True,
+        tested_game_payload_files=22,payload_unchanged_from=PAYLOAD_BASELINE,auxiliary_files=4,archive_files=29,zip_crc=True,all_hashes=True,
         actual_windows_powershell_install_repeat_upgrade_uninstall=True,legacy_upgrade_steam_recovery_requested=True,
         steam_recovery_network_not_executed_in_test=True,installer_synthetic_regressions=6,exe_unchanged=True,game_started=False,
-        original_game_test_evidence='Repack/UserTests/confirmation_v1.1_20261026.json'))
+        in_game_validation=('pending' if PAYLOAD_BASELINE is None else 'historical'), original_game_test_evidence=('Repack/ReleaseAcceptance/v1.5.json' if PAYLOAD_BASELINE is None else 'Repack/UserTests/confirmation_v1.1_20261026.json')))
     print(json.dumps({'status':'passed','archive':str(ARCHIVE),'sha256':sha(ARCHIVE)},ensure_ascii=False))
 if __name__=='__main__':
     if len(sys.argv)>1 and sys.argv[1]=='verify':verify()

@@ -22,7 +22,7 @@ def load(path):
 
 
 def image_checks():
-    root = P / 'ImagePatch/build-v7'
+    root = P / 'ImagePatch/build-v9'
     manifest = load(root / 'IMAGE_PATCH_MANIFEST.json')
     if manifest.get('composite_labels'):
         with (P/'avadon-the-black-fortress_images_text.csv').open(encoding='utf-8-sig',newline='') as stream:source_rows=[r[0] for r in csv.reader(stream)]
@@ -30,7 +30,7 @@ def image_checks():
         for label in manifest['composite_labels']:
             require(source_rows[label['csv_row']-1]==label['source'] and target_rows[label['csv_row']-1]==label['translation'], 'Composite label not bound to approved text')
             for key,digest in label['source_image_sha256'].items():require(bp.sha(P/f'ImageText/work/images/{key}.png')==digest,'Composite source image changed')
-        require(bp.sha(P/'ImagePatch/v7_texture_styles.json')==manifest['texture_styles_sha256'],'Texture style changed after build')
+        require(bp.sha(P/'ImagePatch/v9_texture_styles.json')==manifest['texture_styles_sha256'],'Texture style changed after build')
     checks = []
     cells = []
     for item in manifest['files']:
@@ -44,15 +44,18 @@ def image_checks():
             # Shared image_patch uses floor/ceil and half-open paste rectangles.
             box = (max(0, math.floor(x1)), max(0, math.floor(y1)), min(target.width, math.ceil(x2)), min(target.height, math.ceil(y2)))
             draw.rectangle((box[0], box[1], box[2]-1, box[3]-1), fill=1)
-            require(entry['text_rgba'] == [245, 240, 220, 255], 'White color-key would erase text')
+            require(entry['text_rgba'][:3] != [255,255,255] and entry['text_rgba'][3]>0, 'White color-key would erase text')
             require(entry['rendering']['font_size'] >= 10, 'Unreadable font size')
             # Check actual opaque ink pixels survive the native white color key.
             crop = target.crop(box)
-            if entry['rendering']['background_mode']=='composite_source_erase':
+            if entry['rendering']['background_mode'].startswith('composite_'):
                 require(any(e['csv_row']==entry['csv_row'] and entry['image_id'] in e['image_ids'] for e in manifest.get('composite_labels',[])), 'Erase-only region needs a confirmed composite label')
             else:
-                require(any(pixel[:3] == (245, 240, 220) and pixel[3] for pixel in crop.getdata()), 'No visible non-key glyph core')
-        original = Image.open(P / 'Game' / item['sources'][0]['path']).convert('RGBA')
+                original_crop=Image.open(P/'ImageText/work/images'/(item['image_id']+'.png')).convert('RGBA').crop(box)
+                ink=entry['text_rgba'][:3]
+                surviving=sum(t[3]>=96 and t[:3]!=(255,255,255) and t!=o and sum(abs(t[k]-ink[k]) for k in range(3))<=120 for t,o in zip(crop.getdata(),original_crop.getdata()))
+                require(surviving>=4, 'Insufficient changed ink pixels survive color key')
+        original = Image.open(P / 'ImageText/work/images' / (item['image_id']+'.png')).convert('RGBA')
         require(original.size == target.size, 'Dimensions changed')
         require(all(a == b or allowed for a, b, allowed in zip(original.getdata(), target.getdata(), mask.getdata())), 'Pixels outside render rectangles changed')
         checks.append({'source': item['sources'][0]['path'], 'dimensions_preserved': True, 'outside_render_rectangles_unchanged': True, 'non_white_glyphs_survive_native_color_key': True, 'sha256': item['sha256']})
@@ -107,7 +110,10 @@ def verify():
     images = image_checks()
     for image in manifest['images']:
         require(bp.sha(bp.PAYLOAD/image['path']) == image['sha256'], 'Engine texture changed')
-        require(bp.sha(P/'Game'/image['original_source']) == image['original_sha256'], 'Original texture changed before installation')
+        original=P/'Game'/image['original_source']
+        if bp.sha(original)!=image['original_sha256']:
+            active=load(R/'INSTALLATION.json');backup=Path(active['backup_directory'])/image['original_source']
+            require(bp.sha(original)==active['payload_files'].get(image['original_source']) and bp.sha(backup)==image['original_sha256'],'Original backup or installed texture changed')
     tests = R/'NativeTests';tests.mkdir(exist_ok=True)
     executable = bp.BUILD/'self_test.exe'
     completed = subprocess.run([str(executable), str(bp.PAYLOAD/'AvadonChinese/translations.bin'), str(bp.BUILD/'required_glyphs.bin'), str(bp.PAYLOAD/'winmm.dll'), str(tests)], capture_output=True, text=True, timeout=60)

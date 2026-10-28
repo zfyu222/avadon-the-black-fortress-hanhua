@@ -164,7 +164,7 @@ def forwarders(dumpbin):
     return exports
 
 def image_payload():
-    root = PROJECT / 'ImagePatch/build-v7'
+    root = PROJECT / 'ImagePatch/build-v9'
     manifest = json.loads((root / 'IMAGE_PATCH_MANIFEST.json').read_text(encoding='utf-8-sig'))
     translated = PROJECT / 'avadon-the-black-fortress_images_text_translated.csv'
     if manifest['translation_sha256'] != sha(translated):
@@ -179,7 +179,10 @@ def image_payload():
             relative = Path(origin['path'])
             original = PROJECT / 'Game' / relative
             if sha(original) != origin['file_sha256']:
-                raise ValueError('Installed original resource differs from extraction snapshot')
+                installed=json.loads((HERE/'INSTALLATION.json').read_text(encoding='utf-8-sig'))
+                backup=Path(installed['backup_directory'])/origin['path']
+                if sha(original)!=installed['payload_files'].get(origin['path']) or not backup.is_file() or sha(backup)!=origin['file_sha256']:
+                    raise ValueError('Original backup or current installed image differs')
             # REA FUN_00471290 probes BMP, then PNG, then JPG. A PNG sibling
             # overrides a JPG while preserving the original; BMP must remain BMP.
             target_relative = relative if relative.suffix.lower() == '.bmp' else relative.with_suffix('.png')
@@ -229,7 +232,7 @@ def build(compile_code=True):
         (BUILD/'compiler.log').write_text(result.stdout+'\n'+result.stderr, encoding='utf-8')
         if result.returncode:
             print(result.stdout[-9000:]);print(result.stderr[-2000:]);raise RuntimeError('Native build failed; see compiler.log')
-    manifest = {'status': 'built_not_installed' if compile_code else 'prepared', 'supported_exe_sha256': SUPPORTED, 'dictionary': report, 'image_build': 'ImagePatch/build-v7',
+    manifest = {'status': 'built_not_installed' if compile_code else 'prepared', 'supported_exe_sha256': SUPPORTED, 'dictionary': report, 'image_build': 'ImagePatch/build-v9',
                 'images': images, 'native_sources': {p.name: sha(p) for p in (HERE/'native').glob('*') if p.is_file()}, 'minhook_commit': commit,
                 'game_started': False, 'in_game_verified': False, 'installed': False}
     if (PAYLOAD/'winmm.dll').exists():
