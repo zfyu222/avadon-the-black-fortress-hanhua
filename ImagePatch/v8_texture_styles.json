@@ -1,0 +1,37 @@
+{
+ "da0e58b3ad506b5c814a410b5c0fa020a750bb70a58aadbfd82ff28feb98069c": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf"
+ },
+ "5bf31fe797846258ee7c61bfcb90d105d586d1936c2dc0f7838dd50dc368e6b5": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf"
+ },
+ "e9c93006873437590fd6d826b559a0fc75c037ee97a47bb07013fba8e6e42314": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf"
+ },
+ "a4fca4ff9d16196ab924505b8029fe3b0077cc5665905c4617bcf79b87b44df9": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf",
+  "rows": {
+   "77": {
+    "ink": [
+     146,
+     46,
+     13
+    ]
+   }
+  }
+ },
+ "074b09de050697f48ed8f82f320cf4503be19a0117c1b38a7efa8ac74a843bc7": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf",
+  "ink": [
+   142,
+   13,
+   1
+  ]
+ },
+ "bea6313ab151c36b675b550644a47c42621b480abef85d1e9d854f85d3a18627": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf"
+ },
+ "a7fa54273dc58278c2404c45e3baa0757c3e38de7a2aae74f90c3e604fe43d63": {
+  "font": "../../../Tools/Fonts/NotoSC/NotoSerifSC-variable.ttf"
+ }
+}

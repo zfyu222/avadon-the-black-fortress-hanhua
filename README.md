@@ -107,6 +107,7 @@
 - 实机状态：用户对最新版字体、排版、菜单、对白及任务推进是否已检查通过的询问答复“检测过了”，据此归档用户实测；未另提供本轮任务名称或逐项截图，不宣称全流程通关。正文及图片子工程的 record-game-check / release-check 均通过，正式记录为各自 `TranslateFiles/reports/in_game_check.json`；此前 pending 模板及静态报告保留历史原状，不当作实测记录。代理未启动游戏。
 
 ## 图片文字合入
+- 2026-10-28 样式候选 `ImagePatch/build-v8`（`prepare_v8.py` + `v8_texture_styles.json`）：改用 matched 样式，笔画级清除原字并移植纸纹修补，按原字取色、字重与倾角重绘，地图/标题用 Noto Serif SC，不再铺半透明底板；跨接缝的 HOLKLANDA / WRETCH LANDS 仍在拼接图上一次绘制后切分。G231 与接缝 WRETCH LANDS、G177 Svorgald 因红字压在棕色线稿上，自动取色选错，已按构建警告固定 `ink`。19 张 / 98 条通过构建，已查看地图拼接全图及 UI 对照；仍有问题：G169 的“武器/法术”小字、G129 的“经验/专精”残留少量旧字痕迹，G153/G165 Logo 只做到配色接近，未做艺术字重绘。尚未导入游戏，发布基线仍为 v4。
 - 2026-10-26 本地修正版使用 `ImagePatch/build-v7`：地图标签改为暖色、64/255（约25%）不透明度并加描边；仅在确认字框内清理旧字像素，再复用正式译文，底纹修补是近似结果。补充 HOLKLANDA / WRETCH LANDS 两处跨图接缝的既有译文，新增4个分片绘制区，原始CSV及mapping保持不变。19张图的尺寸、色键及绘制区外像素检查通过，已查看地图全图和联系表。以下v4条目为v1.0发布基线。
 - v1.0发布基线：`ImagePatch/build-v4/IMAGE_PATCH_MANIFEST.json`，19 张同尺寸 RGBA PNG、94 处中文绘制区域；39 处明确保留原文的技术字形 / 数字 / 教程字母 / 品牌维持原像素，G290 位图字形图集不重绘。
 - 字体：工作区 `Tools/Fonts/NotoSC/NotoSansSC-variable.ttf`，请求字重 400；字形覆盖检查通过，字体哈希记入清单。未复制字体文件到游戏。
