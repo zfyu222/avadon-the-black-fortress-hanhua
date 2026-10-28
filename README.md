@@ -183,3 +183,4 @@
 - 共用质量报告因 sol→standard 字段改名重新绑定；逐项确认除字段命名与范围说明外，快照、语义检查及正式译文哈希均未改变。
 - 补丁：Dispatch/阿瓦登：黑色要塞_子非鱼汉化1.5.zip；适用 Steam Build 4252712 / Avadon v1.0s2。
 - 公开发布：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.5
+- v1.5 已公开并设为最新稳定版；匿名下载哈希与本地 ZIP 一致：59a8c0c5eb2ee35bd67342a762d2e692108900ea640ffbb0a6bf0bb2bf239711。机器报告：Dispatch/GITHUB_RELEASE_VERIFICATION.json。
