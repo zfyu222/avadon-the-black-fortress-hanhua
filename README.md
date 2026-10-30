@@ -131,6 +131,8 @@
 - 项目 `Game/` 为安装目录的 junction；后续对其写入将影响实际游戏，回填前须备份。
 
 ## 对外发布
+
+- 汉化封面：`Dispatch/Artwork/title.png`，基于 [Steam 官方素材](https://store.steampowered.com/app/112100/)使用内置图像工具制作并视觉检查；来源记录见 `Dispatch/Artwork/source.json`，不进入安装载荷。
 - v1.2：新增双击安装/升级及卸载脚本，玩家说明以一句安装步骤开头，简短升级/卸载说明紧随其后；下载区使用已提供的GitHub、百度网盘及腾讯文档链接，订阅提醒紧接下载地址。正式汉化22个载荷与v1.1逐字节相同，复用对应用户实测证据。
 - v1.2安装包装：载荷放ZIP的`汉化文件/`，根目录有`安装汉化.cmd`、`卸载汉化.cmd`及中文说明，工具位于`汉化工具/`。Windows PowerShell脚本自动保存新装前原件，升级保留原件；卸载恢复原件。无安装状态的v1.0/v1.1旧包通过已知文件哈希识别，需还原的原图交Steam校验恢复；测试仅验证发起恢复的分支，没有实际联网恢复本机游戏。
 - v1.2验证：8项脚本/说明回归通过，另在临时游戏目录使用本版实际22个载荷完成安装、重复安装、卸载及旧包升级回放；EXE不变，未启动游戏。脚本辅助文件4个，总ZIP29个文件。发行及下载证据见 `Dispatch/RELEASE_VALIDATION.json` / `Dispatch/GITHUB_RELEASE_VERIFICATION.json`；历史v1.1清单移存`Dispatch/v1.1/`。公开页：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.2 。
@@ -184,3 +186,4 @@
 - 补丁：Dispatch/阿瓦登：黑色要塞_子非鱼汉化1.5.zip；适用 Steam Build 4252712 / Avadon v1.0s2。
 - 公开发布：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.5
 - v1.5 已公开并设为最新稳定版；匿名下载哈希与本地 ZIP 一致：59a8c0c5eb2ee35bd67342a762d2e692108900ea640ffbb0a6bf0bb2bf239711。机器报告：Dispatch/GITHUB_RELEASE_VERIFICATION.json。
+

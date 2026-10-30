@@ -1,0 +1,7 @@
+{
+  "official_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/112100/header.jpg",
+  "prompt": "保留巨龙喷火与战士，以奇幻金色字体添加阿瓦登：黑色要塞及子非鱼汉化，不加版本号。",
+  "output": "title.png",
+  "method": "内置 image_gen 以官方图片为参考编辑，已视觉检查标题及品牌",
+  "official_page": "https://store.steampowered.com/app/112100/"
+}
