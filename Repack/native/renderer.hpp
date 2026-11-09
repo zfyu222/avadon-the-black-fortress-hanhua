@@ -14,7 +14,21 @@ inline std::wstring utf8(const std::string& text){
     if(count<=0 && !text.empty())throw std::runtime_error("Invalid UTF-8 translation");
     std::wstring out(count,L'\0');if(count)MultiByteToWideChar(CP_UTF8,MB_ERR_INVALID_CHARS,text.data(),static_cast<int>(text.size()),&out[0],count);return out;
 }
-struct TextState { int align=0,font=12,left=0,top=0,right=0,bottom=0,screen_width=0,screen_height=0;int clip_left=0,clip_top=0,clip_right=0,clip_bottom=0;bool clip=true;float red=1,green=1,blue=1,alpha=1; };
+struct FontSettings {
+    int percent=100;bool fit_labels=true;
+    static FontSettings load(const std::wstring& path){
+        FontSettings settings;
+        int value=static_cast<int>(GetPrivateProfileIntW(L"Font",L"ScalePercent",100,path.c_str()));
+        settings.percent=std::max(100,std::min(200,value));
+        settings.fit_labels=GetPrivateProfileIntW(L"Font",L"FitLabels",1,path.c_str())!=0;
+        return settings;
+    }
+    int step(int font) const {
+        int size=12;switch(font){case 14:case 15:size=font;break;case 16:case 18:size=16;break;case 20:case 22:case 24:size=24;break;}
+        return (size*std::max(100,std::min(200,percent))+50)/100+1;
+    }
+};
+struct TextState { int align=0,font=12,left=0,top=0,right=0,bottom=0,screen_width=0,screen_height=0;int clip_left=0,clip_top=0,clip_right=0,clip_bottom=0;bool clip=true;float red=1,green=1,blue=1,alpha=1;FontSettings settings; };
 struct TextResult { int height=0,last_x=0,last_y=0; };
 struct BitmapText { GLuint texture=0;int width=0,height=0,texture_width=0,texture_height=0; };
 class Renderer {
@@ -53,14 +67,24 @@ class Renderer {
         return textures_.emplace(key,item).first->second;
     }
 public:
+    int layout_step(const std::wstring& text,const TextState& state){
+        int step=state.settings.step(state.font);
+        // Only alignment 1 denotes a vertically centred fixed-size label.
+        // Native paragraph layout does not use bottom as a height constraint.
+        if(state.settings.fit_labels && state.align==1 && state.settings.percent>100){
+            FontSettings baseline;const int minimum=baseline.step(state.font);
+            const int width=std::max(1,state.right-state.left-6),height=state.bottom-state.top-4;
+            while(step>minimum && (step>height || measure(text,step)>width))--step;
+        }
+        return step;
+    }
     int ink_height(wchar_t character,int height){select(height);MAT2 matrix={{0,1},{0,0},{0,0},{0,1}};GLYPHMETRICS metrics{};if(GetGlyphOutlineW(dc_,character,GGO_METRICS,&metrics,0,nullptr,&matrix)==GDI_ERROR)throw std::runtime_error("Cannot measure glyph ink");return static_cast<int>(metrics.gmBlackBoxY);}
     int measure(const std::wstring& text,int height){select(height);SIZE size{};if(!GetTextExtentPoint32W(dc_,text.data(),static_cast<int>(text.size()),&size))throw std::runtime_error("Cannot measure text");return size.cx;}
     std::wstring face(){select(13);wchar_t name[128]{};GetTextFaceW(dc_,128,name);return name;}
     bool glyphs(const std::wstring& text){select(13);std::vector<WORD> glyph(text.size());if(GetGlyphIndicesW(dc_,text.data(),static_cast<int>(text.size()),glyph.data(),GGI_MARK_NONEXISTING_GLYPHS)==GDI_ERROR)return false;return std::find(glyph.begin(),glyph.end(),0xffff)==glyph.end();}
     TextResult draw(std::wstring text,const TextState& state){
         if(!wglGetCurrentContext())throw std::runtime_error("No GL context");
-        int size=state.font;switch(size){case 14:case 15:break;case 16:case 18:size=16;break;case 20:case 22:case 24:size=24;break;default:size=12;}
-        const int step=size+1;int align=state.align;if(align==2 && text.find(L'|')!=std::wstring::npos)align=0;
+        const int step=layout_step(text,state);int align=state.align;if(align==2 && text.find(L'|')!=std::wstring::npos)align=0;
         std::vector<std::wstring> lines=align==0?wrap(text,std::max(1,state.right-state.left-6),[&](const std::wstring& s){return measure(s,step);}):std::vector<std::wstring>{text};
         int y=state.top+2;if(align==1)y=(state.top+state.bottom-step)/2+2;
         glPushAttrib(GL_ALL_ATTRIB_BITS);glPushClientAttrib(GL_CLIENT_PIXEL_STORE_BIT);

@@ -75,3 +75,10 @@ Desktop.ini
 /ImagePatch/build-v9/images/
 /ImagePatch/build-v9/map_preview.png
 /ImagePatch/build-v9/contact.jpg
+/Repack/FontEnhancement/Build/
+/Repack/FontEnhancement/Payload/
+/Repack/FontEnhancement/Files/
+/Repack/FontEnhancement/*.zip
+/Repack/FontEnhancement/Tests/*.ppm
+/Repack/FontEnhancement/Tests/*.log
+/Repack/FontEnhancement/Tests/unmatched.txt

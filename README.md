@@ -187,3 +187,14 @@
 - 公开发布：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.5
 - v1.5 已公开并设为最新稳定版；匿名下载哈希与本地 ZIP 一致：59a8c0c5eb2ee35bd67342a762d2e692108900ea640ffbb0a6bf0bb2bf239711。机器报告：Dispatch/GITHUB_RELEASE_VERIFICATION.json。
 
+
+## 字体增强补丁（2026-11-10）
+- 用户选择 150%。基于既有 MSVC x86 / MinHook / GDI + OpenGL 中文显示插件，新增 `AvadonChinese/font.ini`，`ScalePercent=150`（100–200），`FitLabels=1`（居中固定标签按宽高缩小，最低为原汉化字号）。配置启动时读取，缺少配置时沿用100%。
+- 同步调整字形、段落换行、返回行高与默认字体测宽；既有 REA + Ghidra 证据 `Analysis/render_pipeline.json` 表明只有 align=1 使用文本框底边垂直居中，不能把正文的 bottom 错当成统一高度限制。未新增原生Hook或更改EXE。
+- 源码：`Repack/native/renderer.hpp`、`adapter.cpp`、`self_test.cpp`。独立构建 `python Repack/build_patch.py --font-only`，随后运行 `Repack/FontEnhancement/Build/self_test.exe`（参数依次为独立 Payload 的词典、Build/required_glyphs.bin、Payload/winmm.dll、Tests目录），再执行 `python Repack/package_font_enhancement.py`。
+- 独立包：`Repack/FontEnhancement/阿瓦登_字体增强150%_1.0.zip`，只含增强DLL、字号配置、安装/还原脚本、清单及说明；不包含游戏原件、词典、图片、开发日志。解压到 Avadon.exe 目录后双击安装；还原入口恢复增强前插件与配置，保留原汉化。仅本地交付，未更新公开 Release。
+- 已安装到本地 Game 指向的实际目录。自动备份在游戏目录 `.zfy-font-enhancement/`；独立安装记录 `Repack/FontEnhancement/INSTALLATION.json`。原汉化的安装状态保留原样；卸载/升级原汉化前须先还原字体增强，避免原安装器检测DLL哈希变化。
+- 验证：全套自建组件回归、193个导出、x86 ABI、3126字形覆盖、动态消息及50个快捷键检查通过；新增配置默认/上下限、150%测宽与行高、固定标签宽高适配、重排及裁剪测试通过。小号“汉”字墨迹11→16像素，行距13→19像素，示例段落3→5行。离线对比 `Repack/FontEnhancement/font_comparison.png`。
+- 安装回放：隔离目录验证安装、重复安装保留自定义字号、还原、重复还原、原有配置恢复、未知插件/错误EXE拒绝，路径含中文及空格；ZIP CRC与逐文件SHA-256核验通过。报告 `Repack/FontEnhancement/VALIDATION.json`。
+- 边界：只放大已有插件绘制的汉化文本；图片文字、未命中译文而回退原生绘制的文字不变。正文沿用原生裁剪区域，固定高度长文本可能显示不全；居中标签空间不足会低于150%。未实现界面整体缩放、滚动区域扩展或动态行号布局改造。
+- 实机检查由用户自行进行，用户明确要求不要接管；桌面控制已停止，未将离线检查或启动尝试写成实机通过。字号效果、长对白/说明书、紧凑列表仍待用户检查。

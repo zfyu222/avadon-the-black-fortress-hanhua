@@ -1,0 +1,11 @@
+{
+  "status": "installed",
+  "date": "2026-11-10",
+  "dll_sha256": "6f77f248e06b3f6917ca5d5c5cf56086c4c8a36edcfe2066cf4701d848310271",
+  "font_ini_sha256": "d122cc46ab8c9288d289b8c45ef0f0e35529c6336a674374bf2b216f45e757ee",
+  "scale_percent": 150,
+  "backup_directory": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\.zfy-font-enhancement",
+  "exe_unchanged": true,
+  "in_game_verified": false,
+  "ui_check": "User stopped computer use; subsequent in-game checks are user-controlled."
+}

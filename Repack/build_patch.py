@@ -198,7 +198,7 @@ def image_payload():
             results.append({'path': target_relative.as_posix(), 'sha256': sha(destination), 'original_source': origin['path'], 'original_sha256': origin['file_sha256']})
     return results
 
-def build(compile_code=True):
+def build(compile_code=True, font_only=False):
     BUILD.mkdir(parents=True, exist_ok=True);PAYLOAD.mkdir(parents=True, exist_ok=True)
     game = PROJECT / 'Game/Avadon.exe'
     if sha(game) != SUPPORTED:
@@ -212,7 +212,7 @@ def build(compile_code=True):
     commit = subprocess.run(['git', '-C', str(mh), 'rev-parse', 'HEAD'], check=True, capture_output=True, text=True).stdout.strip()
     if commit != MINHOOK_COMMIT:
         raise ValueError('MinHook revision differs from reviewed v1.3.4')
-    variables, dumpbin = compiler();forwarders(dumpbin);report = dictionary();images = image_payload()
+    variables, dumpbin = compiler();forwarders(dumpbin);report = dictionary();images = [] if font_only else image_payload()
     shutil.copy2(mh / 'LICENSE.txt', PAYLOAD / 'AvadonChinese/MinHook-LICENSE.txt')
     obj = BUILD / 'obj';obj.mkdir(exist_ok=True)
     def quote(path):
@@ -237,8 +237,11 @@ def build(compile_code=True):
                 'game_started': False, 'in_game_verified': False, 'installed': False}
     if (PAYLOAD/'winmm.dll').exists():
         manifest['dll_sha256'] = sha(PAYLOAD/'winmm.dll')
-    write_json(HERE/'BUILD_MANIFEST.json', manifest)
+    write_json((BUILD.parent if font_only else HERE)/'BUILD_MANIFEST.json', manifest)
     print(json.dumps({'status': manifest['status'], 'dictionary_keys': report['keys'], 'textures': len(images), 'dll_sha256': manifest.get('dll_sha256')}, ensure_ascii=False))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');args = parser.parse_args();build(not args.prepare_only)
+    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');parser.add_argument('--font-only', action='store_true');args = parser.parse_args()
+    if args.font_only:
+        BUILD=HERE/'FontEnhancement/Build';PAYLOAD=HERE/'FontEnhancement/Payload'
+    build(not args.prepare_only,args.font_only)

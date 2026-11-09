@@ -13,6 +13,7 @@
 extern "C" void FixtureInitialize(void*,const wchar_t*,const wchar_t*);
 extern "C" void FixtureFinish();
 extern "C" bool FixtureNameExpansion();
+extern "C" void FixtureFontScale(int);
 static void require(bool test,const char* reason){if(!test)throw std::runtime_error(reason);}
 
 static int call_text(void* entry,const char* text,unsigned alignment){
@@ -148,6 +149,38 @@ int wmain(int argc,wchar_t** argv){
         glFinish();require(glGetError()==GL_NO_ERROR,"OpenGL reported a rendering error");
         std::vector<unsigned char> pixels(320*160*4);glReadPixels(0,0,320,160,GL_RGBA,GL_UNSIGNED_BYTE,pixels.data());size_t changed=0;for(int y=0;y<160;++y)for(int x=0;x<320;++x){size_t i=(y*320+x)*4;if(pixels[i]>40 || pixels[i+1]>40 || pixels[i+2]>40)++changed;if(x<10 || x>=280 || 159-y<10 || 159-y>=110)require(std::abs(static_cast<int>(pixels[i])-12)<=2 && std::abs(static_cast<int>(pixels[i+1])-16)<=2 && std::abs(static_cast<int>(pixels[i+2])-20)<=2,"Text escaped native clip rectangle");}require(changed>50,"No visible CJK glyphs in offscreen output");
         std::ofstream picture((output+L"\\cjk_render.ppm").c_str(),std::ios::binary);picture<<"P6\n320 160\n255\n";for(int y=159;y>=0;--y)for(int x=0;x<320;++x)picture.write(reinterpret_cast<char*>(&pixels[(y*320+x)*4]),3);picture.close();
+        const std::wstring ini=output+L"\\font_test.ini";
+        require(avzh::FontSettings::load(ini).percent==100,"Missing font config must preserve baseline");
+        WritePrivateProfileStringW(L"Font",L"ScalePercent",L"150",ini.c_str());
+        auto large=avzh::FontSettings::load(ini);require(large.percent==150 && large.step(12)==19 && large.step(16)==25,"150 percent config incorrect");
+        WritePrivateProfileStringW(L"Font",L"ScalePercent",L"9999",ini.c_str());require(avzh::FontSettings::load(ini).percent==200,"Upper font bound failed");
+        WritePrivateProfileStringW(L"Font",L"ScalePercent",L"-20",ini.c_str());require(avzh::FontSettings::load(ini).percent==100,"Lower font bound failed");
+        DeleteFileW(ini.c_str());
+        require(renderer.ink_height(L'汉',19)>ink,"150 percent glyph ink did not grow");
+        avzh::TextState fitted;fitted.align=1;fitted.font=12;fitted.right=110;fitted.bottom=22;fitted.settings=large;
+        int fitted_step=renderer.layout_step(L"设置",fitted);require(fitted_step==18,"Fixed label height fit failed");
+        fitted.right=35;fitted.bottom=60;int width_step=renderer.layout_step(L"设置",fitted);
+        require(width_step>=13 && width_step<19 && renderer.measure(L"设置",width_step)<=29,"Fixed label width fit failed");
+        fitted.settings.fit_labels=false;require(renderer.layout_step(L"设置",fitted)==19,"Fit toggle ignored");
+        FixtureFontScale(150);std::string measured;require(dictionary.lookup("Blademaster",measured),"Missing scaled width fixture");
+        require(call_measure(memory+0x6df00,"Blademaster")==renderer.measure(avzh::utf8(measured),19),"Hook width does not use configured scale");
+        call_text(memory+0x6e080,"Blademaster",1);require(*reinterpret_cast<short*>(memory+0x2bef1c)==25,"Hook did not return enlarged line step");
+        require(call_measure(memory+0x6df00,"AVZH_COMPLETELY_UNMATCHED_371")==42,"Scaled unknown width must fall back");
+        FixtureFontScale(100);
+        int baseline_lines=0,large_lines=0;
+        for(int percent:{100,150}){
+            glDisable(GL_SCISSOR_TEST);glClear(GL_COLOR_BUFFER_BIT);
+            avzh::TextState preview;preview.font=12;preview.left=10;preview.top=10;preview.right=310;preview.bottom=150;preview.screen_width=320;preview.screen_height=160;
+            preview.clip_left=10;preview.clip_top=10;preview.clip_right=310;preview.clip_bottom=150;preview.settings.percent=percent;
+            auto rendered=renderer.draw(L"你很快就会明白，在阿瓦登，你只能知道那些你必须知道的事情。这是为了保护你，也是为了保护我们。|任务日志与物品说明会按新的字号重新换行。",preview);
+            if(percent==100)baseline_lines=rendered.height/13;else large_lines=rendered.height/19;
+            glFinish();require(glGetError()==GL_NO_ERROR,"Scaled drawing GL error");glReadPixels(0,0,320,160,GL_RGBA,GL_UNSIGNED_BYTE,pixels.data());
+            for(int y=0;y<160;++y)for(int x=0;x<320;++x)if(x<10 || x>=310 || 159-y<10 || 159-y>=150){size_t i=(y*320+x)*4;require(std::abs(static_cast<int>(pixels[i])-12)<=2,"Scaled text escaped clipping");}
+            std::ofstream scaled_picture((output+L"\\font_"+std::to_wstring(percent)+L".ppm").c_str(),std::ios::binary);scaled_picture<<"P6\n320 160\n255\n";for(int y=159;y>=0;--y)for(int x=0;x<320;++x)scaled_picture.write(reinterpret_cast<char*>(&pixels[(y*320+x)*4]),3);
+        }
+        require(large_lines>baseline_lines,"Enlarged paragraph did not reflow");
+        std::ofstream scale_report((output+L"\\font_scale_report.json").c_str(),std::ios::binary);
+        scale_report<<"{\"status\":\"passed\",\"scale_percent\":150,\"body_step_before\":13,\"body_step_after\":19,\"body_ink_before\":"<<ink<<",\"body_ink_after\":"<<renderer.ink_height(L'汉',19)<<",\"baseline_lines\":"<<baseline_lines<<",\"enlarged_lines\":"<<large_lines<<",\"fixed_label_height_and_width_fit\":true,\"hook_measure_and_line_step\":true,\"scaled_clipping\":true,\"config_bounds_and_missing_default\":true,\"game_started\":false}\n";
         FixtureFinish();VirtualFree(memory,0,MEM_RELEASE);glDeleteTextures(1,&sentinel);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(context);SelectObject(dc,old);DeleteObject(dib);DeleteDC(dc);FreeLibrary(proxy);
         std::ofstream report((output+L"\\report.json").c_str(),std::ios::binary);report<<"{\n  \"status\":\"passed\",\n  \"dictionary_keys\":"<<dictionary.size()<<",\n  \"format_patterns\":"<<dictionary.patterns()<<",\n  \"glyphs_checked\":"<<glyphs.size()<<",\n  \"exports_checked\":"<<AVZH_FORWARD_COUNT<<",\n  \"visible_text_pixels\":"<<changed<<",\n  \"x86_abi_stack_and_registers\":true,\n  \"unknown_text_trampoline\":true,\n  \"gl_state_preserved\":true,\n  \"player_name_placeholder\":true,\n  \"script_quotes_and_heading_markers\":true,\n  \"cjk_wrapping_and_clip\":true,\n  \"offscreen_gdi_gl\":true,\n  \"game_started\":false,\n  \"in_game_verified\":false\n}\n";std::cout<<"Component tests passed; no game launched.\n";return 0;
     }catch(const std::exception& error){std::cerr<<error.what()<<"\n";return 1;}

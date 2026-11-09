@@ -24,6 +24,7 @@ INIT_ONCE real_once=INIT_ONCE_STATIC_INIT,adapter_once=INIT_ONCE_STATIC_INIT;
 uintptr_t game_base=0;bool enabled=false;
 std::wstring data_path;
 avzh::Dictionary dictionary;
+avzh::FontSettings font_settings;
 thread_local avzh::Renderer renderer;
 std::mutex log_mutex;std::set<std::string> unmatched;
 
@@ -65,7 +66,7 @@ extern "C" int __cdecl TryRender(unsigned align,const uint32_t* args) noexcept {
     if(!enabled || !wglGetCurrentContext())return 0;
     try{
         bool found=false;auto text=localized(reinterpret_cast<const char*>(args[0]),found);if(!found)return 0;
-        avzh::TextState state;state.align=static_cast<short>(align);state.font=short_low(args[1]);state.red=short_low(args[2])/31.0f;state.green=short_low(args[3])/31.0f;state.blue=short_low(args[4])/31.0f;state.alpha=at<float>(0x5d0788);
+        avzh::TextState state;state.settings=font_settings;state.align=static_cast<short>(align);state.font=short_low(args[1]);state.red=short_low(args[2])/31.0f;state.green=short_low(args[3])/31.0f;state.blue=short_low(args[4])/31.0f;state.alpha=at<float>(0x5d0788);
         state.top=short_low(args[5]);state.left=short_high(args[5]);state.bottom=short_low(args[6]);state.right=short_high(args[6]);
         state.screen_width=at<int>(0x6bf33c);state.screen_height=at<int>(0x6bf340);if(state.screen_width<=0 || state.screen_height<=0 || state.right<=state.left)return 0;
         state.clip=at<unsigned char>(0x6bed4b)==0;state.clip_top=at<short>(0x6043ec);state.clip_left=at<short>(0x6043ee);state.clip_bottom=at<short>(0x6043f0);state.clip_right=at<short>(0x6043f2);
@@ -76,7 +77,7 @@ extern "C" int __cdecl TryRender(unsigned align,const uint32_t* args) noexcept {
 }
 extern "C" int __cdecl TryMeasure(const char* source) noexcept {
     if(!enabled)return -1;
-    try{bool found=false;auto text=localized(source,found);if(!found)return -1;at<uintptr_t>(0x6bf328)=game_base+0x1c30b0;return std::min(32767,renderer.measure(text,13));}catch(...){return -1;}
+    try{bool found=false;auto text=localized(source,found);if(!found)return -1;at<uintptr_t>(0x6bf328)=game_base+0x1c30b0;return std::min(32767,renderer.measure(text,font_settings.step(12)));}catch(...){return -1;}
 }
 
 // The shipped x86 ABI uses ECX for alignment, EDX for width-query text,
@@ -133,7 +134,9 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
         log("initialize: adapter startup reached");
         if(file_exists(data_path+L"\\disabled.flag")){log("disabled.flag: forwarding only");return TRUE;}
         if(executable_hash(path)!="d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e"){log("unsupported executable: forwarding only");return TRUE;}
-        dictionary.load(data_path+L"\\translations.bin");game_base=reinterpret_cast<uintptr_t>(GetModuleHandleW(nullptr));
+        dictionary.load(data_path+L"\\translations.bin");font_settings=avzh::FontSettings::load(data_path+L"\\font.ini");
+        log("font: scale="+std::to_string(font_settings.percent)+"%; fit_labels="+std::to_string(font_settings.fit_labels));
+        game_base=reinterpret_cast<uintptr_t>(GetModuleHandleW(nullptr));
         void* text_entry=reinterpret_cast<void*>(game_base+0x6e080);void* measure_entry=reinterpret_cast<void*>(game_base+0x6df00);
         const unsigned char text_bytes[]={0x55,0x8b,0xec,0x81,0xec,0x40,0x08,0,0},measure_bytes[]={0x55,0x8b,0xec,0x81,0xec,0x14,0x04,0,0};
         if(memcmp(text_entry,text_bytes,9) || memcmp(measure_entry,measure_bytes,9)){log("entry signature mismatch: forwarding only");return TRUE;}
@@ -184,6 +187,7 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
 }
 extern "C" void FixtureFinish(){enabled=false;MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
+extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
 #endif
 
 #include "forward_stubs.inc"
