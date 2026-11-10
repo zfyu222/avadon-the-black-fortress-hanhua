@@ -1,0 +1,36 @@
+{
+  "status": "installed",
+  "version": "enhancement-1.3",
+  "date": "2026-11-10",
+  "game_root": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress",
+  "dll_sha256": "7b1cfe6ce868529c7e360349c977ab4ed7dcdc8cf88e0255c706f655e1a63c74",
+  "follow_actor": 0,
+  "follow_character_number": 1,
+  "configuration_preserved": {
+    "AvadonChinese/font.ini": "d122cc46ab8c9288d289b8c45ef0f0e35529c6336a674374bf2b216f45e757ee",
+    "AvadonChinese/camera.ini": "fd12e68a94fc4f3b78d20d115931872d6a34a21696841cc30d1e5d65bcd7445a"
+  },
+  "backup_directory": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress\\.zfy-font-enhancement",
+  "original_plugin_sha256": "a29b5246265b56c76f7dd7215433abd9db19097725690f7e880aa4c37e5fc7e3",
+  "exe_unchanged": true,
+  "helper_files": {
+    "font-manifest.json": "8a70f3da76e8c9f4f7ebf693e5e0615ac287706bb2209cba7237aac44297cedd",
+    "关闭镜头跟随.cmd": "5d0f039c406d928d82137ee1eb20110391babe3578234a2fb67371d6934c2877",
+    "增强补丁说明.txt": "02c25ae0c828854d81d15fddc5e74f5c40daab4cafd0677e67ddced4eb2bd9b9",
+    "字体125.cmd": "7c0f226cc98dd1a4a2073a744fd52ea5cf6093c9830830c135bc91cd69d6c088",
+    "字体150.cmd": "8e095b30ba7ae1b9ff6dd4e678542172df68fe53b071fee77a8d045c8c898ead",
+    "字体增强.ps1": "097b72f4e1fa760408d429df7e06ea01207039555dd497d8839471b3ecf834da",
+    "字体文件/camera.ini": "fd12e68a94fc4f3b78d20d115931872d6a34a21696841cc30d1e5d65bcd7445a",
+    "字体文件/font.ini": "004b45a200469d977417d3de6ff336862097b4f9600904d97e05f9c55dfc2bb5",
+    "字体文件/winmm.dll": "7b1cfe6ce868529c7e360349c977ab4ed7dcdc8cf88e0255c706f655e1a63c74",
+    "安装增强补丁.cmd": "a16bd52c125c382cca22a87ac91cf4313e80008c171385e209ca8ed0a50dda7c",
+    "安装字体增强.cmd": "a16bd52c125c382cca22a87ac91cf4313e80008c171385e209ca8ed0a50dda7c",
+    "开启镜头跟随.cmd": "09e72da0c1466e6e94e9be6f7ef030e0d71de0508e77c58a39acf31cc3662d74",
+    "还原增强补丁.cmd": "ad4de5e59d50fd08770b1acc50e96ffe07e2a27944513958aeb1554941d803d1",
+    "还原字体增强.cmd": "ad4de5e59d50fd08770b1acc50e96ffe07e2a27944513958aeb1554941d803d1",
+    "选择字号.cmd": "e508f3dc21fd3dbd0b4bb6ed2354f3f1c05720aa04c433f6033a05a61edabf7d"
+  },
+  "game_started": false,
+  "in_game_verified": false,
+  "desktop_control": false
+}

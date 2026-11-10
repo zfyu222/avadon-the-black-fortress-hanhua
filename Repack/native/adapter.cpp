@@ -18,7 +18,7 @@
 #pragma comment(lib,"user32.lib")
 #pragma comment(lib,"opengl32.lib")
 
-extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr; }
+extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr;void* g_original_keyboard=nullptr; }
 namespace {
 HMODULE module_handle=nullptr,real_winmm=nullptr;
 INIT_ONCE real_once=INIT_ONCE_STATIC_INIT,adapter_once=INIT_ONCE_STATIC_INIT;
@@ -27,6 +27,7 @@ std::wstring data_path;
 avzh::Dictionary dictionary;
 avzh::FontSettings font_settings;
 bool camera_enabled=false;
+bool inventory_toggle_enabled=false;
 avzh::CameraFollow camera_follow;
 thread_local avzh::Renderer renderer;
 std::mutex log_mutex;std::set<std::string> unmatched;
@@ -117,6 +118,41 @@ extern "C" __declspec(naked) void CameraEntry(){
         jmp dword ptr[g_original_camera]
     }
 }
+extern "C" int __cdecl InventoryKey(int key) noexcept {
+    if(!inventory_toggle_enabled || at<short>(0x6bed4c)!=10 ||
+        (at<short>(0x6bed48)!=10 && at<short>(0x6bed48)!=15) ||
+        at<unsigned char>(0x6bee47)!=0 || at<unsigned char>(0x6b1cdd)!=0 || at<unsigned char>(0x6b1cdf)!=0)return key;
+    // Runtime binding tables, exactly as the original inventory-open branch:
+    // key in DX, input event and modifier mode as caller-cleaned stack args.
+    unsigned binding=static_cast<unsigned short>(at<short>(0x60444e));
+    unsigned modifiers=static_cast<unsigned short>(at<short>(0x6044ee));
+    if(binding==0)return key;
+    void* match=reinterpret_cast<void*>(game_base+0x2d2f0);unsigned char matched=0;
+    __asm {
+        push modifiers
+        push key
+        mov edx,binding
+        mov eax,match
+        call eax
+        add esp,8
+        mov matched,al
+    }
+    // Delegate all closing/cancel/held-item rules to the existing Escape route.
+    return matched?0x18:key;
+}
+extern "C" __declspec(naked) void KeyboardEntry(){
+    __asm {
+        pushfd
+        pushad
+        push dword ptr[esp+40]
+        call InventoryKey
+        add esp,4
+        mov dword ptr[esp+40],eax
+        popad
+        popfd
+        jmp dword ptr[g_original_keyboard]
+    }
+}
 
 // The shipped x86 ABI uses ECX for alignment, EDX for width-query text,
 // caller-cleaned stack arguments, and a plain RET. Both prologues are nine
@@ -189,6 +225,15 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
                 MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: character 1 only while walking; native idle edge scrolling");}
             else log("camera: signature or hook mismatch; camera enhancement disabled");
         }
+        const unsigned char keyboard_bytes[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c};
+        const unsigned char matcher_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x78};
+        void* keyboard_entry=reinterpret_cast<void*>(game_base+0x67370);
+        if(file_exists(data_path+L"\\camera.ini") && GetPrivateProfileIntW(L"Inventory",L"ToggleHotkey",1,(data_path+L"\\camera.ini").c_str())!=0){
+            if(memcmp(keyboard_entry,keyboard_bytes,sizeof(keyboard_bytes))==0 &&
+                memcmp(reinterpret_cast<void*>(game_base+0x2d2f0),matcher_bytes,sizeof(matcher_bytes))==0 &&
+                MH_CreateHook(keyboard_entry,reinterpret_cast<void*>(&KeyboardEntry),&g_original_keyboard)==MH_OK){inventory_toggle_enabled=true;log("inventory: current custom hotkey also invokes native Escape while inventory is open");}
+            else log("inventory: signature or hook mismatch; inventory toggle disabled");
+        }
         enabled=true;status=MH_EnableHook(MH_ALL_HOOKS);
         if(status!=MH_OK){enabled=false;MH_DisableHook(MH_ALL_HOOKS);log(std::string("hook activation failed: ")+MH_StatusToString(status));return TRUE;}
         log("enabled: offline pre-format localization; "+std::to_string(dictionary.size())+" keys; "+std::to_string(dictionary.patterns())+" format patterns");
@@ -230,12 +275,35 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
     if(MH_Initialize()!=MH_OK || MH_CreateHook(reinterpret_cast<void*>(game_base+0x6e080),reinterpret_cast<void*>(&TextEntry),&g_original_text)!=MH_OK || MH_CreateHook(reinterpret_cast<void*>(game_base+0x6df00),reinterpret_cast<void*>(&MeasureEntry),&g_original_measure)!=MH_OK)throw std::runtime_error("Fixture hook creation failed");
     enabled=true;if(MH_EnableHook(MH_ALL_HOOKS)!=MH_OK)throw std::runtime_error("Fixture hook activation failed");
 }
-extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
+extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;inventory_toggle_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
 extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
 extern "C" void FixtureCameraEnable(){
     camera_enabled=true;camera_follow.reset();
     if(MH_CreateHook(reinterpret_cast<void*>(game_base+0x32970),reinterpret_cast<void*>(&CameraEntry),&g_original_camera)!=MH_OK || MH_EnableHook(g_original_camera?reinterpret_cast<void*>(game_base+0x32970):nullptr)!=MH_OK)throw std::runtime_error("Fixture camera hook failed");
+}
+extern "C" { int g_fixture_key_modifiers=0; }
+extern "C" __declspec(naked) void FixtureKeyMatcher(){
+    __asm {
+        cmp edx,dword ptr[esp+4]
+        jne fixture_no_match
+        mov eax,dword ptr[esp+8]
+        cmp eax,dword ptr[g_fixture_key_modifiers]
+        jne fixture_no_match
+        mov eax,1
+        ret
+    fixture_no_match:
+        xor eax,eax
+        ret
+    }
+}
+extern "C" void FixtureKeyModifiers(int mode){g_fixture_key_modifiers=mode;}
+extern "C" void FixtureInventoryEnable(){
+    unsigned char matcher[]={0xb8,0,0,0,0,0xff,0xe0};
+    auto target=reinterpret_cast<uintptr_t>(&FixtureKeyMatcher);memcpy(matcher+1,&target,4);
+    memcpy(reinterpret_cast<void*>(game_base+0x2d2f0),matcher,sizeof(matcher));
+    if(MH_CreateHook(reinterpret_cast<void*>(game_base+0x67370),reinterpret_cast<void*>(&KeyboardEntry),&g_original_keyboard)!=MH_OK || MH_EnableHook(reinterpret_cast<void*>(game_base+0x67370))!=MH_OK)throw std::runtime_error("Fixture keyboard hook failed");
+    inventory_toggle_enabled=true;
 }
 #endif
 

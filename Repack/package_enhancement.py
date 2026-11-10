@@ -41,7 +41,7 @@ def main():
     (FILES/'字体文件').mkdir(parents=True,exist_ok=True)
     shutil.copy2(dll,FILES/'字体文件/winmm.dll')
     (FILES/'字体文件/font.ini').write_bytes(b'[Font]\r\nScalePercent=150\r\nFitLabels=1\r\n')
-    (FILES/'字体文件/camera.ini').write_bytes(b'[Camera]\r\nFollowCharacter=1\r\n')
+    (FILES/'字体文件/camera.ini').write_bytes(b'[Camera]\r\nFollowCharacter=1\r\n\r\n[Inventory]\r\nToggleHotkey=1\r\n')
     (FILES/'字体增强.ps1').write_text((bp.HERE/'enhancement.ps1').read_text(encoding='utf-8'),encoding='utf-8-sig')
     commands={
         '安装增强补丁':'-Action install','还原增强补丁':'-Action uninstall',
@@ -51,13 +51,16 @@ def main():
     for title,args in commands.items():
         (FILES/(title+'.cmd')).write_bytes(('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0字体增强.ps1" '+args+' -GameRoot "%~dp0."\r\nif errorlevel 1 (pause & exit /b 1)\r\npause\r\n').encode('gbk'))
     shutil.copy2(bp.HERE/'FontEnhancement/Files/选择字号.cmd',FILES/'选择字号.cmd')
+    previous13=read(ROOT/'v1.3_VALIDATION.json')
+    assert bp.sha(ROOT/'阿瓦登_字体与镜头增强_1.3.zip')==previous13['archive_sha256']
     previous=read(ROOT/'v1.2_VALIDATION.json')
     previous_zip=ROOT/'阿瓦登_字体与镜头增强_1.2.zip'
     assert bp.sha(previous_zip)==previous['archive_sha256']
-    manifest={'version':'enhancement-1.3','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
-              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
+    manifest={'version':'enhancement-1.4','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
+              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
     bp.write_json(FILES/'font-manifest.json',manifest)
-    (FILES/'增强补丁说明.txt').write_text('阿瓦登：黑色要塞 字体与镜头增强 v1.3\n\n安装：退出游戏，将本包解压到 Avadon.exe 所在文件夹，双击“安装增强补丁.cmd”。\n升级：覆盖解压后运行同一个安装入口，保留当前字号与镜头设置。\n还原：双击“还原增强补丁.cmd”，恢复增强前的插件和设置，保留汉化。\n\n镜头：只跟随1号角色。1号角色行走时自动跟随；停止后可将鼠标移至屏幕边缘浏览；1号角色再次行走自动接回。其他角色移动或切换选中角色不会改变跟随目标。\n双击“开启镜头跟随.cmd”或“关闭镜头跟随.cmd”切换功能，重新启动游戏生效。\n默认开启；菜单和敌方回合保持原游戏镜头行为。\n\n字号：双击“选择字号.cmd”，按1选择125%，按2选择150%；也可使用“字体125.cmd”或“字体150.cmd”。\n退出游戏后切换，重新启动生效。初次安装默认150%，升级保留原设置。\n\n适用版本：Steam Build 4252712 / Avadon v1.0s2，需要先安装子非鱼汉化。\n',encoding='utf-8-sig')
+    (FILES/'增强补丁说明.txt').write_text('阿瓦登：黑色要塞 字体、镜头与背包增强 v1.4\n\n安装：退出游戏，将本包解压到 Avadon.exe 所在文件夹，双击“安装增强补丁.cmd”。\n升级：覆盖解压后运行同一个安装入口，保留当前字号与镜头设置。\n还原：双击“还原增强补丁.cmd”，恢复增强前的插件和设置，保留汉化。\n\n镜头：只跟随1号角色。1号角色行走时自动跟随；停止后可将鼠标移至屏幕边缘浏览；1号角色再次行走自动接回。其他角色移动或切换选中角色不会改变跟随目标。\n双击“开启镜头跟随.cmd”或“关闭镜头跟随.cmd”切换功能，重新启动游戏生效。\n默认开启；菜单和敌方回合保持原游戏镜头行为。\n\n背包：按背包快捷键打开，再按同一个键关闭，自动沿用游戏内自定义按键及修饰键。关闭处理与Esc一致。\n\n字号：双击“选择字号.cmd”，按1选择125%，按2选择150%；也可使用“字体125.cmd”或“字体150.cmd”。\n退出游戏后切换，重新启动生效。初次安装默认150%，升级保留原设置。\n\n适用版本：Steam Build 4252712 / Avadon v1.0s2，需要先安装子非鱼汉化。\n',encoding='utf-8-sig')
+    assert read(TESTS/'inventory_report.json')['status']=='passed'
     cases=[]
     with tempfile.TemporaryDirectory(prefix='avadon-camera-中文 空格-') as temp:
         game=Path(temp)/'游戏 空格';(game/'AvadonChinese').mkdir(parents=True)
@@ -93,11 +96,24 @@ def main():
         run(game);assert bp.sha(game/'winmm.dll')==bp.sha(dll) and config(font_ini)['Font']['ScalePercent']=='125'
         assert bp.sha(game/'.zfy-font-enhancement/winmm.dll')==baseline_hash
         run(game,'uninstall');cases.append('camera_v1_2_upgrade_preserves_font_and_original_backup')
+        old13=Path(temp)/'old-v1.3';old13.mkdir()
+        with zipfile.ZipFile(ROOT/'阿瓦登_字体与镜头增强_1.3.zip') as old:
+            for name,digest in previous13['files'].items():
+                target=old13/name;assert target.resolve().is_relative_to(old13.resolve())
+                data=old.read(name);assert hashlib.sha256(data).hexdigest()==digest
+                target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+        run(game,script=old13/'字体增强.ps1')
+        font_ini.write_bytes(b'[Font]\r\nScalePercent=125\r\nFitLabels=0\r\n')
+        camera_ini.write_bytes(b'[Camera]\r\nFollowCharacter=0\r\n')
+        run(game);assert bp.sha(game/'winmm.dll')==bp.sha(dll)
+        assert config(font_ini)['Font']['ScalePercent']=='125' and config(camera_ini)['Camera']['FollowCharacter']=='0'
+        run(game,'uninstall');assert bp.sha(game/'winmm.dll')==baseline_hash
+        cases.append('v1_3_upgrade_preserves_font_and_disabled_camera')
         (game/'winmm.dll').write_bytes(b'unknown');run(game,ok=False);assert (game/'winmm.dll').read_bytes()==b'unknown';cases.append('unknown_plugin_no_write')
         shutil.copy2(baseline,game/'winmm.dll');(game/'Avadon.exe').write_bytes(b'wrong');run(game,ok=False);assert bp.sha(game/'winmm.dll')==baseline_hash;cases.append('wrong_game_no_write')
     inventory={p.relative_to(FILES).as_posix():bp.sha(p) for p in sorted(FILES.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt'}
     (FILES/'SHA256SUMS.txt').write_text(''.join(f'{digest}  {name}\n' for name,digest in inventory.items()),encoding='utf-8-sig')
-    archive=ROOT/'阿瓦登_字体与镜头增强_1.3.zip'
+    archive=ROOT/'阿瓦登_字体镜头与背包增强_1.4.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(FILES.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(FILES).as_posix())
@@ -105,7 +121,7 @@ def main():
         assert z.testzip() is None
         for name,digest in inventory.items():assert hashlib.sha256(z.read(name)).hexdigest()==digest
     bp.write_json(ROOT/'VALIDATION.json',{'status':'passed','supported_exe_sha256':bp.SUPPORTED,'dll_sha256':bp.sha(dll),'component_exe_sha256':bp.sha(ROOT/'Build/self_test.exe'),'native_sources':build['native_sources'],
-        'camera_report':read(TESTS/'camera_report.json'),'font_report':read(TESTS/'font_scale_report.json'),'installer_cases':cases,'files':inventory,'archive':str(archive),'archive_sha256':bp.sha(archive),'game_started':False,'in_game_verified':False,'installed':False})
+        'inventory_report':read(TESTS/'inventory_report.json'),'camera_report':read(TESTS/'camera_report.json'),'font_report':read(TESTS/'font_scale_report.json'),'installer_cases':cases,'files':inventory,'archive':str(archive),'archive_sha256':bp.sha(archive),'game_started':False,'in_game_verified':False,'installed':False})
     print(json.dumps({'status':'passed','archive':str(archive),'installer_cases':len(cases)},ensure_ascii=False))
 
 if __name__=='__main__':main()

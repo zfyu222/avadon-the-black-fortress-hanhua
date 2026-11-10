@@ -16,6 +16,8 @@ extern "C" void FixtureFinish();
 extern "C" bool FixtureNameExpansion();
 extern "C" void FixtureFontScale(int);
 extern "C" void FixtureCameraEnable();
+extern "C" void FixtureInventoryEnable();
+extern "C" void FixtureKeyModifiers(int);
 static void require(bool test,const char* reason){if(!test)throw std::runtime_error(reason);}
 
 static int call_text(void* entry,const char* text,unsigned alignment){
@@ -233,6 +235,31 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x6bed4c)=0x27;native_short(0x7438e2)=2;native_int(0x742388)+=8;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Menu hook overwrote view");
         std::ofstream camera_report((output+L"\\camera_report.json").c_str(),std::ios::binary);
         camera_report<<"{\"status\":\"passed\",\"character_1_only\":true,\"seven_companions_excluded\":true,\"selection_does_not_change_target\":true,\"invalid_primary_no_companion_fallback\":true,\"companion_combat_turn_excluded\":true,\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
+        const unsigned char keyboard_code[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c,0x8b,0x45,0x08,0x8b,0xe5,0x5d,0xc3};
+        memcpy(memory+0x67370,keyboard_code,sizeof(keyboard_code));FixtureInventoryEnable();
+        auto key_event=[&](int key){return call_text(memory+0x67370,reinterpret_cast<const char*>(key),0);};
+        native_short(0x6bed48)=10;native_short(0x6bed4c)=10;
+        native_short(0x60444e)=0x49;native_short(0x6044ee)=0;
+        require(key_event(0x49)==0x18,"Inventory key did not route to native Escape");
+        require(key_event(0x4a)==0x4a,"Unrelated inventory item key changed");
+        native_short(0x6bed4c)=0;require(key_event(0x49)==0x49,"Inventory opening path changed");
+        native_short(0x6bed4c)=0x21;require(key_event(0x49)==0x49,"Shortcut editor input intercepted");
+        native_short(0x6bed4c)=10;native_short(0x6bed48)=0;require(key_event(0x49)==0x49,"Main menu input intercepted");
+        native_short(0x6bed48)=15;require(key_event(0x49)==0x18,"Combat inventory toggle failed");
+        native_short(0x60444e)=0x4a;require(key_event(0x49)==0x49 && key_event(0x4a)==0x18,"Live custom key change was not respected");
+        for(int modifier=1;modifier<=3;++modifier){
+            native_short(0x6044ee)=static_cast<short>(modifier);FixtureKeyModifiers(0);require(key_event(0x4a)==0x4a,"Wrong modifiers closed inventory");
+            FixtureKeyModifiers(modifier);require(key_event(0x4a)==0x18,"Custom modifier not passed to native matcher");
+        }
+        native_short(0x6044ee)=0;FixtureKeyModifiers(0);
+        for(uintptr_t flag:{0x6bee47,0x6b1cdd,0x6b1cdf}){
+            *reinterpret_cast<unsigned char*>(memory+flag-0x400000)=1;require(key_event(0x4a)==0x4a,"Native input capture or pending action bypassed");
+            *reinterpret_cast<unsigned char*>(memory+flag-0x400000)=0;
+        }
+        native_short(0x60444e)=0;require(key_event(0x4a)==0x4a,"Unassigned inventory key intercepted input");
+        native_short(0x60444e)=0x4a;require(key_event(0x18)==0x18,"Original Escape changed");
+        std::ofstream inventory_report((output+L"\\inventory_report.json").c_str(),std::ios::binary);
+        inventory_report<<"{\"status\":\"passed\",\"open_path_unchanged\":true,\"inventory_hotkey_routes_native_escape\":true,\"live_custom_key\":true,\"all_three_modifier_modes\":true,\"wrong_modifiers_and_unassigned_ignored\":true,\"other_menus_and_captured_input_unchanged\":true,\"combat_inventory\":true,\"unrelated_item_keys_unchanged\":true,\"keyboard_hook_stack_registers\":true,\"synthetic_native_matcher_dx_and_stack_abi\":true,\"native_held_item_and_close_policy\":\"delegated_to_original_escape_path_static_evidence\",\"game_started\":false,\"in_game_verified\":false}\n";
         FixtureFinish();VirtualFree(memory,0,MEM_RELEASE);glDeleteTextures(1,&sentinel);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(context);SelectObject(dc,old);DeleteObject(dib);DeleteDC(dc);FreeLibrary(proxy);
         std::ofstream report((output+L"\\report.json").c_str(),std::ios::binary);report<<"{\n  \"status\":\"passed\",\n  \"dictionary_keys\":"<<dictionary.size()<<",\n  \"format_patterns\":"<<dictionary.patterns()<<",\n  \"glyphs_checked\":"<<glyphs.size()<<",\n  \"exports_checked\":"<<AVZH_FORWARD_COUNT<<",\n  \"visible_text_pixels\":"<<changed<<",\n  \"x86_abi_stack_and_registers\":true,\n  \"unknown_text_trampoline\":true,\n  \"gl_state_preserved\":true,\n  \"player_name_placeholder\":true,\n  \"script_quotes_and_heading_markers\":true,\n  \"cjk_wrapping_and_clip\":true,\n  \"offscreen_gdi_gl\":true,\n  \"game_started\":false,\n  \"in_game_verified\":false\n}\n";std::cout<<"Component tests passed; no game launched.\n";return 0;
     }catch(const std::exception& error){std::cerr<<error.what()<<"\n";return 1;}

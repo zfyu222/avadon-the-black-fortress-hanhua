@@ -1,14 +1,30 @@
 {
   "status": "passed",
   "supported_exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
-  "dll_sha256": "7b1cfe6ce868529c7e360349c977ab4ed7dcdc8cf88e0255c706f655e1a63c74",
-  "component_exe_sha256": "b10eccd3dae1e97b3cb8310508ce41efd0aff68fc71ef05f92b3bfad853c3193",
+  "dll_sha256": "c1047bba6838e65524ad2e28fc66dd9548a84cd9d35de525bfaf790e13cac2e4",
+  "component_exe_sha256": "558fad74121823d2d0fb9447e713eee3ce15d2d75e23b134d8212186da4b93ac",
   "native_sources": {
-    "adapter.cpp": "c9a665e9314c68d6849ef3e58eee7bc341f5725ccc3d415b42f672355f1c8962",
+    "adapter.cpp": "e058687ac4116fb35055bb9fca722b0177b6ca37d18eab613a163bc8d6f6b4dc",
     "camera_follow.hpp": "c7446a2a27cc699e3c0735772db9d3d1b8d2ca8d3627b7eb2cfe4f02d0c8db1f",
     "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
-    "self_test.cpp": "9994eee1318c4e636997cd7ffb364f14b4d6969e5f67d57d873ff923719b736d"
+    "self_test.cpp": "17b96b321a4679d1c581d0424c16bf60ebe94399622ba3ed25714f0747a249f4"
+  },
+  "inventory_report": {
+    "status": "passed",
+    "open_path_unchanged": true,
+    "inventory_hotkey_routes_native_escape": true,
+    "live_custom_key": true,
+    "all_three_modifier_modes": true,
+    "wrong_modifiers_and_unassigned_ignored": true,
+    "other_menus_and_captured_input_unchanged": true,
+    "combat_inventory": true,
+    "unrelated_item_keys_unchanged": true,
+    "keyboard_hook_stack_registers": true,
+    "synthetic_native_matcher_dx_and_stack_abi": true,
+    "native_held_item_and_close_policy": "delegated_to_original_escape_path_static_evidence",
+    "game_started": false,
+    "in_game_verified": false
   },
   "camera_report": {
     "status": "passed",
@@ -55,19 +71,20 @@
     "invalid_scale_no_write",
     "upgrade_uninstall_restores_pre_camera_config",
     "camera_v1_2_upgrade_preserves_font_and_original_backup",
+    "v1_3_upgrade_preserves_font_and_disabled_camera",
     "unknown_plugin_no_write",
     "wrong_game_no_write"
   ],
   "files": {
-    "font-manifest.json": "8a70f3da76e8c9f4f7ebf693e5e0615ac287706bb2209cba7237aac44297cedd",
+    "font-manifest.json": "730157a2a21f08a8f63296b4e67bc568b782ae8196b43cb92383df91bb165030",
     "关闭镜头跟随.cmd": "5d0f039c406d928d82137ee1eb20110391babe3578234a2fb67371d6934c2877",
-    "增强补丁说明.txt": "02c25ae0c828854d81d15fddc5e74f5c40daab4cafd0677e67ddced4eb2bd9b9",
+    "增强补丁说明.txt": "9537a21d12707fb4cff86be682ea6d0b5e0fae221e6b7e165a3aae21d0500082",
     "字体125.cmd": "7c0f226cc98dd1a4a2073a744fd52ea5cf6093c9830830c135bc91cd69d6c088",
     "字体150.cmd": "8e095b30ba7ae1b9ff6dd4e678542172df68fe53b071fee77a8d045c8c898ead",
     "字体增强.ps1": "097b72f4e1fa760408d429df7e06ea01207039555dd497d8839471b3ecf834da",
-    "字体文件/camera.ini": "fd12e68a94fc4f3b78d20d115931872d6a34a21696841cc30d1e5d65bcd7445a",
+    "字体文件/camera.ini": "13f903981331bf5e92239fad4fdd07f1ec21c1d9781f29a0b1fad5bf6135353e",
     "字体文件/font.ini": "004b45a200469d977417d3de6ff336862097b4f9600904d97e05f9c55dfc2bb5",
-    "字体文件/winmm.dll": "7b1cfe6ce868529c7e360349c977ab4ed7dcdc8cf88e0255c706f655e1a63c74",
+    "字体文件/winmm.dll": "c1047bba6838e65524ad2e28fc66dd9548a84cd9d35de525bfaf790e13cac2e4",
     "安装增强补丁.cmd": "a16bd52c125c382cca22a87ac91cf4313e80008c171385e209ca8ed0a50dda7c",
     "安装字体增强.cmd": "a16bd52c125c382cca22a87ac91cf4313e80008c171385e209ca8ed0a50dda7c",
     "开启镜头跟随.cmd": "09e72da0c1466e6e94e9be6f7ef030e0d71de0508e77c58a39acf31cc3662d74",
@@ -75,8 +92,8 @@
     "还原字体增强.cmd": "ad4de5e59d50fd08770b1acc50e96ffe07e2a27944513958aeb1554941d803d1",
     "选择字号.cmd": "e508f3dc21fd3dbd0b4bb6ed2354f3f1c05720aa04c433f6033a05a61edabf7d"
   },
-  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_字体与镜头增强_1.3.zip",
-  "archive_sha256": "335c4b2ee662f8945a531fca4af71cb5cfef33e9abbb4b48daab496389732b77",
+  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_字体镜头与背包增强_1.4.zip",
+  "archive_sha256": "05e5ce65f0df5b2023f1b3c871e5891b93e18d144cdbc2398e49232d1df18e2a",
   "game_started": false,
   "in_game_verified": false,
   "installed": false
