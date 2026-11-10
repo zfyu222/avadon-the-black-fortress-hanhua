@@ -9,6 +9,7 @@
 #include <set>
 #include <sstream>
 #include "renderer.hpp"
+#include "camera_follow.hpp"
 #include "forward_metadata.hpp"
 #include "MinHook.h"
 
@@ -17,7 +18,7 @@
 #pragma comment(lib,"user32.lib")
 #pragma comment(lib,"opengl32.lib")
 
-extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr; }
+extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr; }
 namespace {
 HMODULE module_handle=nullptr,real_winmm=nullptr;
 INIT_ONCE real_once=INIT_ONCE_STATIC_INIT,adapter_once=INIT_ONCE_STATIC_INIT;
@@ -25,6 +26,8 @@ uintptr_t game_base=0;bool enabled=false;
 std::wstring data_path;
 avzh::Dictionary dictionary;
 avzh::FontSettings font_settings;
+bool camera_enabled=false;
+avzh::CameraFollow camera_follow;
 thread_local avzh::Renderer renderer;
 std::mutex log_mutex;std::set<std::string> unmatched;
 
@@ -78,6 +81,41 @@ extern "C" int __cdecl TryRender(unsigned align,const uint32_t* args) noexcept {
 extern "C" int __cdecl TryMeasure(const char* source) noexcept {
     if(!enabled)return -1;
     try{bool found=false;auto text=localized(source,found);if(!found)return -1;at<uintptr_t>(0x6bf328)=game_base+0x1c30b0;return std::min(32767,renderer.measure(text,font_settings.step(12)));}catch(...){return -1;}
+}
+extern "C" void __cdecl UpdateCamera() noexcept {
+    if(!camera_enabled)return;
+    avzh::CameraFrame frame;frame.mode=at<short>(0x6bed48);frame.layer=at<short>(0x73b90c);
+    // Native input/scroll suppression, ordinary gameplay only; never menus,
+    // targeting modes, paused/scripted UI, background window, or enemy turns.
+    frame.allowed=(frame.mode==10 || frame.mode==15) && at<short>(0x6bed4c)==0 &&
+        at<unsigned char>(0x6bed47)==0 && frame.layer>=0 && frame.layer<2 &&
+        GetForegroundWindow()==at<HWND>(0x6bed20);
+    frame.tick=at<uint32_t>(0x6beeb8);frame.preferred=at<short>(0x5cf394);
+    if(frame.mode==15 && (frame.preferred<0 || frame.preferred>=8))frame.allowed=false;
+    if(frame.allowed){
+        for(int i=0;i<8;++i){
+            const uintptr_t actor=0x742368+i*0x19ac;
+            auto& a=frame.actors[i];a.x=at<int>(actor+0x20);a.y=at<int>(actor+0x24);a.motion=at<short>(actor+0x157a);
+            a.valid=at<short>(actor+0x30)==frame.layer && at<short>(actor+2)>=0 &&
+                at<short>(actor+0x46c)>=0 && at<short>(actor+0x1e)==2 &&
+                a.x>=0 && a.y>=0 && a.x<=32768 && a.y<=32768;
+        }
+    }
+    auto target=camera_follow.update(frame);if(!target.follow)return;
+    auto position=avzh::camera_position(target.x,target.y);
+    at<int>(0xeb84b8)=position.x;at<int>(0xeb84bc)=position.y;
+    at<int>(0xeb84c0)=position.screen_x;at<int>(0xeb84c4)=position.screen_y;
+}
+
+extern "C" __declspec(naked) void CameraEntry(){
+    __asm {
+        pushfd
+        pushad
+        call UpdateCamera
+        popad
+        popfd
+        jmp dword ptr[g_original_camera]
+    }
 }
 
 // The shipped x86 ABI uses ECX for alignment, EDX for width-query text,
@@ -144,6 +182,13 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
         status=MH_CreateHook(text_entry,reinterpret_cast<void*>(&TextEntry),&g_original_text);
         if(status==MH_OK)status=MH_CreateHook(measure_entry,reinterpret_cast<void*>(&MeasureEntry),&g_original_measure);
         if(status!=MH_OK){MH_RemoveHook(MH_ALL_HOOKS);log(std::string("hook preparation failed: ")+MH_StatusToString(status));return TRUE;}
+        const unsigned char camera_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x5c};
+        void* camera_entry=reinterpret_cast<void*>(game_base+0x32970);
+        if(GetPrivateProfileIntW(L"Camera",L"FollowCharacter",0,(data_path+L"\\camera.ini").c_str())!=0){
+            if(memcmp(camera_entry,camera_bytes,sizeof(camera_bytes))==0 &&
+                MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: follow while walking; native idle edge scrolling");}
+            else log("camera: signature or hook mismatch; camera enhancement disabled");
+        }
         enabled=true;status=MH_EnableHook(MH_ALL_HOOKS);
         if(status!=MH_OK){enabled=false;MH_DisableHook(MH_ALL_HOOKS);log(std::string("hook activation failed: ")+MH_StatusToString(status));return TRUE;}
         log("enabled: offline pre-format localization; "+std::to_string(dictionary.size())+" keys; "+std::to_string(dictionary.patterns())+" format patterns");
@@ -185,9 +230,13 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
     if(MH_Initialize()!=MH_OK || MH_CreateHook(reinterpret_cast<void*>(game_base+0x6e080),reinterpret_cast<void*>(&TextEntry),&g_original_text)!=MH_OK || MH_CreateHook(reinterpret_cast<void*>(game_base+0x6df00),reinterpret_cast<void*>(&MeasureEntry),&g_original_measure)!=MH_OK)throw std::runtime_error("Fixture hook creation failed");
     enabled=true;if(MH_EnableHook(MH_ALL_HOOKS)!=MH_OK)throw std::runtime_error("Fixture hook activation failed");
 }
-extern "C" void FixtureFinish(){enabled=false;MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
+extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
 extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
+extern "C" void FixtureCameraEnable(){
+    camera_enabled=true;camera_follow.reset();
+    if(MH_CreateHook(reinterpret_cast<void*>(game_base+0x32970),reinterpret_cast<void*>(&CameraEntry),&g_original_camera)!=MH_OK || MH_EnableHook(g_original_camera?reinterpret_cast<void*>(game_base+0x32970):nullptr)!=MH_OK)throw std::runtime_error("Fixture camera hook failed");
+}
 #endif
 
 #include "forward_stubs.inc"

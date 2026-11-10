@@ -1,0 +1,47 @@
+{
+  "exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
+  "image_base": "0x400000",
+  "provider": "ghidra",
+  "provider_version": "12.1.4",
+  "hook": {
+    "va": "0x432970",
+    "rva": "0x32970",
+    "file_offset": 204144,
+    "expected_bytes": "558bec83ec5c",
+    "role": "Pre scene spatial-cache update, after normal movement and edge scrolling in FUN_004663c0",
+    "abi": "No arguments, preserve general registers and EFLAGS, tail-jump original MinHook trampoline"
+  },
+  "globals": {
+    "mode": "0x6bed48 short, 10 exploration / 15 combat",
+    "ui_mode": "0x6bed4c short, permit 0 only",
+    "input_blocked": "0x6bed47 byte",
+    "window": "0x6bed20 HWND",
+    "tick": "0x6beeb8 uint32 game simulation ms",
+    "floor": "0x73b90c short",
+    "active_combat_actor": "0x5cf394 short",
+    "party_base": "0x742368, 8 actors with stride 0x19ac",
+    "actor_fields": {
+      "sprite_id": "0x2 short",
+      "status": "0x1e short, 2=present",
+      "x": "0x20 int32",
+      "y": "0x24 int32",
+      "floor": "0x30 short",
+      "health": "0x46c short, nonnegative",
+      "motion": "0x157a short, 1..10 walking state"
+    },
+    "camera_world_x": "0xeb84b8 int32",
+    "camera_world_y": "0xeb84bc int32",
+    "camera_projected_x": "0xeb84c0 int32",
+    "camera_projected_y": "0xeb84c4 int32"
+  },
+  "references": [
+    "FUN_004663c0 main update and scroll-before-spatial-preparation",
+    "FUN_004327d0 native mouse edge scrolling",
+    "FUN_004326a0 native pan bounds",
+    "FUN_00418160 scene-load centre projection",
+    "FUN_004414b0 per-actor walking",
+    "FUN_004733a0 player movement dispatch"
+  ],
+  "runtime_validation": "pending_user_test",
+  "game_started": false
+}

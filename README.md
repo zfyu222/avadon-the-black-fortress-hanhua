@@ -205,3 +205,12 @@
 - 安装脚本回放通过150→125→150→125切换、其他配置保留、非法字号拒绝，以及首次选125%自动安装与还原；原有安装/还原回归继续通过。使用 Windows 自带CMD、Windows PowerShell及.NET，无额外玩家运行依赖。
 - 独立包 `Repack/FontEnhancement/阿瓦登_字体增强可选字号_1.1.zip`；保留1.0旧包。ZIP CRC与所有文件哈希通过，证据 `Repack/FontEnhancement/VALIDATION.json`。
 - 已将选择/切换、安装/还原入口与所需辅助文件放到实际游戏目录。当前字体配置、已装DLL、词典和原汉化SHA256SUMS均保持本轮开始时的字节；部署记录 `Repack/FontEnhancement/SWITCH_INSTALLATION.json`。实机检查仍由用户自行进行。
+
+## 字体与镜头增强 v1.2（2026-11-10）
+- 新增镜头规则：可控角色实际行走时居中跟随；停止后保留原生鼠标贴边与方向键浏览；再次行走接回。保留125%/150%字号选择，两个功能独立配置，切换后重启游戏生效。默认 `[Camera] FollowCharacter=1`，开启/关闭入口为 `开启镜头跟随.cmd`、`关闭镜头跟随.cmd`。
+- REA + Ghidra 12.1.4只读分析当前哈希绑定EXE。原生 `0x4327d0` 为贴边浏览，`0x4326a0` 为平移；`0x4663c0` 完成角色更新与贴边平移后调用 `0x432970` 更新场景空间缓存。新增该入口的MinHook，在原函数运行前同步四个镜头坐标；六字节前导 `558bec83ec5c` 经原文件偏移验证，保持寄存器/标志与原trampoline。证据 `Analysis/camera_follow_evidence.json`、地址/类型/偏移 `Analysis/camera_follow_layout.json`。
+- 角色来自8个队员的原生坐标与行走状态；战斗仅跟随当前可控队员，不跟随敌方回合。仅在正常游玩UI、输入未屏蔽且游戏窗口在前台时生效；菜单、楼层/模式变更重置跟踪，首次采样不强行拉回，传送不当作普通行走。模拟更新间隔允许最多96ms等待，卡住的路径会释放镜头。等距投影沿用原生 `(x-y)*15/64`、`(x+y)*10/64`，不改角色坐标、存档或EXE。
+- 源码 `Repack/native/camera_follow.hpp`、`adapter.cpp`；独立构建 `python Repack/build_patch.py --enhancement`。使用自建self_test运行完整字体/翻译/ABI回归和镜头状态机、实际合成x86钩子/内存测试；随后 `python Repack/package_enhancement.py`。离线报告 `Repack/Enhancement/Tests/camera_report.json`、`VALIDATION.json`。
+- 安装/还原回放9组通过，包括字体v1.1原位升级保留原件与125%设置、独立开关、重复安装/还原、原有camera.ini恢复、未知插件与错误EXE拒绝。ZIP CRC及逐文件SHA-256通过。新安装默认开启跟随和150%字号；升级保留既有配置。还原入口恢复最初增强前的汉化插件与设置，卸载原汉化前应先还原增强。
+- 独立包 `Repack/Enhancement/阿瓦登_字体与镜头增强_1.2.zip`；仅本地交付，不更新公开Release。用户告知游戏已退出后，核验无Avadon进程再安装；已将安装/还原、字体选择、镜头开关入口放到实际游戏目录。字体配置仍为本轮开始时的150%，原件备份与EXE校验通过；记录 `Repack/Enhancement/INSTALLATION.json`。
+- 实机验证待用户操作：移动→停下贴边浏览→再次移动，另检查战斗可控角色、菜单、切层与长距离行走。代理未启动或接管游戏。静态分析/合成组件通过不代表剧情镜头和所有场景实机通过；暂未加入平滑插值、游戏内热切换或鼠标滚动行为改造。

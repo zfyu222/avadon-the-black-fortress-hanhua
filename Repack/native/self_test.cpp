@@ -8,12 +8,14 @@
 #include <iostream>
 #include <iterator>
 #include "renderer.hpp"
+#include "camera_follow.hpp"
 #include "forward_metadata.hpp"
 
 extern "C" void FixtureInitialize(void*,const wchar_t*,const wchar_t*);
 extern "C" void FixtureFinish();
 extern "C" bool FixtureNameExpansion();
 extern "C" void FixtureFontScale(int);
+extern "C" void FixtureCameraEnable();
 static void require(bool test,const char* reason){if(!test)throw std::runtime_error(reason);}
 
 static int call_text(void* entry,const char* text,unsigned alignment){
@@ -131,7 +133,7 @@ int wmain(int argc,wchar_t** argv){
         avzh::Renderer renderer;std::ifstream glyph_file(argv[2],std::ios::binary);std::string bytes((std::istreambuf_iterator<char>(glyph_file)),{});require(bytes.size()%2==0 && !bytes.empty(),"Glyph inventory unavailable");std::wstring glyphs(bytes.size()/2,L'\0');memcpy(&glyphs[0],bytes.data(),bytes.size());require(renderer.glyphs(glyphs),"Selected GDI font lacks an approved character");
         int ink=renderer.ink_height(L'汉',13);require(ink>=10 && ink<=13,"CJK body glyph too small or too tall");
         std::ofstream dynamic_report((output+L"\\dynamic_font_report.json").c_str(),std::ios::binary);dynamic_report<<"{\"status\":\"passed\",\"complete_message_composition\":true,\"padding_and_shortcut_labels\":true,\"partial_prose_falls_back\":true,\"cjk_body_ink_height\":"<<ink<<",\"native_line_step\":13,\"game_started\":false}\n";dynamic_report.close();
-        auto* memory=static_cast<unsigned char*>(VirtualAlloc(nullptr,0x300000,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));require(memory!=nullptr,"Fixture allocation failed");
+        auto* memory=static_cast<unsigned char*>(VirtualAlloc(nullptr,0xc00000,MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE));require(memory!=nullptr,"Fixture allocation failed");
         unsigned char text_code[]={0x55,0x8b,0xec,0x81,0xec,0x40,0x08,0,0,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};unsigned char measure_code[]={0x55,0x8b,0xec,0x81,0xec,0x14,0x04,0,0,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};memcpy(memory+0x6e080,text_code,sizeof(text_code));memcpy(memory+0x6df00,measure_code,sizeof(measure_code));
         unsigned char name_code[]={0xc7,0x01,'T','e','s','t',0xc7,0x41,0x04,'H','e','r','o',0xc6,0x41,0x08,0,0xc3};memcpy(memory+0x6ede0,name_code,sizeof(name_code));
         FixtureInitialize(memory,argv[1],output.c_str());
@@ -181,6 +183,45 @@ int wmain(int argc,wchar_t** argv){
         require(large_lines>baseline_lines,"Enlarged paragraph did not reflow");
         std::ofstream scale_report((output+L"\\font_scale_report.json").c_str(),std::ios::binary);
         scale_report<<"{\"status\":\"passed\",\"scale_percent\":150,\"body_step_before\":13,\"body_step_after\":19,\"body_ink_before\":"<<ink<<",\"body_ink_after\":"<<renderer.ink_height(L'汉',19)<<",\"baseline_lines\":"<<baseline_lines<<",\"enlarged_lines\":"<<large_lines<<",\"fixed_label_height_and_width_fit\":true,\"hook_measure_and_line_step\":true,\"scaled_clipping\":true,\"config_bounds_and_missing_default\":true,\"game_started\":false}\n";
+        avzh::CameraFollow follow;avzh::CameraFrame frame;frame.allowed=true;frame.mode=10;frame.preferred=0;
+        frame.actors[0]={true,1000,1200,0};
+        require(!follow.update(frame).follow,"Camera snapped on initial observation");
+        frame.tick=32;require(!follow.update(frame).follow,"Idle camera must remain free");
+        frame.actors[0].motion=2;frame.actors[0].x+=8;frame.tick=64;
+        auto target=follow.update(frame);require(target.follow && target.x==1008 && target.y==1200,"Walking failed to reacquire camera");
+        frame.tick=96;require(follow.update(frame).follow,"Camera lost walking actor between simulation steps");
+        frame.actors[0].motion=0;require(!follow.update(frame).follow,"Stopped actor did not release edge scrolling");
+        frame.actors[0].motion=2;frame.actors[0].y+=8;frame.tick=128;require(follow.update(frame).follow,"Resume after free pan failed");
+        frame.allowed=false;require(!follow.update(frame).follow,"Blocked or menu camera followed");
+        frame.allowed=true;frame.actors[0].x+=8;require(!follow.update(frame).follow,"Returning from modal snapped camera");
+        frame.actors[0].x+=8;frame.tick=160;require(follow.update(frame).follow,"Walking after modal failed");
+        frame.actors[0].x+=4096;frame.tick=192;require(!follow.update(frame).follow,"Teleport mistaken for walking");
+        frame.layer=1;frame.actors[0].x+=8;require(!follow.update(frame).follow,"Floor transition caused stale follow");
+        frame.mode=15;frame.preferred=9;require(!follow.update(frame).follow,"Enemy turn took camera");
+        frame.actors[0].x+=8;frame.tick=224;require(!follow.update(frame).follow,"Party movement during enemy turn took camera");
+        frame.preferred=0;frame.actors[0].x+=8;frame.tick=256;require(follow.update(frame).follow,"Active player combat movement not followed");
+        frame.tick=512;require(!follow.update(frame).follow,"Stalled path kept camera locked");
+        frame.actors[0].valid=false;require(!follow.update(frame).follow,"Invalid actor followed");
+        auto projection=avzh::camera_position(1000,1200);require(projection.screen_x==-46 && projection.screen_y==343,"Native camera projection differs");
+        auto clamped=avzh::camera_position(-1000,50000);require(clamped.x==-512 && clamped.y==33280,"Camera bounds invalid");
+        // Real hook/trampoline against synthetic code and memory, never game code.
+        const unsigned char camera_code[]={0x55,0x8b,0xec,0x83,0xec,0x5c,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};
+        memcpy(memory+0x32970,camera_code,sizeof(camera_code));
+        auto native_short=[&](uintptr_t va)->short&{return *reinterpret_cast<short*>(memory+va-0x400000);};
+        auto native_int=[&](uintptr_t va)->int&{return *reinterpret_cast<int*>(memory+va-0x400000);};
+        native_short(0x6bed48)=10;native_short(0x6bed4c)=0;native_short(0x73b90c)=0;native_short(0x5cf394)=0;
+        *reinterpret_cast<HWND*>(memory+0x6bed20-0x400000)=GetForegroundWindow();
+        native_short(0x74236a)=1;native_short(0x742386)=2;native_short(0x7427d4)=1;native_short(0x742398)=0;
+        native_int(0x742388)=1000;native_int(0x74238c)=1200;native_short(0x7438e2)=2;
+        native_int(0xeb84b8)=5000;native_int(0xeb84bc)=6000;
+        FixtureCameraEnable();require(call_text(memory+0x32970,"",0)==42,"Camera trampoline or ABI broken");
+        require(native_int(0xeb84b8)==5000,"Initial hook observation changed camera");
+        native_int(0x742388)=1008;native_int(0x6beeb8)=32;call_text(memory+0x32970,"",0);
+        require(native_int(0xeb84b8)==1008 && native_int(0xeb84bc)==1200 && native_int(0xeb84c0)==-45 && native_int(0xeb84c4)==345,"Hook camera world/projected coordinates inconsistent");
+        native_short(0x7438e2)=0;native_int(0xeb84b8)=9000;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Idle hook blocked native panning");
+        native_short(0x6bed4c)=0x27;native_short(0x7438e2)=2;native_int(0x742388)+=8;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Menu hook overwrote view");
+        std::ofstream camera_report((output+L"\\camera_report.json").c_str(),std::ios::binary);
+        camera_report<<"{\"status\":\"passed\",\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
         FixtureFinish();VirtualFree(memory,0,MEM_RELEASE);glDeleteTextures(1,&sentinel);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(context);SelectObject(dc,old);DeleteObject(dib);DeleteDC(dc);FreeLibrary(proxy);
         std::ofstream report((output+L"\\report.json").c_str(),std::ios::binary);report<<"{\n  \"status\":\"passed\",\n  \"dictionary_keys\":"<<dictionary.size()<<",\n  \"format_patterns\":"<<dictionary.patterns()<<",\n  \"glyphs_checked\":"<<glyphs.size()<<",\n  \"exports_checked\":"<<AVZH_FORWARD_COUNT<<",\n  \"visible_text_pixels\":"<<changed<<",\n  \"x86_abi_stack_and_registers\":true,\n  \"unknown_text_trampoline\":true,\n  \"gl_state_preserved\":true,\n  \"player_name_placeholder\":true,\n  \"script_quotes_and_heading_markers\":true,\n  \"cjk_wrapping_and_clip\":true,\n  \"offscreen_gdi_gl\":true,\n  \"game_started\":false,\n  \"in_game_verified\":false\n}\n";std::cout<<"Component tests passed; no game launched.\n";return 0;
     }catch(const std::exception& error){std::cerr<<error.what()<<"\n";return 1;}

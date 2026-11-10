@@ -1,0 +1,17 @@
+{
+  "status":"passed",
+  "dictionary_keys":21808,
+  "format_patterns":87,
+  "glyphs_checked":3126,
+  "exports_checked":193,
+  "visible_text_pixels":3500,
+  "x86_abi_stack_and_registers":true,
+  "unknown_text_trampoline":true,
+  "gl_state_preserved":true,
+  "player_name_placeholder":true,
+  "script_quotes_and_heading_markers":true,
+  "cjk_wrapping_and_clip":true,
+  "offscreen_gdi_gl":true,
+  "game_started":false,
+  "in_game_verified":false
+}

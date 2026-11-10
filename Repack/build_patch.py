@@ -204,9 +204,9 @@ def build(compile_code=True, font_only=False):
     if sha(game) != SUPPORTED:
         raise ValueError('Unsupported Avadon executable')
     data = game.read_bytes()
-    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000')]:
+    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000'), (0x432970, '558bec83ec5c')]:
         offset = pe_file_offset(data, address)
-        if data[offset:offset+9].hex() != expected:
+        if data[offset:offset+len(bytes.fromhex(expected))].hex() != expected:
             raise ValueError('REA hook bytes do not match the shipped file')
     mh = WORKSPACE / 'Tools/native/MinHook'
     commit = subprocess.run(['git', '-C', str(mh), 'rev-parse', 'HEAD'], check=True, capture_output=True, text=True).stdout.strip()
@@ -237,11 +237,15 @@ def build(compile_code=True, font_only=False):
                 'game_started': False, 'in_game_verified': False, 'installed': False}
     if (PAYLOAD/'winmm.dll').exists():
         manifest['dll_sha256'] = sha(PAYLOAD/'winmm.dll')
+    if font_only:
+        manifest['dictionary']={key:report[key] for key in ['records','keys','source_sha256','translation_sha256','dictionary_sha256','original_game_data_modified']}
     write_json((BUILD.parent if font_only else HERE)/'BUILD_MANIFEST.json', manifest)
     print(json.dumps({'status': manifest['status'], 'dictionary_keys': report['keys'], 'textures': len(images), 'dll_sha256': manifest.get('dll_sha256')}, ensure_ascii=False))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');parser.add_argument('--font-only', action='store_true');args = parser.parse_args()
-    if args.font_only:
+    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');parser.add_argument('--font-only', action='store_true');parser.add_argument('--enhancement', action='store_true');args = parser.parse_args()
+    if args.enhancement:
+        BUILD=HERE/'Enhancement/Build';PAYLOAD=HERE/'Enhancement/Payload'
+    elif args.font_only:
         BUILD=HERE/'FontEnhancement/Build';PAYLOAD=HERE/'FontEnhancement/Payload'
-    build(not args.prepare_only,args.font_only)
+    build(not args.prepare_only,args.font_only or args.enhancement)

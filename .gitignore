@@ -82,3 +82,10 @@ Desktop.ini
 /Repack/FontEnhancement/Tests/*.ppm
 /Repack/FontEnhancement/Tests/*.log
 /Repack/FontEnhancement/Tests/unmatched.txt
+/Repack/Enhancement/Build/
+/Repack/Enhancement/Payload/
+/Repack/Enhancement/Files/
+/Repack/Enhancement/*.zip
+/Repack/Enhancement/Tests/*.ppm
+/Repack/Enhancement/Tests/*.log
+/Repack/Enhancement/Tests/unmatched.txt
