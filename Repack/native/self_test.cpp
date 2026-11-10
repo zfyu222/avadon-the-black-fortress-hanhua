@@ -199,9 +199,20 @@ int wmain(int argc,wchar_t** argv){
         frame.layer=1;frame.actors[0].x+=8;require(!follow.update(frame).follow,"Floor transition caused stale follow");
         frame.mode=15;frame.preferred=9;require(!follow.update(frame).follow,"Enemy turn took camera");
         frame.actors[0].x+=8;frame.tick=224;require(!follow.update(frame).follow,"Party movement during enemy turn took camera");
-        frame.preferred=0;frame.actors[0].x+=8;frame.tick=256;require(follow.update(frame).follow,"Active player combat movement not followed");
+        frame.preferred=0;frame.actors[0].x+=8;frame.tick=256;require(!follow.update(frame).follow,"Returning to character 1 turn snapped view");
+        frame.actors[0].x+=8;frame.tick=288;require(follow.update(frame).follow,"Character 1 combat movement not followed");
         frame.tick=512;require(!follow.update(frame).follow,"Stalled path kept camera locked");
         frame.actors[0].valid=false;require(!follow.update(frame).follow,"Invalid actor followed");
+        follow.reset();frame=avzh::CameraFrame{};frame.allowed=true;frame.mode=10;frame.preferred=1;
+        frame.actors[0]={true,1000,1200,0};
+        for(int id=1;id<8;++id)frame.actors[id]={true,2000+id*10,2400,2};
+        follow.update(frame);
+        for(int id=1;id<8;++id){frame.actors[id].x+=8;frame.tick+=32;require(!follow.update(frame).follow,"Companion movement acquired camera");}
+        frame.actors[0].motion=2;frame.actors[0].x+=8;frame.tick+=32;
+        auto primary=follow.update(frame);require(primary.follow && primary.actor==0,"Selection displaced character 1 camera ownership");
+        frame.actors[1].x+=8;frame.actors[0].motion=0;frame.tick+=32;require(!follow.update(frame).follow,"Companion kept follow after character 1 stopped");
+        frame.actors[0].valid=false;frame.actors[1].x+=8;require(!follow.update(frame).follow,"Invalid character 1 fell back to companion");
+        frame.mode=15;frame.preferred=1;frame.actors[0].valid=true;frame.actors[0].motion=2;frame.actors[0].x+=8;require(!follow.update(frame).follow,"Companion combat turn acquired camera");
         auto projection=avzh::camera_position(1000,1200);require(projection.screen_x==-46 && projection.screen_y==343,"Native camera projection differs");
         auto clamped=avzh::camera_position(-1000,50000);require(clamped.x==-512 && clamped.y==33280,"Camera bounds invalid");
         // Real hook/trampoline against synthetic code and memory, never game code.
@@ -221,7 +232,7 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x7438e2)=0;native_int(0xeb84b8)=9000;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Idle hook blocked native panning");
         native_short(0x6bed4c)=0x27;native_short(0x7438e2)=2;native_int(0x742388)+=8;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Menu hook overwrote view");
         std::ofstream camera_report((output+L"\\camera_report.json").c_str(),std::ios::binary);
-        camera_report<<"{\"status\":\"passed\",\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
+        camera_report<<"{\"status\":\"passed\",\"character_1_only\":true,\"seven_companions_excluded\":true,\"selection_does_not_change_target\":true,\"invalid_primary_no_companion_fallback\":true,\"companion_combat_turn_excluded\":true,\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
         FixtureFinish();VirtualFree(memory,0,MEM_RELEASE);glDeleteTextures(1,&sentinel);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(context);SelectObject(dc,old);DeleteObject(dib);DeleteDC(dc);FreeLibrary(proxy);
         std::ofstream report((output+L"\\report.json").c_str(),std::ios::binary);report<<"{\n  \"status\":\"passed\",\n  \"dictionary_keys\":"<<dictionary.size()<<",\n  \"format_patterns\":"<<dictionary.patterns()<<",\n  \"glyphs_checked\":"<<glyphs.size()<<",\n  \"exports_checked\":"<<AVZH_FORWARD_COUNT<<",\n  \"visible_text_pixels\":"<<changed<<",\n  \"x86_abi_stack_and_registers\":true,\n  \"unknown_text_trampoline\":true,\n  \"gl_state_preserved\":true,\n  \"player_name_placeholder\":true,\n  \"script_quotes_and_heading_markers\":true,\n  \"cjk_wrapping_and_clip\":true,\n  \"offscreen_gdi_gl\":true,\n  \"game_started\":false,\n  \"in_game_verified\":false\n}\n";std::cout<<"Component tests passed; no game launched.\n";return 0;
     }catch(const std::exception& error){std::cerr<<error.what()<<"\n";return 1;}

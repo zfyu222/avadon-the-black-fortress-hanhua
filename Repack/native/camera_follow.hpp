@@ -19,7 +19,7 @@ public:
     void reset(){sampled_=false;tracking_=-1;}
     CameraTarget update(const CameraFrame& frame){
         CameraTarget result;
-        if(!frame.allowed){reset();return result;}
+        if(!frame.allowed || (frame.mode==15 && frame.preferred!=0)){reset();return result;}
         if(!sampled_ || frame.layer!=previous_.layer || frame.mode!=previous_.mode){
             previous_=frame;sampled_=true;tracking_=-1;return result;
         }
@@ -30,13 +30,9 @@ public:
             return a.valid && b.valid && a.motion>0 && a.motion<11 &&
                 (a.x!=b.x || a.y!=b.y) && std::abs(a.x-b.x)<=256 && std::abs(a.y-b.y)<=256;
         };
-        int choice=-1;
-        if(frame.mode==15){if(moving(frame.preferred))choice=frame.preferred;}
-        else {
-            if(moving(frame.preferred))choice=frame.preferred;
-            else if(moving(tracking_))choice=tracking_;
-            else for(int id=0;id<8;++id)if(moving(id)){choice=id;break;}
-        }
+        // Party actor 0 is character 1. Selection and companion movement must
+        // never transfer camera ownership to another actor.
+        const int choice=moving(0)?0:-1;
         if(choice>=0){tracking_=choice;last_motion_=frame.tick;}
         else if(tracking_>=0){
             const auto& a=frame.actors[tracking_];
