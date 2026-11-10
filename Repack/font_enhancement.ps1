@@ -1,11 +1,26 @@
 param(
-    [ValidateSet('install','uninstall')][string]$Action = 'install',
+    [ValidateSet('install','uninstall','scale')][string]$Action = 'install',
+    [ValidateSet(0,125,150)][int]$Scale = 0,
     [string]$GameRoot = $PSScriptRoot
 )
 $ErrorActionPreference = 'Stop'
 Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility.psd1" -ErrorAction Stop
 Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.psd1" -ErrorAction Stop
 function Hash([string]$Path) { (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant() }
+if ($Action -eq 'scale' -and $Scale -eq 0) { throw '请选择125%或150%。' }
+function SetFontScale {
+    if ($Scale -eq 0) { return }
+    Add-Type -TypeDefinition @'
+using System;
+using System.Runtime.InteropServices;
+public static class AvadonFontIni {
+    [DllImport("kernel32.dll", CharSet=CharSet.Unicode, SetLastError=true)]
+    public static extern bool WritePrivateProfileString(string section, string key, string value, string path);
+}
+'@
+    if (![AvadonFontIni]::WritePrivateProfileString('Font','ScalePercent',[string]$Scale,$ini)) { throw '字号设置保存失败。' }
+    Write-Output "字号已切换至 $Scale%，重新启动游戏生效。"
+}
 $root = (Resolve-Path -LiteralPath $GameRoot).Path
 $package = Join-Path $PSScriptRoot 'font-manifest.json'
 $manifest = Get-Content -LiteralPath $package -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -40,6 +55,7 @@ if (Test-Path -LiteralPath $statePath) {
     if ($previous.status -eq 'installed') {
         if ((Hash $dll) -ne $previous.dll_installed -or $previous.dll_installed -ne $manifest.files.'winmm.dll') { throw '已安装的显示插件版本不同，请先还原字体增强。' }
         if (!(Test-Path -LiteralPath $ini)) { Copy-Item -LiteralPath (Join-Path $PSScriptRoot '字体文件/font.ini') -Destination $ini }
+        SetFontScale
         Write-Output '字体增强已安装，保留当前字号设置。'; exit 0
     }
     if ($previous.status -notin @('uninstalled','rolled_back')) { throw '上次安装未完成，已保留原件，请先还原字体增强。' }
@@ -68,4 +84,5 @@ try {
     throw
 }
 $state.status='installed';$state | ConvertTo-Json | Set-Content -LiteralPath $statePath -Encoding UTF8
-Write-Output '字体增强已安装：150%。启动原游戏即可。'
+SetFontScale
+Write-Output '字体增强已安装。启动原游戏即可。'

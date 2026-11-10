@@ -1,0 +1,25 @@
+{
+  "status": "installed_helpers_only",
+  "date": "2026-11-10",
+  "game_root": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress",
+  "files": {
+    "font-manifest.json": "4fe45744fe9d53f8263b8232499437f9ba18842ef19d5868e5a3dc5725019d36",
+    "字体125.cmd": "7c0f226cc98dd1a4a2073a744fd52ea5cf6093c9830830c135bc91cd69d6c088",
+    "字体150.cmd": "8e095b30ba7ae1b9ff6dd4e678542172df68fe53b071fee77a8d045c8c898ead",
+    "字体增强.ps1": "0ca728f0af64b4e274e5531bd71ded49501597a7013b2ae5a0b9080a5f783089",
+    "字体增强说明.txt": "1bb1b19d755faf0cf4a0948f33f0dadd04391b6b09a1a5a55d54642525583704",
+    "安装字体增强.cmd": "a16bd52c125c382cca22a87ac91cf4313e80008c171385e209ca8ed0a50dda7c",
+    "还原字体增强.cmd": "ad4de5e59d50fd08770b1acc50e96ffe07e2a27944513958aeb1554941d803d1",
+    "选择字号.cmd": "e508f3dc21fd3dbd0b4bb6ed2354f3f1c05720aa04c433f6033a05a61edabf7d",
+    "字体文件/font.ini": "d122cc46ab8c9288d289b8c45ef0f0e35529c6336a674374bf2b216f45e757ee",
+    "字体文件/winmm.dll": "6f77f248e06b3f6917ca5d5c5cf56086c4c8a36edcfe2066cf4701d848310271"
+  },
+  "runtime_files_unchanged": {
+    "winmm.dll": "6f77f248e06b3f6917ca5d5c5cf56086c4c8a36edcfe2066cf4701d848310271",
+    "AvadonChinese/font.ini": "d122cc46ab8c9288d289b8c45ef0f0e35529c6336a674374bf2b216f45e757ee",
+    "AvadonChinese/translations.bin": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c",
+    "SHA256SUMS.txt": "43efe25f865df5fdcafd283f75abb484369f82854939c150e14638c1c6bf7daa"
+  },
+  "game_started": false,
+  "desktop_control": false
+}
