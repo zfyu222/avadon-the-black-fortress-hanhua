@@ -213,7 +213,12 @@ int wmain(int argc,wchar_t** argv){
         frame.actors[0].motion=2;frame.actors[0].x+=8;frame.tick+=32;
         auto primary=follow.update(frame);require(primary.follow && primary.actor==0,"Selection displaced character 1 camera ownership");
         frame.actors[1].x+=8;frame.actors[0].motion=0;frame.tick+=32;require(!follow.update(frame).follow,"Companion kept follow after character 1 stopped");
-        frame.actors[0].valid=false;frame.actors[1].x+=8;require(!follow.update(frame).follow,"Invalid character 1 fell back to companion");
+        frame.actors[0].valid=false;frame.actors[1].x+=8;auto fallback=follow.update(frame);require(fallback.follow && fallback.actor==1,"Absent character 1 did not fall back to character 2");
+        frame.actors[1].motion=0;require(!follow.update(frame).follow,"Stopped character 2 did not release camera");
+        frame.mode=15;frame.preferred=1;frame.actors[1].motion=2;follow.update(frame);
+        frame.actors[1].x+=8;require(follow.update(frame).actor==1,"Character 2 combat turn not followed while character 1 is absent");
+        frame.actors[1].valid=false;frame.actors[2].x+=8;require(!follow.update(frame).follow,"Character 3 took over when both targets were absent");
+        frame.actors[1].valid=true;
         frame.mode=15;frame.preferred=1;frame.actors[0].valid=true;frame.actors[0].motion=2;frame.actors[0].x+=8;require(!follow.update(frame).follow,"Companion combat turn acquired camera");
         auto projection=avzh::camera_position(1000,1200);require(projection.screen_x==-46 && projection.screen_y==343,"Native camera projection differs");
         auto clamped=avzh::camera_position(-1000,50000);require(clamped.x==-512 && clamped.y==33280,"Camera bounds invalid");
@@ -234,7 +239,7 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x7438e2)=0;native_int(0xeb84b8)=9000;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Idle hook blocked native panning");
         native_short(0x6bed4c)=0x27;native_short(0x7438e2)=2;native_int(0x742388)+=8;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Menu hook overwrote view");
         std::ofstream camera_report((output+L"\\camera_report.json").c_str(),std::ios::binary);
-        camera_report<<"{\"status\":\"passed\",\"character_1_only\":true,\"seven_companions_excluded\":true,\"selection_does_not_change_target\":true,\"invalid_primary_no_companion_fallback\":true,\"companion_combat_turn_excluded\":true,\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
+        camera_report<<"{\"status\":\"passed\",\"character_1_priority\":true,\"companions_excluded_while_primary_present\":true,\"selection_does_not_change_target\":true,\"absent_primary_falls_back_to_character_2\":true,\"companion_combat_turn_excluded\":true,\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
         const unsigned char keyboard_code[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c,0x8b,0x45,0x08,0x8b,0xe5,0x5d,0xc3};
         memcpy(memory+0x67370,keyboard_code,sizeof(keyboard_code));FixtureInventoryEnable();
         auto key_event=[&](int key){return call_text(memory+0x67370,reinterpret_cast<const char*>(key),0);};

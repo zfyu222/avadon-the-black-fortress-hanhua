@@ -92,9 +92,8 @@ extern "C" void __cdecl UpdateCamera() noexcept {
         at<unsigned char>(0x6bed47)==0 && frame.layer>=0 && frame.layer<2 &&
         GetForegroundWindow()==at<HWND>(0x6bed20);
     frame.tick=at<uint32_t>(0x6beeb8);frame.preferred=at<short>(0x5cf394);
-    if(frame.mode==15 && frame.preferred!=0)frame.allowed=false;
     if(frame.allowed){
-        for(int i=0;i<8;++i){
+        for(int i=0;i<2;++i){
             const uintptr_t actor=0x742368+i*0x19ac;
             auto& a=frame.actors[i];a.x=at<int>(actor+0x20);a.y=at<int>(actor+0x24);a.motion=at<short>(actor+0x157a);
             a.valid=at<short>(actor+0x30)==frame.layer && at<short>(actor+2)>=0 &&
@@ -222,7 +221,7 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
         void* camera_entry=reinterpret_cast<void*>(game_base+0x32970);
         if(GetPrivateProfileIntW(L"Camera",L"FollowCharacter",0,(data_path+L"\\camera.ini").c_str())!=0){
             if(memcmp(camera_entry,camera_bytes,sizeof(camera_bytes))==0 &&
-                MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: character 1 only while walking; native idle edge scrolling");}
+                MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: character 1 or character 2 when absent; native idle edge scrolling");}
             else log("camera: signature or hook mismatch; camera enhancement disabled");
         }
         const unsigned char keyboard_bytes[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c};
