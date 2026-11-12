@@ -3,6 +3,7 @@ from pathlib import Path
 import configparser
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import tempfile
@@ -10,7 +11,7 @@ import zipfile
 import build_patch as bp
 
 ROOT=bp.HERE/'Enhancement'
-FILES=ROOT/'Files'
+FILES=ROOT/'GuiFiles'
 TESTS=ROOT/'Tests'
 
 def read(path):return json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -44,15 +45,11 @@ def main():
     (FILES/'字体文件/font.ini').write_bytes(b'[Font]\r\nScalePercent=150\r\nFitLabels=1\r\n')
     (FILES/'字体文件/camera.ini').write_bytes(b'[Camera]\r\nFollowCharacter=1\r\n\r\n[Inventory]\r\nToggleHotkey=1\r\n')
     (FILES/'字体增强.ps1').write_text((bp.HERE/'enhancement.ps1').read_text(encoding='utf-8'),encoding='utf-8-sig')
-    commands={
-        '设置主角移动速度':'-Action speed',
-        '安装增强补丁':'-Action install','还原增强补丁':'-Action uninstall',
-        '安装字体增强':'-Action install','还原字体增强':'-Action uninstall',
-        '字体125':'-Action scale -Scale 125','字体150':'-Action scale -Scale 150',
-        '开启镜头跟随':'-Action camera -Follow 1','关闭镜头跟随':'-Action camera -Follow 0'}
-    for title,args in commands.items():
-        (FILES/(title+'.cmd')).write_bytes(('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0字体增强.ps1" '+args+' -GameRoot "%~dp0."\r\nif errorlevel 1 (pause & exit /b 1)\r\npause\r\n').encode('gbk'))
-    shutil.copy2(bp.HERE/'FontEnhancement/Files/选择字号.cmd',FILES/'选择字号.cmd')
+    csc=Path(os.environ['WINDIR'])/'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
+    source=bp.HERE/'EnhancementSettings.cs'
+    compiler=[str(csc),'/nologo','/target:winexe','/optimize+','/codepage:65001','/r:System.Windows.Forms.dll','/r:System.Drawing.dll']
+    settings_exe=FILES/'阿瓦登增强设置.exe'
+    subprocess.run(compiler+['/out:'+str(settings_exe),str(source)],check=True)
     previous13=read(ROOT/'v1.3_VALIDATION.json')
     assert bp.sha(ROOT/'阿瓦登_字体与镜头增强_1.3.zip')==previous13['archive_sha256']
     previous=read(ROOT/'v1.2_VALIDATION.json')
@@ -60,10 +57,18 @@ def main():
     assert bp.sha(previous_zip)==previous['archive_sha256']
     previous14=read(ROOT/'v1.4_VALIDATION.json')
     previous15=read(ROOT/'v1.5_VALIDATION.json')
-    manifest={'version':'enhancement-1.6','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
+    manifest={'version':'enhancement-1.7','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
               'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],previous14['dll_sha256'],previous15['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
     bp.write_json(FILES/'font-manifest.json',manifest)
-    (FILES/'增强补丁说明.txt').write_text('阿瓦登：黑色要塞 增强补丁 v1.6\n\n安装：退出游戏，将本包解压到 Avadon.exe 所在文件夹，双击“安装增强补丁.cmd”。\n升级：覆盖解压后运行同一个安装入口，保留当前字号与镜头设置。\n还原：双击“还原增强补丁.cmd”，恢复增强前的插件和设置，保留汉化。\n\n镜头：优先跟随1号角色，1号不在场时跟随2号。跟随目标停下后可用鼠标贴边浏览，再次行走时恢复跟随。\n双击“开启镜头跟随.cmd”或“关闭镜头跟随.cmd”切换功能，重新启动游戏生效。\n默认开启；菜单和敌方回合保持原游戏镜头行为。\n\n背包：按背包快捷键打开，再按同一个键关闭，自动沿用游戏内自定义按键及修饰键。关闭处理与Esc一致。\n\n字号：双击“选择字号.cmd”，按1选择125%，按2选择150%；也可使用“字体125.cmd”或“字体150.cmd”。\n退出游戏后切换，重新启动生效。初次安装默认150%，升级保留原设置。\n\n移动速度：退出游戏后双击“设置主角移动速度.cmd”，输入100到200之间的整数，重启生效。100为原速，200为两倍。\n\n适用版本：Steam Build 4252712 / Avadon v1.0s2，需要先安装子非鱼汉化。\n',encoding='utf-8-sig')
+    (FILES/'增强补丁说明.txt').write_text(
+        '阿瓦登：黑色要塞 增强补丁 v1.7\n\n'
+        '退出游戏，把补丁解压到 Avadon.exe 所在文件夹。双击“阿瓦登增强设置.exe”，'
+        '调整后点击“保存并应用”，再启动游戏。首次保存会安装增强补丁。\n\n'
+        '可调整字号、标签自动缩小、镜头跟随、背包快捷键开关和探索移动速度。'
+        '移动速度100%为原速，最高200%。\n'
+        '点击“还原增强补丁”可恢复增强前的设置。\n\n'
+        '适用版本：Steam Build 4252712 / Avadon v1.0s2，需要先安装子非鱼汉化。\n',
+        encoding='utf-8-sig')
     assert read(TESTS/'inventory_report.json')['status']=='passed'
     assert read(TESTS/'movement_report.json')['status']=='passed'
     cases=[]
@@ -87,7 +92,7 @@ def main():
         camera_before=camera_ini.read_bytes();run(game)
         assert bp.sha(game/'winmm.dll')==bp.sha(dll) and config(font_ini)['Font']['ScalePercent']=='125' and config(font_ini)['Font']['FitLabels']=='0' and camera_ini.read_bytes()==camera_before
         assert bp.sha(game/'.zfy-font-enhancement/winmm.dll')==baseline_hash;cases.append('font_v1_1_upgrade_preserves_original_backup_and_options')
-        before_dll=bp.sha(game/'winmm.dll');before_ini=font_ini.read_bytes();run(game,'scale',scale=110,ok=False);assert bp.sha(game/'winmm.dll')==before_dll and font_ini.read_bytes()==before_ini;cases.append('invalid_scale_no_write')
+        before_dll=bp.sha(game/'winmm.dll');before_ini=font_ini.read_bytes();run(game,'scale',scale=99,ok=False);assert bp.sha(game/'winmm.dll')==before_dll and font_ini.read_bytes()==before_ini;cases.append('invalid_scale_no_write')
         run(game,'camera',follow=1);run(game,'uninstall');assert bp.sha(game/'winmm.dll')==baseline_hash and not font_ini.exists() and camera_ini.read_bytes()==camera_before;cases.append('upgrade_uninstall_restores_pre_camera_config')
         old_files=Path(temp)/'old-v1.2';old_files.mkdir()
         with zipfile.ZipFile(previous_zip) as old:
@@ -121,11 +126,23 @@ def main():
         run(game,'speed',speed=137)
         assert config(camera_ini)['Movement']['SpeedPercent']=='137'
         run(game,'uninstall');cases.append('movement_speed_range_and_persistence')
+        for source_file in (FILES/'字体文件').iterdir():
+            target=game/'字体文件'/source_file.name
+            target.parent.mkdir(exist_ok=True)
+            shutil.copy2(source_file,target)
+        for name in ['字体增强.ps1','font-manifest.json']:
+            shutil.copy2(FILES/name,game/name)
+        test_exe=game/'设置组件校验.exe'
+        subprocess.run(compiler+['/define:SETTINGS_TEST','/out:'+str(test_exe),str(source)],check=True)
+        subprocess.run([str(test_exe),'--verify-save'],check=True,timeout=30)
+        assert bp.sha(game/'winmm.dll')==bp.sha(dll)
+        run(game,'uninstall');cases.append('winforms_backend_saves_all_fields_unicode_path')
+
         (game/'winmm.dll').write_bytes(b'unknown');run(game,ok=False);assert (game/'winmm.dll').read_bytes()==b'unknown';cases.append('unknown_plugin_no_write')
         shutil.copy2(baseline,game/'winmm.dll');(game/'Avadon.exe').write_bytes(b'wrong');run(game,ok=False);assert bp.sha(game/'winmm.dll')==baseline_hash;cases.append('wrong_game_no_write')
     inventory={p.relative_to(FILES).as_posix():bp.sha(p) for p in sorted(FILES.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt'}
     (FILES/'SHA256SUMS.txt').write_text(''.join(f'{digest}  {name}\n' for name,digest in inventory.items()),encoding='utf-8-sig')
-    archive=ROOT/'阿瓦登_增强补丁_1.6.zip'
+    archive=ROOT/'阿瓦登_增强补丁_1.7.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(FILES.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(FILES).as_posix())

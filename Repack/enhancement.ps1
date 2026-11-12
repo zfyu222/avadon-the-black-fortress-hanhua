@@ -1,11 +1,23 @@
 param(
-    [ValidateSet('install','uninstall','scale','camera','speed')][string]$Action='install',
-    [ValidateSet(0,125,150)][int]$Scale=0,
+    [ValidateSet('install','uninstall','scale','camera','speed','settings')][string]$Action='install',
+    [ValidateRange(0,200)][int]$Scale=0,
     [ValidateSet(-1,0,1)][int]$Follow=-1,
     [ValidateRange(100,200)][int]$Speed,
+    [ValidateSet(-1,0,1)][int]$Inventory=-1,
+    [ValidateSet(-1,0,1)][int]$FitLabels=-1,
     [string]$GameRoot=$PSScriptRoot
 )
 $ErrorActionPreference='Stop'
+if($env:AVADON_SETTINGS_UTF8 -eq '1') {
+    [Console]::OutputEncoding=New-Object System.Text.UTF8Encoding($false)
+}
+trap {
+    if($env:AVADON_SETTINGS_UTF8 -eq '1') {
+        [Console]::Error.WriteLine($_.Exception.Message)
+        exit 1
+    }
+    break
+}
 Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility.psd1" -ErrorAction Stop
 Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.psd1" -ErrorAction Stop
 function Hash([string]$p) { if(Test-Path -LiteralPath $p -PathType Leaf) { (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() } else { $null } }
@@ -24,7 +36,8 @@ public static class AvadonEnhancementIni {
     }
     if(![AvadonEnhancementIni]::WritePrivateProfileString($section,$key,[string]$value,$path)) { throw '设置保存失败。' }
 }
-if($Action -eq 'scale' -and $Scale -eq 0) { throw '请选择125%或150%。' }
+if($PSBoundParameters.ContainsKey('Scale') -and $Scale -lt 100) { throw '字号范围为100%到200%。' }
+if($Action -eq 'scale' -and $Scale -eq 0) { throw '请填写字号。' }
 if($Action -eq 'camera' -and $Follow -eq -1) { throw '请选择开启或关闭镜头跟随。' }
 $root=(Resolve-Path -LiteralPath $GameRoot).Path
 $exe=Join-Path $root 'Avadon.exe'
@@ -101,6 +114,8 @@ try {
     if($Scale -ne 0) { SetIni $font 'Font' 'ScalePercent' $Scale }
     if($Follow -ne -1) { SetIni $camera 'Camera' 'FollowCharacter' $Follow }
     if($Speed -ge 100) { SetIni $camera 'Movement' 'SpeedPercent' $Speed }
+    if($Inventory -ne -1) { SetIni $camera 'Inventory' 'ToggleHotkey' $Inventory }
+    if($FitLabels -ne -1) { SetIni $font 'Font' 'FitLabels' $FitLabels }
     $state.dll_installed=$manifest.files.'winmm.dll';$state.status='installed';Save $state
 } catch {
     foreach($record in $snapshots) {
