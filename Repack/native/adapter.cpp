@@ -18,7 +18,7 @@
 #pragma comment(lib,"user32.lib")
 #pragma comment(lib,"opengl32.lib")
 
-extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr;void* g_original_keyboard=nullptr;void* g_original_walk_vector=nullptr; }
+extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr;void* g_original_keyboard=nullptr;void* g_original_walk_vector=nullptr;void* g_original_world_labels=nullptr; }
 namespace {
 HMODULE module_handle=nullptr,real_winmm=nullptr;
 INIT_ONCE real_once=INIT_ONCE_STATIC_INIT,adapter_once=INIT_ONCE_STATIC_INIT;
@@ -27,6 +27,7 @@ std::wstring data_path;
 avzh::Dictionary dictionary;
 avzh::FontSettings font_settings;
 bool camera_enabled=false;
+bool interaction_markers_enabled=false;
 unsigned movement_percent=100;
 bool inventory_toggle_enabled=false;
 avzh::CameraFollow camera_follow;
@@ -141,6 +142,78 @@ extern "C" __declspec(naked) void WalkVectorEntry(){
         ret 8
     }
 }
+namespace {
+uint32_t screen_point(int x,int y) noexcept {
+    return (static_cast<uint32_t>(static_cast<uint16_t>(x))<<16)|static_cast<uint16_t>(y);
+}
+}
+
+extern "C" void __cdecl DrawInteractionMarkers() noexcept {
+    const short mode=at<short>(0x6bed48);
+    if(!interaction_markers_enabled || (mode!=10 && mode!=15) || at<short>(0x6bed4c)!=0 ||
+        at<unsigned char>(0x6bee3b)==0 || at<unsigned char>(0x6bee3a)!=0 ||
+        GetForegroundWindow()!=at<HWND>(0x6bed20))return;
+    const short layer=at<short>(0x73b90c);
+    if(layer<0 || layer>=2)return;
+
+    const int left=std::max(at<short>(0x6043ee),at<short>(0x6043fe));
+    const int top=std::max(at<short>(0x6043ec),at<short>(0x6043fc));
+    const int right=std::min(at<short>(0x6043f2),at<short>(0x604402));
+    const int bottom=std::min(at<short>(0x6043f0),at<short>(0x604400));
+    if(right-left<12 || bottom-top<14)return;
+    const uint32_t clip_start=screen_point(left,top),clip_end=screen_point(right,bottom);
+    using DrawRect=void(__cdecl*)(float,float,float,float,uint32_t,uint32_t,uint32_t,uint32_t);
+    using Visible=unsigned char(__cdecl*)(int,int,int,int,int);
+    auto draw=reinterpret_cast<DrawRect>(game_base+0x76c0);
+    auto visible=reinterpret_cast<Visible>(game_base+0xa900);
+    auto rect=[&](int x,int y,int width,int height,float red,float green,float blue){
+        draw(red,green,blue,1.0f,screen_point(x,y),screen_point(x+width,y+height),clip_start,clip_end);
+    };
+    std::array<bool,600> marked{};
+    for(int slot=0;slot<1200;++slot){
+        // Category 9 in the original world draw list is a scenery object.
+        const int entry=at<int>(0x6af7f8+4*slot);
+        if(entry<9000 || entry>=9600)continue;
+        const int id=entry-9000;
+        if(marked[id])continue;
+        const uintptr_t object=0x8b33f0+id*0x490;
+        if(at<short>(object+4)!=0 || at<short>(object+0x1c)!=layer)continue;
+        const int definition=at<short>(object+2);
+        constexpr int definition_limit=(0x73b5ec-0x714958)/0x58;
+        if(definition<0 || definition>=definition_limit)continue;
+        const int type=at<short>(0x714958+definition*0x58);
+        // Native cursor hit-testing accepts active scenery types 10 through 19.
+        if(type<10 || type>=20)continue;
+        const int tile_x=at<short>(object+0x14),tile_y=at<short>(object+0x18);
+        if(tile_x<0 || tile_x>=128 || tile_y<0 || tile_y>=128 ||
+            at<signed char>(0x661cc8+tile_x*128+tile_y)<=0)continue;
+        const int x0=at<short>(object+0x3a),y0=at<short>(object+0x38);
+        const int x1=at<short>(object+0x3e),y1=at<short>(object+0x3c);
+        if(x0>=x1 || y0>=y1 || x1<=left || x0>=right || y1<=top || y0>=bottom)continue;
+        if(!visible(1,at<int>(object+0x28),at<int>(object+0x2c),
+            at<int>(object+0x30),at<int>(object+0x34)))continue;
+        marked[id]=true;
+
+        const int x=std::clamp((x0+x1)/2-6,left,right-12);
+        const int y=std::clamp(y0+2,top,bottom-14);
+        rect(x,y,12,14,2,2,3);
+        rect(x+1,y+1,10,12,31,25,6);
+        rect(x+5,y+3,2,5,3,2,1);
+        rect(x+5,y+10,2,2,3,2,1);
+    }
+}
+
+extern "C" __declspec(naked) void WorldLabelsEntry(){
+    __asm {
+        pushfd
+        pushad
+        call DrawInteractionMarkers
+        popad
+        popfd
+        jmp dword ptr[g_original_world_labels]
+    }
+}
+
 extern "C" void __cdecl UpdateCamera() noexcept {
     if(!camera_enabled)return;
     avzh::CameraFrame frame;frame.mode=at<short>(0x6bed48);frame.layer=at<short>(0x73b90c);
@@ -278,6 +351,20 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
                 MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: character 1 or character 2 when absent; native idle edge scrolling");}
             else log("camera: signature or hook mismatch; camera enhancement disabled");
         }
+        const auto settings_path=data_path+L"\\camera.ini";
+        if(file_exists(settings_path) && GetPrivateProfileIntW(L"Interaction",L"HighlightOnShift",1,settings_path.c_str())!=0){
+            const unsigned char label_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x1c};
+            const unsigned char rect_bytes[]={0x55,0x8b,0xec,0x51,0x8b,0x55,0x18};
+            const unsigned char sight_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x08};
+            void* labels=reinterpret_cast<void*>(game_base+0x350c0);
+            if(memcmp(labels,label_bytes,sizeof(label_bytes))==0 &&
+                memcmp(reinterpret_cast<void*>(game_base+0x76c0),rect_bytes,sizeof(rect_bytes))==0 &&
+                memcmp(reinterpret_cast<void*>(game_base+0xa900),sight_bytes,sizeof(sight_bytes))==0 &&
+                MH_CreateHook(labels,reinterpret_cast<void*>(&WorldLabelsEntry),&g_original_world_labels)==MH_OK){
+                interaction_markers_enabled=true;
+                log("interaction markers: hold Shift");
+            }else log("interaction markers: signature or hook mismatch");
+        }
         const auto configured_speed=GetPrivateProfileIntW(L"Movement",L"SpeedPercent",100,(data_path+L"\\camera.ini").c_str());
         movement_percent=static_cast<unsigned>(std::clamp(static_cast<int>(configured_speed),100,200));
         if(movement_percent>100){
@@ -343,6 +430,12 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
 extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;inventory_toggle_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
 extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
+extern "C" void FixtureInteractionEnable(){
+    void* entry=reinterpret_cast<void*>(game_base+0x350c0);
+    if(MH_CreateHook(entry,reinterpret_cast<void*>(&WorldLabelsEntry),&g_original_world_labels)!=MH_OK ||
+        MH_EnableHook(entry)!=MH_OK)throw std::runtime_error("Fixture interaction hook failed");
+    interaction_markers_enabled=true;
+}
 extern "C" void FixtureMovementSpeed(unsigned percent){movement_percent=percent;}
 extern "C" void FixtureMovementEnable(){
     void* entry=reinterpret_cast<void*>(game_base+0x51390);

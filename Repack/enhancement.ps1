@@ -5,6 +5,7 @@ param(
     [ValidateRange(100,200)][int]$Speed,
     [ValidateSet(-1,0,1)][int]$Inventory=-1,
     [ValidateSet(-1,0,1)][int]$FitLabels=-1,
+    [ValidateSet(-1,0,1)][int]$Highlight=-1,
     [string]$GameRoot=$PSScriptRoot
 )
 $ErrorActionPreference='Stop'
@@ -115,6 +116,7 @@ try {
     if($Follow -ne -1) { SetIni $camera 'Camera' 'FollowCharacter' $Follow }
     if($Speed -ge 100) { SetIni $camera 'Movement' 'SpeedPercent' $Speed }
     if($Inventory -ne -1) { SetIni $camera 'Inventory' 'ToggleHotkey' $Inventory }
+    if($Highlight -ne -1) { SetIni $camera 'Interaction' 'HighlightOnShift' $Highlight }
     if($FitLabels -ne -1) { SetIni $font 'Font' 'FitLabels' $FitLabels }
     $state.dll_installed=$manifest.files.'winmm.dll';$state.status='installed';Save $state
 } catch {
