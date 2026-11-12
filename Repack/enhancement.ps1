@@ -23,7 +23,11 @@ Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Utility/Microsoft.PowerShell
 Import-Module "$PSHOME/Modules/Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.psd1" -ErrorAction Stop
 function Hash([string]$p) { if(Test-Path -LiteralPath $p -PathType Leaf) { (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() } else { $null } }
 function Save($value) { $value|ConvertTo-Json -Depth 8|Set-Content -LiteralPath $statePath -Encoding UTF8 }
-function Put($source,$target) { Copy-Item -LiteralPath $source -Destination $target -Force; if((Hash $source) -ne (Hash $target)) { throw '文件写入校验失败。' } }
+function Message($chinese, $english) {
+    if ($env:AVADON_SETTINGS_LANGUAGE -eq 'en') { return $english }
+    return $chinese
+}
+function Put($source,$target) { Copy-Item -LiteralPath $source -Destination $target -Force; if((Hash $source) -ne (Hash $target)) { throw (Message '文件写入校验失败。' 'File verification failed after writing.') } }
 function SetIni($path,$section,$key,$value) {
     if(!('AvadonEnhancementIni' -as [type])) {
         Add-Type -TypeDefinition @'
@@ -35,21 +39,21 @@ public static class AvadonEnhancementIni {
 }
 '@
     }
-    if(![AvadonEnhancementIni]::WritePrivateProfileString($section,$key,[string]$value,$path)) { throw '设置保存失败。' }
+    if(![AvadonEnhancementIni]::WritePrivateProfileString($section,$key,[string]$value,$path)) { throw (Message '设置保存失败。' 'Could not save the settings.') }
 }
-if($PSBoundParameters.ContainsKey('Scale') -and $Scale -lt 100) { throw '字号范围为100%到200%。' }
-if($Action -eq 'scale' -and $Scale -eq 0) { throw '请填写字号。' }
-if($Action -eq 'camera' -and $Follow -eq -1) { throw '请选择开启或关闭镜头跟随。' }
+if($PSBoundParameters.ContainsKey('Scale') -and $Scale -lt 100) { throw (Message '字号范围为100%到200%。' 'Font size must be between 100% and 200%.') }
+if($Action -eq 'scale' -and $Scale -eq 0) { throw (Message '请填写字号。' 'Enter a font size.') }
+if($Action -eq 'camera' -and $Follow -eq -1) { throw (Message '请选择开启或关闭镜头跟随。' 'Select whether the camera should follow the player.') }
 $root=(Resolve-Path -LiteralPath $GameRoot).Path
 $exe=Join-Path $root 'Avadon.exe'
-if(@(Get-Process -Name 'Avadon*' -ErrorAction SilentlyContinue|Where-Object { !$_.Path -or $_.Path -eq $exe }).Count) { throw '请先退出游戏，再安装或切换增强功能。' }
+if(@(Get-Process -Name 'Avadon*' -ErrorAction SilentlyContinue|Where-Object { !$_.Path -or $_.Path -eq $exe }).Count) { throw (Message '请先退出游戏，再安装或切换增强功能。' 'Close the game before applying or changing enhancements.') }
 if($Action -eq 'speed' -and !$PSBoundParameters.ContainsKey('Speed')) {
     $enteredSpeed=Read-Host '输入主角移动速度百分比（100 到 200，100 为原速）'
-    if($enteredSpeed -notmatch '^(1[0-9]{2}|200)$') { throw '请输入100到200之间的整数。' }
+    if($enteredSpeed -notmatch '^(1[0-9]{2}|200)$') { throw (Message '请输入100到200之间的整数。' 'Enter a whole number from 100 to 200.') }
     $Speed=[int]$enteredSpeed
 }
 $manifest=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'font-manifest.json') -Raw -Encoding UTF8|ConvertFrom-Json
-if((Hash $exe) -ne $manifest.exe_sha256) { throw '游戏版本不匹配。' }
+if((Hash $exe) -ne $manifest.exe_sha256) { throw (Message '游戏版本不匹配。' 'This game version is unsupported.') }
 $dll=Join-Path $root 'winmm.dll'
 $font=Join-Path $root 'AvadonChinese/font.ini'
 $camera=Join-Path $root 'AvadonChinese/camera.ini'
@@ -58,12 +62,12 @@ $statePath=Join-Path $backup 'state.json'
 $state=$null
 if(Test-Path -LiteralPath $statePath) { $state=Get-Content -LiteralPath $statePath -Raw -Encoding UTF8|ConvertFrom-Json }
 if($Action -eq 'uninstall') {
-    if(!$state) { throw '没有已安装的增强补丁。' }
-    if($state.status -eq 'uninstalled') { Write-Output '增强补丁已还原。'; exit 0 }
-    if((Hash $dll) -ne $state.dll_installed) { throw '显示插件已被修改，未覆盖。' }
-    if((Hash (Join-Path $backup 'winmm.dll')) -ne $state.dll_original) { throw '插件原件校验失败。' }
-    if($state.ini_existed -and (Hash (Join-Path $backup 'font.ini')) -ne $state.ini_original) { throw '字体设置原件校验失败。' }
-    if($state.camera_existed -and (Hash (Join-Path $backup 'camera.ini')) -ne $state.camera_original) { throw '镜头设置原件校验失败。' }
+    if(!$state) { throw (Message '没有已安装的增强补丁。' 'There is no enhancement patch to restore.') }
+    if($state.status -eq 'uninstalled') { Write-Output (Message '增强补丁已还原。' 'Enhancements have already been removed.'); exit 0 }
+    if((Hash $dll) -ne $state.dll_installed) { throw (Message '显示插件已被修改，未覆盖。' 'The installed display plugin was modified and could not be restored.') }
+    if((Hash (Join-Path $backup 'winmm.dll')) -ne $state.dll_original) { throw (Message '插件原件校验失败。' 'The original plugin backup failed verification.') }
+    if($state.ini_existed -and (Hash (Join-Path $backup 'font.ini')) -ne $state.ini_original) { throw (Message '字体设置原件校验失败。' 'The original font settings backup failed verification.') }
+    if($state.camera_existed -and (Hash (Join-Path $backup 'camera.ini')) -ne $state.camera_original) { throw (Message '镜头设置原件校验失败。' 'The original camera settings backup failed verification.') }
     Put (Join-Path $backup 'winmm.dll') $dll
     if($state.ini_existed) { Put (Join-Path $backup 'font.ini') $font }
     elseif(Test-Path -LiteralPath $font) { Remove-Item -LiteralPath $font -Force }
@@ -72,20 +76,20 @@ if($Action -eq 'uninstall') {
         elseif(Test-Path -LiteralPath $camera) { Remove-Item -LiteralPath $camera -Force }
     }
     $state.status='uninstalled';Save $state
-    Write-Output '已恢复增强前的插件与设置，汉化保留。';exit 0
+    Write-Output (Message '已恢复增强前的插件与设置，汉化保留。' 'The original plugin and settings were restored. The Chinese localization remains installed.');exit 0
 }
 foreach($item in $manifest.files.PSObject.Properties) {
-    if((Hash (Join-Path $PSScriptRoot ('字体文件/'+$item.Name))) -ne $item.Value) { throw '补丁文件校验失败。' }
+    if((Hash (Join-Path $PSScriptRoot ('字体文件/'+$item.Name))) -ne $item.Value) { throw (Message '补丁文件校验失败。' 'A patch file failed verification.') }
 }
-if((Hash (Join-Path $root 'AvadonChinese/translations.bin')) -ne $manifest.dictionary_sha256) { throw '请先安装本游戏对应的子非鱼汉化。' }
+if((Hash (Join-Path $root 'AvadonChinese/translations.bin')) -ne $manifest.dictionary_sha256) { throw (Message '请先安装本游戏对应的子非鱼汉化。' 'Install the matching Zifeiyu Chinese localization first.') }
 $current=Hash $dll
 $wasInstalled=$state -and $state.status -eq 'installed'
 if($wasInstalled) {
-    if($current -ne $state.dll_installed -or ($current -notin $manifest.supported_dll_sha256 -and $current -ne $manifest.files.'winmm.dll')) { throw '已安装插件不匹配，未覆盖。' }
-    if((Hash (Join-Path $backup 'winmm.dll')) -ne $state.dll_original) { throw '插件原件校验失败。' }
+    if($current -ne $state.dll_installed -or ($current -notin $manifest.supported_dll_sha256 -and $current -ne $manifest.files.'winmm.dll')) { throw (Message '已安装插件不匹配，未覆盖。' 'The installed plugin does not match the expected version.') }
+    if((Hash (Join-Path $backup 'winmm.dll')) -ne $state.dll_original) { throw (Message '插件原件校验失败。' 'The original plugin backup failed verification.') }
 } else {
-    if($state -and $state.status -notin @('uninstalled','rolled_back')) { throw '上次安装未完成，已保留原件。' }
-    if($current -notin $manifest.supported_dll_sha256) { throw '未识别的显示插件，未覆盖。' }
+    if($state -and $state.status -notin @('uninstalled','rolled_back')) { throw (Message '上次安装未完成，已保留原件。' 'The previous installation did not finish. Original files were retained.') }
+    if($current -notin $manifest.supported_dll_sha256) { throw (Message '未识别的显示插件，未覆盖。' 'The display plugin version is unrecognized.') }
     New-Item -ItemType Directory -Path $backup -Force|Out-Null
     Put $dll (Join-Path $backup 'winmm.dll')
     $state=[pscustomobject]@{status='backed_up';dll_original=$current;dll_installed=$manifest.files.'winmm.dll';ini_existed=(Test-Path -LiteralPath $font);ini_original=(Hash $font)}
@@ -128,4 +132,4 @@ try {
     else { $state.status='rolled_back';Save $state }
     throw
 }
-Write-Output '增强功能设置已保存，重新启动游戏生效。'
+Write-Output (Message '增强功能设置已保存，重新启动游戏生效。' 'Enhancement settings saved. Restart the game to apply them.')

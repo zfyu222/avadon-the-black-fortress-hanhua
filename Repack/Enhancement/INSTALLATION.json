@@ -1,9 +1,13 @@
 {
-  "status": "pending_game_exit",
-  "version": "enhancement-2.0",
+  "status": "installed",
+  "version": "enhancement-2.1",
   "dll_sha256": "41686c3c508906fccc7bd5bed0f1a786f945f693fbea80702c65a503541f79f5",
   "game_root": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Avadon The Black Fortress",
-  "upgrade_from_1_9_replay_passed": true,
+  "settings_exe_sha256": "1a18977abbb6cdd86b3089600c4ffa3347cb0223de35a4ce6b77464792f8f09a",
+  "configuration_preserved": {
+    "AvadonChinese/font.ini": "d122cc46ab8c9288d289b8c45ef0f0e35529c6336a674374bf2b216f45e757ee",
+    "AvadonChinese/camera.ini": "c43c794d3fa41568adf305eb3aa343d039ab50fd2583a77f9f6ceacec54db8df"
+  },
   "game_started": false,
   "in_game_verified": false
 }

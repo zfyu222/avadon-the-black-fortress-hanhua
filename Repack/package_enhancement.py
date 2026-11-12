@@ -60,15 +60,17 @@ def main():
     previous17=read(ROOT/'v1.7_VALIDATION.json')
     previous18=read(ROOT/'v1.8_VALIDATION.json')
     previous19=read(ROOT/'v1.9_VALIDATION.json')
-    manifest={'version':'enhancement-2.0','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
-              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],previous14['dll_sha256'],previous15['dll_sha256'],previous17['dll_sha256'],previous18['dll_sha256'],previous19['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
+    previous20=read(ROOT/'v2.0_VALIDATION.json')
+    manifest={'version':'enhancement-2.1','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
+              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],previous14['dll_sha256'],previous15['dll_sha256'],previous17['dll_sha256'],previous18['dll_sha256'],previous19['dll_sha256'],previous20['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
     bp.write_json(FILES/'font-manifest.json',manifest)
     (FILES/'增强补丁说明.txt').write_text(
-        '阿瓦登：黑色要塞 增强补丁 v2.0\n\n'
+        '阿瓦登：黑色要塞 增强补丁 v2.1\n\n'
         '退出游戏，把补丁解压到 Avadon.exe 所在文件夹。双击“阿瓦登增强设置.exe”，'
         '调整后点击“保存并应用”，再启动游戏。首次保存会安装增强补丁。\n\n'
         '可调整字号、标签自动缩小、镜头跟随、背包快捷键、探索移动速度和交互物标记。'
         '移动速度100%为原速，最高200%。按住 Shift 会标记当前画面内的可交互场景物体，包含角色视野外的物体。\n'
+        '设置界面默认跟随 Windows 显示语言，也可手动切换简体中文或 English。\n'
         '点击“还原增强补丁”可恢复增强前的设置。\n\n'
         '适用版本：Steam Build 4252712 / Avadon v1.0s2，需要先安装子非鱼汉化。\n',
         encoding='utf-8-sig')
@@ -138,6 +140,8 @@ def main():
             shutil.copy2(FILES/name,game/name)
         test_exe=game/'设置组件校验.exe'
         subprocess.run(compiler+['/define:SETTINGS_TEST','/out:'+str(test_exe),str(source)],check=True)
+        subprocess.run([str(test_exe),'--verify-language'],check=True,timeout=30)
+        cases.append('winforms_system_language_and_switch')
         subprocess.run([str(test_exe),'--verify-save'],check=True,timeout=30)
         assert bp.sha(game/'winmm.dll')==bp.sha(dll)
         run(game,'uninstall');cases.append('winforms_backend_saves_all_fields_unicode_path')
@@ -146,7 +150,7 @@ def main():
         shutil.copy2(baseline,game/'winmm.dll');(game/'Avadon.exe').write_bytes(b'wrong');run(game,ok=False);assert bp.sha(game/'winmm.dll')==baseline_hash;cases.append('wrong_game_no_write')
     inventory={p.relative_to(FILES).as_posix():bp.sha(p) for p in sorted(FILES.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt'}
     (FILES/'SHA256SUMS.txt').write_text(''.join(f'{digest}  {name}\n' for name,digest in inventory.items()),encoding='utf-8-sig')
-    archive=ROOT/'阿瓦登_增强补丁_2.0.zip'
+    archive=ROOT/'阿瓦登_增强补丁_2.1.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(FILES.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(FILES).as_posix())
