@@ -12,7 +12,7 @@
   "image_build": "ImagePatch/build-v9",
   "images": [],
   "native_sources": {
-    "adapter.cpp": "ca3427dcb283d51312033c182686d79420a5f537634148b8a39d132955628bd6",
+    "adapter.cpp": "244a2810df8070d6b769bb971eb6611533f7929ec9327d7406c055d6877ad38f",
     "camera_follow.hpp": "a05db0ae3ce04f8252de831db0033c5d654ac344a9f547c05cdd0657c0183fdb",
     "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
@@ -22,5 +22,5 @@
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "0d262daed8ee21b0b57de0ce339a46cb6d5c60b221e68ed2df96f190f242bd24"
+  "dll_sha256": "d03a84d54b444137a5cee35e7414e119cfd8b78b6fceb8919f9746c4e34bb154"
 }

@@ -1,10 +1,10 @@
 {
   "status": "passed",
   "supported_exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
-  "dll_sha256": "0d262daed8ee21b0b57de0ce339a46cb6d5c60b221e68ed2df96f190f242bd24",
-  "component_exe_sha256": "be7a59246373a2352f3e1d9a65c845c493e055d7bc74f140899463408a9f7d9c",
+  "dll_sha256": "d03a84d54b444137a5cee35e7414e119cfd8b78b6fceb8919f9746c4e34bb154",
+  "component_exe_sha256": "93cb9868d8f5e6cc6bdca589dba374cd2c5c67ad74fccba6e4e57a9119145d51",
   "native_sources": {
-    "adapter.cpp": "ca3427dcb283d51312033c182686d79420a5f537634148b8a39d132955628bd6",
+    "adapter.cpp": "244a2810df8070d6b769bb971eb6611533f7929ec9327d7406c055d6877ad38f",
     "camera_follow.hpp": "a05db0ae3ce04f8252de831db0033c5d654ac344a9f547c05cdd0657c0183fdb",
     "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
@@ -100,16 +100,16 @@
     "wrong_game_no_write"
   ],
   "files": {
-    "font-manifest.json": "6a258fc1ab4ac526f3e915cb69d5fa90dbcac952e2b077102d9e24aa82b37aca",
-    "增强补丁说明.txt": "7b0e32e83d54eff36311382f726088abf5dac84ca539bba875ccf8fa65074616",
+    "font-manifest.json": "0cbc3388a7d7806db2c1b18a501766fee48f1b40c2653bfb8af9f08941b7d995",
+    "增强补丁说明.txt": "8c70d89818bafaef27a5064a9e61e7e7427d93da661f4a817b0446168624dfa7",
     "字体增强.ps1": "0b0f69544ddbd9577b2dbbdb205ee9a92f743f24c25f3674649bebdafcd7ad66",
     "字体文件/camera.ini": "b07a006ea1cc7958387b612732c263f1e9aa35b484d3c6b532407bbef987a30e",
     "字体文件/font.ini": "004b45a200469d977417d3de6ff336862097b4f9600904d97e05f9c55dfc2bb5",
-    "字体文件/winmm.dll": "0d262daed8ee21b0b57de0ce339a46cb6d5c60b221e68ed2df96f190f242bd24",
-    "阿瓦登增强设置.exe": "5352533d24177938618d36aef5de2a7828010b84d7c21edd59a4aea09275a21a"
+    "字体文件/winmm.dll": "d03a84d54b444137a5cee35e7414e119cfd8b78b6fceb8919f9746c4e34bb154",
+    "阿瓦登增强设置.exe": "d2fa635611959da3fa664d05f59470dec6569985116266ef7963e852d1f0f96f"
   },
-  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_增强补丁_1.8.zip",
-  "archive_sha256": "a5614e88b0480ccfce45bdf22473a29b0ab76b3797e67a29af6dbe07bf6a409b",
+  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_增强补丁_1.9.zip",
+  "archive_sha256": "9323079911fb23695023c35a0854928989e7d41d31c6825c81569f0415c9be7b",
   "game_started": false,
   "in_game_verified": false,
   "installed": false

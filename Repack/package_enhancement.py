@@ -58,11 +58,12 @@ def main():
     previous14=read(ROOT/'v1.4_VALIDATION.json')
     previous15=read(ROOT/'v1.5_VALIDATION.json')
     previous17=read(ROOT/'v1.7_VALIDATION.json')
-    manifest={'version':'enhancement-1.8','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
-              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],previous14['dll_sha256'],previous15['dll_sha256'],previous17['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
+    previous18=read(ROOT/'v1.8_VALIDATION.json')
+    manifest={'version':'enhancement-1.9','exe_sha256':bp.SUPPORTED,'dictionary_sha256':build['dictionary']['dictionary_sha256'],
+              'supported_dll_sha256':sorted({baseline_hash,font_hash,previous['dll_sha256'],previous13['dll_sha256'],previous14['dll_sha256'],previous15['dll_sha256'],previous17['dll_sha256'],previous18['dll_sha256'],bp.sha(dll)}),'files':{n:bp.sha(FILES/'字体文件'/n) for n in ['winmm.dll','font.ini','camera.ini']}}
     bp.write_json(FILES/'font-manifest.json',manifest)
     (FILES/'增强补丁说明.txt').write_text(
-        '阿瓦登：黑色要塞 增强补丁 v1.8\n\n'
+        '阿瓦登：黑色要塞 增强补丁 v1.9\n\n'
         '退出游戏，把补丁解压到 Avadon.exe 所在文件夹。双击“阿瓦登增强设置.exe”，'
         '调整后点击“保存并应用”，再启动游戏。首次保存会安装增强补丁。\n\n'
         '可调整字号、标签自动缩小、镜头跟随、背包快捷键、探索移动速度和交互物标记。'
@@ -144,7 +145,7 @@ def main():
         shutil.copy2(baseline,game/'winmm.dll');(game/'Avadon.exe').write_bytes(b'wrong');run(game,ok=False);assert bp.sha(game/'winmm.dll')==baseline_hash;cases.append('wrong_game_no_write')
     inventory={p.relative_to(FILES).as_posix():bp.sha(p) for p in sorted(FILES.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt'}
     (FILES/'SHA256SUMS.txt').write_text(''.join(f'{digest}  {name}\n' for name,digest in inventory.items()),encoding='utf-8-sig')
-    archive=ROOT/'阿瓦登_增强补丁_1.8.zip'
+    archive=ROOT/'阿瓦登_增强补丁_1.9.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(FILES.rglob('*')):
             if p.is_file():z.write(p,p.relative_to(FILES).as_posix())

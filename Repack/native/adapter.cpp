@@ -160,7 +160,8 @@ extern "C" void __cdecl DrawInteractionMarkers() noexcept {
     const int top=std::max(at<short>(0x6043ec),at<short>(0x6043fc));
     const int right=std::min(at<short>(0x6043f2),at<short>(0x604402));
     const int bottom=std::min(at<short>(0x6043f0),at<short>(0x604400));
-    if(right-left<12 || bottom-top<14)return;
+    constexpr int marker_width=22,marker_height=28;
+    if(right-left<marker_width || bottom-top<marker_height)return;
     const uint32_t clip_start=screen_point(left,top),clip_end=screen_point(right,bottom);
     using DrawRect=void(__cdecl*)(float,float,float,float,uint32_t,uint32_t,uint32_t,uint32_t);
     using Visible=unsigned char(__cdecl*)(int,int,int,int,int);
@@ -194,12 +195,12 @@ extern "C" void __cdecl DrawInteractionMarkers() noexcept {
             at<int>(object+0x30),at<int>(object+0x34)))continue;
         marked[id]=true;
 
-        const int x=std::clamp((x0+x1)/2-6,left,right-12);
-        const int y=std::clamp(y0+2,top,bottom-14);
-        rect(x,y,12,14,2,2,3);
-        rect(x+1,y+1,10,12,31,25,6);
-        rect(x+5,y+3,2,5,3,2,1);
-        rect(x+5,y+10,2,2,3,2,1);
+        const int x=std::clamp((x0+x1)/2-marker_width/2,left,right-marker_width);
+        const int y=std::clamp(y0+2,top,bottom-marker_height);
+        rect(x,y,marker_width,marker_height,1,1,1);
+        rect(x+2,y+2,18,24,31,27,5);
+        rect(x+9,y+5,4,11,1,1,1);
+        rect(x+9,y+19,4,4,1,1,1);
     }
 }
 
