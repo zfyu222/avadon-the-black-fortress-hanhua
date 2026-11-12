@@ -18,7 +18,7 @@
 #pragma comment(lib,"user32.lib")
 #pragma comment(lib,"opengl32.lib")
 
-extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr;void* g_original_keyboard=nullptr; }
+extern "C" { FARPROC g_forwards[AVZH_FORWARD_COUNT]{};void* g_original_text=nullptr;void* g_original_measure=nullptr;void* g_original_camera=nullptr;void* g_original_keyboard=nullptr;void* g_original_walk_vector=nullptr; }
 namespace {
 HMODULE module_handle=nullptr,real_winmm=nullptr;
 INIT_ONCE real_once=INIT_ONCE_STATIC_INIT,adapter_once=INIT_ONCE_STATIC_INIT;
@@ -27,6 +27,7 @@ std::wstring data_path;
 avzh::Dictionary dictionary;
 avzh::FontSettings font_settings;
 bool camera_enabled=false;
+unsigned movement_percent=100;
 bool inventory_toggle_enabled=false;
 avzh::CameraFollow camera_follow;
 thread_local avzh::Renderer renderer;
@@ -83,6 +84,63 @@ extern "C" int __cdecl TryMeasure(const char* source) noexcept {
     if(!enabled)return -1;
     try{bool found=false;auto text=localized(source,found);if(!found)return -1;at<uintptr_t>(0x6bf328)=game_base+0x1c30b0;return std::min(32767,renderer.measure(text,font_settings.step(12)));}catch(...){return -1;}
 }
+static avzh::CameraActor read_party_actor(int index,int layer) noexcept {
+    const uintptr_t actor=0x742368+index*0x19ac;
+    avzh::CameraActor a;
+    a.x=at<int>(actor+0x20);a.y=at<int>(actor+0x24);a.motion=at<short>(actor+0x157a);
+    a.valid=at<short>(actor+0x30)==layer && at<short>(actor+2)>=0 &&
+        at<short>(actor+0x46c)>=0 && at<short>(actor+0x1e)==2 &&
+        a.x>=0 && a.y>=0 && a.x<=32768 && a.y<=32768;
+    return a;
+}
+
+extern "C" unsigned __cdecl ScaleWalkSpeed(unsigned input,uintptr_t position,uintptr_t caller) noexcept {
+    if(movement_percent<=100 || caller!=game_base+0x4160a ||
+        at<short>(0x6bed48)!=10 || at<short>(0x6bed4c)!=0 || at<unsigned char>(0x6bed47)!=0)return input;
+    const int layer=at<short>(0x73b90c);
+    const int actor=read_party_actor(0,layer).valid?0:1;
+    if(position!=game_base+0x342388+actor*0x19ac || !read_party_actor(actor,layer).valid)return input;
+    const int speed=static_cast<short>(input);
+    if(speed<=0)return input;
+    const unsigned scaled=std::min(32767u,(speed*movement_percent+50u)/100u);
+    return (input&0xffff0000u)|scaled;
+}
+
+// The native vector routine reads AX/ESI and returns with RET 8. Keep its
+// computed deltas and restore the nominal speed it saves for the next step.
+extern "C" __declspec(naked) void WalkVectorEntry(){
+    __asm {
+        push ebp
+        mov ebp,esp
+        push eax
+        pushfd
+        pushad
+        push dword ptr[ebp+4]
+        push esi
+        push eax
+        call ScaleWalkSpeed
+        add esp,12
+        mov dword ptr[esp+28],eax
+        popad
+        popfd
+        push eax
+        push dword ptr[ebp+12]
+        push dword ptr[ebp+8]
+        call dword ptr[g_original_walk_vector]
+        pushfd
+        push eax
+        mov eax,dword ptr[ebp-4]
+        cmp ax,word ptr[ebp-8]
+        je keep_nominal_speed
+        mov word ptr[esi+0x12],ax
+    keep_nominal_speed:
+        pop eax
+        popfd
+        mov esp,ebp
+        pop ebp
+        ret 8
+    }
+}
 extern "C" void __cdecl UpdateCamera() noexcept {
     if(!camera_enabled)return;
     avzh::CameraFrame frame;frame.mode=at<short>(0x6bed48);frame.layer=at<short>(0x73b90c);
@@ -94,11 +152,7 @@ extern "C" void __cdecl UpdateCamera() noexcept {
     frame.tick=at<uint32_t>(0x6beeb8);frame.preferred=at<short>(0x5cf394);
     if(frame.allowed){
         for(int i=0;i<2;++i){
-            const uintptr_t actor=0x742368+i*0x19ac;
-            auto& a=frame.actors[i];a.x=at<int>(actor+0x20);a.y=at<int>(actor+0x24);a.motion=at<short>(actor+0x157a);
-            a.valid=at<short>(actor+0x30)==frame.layer && at<short>(actor+2)>=0 &&
-                at<short>(actor+0x46c)>=0 && at<short>(actor+0x1e)==2 &&
-                a.x>=0 && a.y>=0 && a.x<=32768 && a.y<=32768;
+            frame.actors[i]=read_party_actor(i,frame.layer);
         }
     }
     auto target=camera_follow.update(frame);if(!target.follow)return;
@@ -224,6 +278,18 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
                 MH_CreateHook(camera_entry,reinterpret_cast<void*>(&CameraEntry),&g_original_camera)==MH_OK){camera_enabled=true;log("camera: character 1 or character 2 when absent; native idle edge scrolling");}
             else log("camera: signature or hook mismatch; camera enhancement disabled");
         }
+        const auto configured_speed=GetPrivateProfileIntW(L"Movement",L"SpeedPercent",100,(data_path+L"\\camera.ini").c_str());
+        movement_percent=static_cast<unsigned>(std::clamp(static_cast<int>(configured_speed),100,200));
+        if(movement_percent>100){
+            const unsigned char vector_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x08};
+            const unsigned char call_bytes[]={0x66,0x8b,0x43,0x32,0x8b,0xf7,0xe8,0x86,0xfd,0x00,0x00};
+            void* vector_entry=reinterpret_cast<void*>(game_base+0x51390);
+            if(memcmp(vector_entry,vector_bytes,sizeof(vector_bytes))==0 &&
+                memcmp(reinterpret_cast<void*>(game_base+0x415ff),call_bytes,sizeof(call_bytes))==0 &&
+                MH_CreateHook(vector_entry,reinterpret_cast<void*>(&WalkVectorEntry),&g_original_walk_vector)==MH_OK){
+                log("movement speed: "+std::to_string(movement_percent)+"%");
+            }else log("movement speed: signature or hook mismatch");
+        }
         const unsigned char keyboard_bytes[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c};
         const unsigned char matcher_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x78};
         void* keyboard_entry=reinterpret_cast<void*>(game_base+0x67370);
@@ -277,6 +343,12 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
 extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;inventory_toggle_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
 extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
+extern "C" void FixtureMovementSpeed(unsigned percent){movement_percent=percent;}
+extern "C" void FixtureMovementEnable(){
+    void* entry=reinterpret_cast<void*>(game_base+0x51390);
+    if(MH_CreateHook(entry,reinterpret_cast<void*>(&WalkVectorEntry),&g_original_walk_vector)!=MH_OK ||
+        MH_EnableHook(entry)!=MH_OK)throw std::runtime_error("Fixture movement hook failed");
+}
 extern "C" void FixtureCameraEnable(){
     camera_enabled=true;camera_follow.reset();
     if(MH_CreateHook(reinterpret_cast<void*>(game_base+0x32970),reinterpret_cast<void*>(&CameraEntry),&g_original_camera)!=MH_OK || MH_EnableHook(g_original_camera?reinterpret_cast<void*>(game_base+0x32970):nullptr)!=MH_OK)throw std::runtime_error("Fixture camera hook failed");

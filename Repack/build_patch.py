@@ -204,7 +204,7 @@ def build(compile_code=True, font_only=False):
     if sha(game) != SUPPORTED:
         raise ValueError('Unsupported Avadon executable')
     data = game.read_bytes()
-    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000'), (0x432970, '558bec83ec5c'), (0x467370, '558bec83e4f883ec0c'), (0x42d2f0, '558bec83ec78')]:
+    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000'), (0x432970, '558bec83ec5c'), (0x451390, '558bec83ec08'), (0x4415ff, '668b43328bf7e886fd0000'), (0x467370, '558bec83e4f883ec0c'), (0x42d2f0, '558bec83ec78')]:
         offset = pe_file_offset(data, address)
         if data[offset:offset+len(bytes.fromhex(expected))].hex() != expected:
             raise ValueError('REA hook bytes do not match the shipped file')

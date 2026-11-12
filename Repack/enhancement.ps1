@@ -1,7 +1,8 @@
 param(
-    [ValidateSet('install','uninstall','scale','camera')][string]$Action='install',
+    [ValidateSet('install','uninstall','scale','camera','speed')][string]$Action='install',
     [ValidateSet(0,125,150)][int]$Scale=0,
     [ValidateSet(-1,0,1)][int]$Follow=-1,
+    [ValidateRange(100,200)][int]$Speed,
     [string]$GameRoot=$PSScriptRoot
 )
 $ErrorActionPreference='Stop'
@@ -28,6 +29,11 @@ if($Action -eq 'camera' -and $Follow -eq -1) { throw '请选择开启或关闭�
 $root=(Resolve-Path -LiteralPath $GameRoot).Path
 $exe=Join-Path $root 'Avadon.exe'
 if(@(Get-Process -Name 'Avadon*' -ErrorAction SilentlyContinue|Where-Object { !$_.Path -or $_.Path -eq $exe }).Count) { throw '请先退出游戏，再安装或切换增强功能。' }
+if($Action -eq 'speed' -and !$PSBoundParameters.ContainsKey('Speed')) {
+    $enteredSpeed=Read-Host '输入主角移动速度百分比（100 到 200，100 为原速）'
+    if($enteredSpeed -notmatch '^(1[0-9]{2}|200)$') { throw '请输入100到200之间的整数。' }
+    $Speed=[int]$enteredSpeed
+}
 $manifest=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'font-manifest.json') -Raw -Encoding UTF8|ConvertFrom-Json
 if((Hash $exe) -ne $manifest.exe_sha256) { throw '游戏版本不匹配。' }
 $dll=Join-Path $root 'winmm.dll'
@@ -94,6 +100,7 @@ try {
     if(!(Test-Path -LiteralPath $camera)) { Put (Join-Path $PSScriptRoot '字体文件/camera.ini') $camera }
     if($Scale -ne 0) { SetIni $font 'Font' 'ScalePercent' $Scale }
     if($Follow -ne -1) { SetIni $camera 'Camera' 'FollowCharacter' $Follow }
+    if($Speed -ge 100) { SetIni $camera 'Movement' 'SpeedPercent' $Speed }
     $state.dll_installed=$manifest.files.'winmm.dll';$state.status='installed';Save $state
 } catch {
     foreach($record in $snapshots) {

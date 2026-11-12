@@ -16,10 +16,24 @@ extern "C" void FixtureFinish();
 extern "C" bool FixtureNameExpansion();
 extern "C" void FixtureFontScale(int);
 extern "C" void FixtureCameraEnable();
+extern "C" void FixtureMovementSpeed(unsigned);
+extern "C" void FixtureMovementEnable();
 extern "C" void FixtureInventoryEnable();
 extern "C" void FixtureKeyModifiers(int);
 static void require(bool test,const char* reason){if(!test)throw std::runtime_error(reason);}
 
+static void call_walk(void* entry,void* position){
+    int before_stack=0,after_stack=0;
+    __asm {
+        mov before_stack,esp
+        mov esi,position
+        movzx eax,word ptr[esi+0x12]
+        mov edx,entry
+        call edx
+        mov after_stack,esp
+    }
+    require(before_stack==after_stack,"Walking hook did not preserve RET 8 cleanup");
+}
 static int call_text(void* entry,const char* text,unsigned alignment){
     unsigned before=0,after=0,saved_bx=0,saved_si=0,saved_di=0;int value=0;
     __asm {
@@ -240,6 +254,32 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x6bed4c)=0x27;native_short(0x7438e2)=2;native_int(0x742388)+=8;call_text(memory+0x32970,"",0);require(native_int(0xeb84b8)==9000,"Menu hook overwrote view");
         std::ofstream camera_report((output+L"\\camera_report.json").c_str(),std::ios::binary);
         camera_report<<"{\"status\":\"passed\",\"character_1_priority\":true,\"companions_excluded_while_primary_present\":true,\"selection_does_not_change_target\":true,\"absent_primary_falls_back_to_character_2\":true,\"companion_combat_turn_excluded\":true,\"walking_reacquires\":true,\"idle_preserves_native_pan\":true,\"stopped_releases\":true,\"simulation_gap_grace\":true,\"modal_and_floor_reset\":true,\"enemy_turn_excluded\":true,\"teleport_excluded\":true,\"stalled_path_releases\":true,\"world_projection_and_bounds\":true,\"x86_camera_hook_trampoline_and_registers\":true,\"native_memory_integration\":true,\"game_started\":false,\"in_game_verified\":false}\n";
+        // Synthetic native vector stores AX as nominal speed and X step.
+        const unsigned char vector_code[]={0x55,0x8b,0xec,0x83,0xec,0x08,0x66,0x89,0x46,0x12,0x66,0x89,0x46,0x14,0x8b,0xe5,0x5d,0xc2,0x08,0x00};
+        const unsigned char walk_call[]={0x6a,0,0x6a,0,0xe8,0x86,0xfd,0,0,0xc3};
+        memcpy(memory+0x51390,vector_code,sizeof(vector_code));
+        memcpy(memory+0x41601,walk_call,sizeof(walk_call));
+        FixtureMovementEnable();
+        auto walk=[&](uintptr_t actor){
+            auto position=memory+actor-0x400000+0x20;
+            auto entry=memory+0x41601;
+            call_walk(entry,position);
+            return native_short(actor+0x34);
+        };
+        constexpr uintptr_t hero=0x742368,second=hero+0x19ac;
+        native_short(0x6bed48)=10;native_short(0x6bed4c)=0;
+        native_short(hero+0x32)=24;native_short(second+0x32)=24;
+        native_short(second+0x1e)=2;
+        FixtureMovementSpeed(100);require(walk(hero)==24,"100 percent changed native speed");
+        FixtureMovementSpeed(137);require(walk(hero)==33,"Custom percent was not applied");
+        FixtureMovementSpeed(200);require(walk(hero)==48 && walk(hero)==48 && native_short(hero+0x32)==24,"200 percent compounded the nominal speed");
+        require(walk(second)==24,"Companion was accelerated with hero present");
+        native_short(hero+0x1e)=0;
+        require(walk(second)==48,"Second character did not receive speed while hero absent");
+        native_short(0x6bed48)=15;require(walk(second)==24,"Combat was accelerated");
+        native_short(0x6bed48)=10;native_short(0x6bed4c)=10;require(walk(second)==24,"Menu movement was accelerated");
+        std::ofstream speed_report((output+L"\\movement_report.json").c_str(),std::ios::binary);
+        speed_report<<"{\"status\":\"passed\",\"percentages\":[100,137,200],\"no_compounding\":true,\"leader_fallback\":true,\"combat_and_menu_excluded\":true,\"ret8_cleanup\":true,\"in_game_verified\":false}\n";
         const unsigned char keyboard_code[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c,0x8b,0x45,0x08,0x8b,0xe5,0x5d,0xc3};
         memcpy(memory+0x67370,keyboard_code,sizeof(keyboard_code));FixtureInventoryEnable();
         auto key_event=[&](int key){return call_text(memory+0x67370,reinterpret_cast<const char*>(key),0);};
