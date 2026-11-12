@@ -1,1 +1,1 @@
-{"status":"passed","shift_hold_release":true,"native_labels_trampoline":true,"deduplication":true,"native_type_and_visibility_filters":true,"inactive_hidden_occluded_and_offscreen_excluded":true,"in_game_verified":false}
+{"status":"passed","shift_hold_release":true,"native_labels_trampoline":true,"native_interactive_type_filter":true,"inactive_and_offscreen_excluded":true,"on_screen_outside_party_sight_and_draw_list_marked":true,"in_game_verified":false}

@@ -282,7 +282,7 @@ int wmain(int argc,wchar_t** argv){
         std::ofstream speed_report((output+L"\\movement_report.json").c_str(),std::ios::binary);
         speed_report<<"{\"status\":\"passed\",\"percentages\":[100,137,200],\"no_compounding\":true,\"leader_fallback\":true,\"combat_and_menu_excluded\":true,\"ret8_cleanup\":true,\"in_game_verified\":false}\n";
         const unsigned char labels_code[]={0x55,0x8b,0xec,0x83,0xec,0x1c,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};
-        const unsigned char sight_code[]={0xb8,1,0,0,0,0xc3};
+        const unsigned char sight_code[]={0x31,0xc0,0xc3};
         unsigned char rectangle_code[]={0xb8,0,0,0,0,0xff,0x00,0xc3};
         int rectangles=0;
         const auto counter=reinterpret_cast<uintptr_t>(&rectangles);
@@ -294,7 +294,7 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x6bed48)=10;native_short(0x6bed4c)=0;
         native_short(0x6043ec)=0;native_short(0x6043ee)=0;native_short(0x6043f0)=160;native_short(0x6043f2)=320;
         native_short(0x6043fc)=0;native_short(0x6043fe)=0;native_short(0x604400)=160;native_short(0x604402)=320;
-        native_int(0x6af7f8)=9000;native_int(0x6af7fc)=9000;
+        native_int(0x6af7f8)=9000;
         native_short(0x8b33f2)=1;native_short(0x714958+0x58)=10;
         native_short(0x8b3428)=40;native_short(0x8b342a)=50;native_short(0x8b342c)=80;native_short(0x8b342e)=90;
         auto& shift=memory[0x6bee3b-0x400000];
@@ -310,16 +310,16 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x714958+0x58)=9;require(draw_labels()==0,"Decoration marked");
         native_short(0x714958+0x58)=19;require(draw_labels()==4,"Last interactive type omitted");
         native_short(0x8b33f4)=1;require(draw_labels()==0,"Inactive object marked");
-        native_short(0x8b33f4)=0;tile_visible=0;require(draw_labels()==0,"Unseen object marked");
-        tile_visible=1;memory[0xa901]=0;require(draw_labels()==0,"Occluded object marked");
-        memory[0xa901]=1;native_short(0x8b340c)=1;require(draw_labels()==0,"Other layer marked");
+        native_short(0x8b33f4)=0;tile_visible=0;native_int(0x6af7f8)=-1;
+        require(draw_labels()==4,"On-screen object outside party sight and absent from the draw list was omitted");
+        native_short(0x8b340c)=1;require(draw_labels()==0,"Other layer marked");
         native_short(0x8b340c)=0;native_short(0x8b342a)=340;native_short(0x8b342e)=360;
         require(draw_labels()==0,"Off-screen object marked");
         native_short(0x8b342a)=50;native_short(0x8b342e)=90;
         native_short(0x6bed4c)=10;require(draw_labels()==0,"Inventory overlay marked");
         native_short(0x6bed4c)=0;shift=0;require(draw_labels()==0,"Marker did not disappear on release");
         std::ofstream interaction_report((output+L"\\interaction_report.json").c_str(),std::ios::binary);
-        interaction_report<<"{\"status\":\"passed\",\"shift_hold_release\":true,\"native_labels_trampoline\":true,\"deduplication\":true,\"native_type_and_visibility_filters\":true,\"inactive_hidden_occluded_and_offscreen_excluded\":true,\"in_game_verified\":false}\n";
+        interaction_report<<"{\"status\":\"passed\",\"shift_hold_release\":true,\"native_labels_trampoline\":true,\"native_interactive_type_filter\":true,\"inactive_and_offscreen_excluded\":true,\"on_screen_outside_party_sight_and_draw_list_marked\":true,\"in_game_verified\":false}\n";
         const unsigned char keyboard_code[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c,0x8b,0x45,0x08,0x8b,0xe5,0x5d,0xc3};
         memcpy(memory+0x67370,keyboard_code,sizeof(keyboard_code));FixtureInventoryEnable();
         auto key_event=[&](int key){return call_text(memory+0x67370,reinterpret_cast<const char*>(key),0);};

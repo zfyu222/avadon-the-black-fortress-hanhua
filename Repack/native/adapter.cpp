@@ -164,19 +164,12 @@ extern "C" void __cdecl DrawInteractionMarkers() noexcept {
     if(right-left<marker_width || bottom-top<marker_height)return;
     const uint32_t clip_start=screen_point(left,top),clip_end=screen_point(right,bottom);
     using DrawRect=void(__cdecl*)(float,float,float,float,uint32_t,uint32_t,uint32_t,uint32_t);
-    using Visible=unsigned char(__cdecl*)(int,int,int,int,int);
     auto draw=reinterpret_cast<DrawRect>(game_base+0x76c0);
-    auto visible=reinterpret_cast<Visible>(game_base+0xa900);
     auto rect=[&](int x,int y,int width,int height,float red,float green,float blue){
         draw(red,green,blue,1.0f,screen_point(x,y),screen_point(x+width,y+height),clip_start,clip_end);
     };
-    std::array<bool,600> marked{};
-    for(int slot=0;slot<1200;++slot){
-        // Category 9 in the original world draw list is a scenery object.
-        const int entry=at<int>(0x6af7f8+4*slot);
-        if(entry<9000 || entry>=9600)continue;
-        const int id=entry-9000;
-        if(marked[id])continue;
+    // The engine projects all scenery on this layer before filtering its draw list by sight.
+    for(int id=0;id<600;++id){
         const uintptr_t object=0x8b33f0+id*0x490;
         if(at<short>(object+4)!=0 || at<short>(object+0x1c)!=layer)continue;
         const int definition=at<short>(object+2);
@@ -186,14 +179,10 @@ extern "C" void __cdecl DrawInteractionMarkers() noexcept {
         // Native cursor hit-testing accepts active scenery types 10 through 19.
         if(type<10 || type>=20)continue;
         const int tile_x=at<short>(object+0x14),tile_y=at<short>(object+0x18);
-        if(tile_x<0 || tile_x>=128 || tile_y<0 || tile_y>=128 ||
-            at<signed char>(0x661cc8+tile_x*128+tile_y)<=0)continue;
+        if(tile_x<0 || tile_x>=128 || tile_y<0 || tile_y>=128)continue;
         const int x0=at<short>(object+0x3a),y0=at<short>(object+0x38);
         const int x1=at<short>(object+0x3e),y1=at<short>(object+0x3c);
         if(x0>=x1 || y0>=y1 || x1<=left || x0>=right || y1<=top || y0>=bottom)continue;
-        if(!visible(1,at<int>(object+0x28),at<int>(object+0x2c),
-            at<int>(object+0x30),at<int>(object+0x34)))continue;
-        marked[id]=true;
 
         const int x=std::clamp((x0+x1)/2-marker_width/2,left,right-marker_width);
         const int y=std::clamp(y0+2,top,bottom-marker_height);
