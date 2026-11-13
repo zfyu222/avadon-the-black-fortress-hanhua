@@ -12,15 +12,15 @@
   "image_build": "ImagePatch/build-v9",
   "images": [],
   "native_sources": {
-    "adapter.cpp": "5d25f3d21ed2ac404d896269f76923c8dcc118647de7821435854f53a6430dad",
+    "adapter.cpp": "819646fd9e88d52933fa4360bb2a53416f8d7015c1ee79d1ba147724b577d02c",
     "camera_follow.hpp": "a05db0ae3ce04f8252de831db0033c5d654ac344a9f547c05cdd0657c0183fdb",
     "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
-    "self_test.cpp": "2dc0d5db66642f1a8f1ceff2d1751ab738ba7e258281236d861defd3819a2026"
+    "self_test.cpp": "ab149e0dc03bd61ae63aeb1e9e853d7760ca08c9b711853c590e7a301a4e5ff1"
   },
   "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
   "game_started": false,
   "in_game_verified": false,
   "installed": false,
-  "dll_sha256": "41686c3c508906fccc7bd5bed0f1a786f945f693fbea80702c65a503541f79f5"
+  "dll_sha256": "d05df3f24613ef3a8ad4eaf70944ea391ebde7759f00900d219e1ab8e98c0a01"
 }

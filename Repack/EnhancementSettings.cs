@@ -203,7 +203,7 @@ internal static class EnhancementSettings
             instruction.Text = TextFor("退出游戏后保存，下次启动游戏时生效。", "Close the game before saving. Changes apply on the next launch.");
             languageLabel.Text = TextFor("界面语言", "Display language");
             fontLabel.Text = TextFor("字体大小（%）", "Font size (%)");
-            speedLabel.Text = TextFor("主角探索移动速度（%）", "Player movement speed outside combat (%)");
+            speedLabel.Text = TextFor("队伍探索移动速度（%）", "Party movement speed outside combat (%)");
             fitLabels.Text = TextFor("长标签自动缩小字号", "Shrink long labels to fit");
             follow.Text = TextFor("镜头跟随角色", "Follow the player with the camera");
             inventory.Text = TextFor("再按一次背包快捷键关闭背包", "Press the inventory shortcut again to close it");

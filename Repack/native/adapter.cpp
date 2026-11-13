@@ -85,8 +85,11 @@ extern "C" int __cdecl TryMeasure(const char* source) noexcept {
     if(!enabled)return -1;
     try{bool found=false;auto text=localized(source,found);if(!found)return -1;at<uintptr_t>(0x6bf328)=game_base+0x1c30b0;return std::min(32767,renderer.measure(text,font_settings.step(12)));}catch(...){return -1;}
 }
+constexpr uintptr_t party_base=0x742368,party_stride=0x19ac;
+constexpr int party_slots=8;
+
 static avzh::CameraActor read_party_actor(int index,int layer) noexcept {
-    const uintptr_t actor=0x742368+index*0x19ac;
+    const uintptr_t actor=party_base+index*party_stride;
     avzh::CameraActor a;
     a.x=at<int>(actor+0x20);a.y=at<int>(actor+0x24);a.motion=at<short>(actor+0x157a);
     a.valid=at<short>(actor+0x30)==layer && at<short>(actor+2)>=0 &&
@@ -98,9 +101,12 @@ static avzh::CameraActor read_party_actor(int index,int layer) noexcept {
 extern "C" unsigned __cdecl ScaleWalkSpeed(unsigned input,uintptr_t position,uintptr_t caller) noexcept {
     if(movement_percent<=100 || caller!=game_base+0x4160a ||
         at<short>(0x6bed48)!=10 || at<short>(0x6bed4c)!=0 || at<unsigned char>(0x6bed47)!=0)return input;
-    const int layer=at<short>(0x73b90c);
-    const int actor=read_party_actor(0,layer).valid?0:1;
-    if(position!=game_base+0x342388+actor*0x19ac || !read_party_actor(actor,layer).valid)return input;
+    const uintptr_t first_position=game_base+party_base-0x400000+0x20;
+    if(position<first_position)return input;
+    const uintptr_t offset=position-first_position;
+    if(offset>=party_slots*party_stride || offset%party_stride!=0)return input;
+    const int actor=static_cast<int>(offset/party_stride);
+    if(!read_party_actor(actor,at<short>(0x73b90c)).valid)return input;
     const int speed=static_cast<short>(input);
     if(speed<=0)return input;
     const unsigned scaled=std::min(32767u,(speed*movement_percent+50u)/100u);

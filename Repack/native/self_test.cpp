@@ -274,13 +274,26 @@ int wmain(int argc,wchar_t** argv){
         FixtureMovementSpeed(100);require(walk(hero)==24,"100 percent changed native speed");
         FixtureMovementSpeed(137);require(walk(hero)==33,"Custom percent was not applied");
         FixtureMovementSpeed(200);require(walk(hero)==48 && walk(hero)==48 && native_short(hero+0x32)==24,"200 percent compounded the nominal speed");
-        require(walk(second)==24,"Companion was accelerated with hero present");
+        require(walk(second)==48 && walk(second)==48 && native_short(second+0x32)==24,
+            "Companion did not get the same multiplier or its speed compounded");
+        constexpr uintptr_t last=hero+7*0x19ac,npc=last+0x19ac;
+        for(uintptr_t actor:{last,npc}){
+            native_short(actor+0x1e)=2;
+            native_short(actor+0x32)=20;
+        }
+        require(walk(last)==40,"Last party slot was not accelerated");
+        require(walk(npc)==20,"Actor outside party slots was accelerated");
+        native_short(last+0x30)=1;
+        require(walk(last)==20,"Companion on another layer was accelerated");
+        native_short(last+0x30)=0;
+        native_short(last+0x1e)=0;
+        require(walk(last)==20,"Absent companion was accelerated");
         native_short(hero+0x1e)=0;
         require(walk(second)==48,"Second character did not receive speed while hero absent");
         native_short(0x6bed48)=15;require(walk(second)==24,"Combat was accelerated");
         native_short(0x6bed48)=10;native_short(0x6bed4c)=10;require(walk(second)==24,"Menu movement was accelerated");
         std::ofstream speed_report((output+L"\\movement_report.json").c_str(),std::ios::binary);
-        speed_report<<"{\"status\":\"passed\",\"percentages\":[100,137,200],\"no_compounding\":true,\"leader_fallback\":true,\"combat_and_menu_excluded\":true,\"ret8_cleanup\":true,\"in_game_verified\":false}\n";
+        speed_report<<"{\"status\":\"passed\",\"percentages\":[100,137,200],\"no_compounding\":true,\"all_active_party_slots_scaled\":true,\"non_party_and_absent_actors_excluded\":true,\"combat_and_menu_excluded\":true,\"ret8_cleanup\":true,\"in_game_verified\":false}\n";
         const unsigned char labels_code[]={0x55,0x8b,0xec,0x83,0xec,0x1c,0xb8,42,0,0,0,0x8b,0xe5,0x5d,0xc3};
         const unsigned char sight_code[]={0x31,0xc0,0xc3};
         unsigned char rectangle_code[]={0xb8,0,0,0,0,0xff,0x00,0xc3};

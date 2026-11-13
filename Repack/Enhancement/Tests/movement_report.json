@@ -1,1 +1,1 @@
-{"status":"passed","percentages":[100,137,200],"no_compounding":true,"leader_fallback":true,"combat_and_menu_excluded":true,"ret8_cleanup":true,"in_game_verified":false}
+{"status":"passed","percentages":[100,137,200],"no_compounding":true,"all_active_party_slots_scaled":true,"non_party_and_absent_actors_excluded":true,"combat_and_menu_excluded":true,"ret8_cleanup":true,"in_game_verified":false}
