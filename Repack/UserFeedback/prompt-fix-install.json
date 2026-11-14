@@ -1,0 +1,10 @@
+{
+  "status": "installed",
+  "dictionary_sha256": "0bb54ca000122a15fa26fbe93b83f8adc7db7c11be0caf688705cb0c8440adc9",
+  "previous_dictionary_sha256": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c",
+  "dictionary_keys": 21863,
+  "enhancement_manifest_verified": true,
+  "exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
+  "dll_sha256": "d05df3f24613ef3a8ad4eaf70944ea391ebde7759f00900d219e1ab8e98c0a01",
+  "in_game_verified": false
+}
