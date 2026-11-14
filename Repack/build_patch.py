@@ -106,6 +106,21 @@ def dictionary():
                 collisions.append({'row': index, 'kind': kind, 'key_hex': key.hex(), 'previous': origins[key], 'action': 'variant_omitted'})
                 continue
             add(key, value, index, kind)
+    # The game joins these ability names and targeting prompts before display.
+    # Full strings observed in AvadonChinese/unmatched.txt on 2026-11-14.
+    targeting_prompts = (
+        (621, 'Healing Touch', 15681, ': Select friendly character (or hit Escape to cancel).'),
+        (660, 'Savage Blow', 15679, ': Select target (or hit Escape to cancel).'),
+        (661, 'Disarming Blow', 15679, ': Select target (or hit Escape to cancel).'),
+    )
+    for ability_row, ability, prompt_row, prompt in targeting_prompts:
+        if originals[ability_row - 1] != ability or originals[prompt_row - 1] != prompt:
+            raise ValueError('Targeting prompt source rows changed')
+        ability_key, prompt_key = ability.encode('cp1252'), prompt.encode('cp1252')
+        key = ability_key + prompt_key
+        if key not in entries:
+            value = (entries[ability_key] + entries[prompt_key]).decode('utf-8')
+            add(key, value, ability_row, 'observed_targeting_prompt')
     path = PAYLOAD / 'AvadonChinese/translations.bin'
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('wb') as out:
