@@ -121,6 +121,28 @@ def dictionary():
         if key not in entries:
             value = (entries[ability_key] + entries[prompt_key]).decode('utf-8')
             add(key, value, ability_row, 'observed_targeting_prompt')
+    # Codex titles occupy the first slot of each ten-entry block.
+    # Both notification forms are assembled before the display lookup.
+    codex_source = PROJECT / 'Game/Avadon Files/Scripts/textcodex.txt'
+    codex_titles = [
+        title for number, title in re.findall(r'^\s*(\d+)\s*=\s*"([^"\r\n]*)";',
+                                             codex_source.read_text(encoding='cp1252'), re.M)
+        if int(number) % 10 == 0 and title
+    ]
+    prefix = b'This book is about '
+    suffixes = (
+        b'. This entry has been added to your codex (which can be read in the Journal).',
+        b'. This entry is already in your codex.',
+    )
+    if not codex_titles or len(set(codex_titles)) != len(codex_titles):
+        raise ValueError('Unexpected codex title table')
+    for title in codex_titles:
+        title_key = title.encode('cp1252')
+        for suffix in suffixes:
+            key = prefix + title_key + suffix
+            if key not in entries:
+                value = (entries[prefix].rstrip() + entries[title_key] + entries[suffix]).decode('utf-8')
+                add(key, value, origins[title_key]['row'], 'codex_book_notification')
     path = PAYLOAD / 'AvadonChinese/translations.bin'
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('wb') as out:
