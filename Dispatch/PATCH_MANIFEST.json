@@ -1,6 +1,6 @@
 {
-  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.5.zip",
-  "created": "2026-10-29",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.6.zip",
+  "created": "2026-11-15",
   "files": [
     {
       "path": "Avadon Files/Graphics Core/G128.png",
@@ -125,8 +125,8 @@
     {
       "path": "AvadonChinese/translations.bin",
       "archive_path": "汉化文件/AvadonChinese/translations.bin",
-      "sha256": "51b61bd3bf001ad1c082802322f99b1ab833af0a60125ea1aa8210de5284a25c",
-      "size": 5030957
+      "sha256": "0bb54ca000122a15fa26fbe93b83f8adc7db7c11be0caf688705cb0c8440adc9",
+      "size": 5040871
     },
     {
       "path": "winmm.dll",
@@ -153,8 +153,8 @@
     },
     {
       "path": "汉化工具/config.json",
-      "sha256": "4ad63985b0e8c1a5900a54385550f6b83276322545b5b3861dd8fc71323d3cb9",
-      "size": 9004
+      "sha256": "ba9b57400cadd276d3e7a698e3c6035f9f9132c1321cdb9a58b74c8aac540ab3",
+      "size": 9152
     }
   ],
   "install_mode": "script"

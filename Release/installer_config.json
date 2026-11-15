@@ -236,6 +236,10 @@
     {
       "path": "Avadon Files/Graphics Core/G233.png",
       "sha256": "8f132eaacff02480a89e1e7f8b916d60318f6cd6796042305f251e52a282abcf"
+    },
+    {
+      "path": "AvadonChinese/translations.bin",
+      "sha256": "0bb54ca000122a15fa26fbe93b83f8adc7db7c11be0caf688705cb0c8440adc9"
     }
   ]
 }

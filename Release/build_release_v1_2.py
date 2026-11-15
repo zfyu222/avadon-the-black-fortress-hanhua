@@ -7,6 +7,9 @@ VERSION='1.2'
 INSTALLATION_PATH=P/'Repack/INSTALLATION.json'
 RELEASE_DATE='2026-10-27'
 PAYLOAD_BASELINE='v1.1'
+VERIFY_PAYLOAD=P/'Repack/Payload'
+VERIFY_UPGRADE_ARCHIVE=None
+ACCEPTANCE_VERSION='1.5'
 CHANGES='新增安装、升级和卸载脚本；简化补丁说明，加入网盘下载和腾讯文档反馈地址。汉化内容与v1.1一致。'
 ARCHIVE=P/f'Dispatch/阿瓦登：黑色要塞_子非鱼汉化{VERSION}.zip'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -44,9 +47,9 @@ def verify():
         if VERSION!='1.2':assert guide.index('下载地址:')<guide.index('安装汉化')
         if VERSION not in ('1.2','1.3'):
             assert '\n运行情况\r' not in guide and '本补丁使用 AI 辅助翻译，请适当降低预期。' in guide
-        assert all(term not in guide for term in ['备份','拷贝','未决','未验证','代理','用户对','SHA-256','11 个','请先停止'])
+        assert all(term not in guide for term in ['备份','拷贝','未决','未验证','代理操作','用户对','SHA-256','11 个','请先停止'])
         assert 'v1.0' in guide and 'v1.1' in guide and 'v1.2' in guide
-        links=load(P/'Release/player_links.json');assert all(v in guide for v in links.values())
+        links=load(P/'Release/player_links.json');assert all(v in guide for k,v in links.items() if k!='share_name')
         assert guide.index(links['mirror_url'])<guide.index('请订阅github地址或者网盘地址，以便在补丁更新时获得通知')<guide.index('有问题请反馈至【腾讯文档】Avadon问题反馈')
         with tempfile.TemporaryDirectory(prefix='avadon-v12-install-') as t:
             root=Path(t);z.extractall(root)
@@ -65,9 +68,17 @@ def verify():
             action('install');action('uninstall')
             assert all(sha(root/n)==h for n,h in original.items())
             assert all(not (root/n).exists() for n in expected if n not in original)
+            if VERIFY_UPGRADE_ARCHIVE:
+                with zipfile.ZipFile(VERIFY_UPGRADE_ARCHIVE) as previous:
+                    previous.extractall(root)
+                action('install')
+                z.extractall(root)
+                action('install');assert all(sha(root/n)==h for n,h in expected.items())
+                action('uninstall');assert all(sha(root/n)==h for n,h in original.items())
+                assert all(not (root/n).exists() for n in expected if n not in original)
             # Existing v1.1 package without installer state: upgrade then use Steam recovery.
             for name,h in expected.items():
-                target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(P/'Repack/Payload'/name,target)
+                target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(VERIFY_PAYLOAD/name,target)
             action('install');result=action('uninstall');assert b'STEAM_RESTORE=True' in result
             assert all(not (root/n).exists() for n in expected if n not in original)
             assert sha(root/'Avadon.exe')==old.sha(P/'Game/Avadon.exe')
@@ -79,8 +90,8 @@ def verify():
     write(P/'Dispatch/RELEASE_VALIDATION.json',dict(status='passed',version=VERSION,archive=ARCHIVE.name,sha256=sha(ARCHIVE),
         tested_game_payload_files=22,payload_unchanged_from=PAYLOAD_BASELINE,auxiliary_files=4,archive_files=29,zip_crc=True,all_hashes=True,
         actual_windows_powershell_install_repeat_upgrade_uninstall=True,legacy_upgrade_steam_recovery_requested=True,
-        steam_recovery_network_not_executed_in_test=True,installer_synthetic_regressions=6,exe_unchanged=True,game_started=False,
-        in_game_validation=('pending' if PAYLOAD_BASELINE is None else 'historical'), original_game_test_evidence=('Repack/ReleaseAcceptance/v1.5.json' if PAYLOAD_BASELINE is None else 'Repack/UserTests/confirmation_v1.1_20261026.json')))
+        steam_recovery_network_not_executed_in_test=True,upgrade_from_previous_archive=bool(VERIFY_UPGRADE_ARCHIVE),exe_unchanged=True,game_started=False,
+        in_game_validation=('pending' if PAYLOAD_BASELINE is None else 'historical'), original_game_test_evidence=(f'Repack/ReleaseAcceptance/v{ACCEPTANCE_VERSION}.json' if PAYLOAD_BASELINE is None else 'Repack/UserTests/confirmation_v1.1_20261026.json')))
     print(json.dumps({'status':'passed','archive':str(ARCHIVE),'sha256':sha(ARCHIVE)},ensure_ascii=False))
 if __name__=='__main__':
     if len(sys.argv)>1 and sys.argv[1]=='verify':verify()
