@@ -27,7 +27,7 @@ std::wstring data_path;
 avzh::Dictionary dictionary;
 avzh::FontSettings font_settings;
 bool camera_enabled=false;
-bool interaction_markers_enabled=false;
+unsigned interaction_marker_mode=0;
 unsigned movement_percent=100;
 bool inventory_toggle_enabled=false;
 avzh::CameraFollow camera_follow;
@@ -156,8 +156,8 @@ uint32_t screen_point(int x,int y) noexcept {
 
 extern "C" void __cdecl DrawInteractionMarkers() noexcept {
     const short mode=at<short>(0x6bed48);
-    if(!interaction_markers_enabled || (mode!=10 && mode!=15) || at<short>(0x6bed4c)!=0 ||
-        at<unsigned char>(0x6bee3b)==0 || at<unsigned char>(0x6bee3a)!=0 ||
+    if(interaction_marker_mode==0 || (mode!=10 && mode!=15) || at<short>(0x6bed4c)!=0 ||
+        (interaction_marker_mode==1 && at<unsigned char>(0x6bee3b)==0) || at<unsigned char>(0x6bee3a)!=0 ||
         GetForegroundWindow()!=at<HWND>(0x6bed20))return;
     const short layer=at<short>(0x73b90c);
     if(layer<0 || layer>=2)return;
@@ -348,7 +348,8 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
             else log("camera: signature or hook mismatch; camera enhancement disabled");
         }
         const auto settings_path=data_path+L"\\camera.ini";
-        if(file_exists(settings_path) && GetPrivateProfileIntW(L"Interaction",L"HighlightOnShift",1,settings_path.c_str())!=0){
+        const auto marker_mode=GetPrivateProfileIntW(L"Interaction",L"HighlightOnShift",2,settings_path.c_str());
+        if(file_exists(settings_path) && (marker_mode==1 || marker_mode==2)){
             const unsigned char label_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x1c};
             const unsigned char rect_bytes[]={0x55,0x8b,0xec,0x51,0x8b,0x55,0x18};
             const unsigned char sight_bytes[]={0x55,0x8b,0xec,0x83,0xec,0x08};
@@ -357,8 +358,8 @@ BOOL CALLBACK initialize_adapter(PINIT_ONCE,void*,void**) noexcept {
                 memcmp(reinterpret_cast<void*>(game_base+0x76c0),rect_bytes,sizeof(rect_bytes))==0 &&
                 memcmp(reinterpret_cast<void*>(game_base+0xa900),sight_bytes,sizeof(sight_bytes))==0 &&
                 MH_CreateHook(labels,reinterpret_cast<void*>(&WorldLabelsEntry),&g_original_world_labels)==MH_OK){
-                interaction_markers_enabled=true;
-                log("interaction markers: hold Shift");
+                interaction_marker_mode=marker_mode;
+                log(marker_mode==2?"interaction markers: always":"interaction markers: hold Shift");
             }else log("interaction markers: signature or hook mismatch");
         }
         const auto configured_speed=GetPrivateProfileIntW(L"Movement",L"SpeedPercent",100,(data_path+L"\\camera.ini").c_str());
@@ -426,11 +427,12 @@ extern "C" void FixtureInitialize(void* memory,const wchar_t* dictionary_path,co
 extern "C" void FixtureFinish(){enabled=false;camera_enabled=false;inventory_toggle_enabled=false;camera_follow.reset();MH_DisableHook(MH_ALL_HOOKS);MH_Uninitialize();}
 extern "C" bool FixtureNameExpansion(){bool found=false;auto text=localized("You are [N]?",found);return found && text.find(L"TestHero")!=std::wstring::npos && text.find(L"[N]")==std::wstring::npos;}
 extern "C" void FixtureFontScale(int percent){font_settings.percent=percent;}
+extern "C" void FixtureInteractionMode(unsigned mode){interaction_marker_mode=mode;}
 extern "C" void FixtureInteractionEnable(){
     void* entry=reinterpret_cast<void*>(game_base+0x350c0);
     if(MH_CreateHook(entry,reinterpret_cast<void*>(&WorldLabelsEntry),&g_original_world_labels)!=MH_OK ||
         MH_EnableHook(entry)!=MH_OK)throw std::runtime_error("Fixture interaction hook failed");
-    interaction_markers_enabled=true;
+    interaction_marker_mode=1;
 }
 extern "C" void FixtureMovementSpeed(unsigned percent){movement_percent=percent;}
 extern "C" void FixtureMovementEnable(){

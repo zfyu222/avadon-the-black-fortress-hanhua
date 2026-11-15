@@ -1,18 +1,19 @@
 {
   "status": "passed",
   "supported_exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
-  "dll_sha256": "d05df3f24613ef3a8ad4eaf70944ea391ebde7759f00900d219e1ab8e98c0a01",
-  "component_exe_sha256": "35727a0e4797b160b24a0cf54fab849649b1da54e9ef8ad5fa3dd747436c8d7c",
+  "dll_sha256": "2b90e09760f2a43feb626890344850bfc3065ac85da243ade5a3755214a52265",
+  "component_exe_sha256": "5dfad78c86b2724cb23484cdd46c28ea4caecc0325a20e1f76eb9b1a2e012f33",
   "native_sources": {
-    "adapter.cpp": "819646fd9e88d52933fa4360bb2a53416f8d7015c1ee79d1ba147724b577d02c",
+    "adapter.cpp": "01d72bd36e5a92015fd8efce49f9fd4629af6f4940b02a6b4ada8d010f31a4c8",
     "camera_follow.hpp": "a05db0ae3ce04f8252de831db0033c5d654ac344a9f547c05cdd0657c0183fdb",
     "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
     "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
-    "self_test.cpp": "ab149e0dc03bd61ae63aeb1e9e853d7760ca08c9b711853c590e7a301a4e5ff1"
+    "self_test.cpp": "e61ceb153a91c3dbf652824e749afbf94fbe569e148e2697d639b03684a4a1ea"
   },
   "interaction_report": {
     "status": "passed",
     "shift_hold_release": true,
+    "always_and_disabled_modes": true,
     "native_labels_trampoline": true,
     "native_interactive_type_filter": true,
     "inactive_and_offscreen_excluded": true,
@@ -102,16 +103,16 @@
     "wrong_game_no_write"
   ],
   "files": {
-    "font-manifest.json": "ea5b0fb938103690c77a43d5e5b9a55a70e6ded03d48c4c5353a293eee156e26",
-    "增强补丁说明.txt": "7014e6c58c172cfbef71dc5afd60c1b8686351c36fad427d9e80617d19e9161b",
-    "字体增强.ps1": "1cc5adddb004c2ee9fc8bb07ae2d97e868e0f6744844a7a7fcbeb0a4c14fbc56",
-    "字体文件/camera.ini": "b07a006ea1cc7958387b612732c263f1e9aa35b484d3c6b532407bbef987a30e",
+    "font-manifest.json": "8165e66d02f76bc2eaf1119f6a43e300fab27547428f1a42ba9ec1444f120488",
+    "增强补丁说明.txt": "a8b58d81bc9c2c70b4e87fb7f37abb603ea301ff011a3759d935d22f0dfab2af",
+    "字体增强.ps1": "7088ab8bce9e3b9d2cbf65fd72606067953931403cb22edae76d8c70aafe9be2",
+    "字体文件/camera.ini": "a47171e5c68927aa38941d518cd96b7e098af414ee1d7bd65b2e89e640e9c5b5",
     "字体文件/font.ini": "004b45a200469d977417d3de6ff336862097b4f9600904d97e05f9c55dfc2bb5",
-    "字体文件/winmm.dll": "d05df3f24613ef3a8ad4eaf70944ea391ebde7759f00900d219e1ab8e98c0a01",
-    "阿瓦登增强设置.exe": "1d0cdbacf917e3167be65d7aa146e55a150003134fc7b5a48f2e9823c9185ee0"
+    "字体文件/winmm.dll": "2b90e09760f2a43feb626890344850bfc3065ac85da243ade5a3755214a52265",
+    "阿瓦登增强设置.exe": "28c4a29872c5ddadfe23e0e571ae924bc78030005aed2f642632bd6385f21947"
   },
-  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_增强补丁_2.2.zip",
-  "archive_sha256": "4beb088f624daf9c7f60c02f8884173bd1df4f612c896c2958545026ae2a180e",
+  "archive": "D:\\StaticHanHua\\Projects\\avadon-the-black-fortress\\Repack\\Enhancement\\阿瓦登_增强补丁_2.3.zip",
+  "archive_sha256": "b6bd79d84890f325adc2bcee4da7d81ea79b6641cbb6fc679beb144ca2b134f4",
   "game_started": false,
   "in_game_verified": false,
   "installed": false

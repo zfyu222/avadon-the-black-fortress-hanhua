@@ -20,6 +20,7 @@ extern "C" void FixtureMovementSpeed(unsigned);
 extern "C" void FixtureMovementEnable();
 extern "C" void FixtureInventoryEnable();
 extern "C" void FixtureInteractionEnable();
+extern "C" void FixtureInteractionMode(unsigned);
 extern "C" void FixtureKeyModifiers(int);
 static void require(bool test,const char* reason){if(!test)throw std::runtime_error(reason);}
 
@@ -319,6 +320,9 @@ int wmain(int argc,wchar_t** argv){
             return rectangles;
         };
         require(draw_labels()==0,"Marker shown with Shift released");
+        FixtureInteractionMode(2);require(draw_labels()==4,"Always mode requires Shift");
+        FixtureInteractionMode(0);shift=1;require(draw_labels()==0,"Disabled mode draws markers");
+        FixtureInteractionMode(1);
         shift=1;require(draw_labels()==4,"Interactive object did not receive exactly one marker");
         native_short(0x714958+0x58)=9;require(draw_labels()==0,"Decoration marked");
         native_short(0x714958+0x58)=19;require(draw_labels()==4,"Last interactive type omitted");
@@ -332,7 +336,7 @@ int wmain(int argc,wchar_t** argv){
         native_short(0x6bed4c)=10;require(draw_labels()==0,"Inventory overlay marked");
         native_short(0x6bed4c)=0;shift=0;require(draw_labels()==0,"Marker did not disappear on release");
         std::ofstream interaction_report((output+L"\\interaction_report.json").c_str(),std::ios::binary);
-        interaction_report<<"{\"status\":\"passed\",\"shift_hold_release\":true,\"native_labels_trampoline\":true,\"native_interactive_type_filter\":true,\"inactive_and_offscreen_excluded\":true,\"on_screen_outside_party_sight_and_draw_list_marked\":true,\"in_game_verified\":false}\n";
+        interaction_report<<"{\"status\":\"passed\",\"shift_hold_release\":true,\"always_and_disabled_modes\":true,\"native_labels_trampoline\":true,\"native_interactive_type_filter\":true,\"inactive_and_offscreen_excluded\":true,\"on_screen_outside_party_sight_and_draw_list_marked\":true,\"in_game_verified\":false}\n";
         const unsigned char keyboard_code[]={0x55,0x8b,0xec,0x83,0xe4,0xf8,0x83,0xec,0x0c,0x8b,0x45,0x08,0x8b,0xe5,0x5d,0xc3};
         memcpy(memory+0x67370,keyboard_code,sizeof(keyboard_code));FixtureInventoryEnable();
         auto key_event=[&](int key){return call_text(memory+0x67370,reinterpret_cast<const char*>(key),0);};

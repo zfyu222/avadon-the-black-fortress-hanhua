@@ -5,7 +5,7 @@ param(
     [ValidateRange(100,200)][int]$Speed,
     [ValidateSet(-1,0,1)][int]$Inventory=-1,
     [ValidateSet(-1,0,1)][int]$FitLabels=-1,
-    [ValidateSet(-1,0,1)][int]$Highlight=-1,
+    [ValidateSet(-1,0,1,2)][int]$Highlight=-1,
     [string]$GameRoot=$PSScriptRoot
 )
 $ErrorActionPreference='Stop'
@@ -81,7 +81,7 @@ if($Action -eq 'uninstall') {
 foreach($item in $manifest.files.PSObject.Properties) {
     if((Hash (Join-Path $PSScriptRoot ('字体文件/'+$item.Name))) -ne $item.Value) { throw (Message '补丁文件校验失败。' 'A patch file failed verification.') }
 }
-if((Hash (Join-Path $root 'AvadonChinese/translations.bin')) -ne $manifest.dictionary_sha256) { throw (Message '请先安装本游戏对应的子非鱼汉化。' 'Install the matching Zifeiyu Chinese localization first.') }
+if((Hash (Join-Path $root 'AvadonChinese/translations.bin')) -notin $manifest.supported_dictionary_sha256) { throw (Message '请先安装本游戏对应的子非鱼汉化。' 'Install the matching Zifeiyu Chinese localization first.') }
 $current=Hash $dll
 $wasInstalled=$state -and $state.status -eq 'installed'
 if($wasInstalled) {

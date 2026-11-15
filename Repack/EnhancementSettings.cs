@@ -112,7 +112,8 @@ internal static class EnhancementSettings
         private readonly CheckBox follow = new CheckBox { AutoSize = true };
         private readonly CheckBox inventory = new CheckBox { AutoSize = true };
         private readonly CheckBox fitLabels = new CheckBox { AutoSize = true };
-        private readonly CheckBox highlight = new CheckBox { AutoSize = true };
+        private readonly Label highlightLabel = new Label { AutoSize = true, Anchor = AnchorStyles.Left };
+        private readonly ComboBox highlight = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 120 };
         private readonly Label status = new Label { AutoSize = true, MaximumSize = new Size(475, 0) };
         private readonly Button save = new Button { AutoSize = true };
         private readonly Button restore = new Button { AutoSize = true };
@@ -153,7 +154,7 @@ internal static class EnhancementSettings
             AddFull(fitLabels, 5);
             AddFull(follow, 6);
             AddFull(inventory, 7);
-            AddFull(highlight, 8);
+            AddField(highlightLabel, highlight, 8);
             AddFull(status, 9);
             language.Items.AddRange(new object[] { "System / 系统", "简体中文", "English" });
             language.SelectedIndex = preference;
@@ -180,7 +181,7 @@ internal static class EnhancementSettings
             LoadSettings();
             save.Click += async (sender, e) => await Apply(
                 String.Format("-Action settings -Scale {0} -Speed {1} -Follow {2} -Inventory {3} -FitLabels {4} -Highlight {5}",
-                    (int)fontScale.Value, (int)movement.Value, Flag(follow), Flag(inventory), Flag(fitLabels), Flag(highlight)), false);
+                    (int)fontScale.Value, (int)movement.Value, Flag(follow), Flag(inventory), Flag(fitLabels), highlight.SelectedIndex), false);
             restore.Click += async (sender, e) =>
             {
                 if (MessageBox.Show(this, TextFor("还原会移除增强功能并恢复安装前的设置。要继续吗？",
@@ -207,7 +208,13 @@ internal static class EnhancementSettings
             fitLabels.Text = TextFor("长标签自动缩小字号", "Shrink long labels to fit");
             follow.Text = TextFor("镜头跟随角色", "Follow the player with the camera");
             inventory.Text = TextFor("再按一次背包快捷键关闭背包", "Press the inventory shortcut again to close it");
-            highlight.Text = TextFor("按住 Shift 标记画面内可交互物", "Hold Shift to mark on-screen interactable objects");
+            highlightLabel.Text = TextFor("可交互物标记", "Interactable object markers");
+            int markerMode = Math.Max(0, highlight.SelectedIndex);
+            highlight.Items.Clear();
+            highlight.Items.AddRange(new object[] {
+                TextFor("关闭", "Off"), TextFor("按住 Shift", "Hold Shift"), TextFor("始终显示", "Always show")
+            });
+            highlight.SelectedIndex = markerMode;
             save.Text = TextFor("保存并应用", "Save and Apply");
             restore.Text = TextFor("还原增强补丁", "Restore Original Settings");
         }
@@ -245,7 +252,8 @@ internal static class EnhancementSettings
             movement.Value = Percent(ReadSetting("camera.ini", "Movement", "SpeedPercent", 100));
             fitLabels.Checked = ReadSetting("font.ini", "Font", "FitLabels", 1) != 0;
             follow.Checked = ReadSetting("camera.ini", "Camera", "FollowCharacter", 1) != 0;
-            highlight.Checked = ReadSetting("camera.ini", "Interaction", "HighlightOnShift", 1) != 0;
+            int markerMode = ReadSetting("camera.ini", "Interaction", "HighlightOnShift", 2);
+            highlight.SelectedIndex = markerMode >= 0 && markerMode <= 2 ? markerMode : 0;
             inventory.Checked = ReadSetting("camera.ini", "Inventory", "ToggleHotkey", 1) != 0;
         }
 
