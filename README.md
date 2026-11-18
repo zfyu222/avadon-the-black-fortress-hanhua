@@ -299,3 +299,7 @@ REA + Ghidra 核对了原生 Shift 状态、命中类型 10–19、场景绘制�
 ### 汉化补丁 v1.6
 
 补译 26 个百科主题的两种读书提示及三条施法提示。适用 Steam Build 4252712 / Avadon v1.0s2，载荷与 v1.5 的差异仅为词典。ZIP 校验及隔离目录中的安装、v1.5 升级和卸载回放通过，证据见 `Dispatch/RELEASE_VALIDATION.json`。复用已有发布封面。
+
+### 体验优化补丁 v2.3 对外发布（2026-11-18）
+
+作为独立附件加入 [汉化 v1.5 的 GitHub Release](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.5)。适用 Steam Windows Build 4252712 / Avadon v1.0s2 与匹配的子非鱼汉化。载荷包含设置工具、安装脚本、增强 DLL、默认配置及校验清单。以 v1.5 公开 ZIP 的 DLL 和词典回放安装、重复安装、卸载，验证卸载恢复原汉化 DLL，游戏 EXE 和词典哈希一致。公开下载已核验 SHA-256 为 b6bd79d84890f325adc2bcee4da7d81ea79b6641cbb6fc679beb144ca2b134f4。此次验证未启动游戏。
