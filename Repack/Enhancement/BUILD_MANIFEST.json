@@ -1,0 +1,26 @@
+{
+  "status": "built_not_installed",
+  "supported_exe_sha256": "d3d897e0b0608aad52f22e09d9b2174653b5903e6de9b1cc8e396ebc3c72d44e",
+  "dictionary": {
+    "records": 15928,
+    "keys": 21863,
+    "source_sha256": "f3c99d2b389528373bc9dbc8f55a13bf132e5f167b0dad86ae34e35e231bb991",
+    "translation_sha256": "bf8cb69da9e6f327b9f8a8c9c4e75dcc0168fbf9cdb052241d97f50749a7f6b7",
+    "dictionary_sha256": "0bb54ca000122a15fa26fbe93b83f8adc7db7c11be0caf688705cb0c8440adc9",
+    "original_game_data_modified": false
+  },
+  "image_build": "ImagePatch/build-v9",
+  "images": [],
+  "native_sources": {
+    "adapter.cpp": "01d72bd36e5a92015fd8efce49f9fd4629af6f4940b02a6b4ada8d010f31a4c8",
+    "camera_follow.hpp": "a05db0ae3ce04f8252de831db0033c5d654ac344a9f547c05cdd0657c0183fdb",
+    "localization_core.hpp": "fb3a531f6ca793ba90e460ec6e156e26ad170e88137d8e5b4fb0e42ee6674d2f",
+    "renderer.hpp": "418b8a985e095550768f468432dacad6e636630c2b510c65e8f0d9536e17d4ae",
+    "self_test.cpp": "e61ceb153a91c3dbf652824e749afbf94fbe569e148e2697d639b03684a4a1ea"
+  },
+  "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
+  "game_started": false,
+  "in_game_verified": false,
+  "installed": false,
+  "dll_sha256": "2b90e09760f2a43feb626890344850bfc3065ac85da243ade5a3755214a52265"
+}

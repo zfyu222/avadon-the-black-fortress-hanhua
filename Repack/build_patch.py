@@ -106,6 +106,43 @@ def dictionary():
                 collisions.append({'row': index, 'kind': kind, 'key_hex': key.hex(), 'previous': origins[key], 'action': 'variant_omitted'})
                 continue
             add(key, value, index, kind)
+    # The game joins these ability names and targeting prompts before display.
+    # Full strings observed in AvadonChinese/unmatched.txt on 2026-11-14.
+    targeting_prompts = (
+        (621, 'Healing Touch', 15681, ': Select friendly character (or hit Escape to cancel).'),
+        (660, 'Savage Blow', 15679, ': Select target (or hit Escape to cancel).'),
+        (661, 'Disarming Blow', 15679, ': Select target (or hit Escape to cancel).'),
+    )
+    for ability_row, ability, prompt_row, prompt in targeting_prompts:
+        if originals[ability_row - 1] != ability or originals[prompt_row - 1] != prompt:
+            raise ValueError('Targeting prompt source rows changed')
+        ability_key, prompt_key = ability.encode('cp1252'), prompt.encode('cp1252')
+        key = ability_key + prompt_key
+        if key not in entries:
+            value = (entries[ability_key] + entries[prompt_key]).decode('utf-8')
+            add(key, value, ability_row, 'observed_targeting_prompt')
+    # Codex titles occupy the first slot of each ten-entry block.
+    # Both notification forms are assembled before the display lookup.
+    codex_source = PROJECT / 'Game/Avadon Files/Scripts/textcodex.txt'
+    codex_titles = [
+        title for number, title in re.findall(r'^\s*(\d+)\s*=\s*"([^"\r\n]*)";',
+                                             codex_source.read_text(encoding='cp1252'), re.M)
+        if int(number) % 10 == 0 and title
+    ]
+    prefix = b'This book is about '
+    suffixes = (
+        b'. This entry has been added to your codex (which can be read in the Journal).',
+        b'. This entry is already in your codex.',
+    )
+    if not codex_titles or len(set(codex_titles)) != len(codex_titles):
+        raise ValueError('Unexpected codex title table')
+    for title in codex_titles:
+        title_key = title.encode('cp1252')
+        for suffix in suffixes:
+            key = prefix + title_key + suffix
+            if key not in entries:
+                value = (entries[prefix].rstrip() + entries[title_key] + entries[suffix]).decode('utf-8')
+                add(key, value, origins[title_key]['row'], 'codex_book_notification')
     path = PAYLOAD / 'AvadonChinese/translations.bin'
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('wb') as out:
@@ -198,21 +235,21 @@ def image_payload():
             results.append({'path': target_relative.as_posix(), 'sha256': sha(destination), 'original_source': origin['path'], 'original_sha256': origin['file_sha256']})
     return results
 
-def build(compile_code=True):
+def build(compile_code=True, font_only=False):
     BUILD.mkdir(parents=True, exist_ok=True);PAYLOAD.mkdir(parents=True, exist_ok=True)
     game = PROJECT / 'Game/Avadon.exe'
     if sha(game) != SUPPORTED:
         raise ValueError('Unsupported Avadon executable')
     data = game.read_bytes()
-    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000')]:
+    for address, expected in [(0x46e080, '558bec81ec40080000'), (0x46df00, '558bec81ec14040000'), (0x432970, '558bec83ec5c'), (0x4350c0, '558bec83ec1c'), (0x4076c0, '558bec518b5518'), (0x40a900, '558bec83ec08'), (0x451390, '558bec83ec08'), (0x4415ff, '668b43328bf7e886fd0000'), (0x467370, '558bec83e4f883ec0c'), (0x42d2f0, '558bec83ec78')]:
         offset = pe_file_offset(data, address)
-        if data[offset:offset+9].hex() != expected:
+        if data[offset:offset+len(bytes.fromhex(expected))].hex() != expected:
             raise ValueError('REA hook bytes do not match the shipped file')
     mh = WORKSPACE / 'Tools/native/MinHook'
     commit = subprocess.run(['git', '-C', str(mh), 'rev-parse', 'HEAD'], check=True, capture_output=True, text=True).stdout.strip()
     if commit != MINHOOK_COMMIT:
         raise ValueError('MinHook revision differs from reviewed v1.3.4')
-    variables, dumpbin = compiler();forwarders(dumpbin);report = dictionary();images = image_payload()
+    variables, dumpbin = compiler();forwarders(dumpbin);report = dictionary();images = [] if font_only else image_payload()
     shutil.copy2(mh / 'LICENSE.txt', PAYLOAD / 'AvadonChinese/MinHook-LICENSE.txt')
     obj = BUILD / 'obj';obj.mkdir(exist_ok=True)
     def quote(path):
@@ -237,8 +274,15 @@ def build(compile_code=True):
                 'game_started': False, 'in_game_verified': False, 'installed': False}
     if (PAYLOAD/'winmm.dll').exists():
         manifest['dll_sha256'] = sha(PAYLOAD/'winmm.dll')
-    write_json(HERE/'BUILD_MANIFEST.json', manifest)
+    if font_only:
+        manifest['dictionary']={key:report[key] for key in ['records','keys','source_sha256','translation_sha256','dictionary_sha256','original_game_data_modified']}
+    write_json((BUILD.parent if font_only else HERE)/'BUILD_MANIFEST.json', manifest)
     print(json.dumps({'status': manifest['status'], 'dictionary_keys': report['keys'], 'textures': len(images), 'dll_sha256': manifest.get('dll_sha256')}, ensure_ascii=False))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');args = parser.parse_args();build(not args.prepare_only)
+    parser = argparse.ArgumentParser();parser.add_argument('--prepare-only', action='store_true');parser.add_argument('--font-only', action='store_true');parser.add_argument('--enhancement', action='store_true');args = parser.parse_args()
+    if args.enhancement:
+        BUILD=HERE/'Enhancement/Build';PAYLOAD=HERE/'Enhancement/Payload'
+    elif args.font_only:
+        BUILD=HERE/'FontEnhancement/Build';PAYLOAD=HERE/'FontEnhancement/Payload'
+    build(not args.prepare_only,args.font_only or args.enhancement)
