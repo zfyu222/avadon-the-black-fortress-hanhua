@@ -1,12 +1,12 @@
 # 翻译操作记录
 
 - 工作流：custom
-- 执行路线（codex=SubAgent，api=API）：api
+- 执行路线（subagent=SubAgent，api=API）：api
 - 原文：项目根目录 `avadon-the-black-fortress_text.csv`
 - 正式译文：项目根目录 `avadon-the-black-fortress_text_translated.csv`
 - 中间产物：`TranslateFiles/`
 
-由 game-translate 技能调用共用流程程序；路线为 SubAgent（codex）或 API（api）。正文前完成全文术语整理及冻结。
+由 game-translate 技能调用共用流程程序；路线为 SubAgent（subagent）或 API（api）。正文前完成全文术语整理及冻结。
 试译：固定随机样本 → pilot_translate → pilot-report → 主 AI pilot-decide；按需 pilot-retry。
 试译用于校准流程和风格，不要求逐句零错误；正式译文仍须完整独立审校和导出验收。
 
@@ -19,3 +19,10 @@
 - 用户发现 retrain 中英混杂后，新增独立 Sol 单 ref 作用域审校：独立原生命令保留，普通句不再全局禁翻。公开 revise-glossary 生成 revision 4；原有无关语义证据和累计尝试保持不变。8 条受影响记录经过 API 定向复审，5 条旧语境例外由程序重新处理，实际仅修改 CSV 1144、1587 两句；其他 15,926 条译文不变。正式程序重新导出通过，载荷已更新安装，仍待用户实测。
 - 发布时更新：用户确认最新版“检测过了”并要求发布，已通过正式 record-game-check / release-check 保存用户实测结论，范围和未提供逐项场景的边界见 `Repack/UserTests/confirmation_20261026.json`。代理仍未启动游戏。
 - v1.0 已公开发布至独立 GitHub 仓库；匿名下载附件与本地 ZIP 的 SHA-256 一致。下载页：https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/tag/v1.0 。
+
+## 2026-11-25 正文润色与复审
+
+- 按长短分层抽查 46 条原译，随后沿用已有 API 优先级独立润色 15,928 条，工作流修订号为 5，冻结术语仍为第 4 版。保留原预算，旧标准档执行器名称由 `codex` 迁移为当前的 `subagent`。
+- 仅复审与原正式译文逐字比较后变化的 2,777 条。14 条只变动术语例外说明的记录恢复已审说明。三条 API 证据格式问题由 GPT-6 Sol 独立补审，希玛对白的一处指代疑问在核对原脚本后定向返修。
+- 润色及复审合计 750 次报告用量的 API 请求、9,390,000 Token。润色和首轮复审的回执分别为 `0dc6247bed484a14b875f24e6e6600f9` 和 `813fc0d5c1094039a9bec9585d40221c`，单条返修回执为 `bfa0acbfd4894bb79238a858513091e0`。
+- 正式导出覆盖 15,928 条，与原文顺序逐条对应，最终改动 2,777 条。占位符、结构及术语校验通过，译文 SHA-256 为 `b29a6047487b6840de057a8ab5347f6f1abbd739172d2dceeaad916938e84c11`，等待回填及实机检查。

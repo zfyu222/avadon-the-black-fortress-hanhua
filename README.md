@@ -20,6 +20,12 @@
 | [Repack/native/](Repack/native/) | x86 `winmm.dll` 转发及 MinHook 钩子，通过 GDI / OpenGL 绘制中文并测宽。体验优化设置界面位于 [EnhancementSettings.cs](Repack/EnhancementSettings.cs) |
 | [Release/](Release/) · [Dispatch/](Dispatch/) | 发布脚本、安装配置、载荷清单和验证报告 |
 
+## 翻译
+
+- 2026-11-25 对 15,928 条常规正文执行独立 API 润色，重点改善对白口吻、叙事衔接及教程表达。按当前 API 优先级执行，标准档疑难交由 GPT-6 Sol 定向处理。
+- 逐条比对润色前的正式译文，2,777 条实际改动接受独立复审，13,151 条沿用原审校证据。正文使用第 4 版冻结术语，正式导出通过占位符、结构及术语校验。
+- 润色版正式译文已导出，等待回填和实机检查。详见 [翻译操作记录](TranslateFiles/TranslateDoc.md) 与 [导出验证报告](TranslateFiles/reports/final_validation.json)。
+
 ## 构建与验证
 
 在 StaticHanHua 工作区内，从本项目目录执行。原生构建使用 Python 3.12、MSVC x86 和 MinHook v1.3.4，设置界面使用 Windows .NET Framework / WinForms。

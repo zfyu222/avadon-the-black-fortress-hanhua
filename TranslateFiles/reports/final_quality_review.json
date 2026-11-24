@@ -8,7 +8,7 @@
     "path": "glossary\\revision_4_7791a19e\\built\\glossary_reviewed.json",
     "revision": 4
   },
-  "snapshot_hash": "4e6ad50b3fce404e4b297b92eb8ac777dbb2bd24b8b1939d344129c44951341f",
+  "snapshot_hash": "3c8008667cfbce4f532561de8b75ad01775b2d69bae3ee7d5b0f662a003ce2d6",
   "coverage": {
     "records": 15928,
     "text_types": {
@@ -20,7 +20,7 @@
     "missing_context": 0,
     "risk_records": 5772,
     "ordinary_sample": 0,
-    "sol_records": 2
+    "standard_records": 2
   },
   "risk_detection": "Heuristic candidates plus reviewer findings; absence of flags is not proof of correctness.",
   "records_to_check": [],
@@ -52,9 +52,13 @@
     }
   },
   "required_decisions": [],
-  "sol_scope_policy": "disputes_only_v1",
+  "standard_scope_policy": "disputes_only_v1",
   "carried_findings": {},
-  "selection_explanation": "Only explicit unresolved reviewer issues need Sol adjudication. Risk flags, corrections, ordinary samples, duplicate-source groups and speaker groups do not trigger Sol. Known Sol repair findings are carried to standard repair without re-reading; exhausted or regressing repairs use the existing targeted Sol escalation route.",
-  "report_hash": "cdfec0ab5bbf754db7db344c17540336d8f424482be6b13a9b5b15ea0adaf59d",
+  "selection_explanation": "Only explicit unresolved reviewer issues need standard-tier adjudication. Risk flags, corrections, ordinary samples, duplicate-source groups and speaker groups do not trigger standard-tier review. Known standard-tier repair findings are carried to cheap-tier repair without re-reading; exhausted or regressing repairs use the existing targeted standard-tier escalation route.",
+  "resource_occurrence_binding": {
+    "avadon-the-black-fortress_images_text.mapping.json": "28ec08956967e97c62cca6deb6849dfc4e29c414a1258f99d01013582c8f2f25",
+    "avadon-the-black-fortress_text.mapping.json": "4d3610f4678f2cb99c327a4cfc318fb40f5c213a186c655592f0fc529b137a16"
+  },
+  "report_hash": "60d09e06fa11ebbad31b08aba704a6235fd6520ebef7754c667959a89ee467c7",
   "round_scope": []
 }

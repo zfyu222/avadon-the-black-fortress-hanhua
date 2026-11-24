@@ -26,7 +26,7 @@
   "case_sensitive": false,
   "context_records": 0,
   "draft_scan_workers": 1,
-  "escalation_backend": "codex",
+  "escalation_backend": "subagent",
   "exclusions": [
     {
       "info": "脚本引号/换行及说明书标题控制符",
@@ -51,7 +51,7 @@
     "dollar_var": null,
     "square_bracket": null
   },
-  "polish": false,
+  "polish": true,
   "protect_named_curly": false,
   "quality_version": 2,
   "record_constraints": {},
@@ -76,5 +76,7 @@
   "task_input_chars": 48000,
   "task_input_tokens": 65536,
   "whole_word": true,
-  "workflow": "custom"
+  "workflow": "custom",
+  "standard_no_progress_limit": 2,
+  "standard_repair_round_limit": 3
 }
