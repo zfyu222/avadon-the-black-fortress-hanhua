@@ -1,4 +1,4 @@
-![阿瓦登子非鱼汉化封面](https://raw.githubusercontent.com/zfyu222/avadon-the-black-fortress-hanhua/3300b96bb1837970740398eb12883943a5f42206/Dispatch/Artwork/title.png)
+![阿瓦登子非鱼汉化封面](https://raw.githubusercontent.com/zfyu222/avadon-the-black-fortress-hanhua/main/Dispatch/Artwork/title.jpg)
 
 [子非鱼Ai汉化]《阿瓦登：黑色要塞》/《Avadon: The Black Fortress》
 ================================================
@@ -13,8 +13,11 @@ Steam商店: https://store.steampowered.com/app/112100/
 有问题请反馈至【腾讯文档】Avadon问题反馈
 https://docs.qq.com/sheet/DTkNXdm54YVFOSmJ0?tab=BB08J2
 
-游戏介绍
+### 游戏介绍
+
 这是一款奇幻队伍角色扮演游戏。你将作为黑色要塞的代理人调查阴谋、招募同伴，在回合制战斗中运用职业技能，并决定如何应对盟约各地的冲突。
+
+[下载汉化补丁 v1.7](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/download/v1.7/Avadon_The_Black_Fortress_1.7.zip)
 
 ### 安装汉化
 
@@ -37,11 +40,17 @@ Steam Windows 11 x64（游戏与补丁均为 x86）
 
 游戏正文、菜单、提示及地图文字。
 
+### 体验优化补丁（可选，推荐使用）
+
+[下载体验优化补丁 v2.4](https://github.com/zfyu222/avadon-the-black-fortress-hanhua/releases/download/v1.7/Avadon_Enhancement_2.4.zip)
+
+提供字号调节、镜头跟随、队伍探索加速、背包快捷键和可交互物标记。已使用旧版体验优化的玩家，请先在“阿瓦登增强设置.exe”中选择“还原增强补丁”，再升级主汉化。安装主汉化后，将体验优化补丁 v2.4 解压到同一文件夹，打开“阿瓦登增强设置.exe”，点击“保存并应用”。
+
 ### 说明
 
 本补丁使用 AI 辅助翻译，请适当降低预期。
 
-发布日期：2026-11-15
+发布日期：2026-11-25
 
 ### 更新日志
 
@@ -52,3 +61,4 @@ Steam Windows 11 x64（游戏与补丁均为 x86）
 - v1.4（2026-10-27）：AI翻译说明补充“请适当降低预期”，移除运行情况栏目。
 - v1.5（2026-10-29）：优化19张中文图片：去除遮挡原画的背景色块，修补底纹，调整字体、配色及字号，使地图与界面文字更协调。
 - v1.6（2026-11-15）：补译 26 个百科主题的首次收录和重复阅读提示，以及治疗之触、野蛮打击、缴械打击的目标选择提示。
+- v1.7（2026-11-25）：润色 2,777 条正文，改善对白、叙事和教程表达。

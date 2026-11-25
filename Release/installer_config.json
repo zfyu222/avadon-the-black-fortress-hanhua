@@ -240,6 +240,10 @@
     {
       "path": "AvadonChinese/translations.bin",
       "sha256": "0bb54ca000122a15fa26fbe93b83f8adc7db7c11be0caf688705cb0c8440adc9"
+    },
+    {
+      "path": "AvadonChinese/translations.bin",
+      "sha256": "f4f44bd7e8870e8cd6e0df6466355966c9d736e856ba081cca1bd26e7f5292f0"
     }
   ]
 }

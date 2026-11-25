@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "version": "1.6",
+  "archive": "阿瓦登：黑色要塞_子非鱼汉化1.6.zip",
+  "sha256": "f7f299b4fbd66540cec2887bb6f6632cfc217e00dbdac4e7967cb44249bb579c",
+  "tested_game_payload_files": 22,
+  "payload_unchanged_from": null,
+  "auxiliary_files": 4,
+  "archive_files": 29,
+  "zip_crc": true,
+  "all_hashes": true,
+  "actual_windows_powershell_install_repeat_upgrade_uninstall": true,
+  "legacy_upgrade_steam_recovery_requested": true,
+  "steam_recovery_network_not_executed_in_test": true,
+  "upgrade_from_previous_archive": true,
+  "exe_unchanged": true,
+  "game_started": false,
+  "in_game_validation": "pending",
+  "original_game_test_evidence": "Repack/ReleaseAcceptance/v1.6.json",
+  "isolated_process_check_simulated_closed": true
+}

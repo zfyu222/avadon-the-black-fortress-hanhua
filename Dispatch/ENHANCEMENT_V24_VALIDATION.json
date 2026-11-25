@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "archive": "(可选)阿瓦登_体验优化补丁_2.4.zip",
+  "sha256": "49f3c31d67126233b51ed49fbee92832ffc93cd4350e394eba09b556cc11001d",
+  "dictionary_sha256": "f4f44bd7e8870e8cd6e0df6466355966c9d736e856ba081cca1bd26e7f5292f0",
+  "installer_cases": [
+    "install",
+    "repeat_preserves_settings",
+    "uninstall"
+  ]
+}
